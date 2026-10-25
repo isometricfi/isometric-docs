@@ -1,0 +1,94 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Welcome to Isometric
+sidebarTitle: Welcome
+description: Onchain options that trade like perps. Long or short with leverage, no liquidation, no funding, and a loss that can never exceed what you paid.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Onchain options that trade like perps
+
+Isometric lets you go **long or short with leverage** on Arbitrum and Robinhood Chain. You pay once, up front, in USDG. That payment is the most you can ever lose. There is no liquidation price, no funding rate, and no margin to top up.
+
+## The whole trade in four choices
+
+1. **Direction.** Long if you think the price will be higher at settlement. Short if lower.
+2. **Amount.** How much USDG to spend.
+3. **Term.** One, three, seven, or thirty days. The exact settlement time is shown before you confirm.
+4. **Leverage.** 5x to 100x. It sets your position size, and with it how much every 1% of the move is worth.
+
+At the settlement time a single price decides the outcome. Finish past your breakeven and you come out ahead, up to your **Max payout**. Finish on the wrong side of your worthless price and you lose what you paid, never more.
+
+## Two ways to use Isometric
+
+<Columns cols={2}>
+
+<Card title="Trade" icon="lucide:trending-up" href="./trade/quickstart.mdx" arrow>
+
+Take a leveraged view with a known maximum loss. Open your first position in a few minutes.
+
+</Card>
+
+<Card title="Earn" icon="lucide:vault" href="./earn/overview.mdx" arrow>
+
+Deposit USDG into the pool that takes the other side of every trade and collects the premium traders pay.
+
+</Card>
+
+</Columns>
+
+## Why not a perp
+
+<Columns cols={3}>
+
+<Card title="No liquidation" icon="lucide:shield-check">
+
+A move against you does not close your position. It stays open to settlement, however far the price wanders in between.
+
+</Card>
+
+<Card title="No funding" icon="lucide:clock">
+
+Holding costs nothing, at any size, for the whole term. What you pay at open is the entire cost.
+
+</Card>
+
+<Card title="One counterparty" icon="lucide:zap">
+
+The pool is the counterparty on every trade. There is no order book to walk and no partial fill.
+
+</Card>
+
+</Columns>
+
+The trade-off is that a position runs to its settlement time. You cannot close it early, and the payout stops growing at the **Max payout** shown on the ticket. [Perps versus Isometric](./trade/perps-vs-isometric.mdx) lays out both sides.
+
+## Keep reading
+
+<Columns cols={2}>
+
+<Card title="Open your first position" icon="lucide:rocket" href="./trade/quickstart.mdx" arrow>
+
+Connect a wallet, fund it with USDG on Arbitrum or Robinhood Chain, and place a trade.
+
+</Card>
+
+<Card title="Read the quote" icon="lucide:receipt" href="./trade/reading-the-quote.mdx" arrow>
+
+What the six numbers on the ticket mean, with a worked example.
+
+</Card>
+
+<Card title="Know the risks" icon="lucide:shield-alert" href="./trade/risks.mdx" arrow>
+
+What you can lose, what can delay a payout, and what the protocol does not protect you from.
+
+</Card>
+
+<Card title="Markets" icon="lucide:layers" href="./markets.mdx" arrow>
+
+Launching with Bitcoin on Arbitrum and Robinhood Chain. More markets are listed in the app as coming soon.
+
+</Card>
+
+</Columns>

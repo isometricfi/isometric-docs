@@ -1,0 +1,66 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Pool risks
+sidebarTitle: Risks
+description: What can go wrong for an Isometric depositor. Read this before you deposit.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Pool risks
+
+A pool takes the other side of every trade. That is where its return comes from, and it is also where its losses come from. Read this page once before you deposit.
+
+<Warning>
+  A pool is not a savings rate. Winning traders are paid from it, and the value of your shares can
+  fall.
+</Warning>
+
+## Winning traders are paid from your deposit
+
+Every payout to a trader is a loss to the pool. The pool's pricing gives it an edge over many trades, but a strong trend can produce a run of winners that outweighs the premium collected. The worst case is a sharp move in the direction most open positions point, most of all when traders pile in after the move has started.
+
+The limits bound how bad one stretch can be: a cap on how much of the pool can be at risk at once, on how much one settlement hour and one position can take, and on how much new exposure the pool adds in an hour. They do not put a floor under the share price.
+
+## Withdrawals are hourly and can be partial
+
+You cannot leave instantly. A withdrawal is a request that fills at the next hourly fill, at a price you do not know in advance.
+
+A withdrawal is paid from the pool's free USDG. If many depositors leave at once and their requests exceed it, every request at that fill is filled in the same proportion and the rest of your shares come back to you to request again. A full exit then takes as long as it takes open trades to settle and free their money.
+
+A fill can also be late: when the Arbitrum sequencer or the price feed is unavailable, the pool waits for a trustworthy price rather than fill on a bad one.
+
+## You fill at a price you have not seen
+
+The share price on the page is the last fill's. Your request fills at the next one, after the market has moved. A deposit requested before a bad hour for the pool buys in after the loss, and one requested before a good hour buys in after the gain. You can cancel only until the cutoff, 10 minutes before the hour.
+
+## The pool's valuation is a model
+
+Between settlements the pool values its open trades with its own pricing model. A model can be wrong: in a market more violent than it allows for, depositors who leave at that moment are paid more than they should be, at the expense of those who stay.
+
+## The pool can be paused or capped
+
+A pause stops new deposit requests and new trades. It does not stop withdrawals, fills, or claims. At launch the pool can also have a deposit cap, and a request over it is refused.
+
+## Parameters can change
+
+The fee, the utilisation cap, and the pool's other limits are protocol parameters. Governance can adjust them at any time within ceilings fixed in the contract code. A change could raise or lower the pool's risk and return.
+
+## Contract upgrades
+
+The contracts are upgradeable. An upgrade can change anything, including how funds are held, so a faulty upgrade or a compromised upgrade owner can cause loss of funds. On Arbitrum One every upgrade must wait in a public timelock for at least 48 hours before it can take effect, so a pending upgrade is public before it happens.
+
+## Smart contract and token risk
+
+The pool is a smart contract on Arbitrum or Robinhood Chain holding USDG. Contracts can have bugs, oracles can fail, and USDG carries its own issuer and technical risk. The protocol is designed to refuse an action rather than perform it on bad data, but no software is risk free.
+
+## Past changes do not predict returns
+
+The pool page shows a 30d APY: how much a pool share grew over the last 30 days, as a yearly rate. It is a record of the past, not a promise. Future returns can be lower or negative.
+
+## What the contract code protects
+
+- **Every position is funded when it opens.** The pool sets aside enough to pay every position at each settlement hour, at any price, so it cannot owe traders more than it holds.
+- **Risk is capped.** The pool refuses trades that would take it past its limits, which keeps most of it free.
+- **Share pricing is conservative in both directions.** Deposits and withdrawals are priced so that neither can take value from the depositors who stay.
+- **Everyone at a fill gets the same price.** There is no advantage in being first, and requests close 10 minutes before the hour's price is taken, so nobody can join after seeing it.
+- **The pool never lends its money out.** It backs Isometric positions and nothing else.

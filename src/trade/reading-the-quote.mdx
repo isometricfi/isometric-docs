@@ -1,0 +1,98 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Reading the quote
+sidebarTitle: Reading the quote
+description: The six numbers on the Isometric ticket explained with a worked example, so you know exactly what you are agreeing to before you confirm.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Reading the quote
+
+Every quote shows the same six numbers. They do not change meaning between markets, terms, or leverage. Once you can read them, you can read any Isometric trade.
+
+## The six numbers
+
+| Number                    | What it tells you                                                                                                               |
+| ------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| **Settles**               | The date and hour the position ends. One price at that hour decides the result. It cannot be closed before then.                |
+| **Position size**         | Your amount times leverage, or a little more. The exposure the position gives you.                                              |
+| **Worthless at or below** | For a long: settle at or below this price and you receive nothing. A short shows **Worthless at or above**.                     |
+| **Profit above**          | For a long: settle above this price and you get back more than you paid. A short shows **Profit below**.                        |
+| **Max payout**            | The most the position can pay in USDG. It is fixed when the trade opens.                                                        |
+| **Max loss**              | Your amount, paid now including the trading fee. If the position expires worthless you lose it. No margin call, no liquidation. |
+
+Between the worthless price and the profit price the position pays something, but less than it cost. That band is where you get part of your money back.
+
+## Max payout
+
+Every position has a maximum payout, fixed when you open it. A long earns on the way up from its worthless price to its cap price and nothing beyond. A short earns on the way down from its worthless price to its floor price and nothing beyond.
+
+The cap sits further from today's price on a longer term and in a more volatile market, so a 7-day position has more room to run than a 1-day one. The ticket shows the dollar amount before you confirm. Once the position is open, its detail in Portfolio shows the price where the payout stops, as **Capped at** for a long and **Floored at** for a short. Neither changes afterwards.
+
+The cap is what lets the pool set aside the whole **Max payout** for you on day one instead of an open-ended amount.
+
+## A worked example
+
+Bitcoin is at **$100,000**. You go **Long**, enter **$500**, choose **7 days** and **25x**. The ticket might show:
+
+| Number                | Value                        |
+| --------------------- | ---------------------------- |
+| Settles               | 7 days from now, on the hour |
+| Position size         | $12,817                      |
+| Worthless at or below | $99,154                      |
+| Profit above          | $103,022                     |
+| Max payout            | $3,309.85                    |
+| Max loss              | $500.00                      |
+
+The exact figures depend on the live price, how volatile the market has been, and how busy the pool is, so yours will differ. Once open, this position shows **Capped at $124,759** in Portfolio.
+
+Settlement at different prices pays:
+
+| Bitcoin at settlement | You receive | Result  |
+| --------------------- | ----------- | ------- |
+| $99,154 or below      | $0          | −$500   |
+| $101,000              | $239        | −$261   |
+| $103,022              | $500        | $0      |
+| $105,000              | $756        | +$256   |
+| $110,000              | $1,402      | +$902   |
+| $120,000              | $2,695      | +$2,195 |
+| $124,759 and above    | $3,310      | +$2,810 |
+
+Two things to notice. Between $99,154 and $103,022 you get some money back but not all of it. And the payout stops growing at $124,759: Bitcoin at $150,000 pays the same $3,310.
+
+## The same idea as a short
+
+Bitcoin is at $100,000. You go **Short**, enter **$400**, choose **1 day** and **25x**. The ticket might show:
+
+| Number                | Value     |
+| --------------------- | --------- |
+| Position size         | $10,088   |
+| Worthless at or above | $103,712  |
+| Profit below          | $99,600   |
+| Max payout            | $1,250.46 |
+| Max loss              | $400.00   |
+
+Once open, this position shows **Floored at $90,857** in Portfolio.
+
+| Bitcoin at settlement | You receive | Result |
+| --------------------- | ----------- | ------ |
+| $103,712 or above     | $0          | −$400  |
+| $101,000              | $264        | −$136  |
+| $99,600               | $400        | $0     |
+| $98,000               | $556        | +$156  |
+| $95,000               | $847        | +$447  |
+| $90,857 and below     | $1,250      | +$850  |
+
+In both examples the worthless price sits on the safe side of today's price and the profit price sits just past it. That is typical: a position starts with some value, and you come out ahead once the price moves a little further your way.
+
+## Two shortcuts
+
+**Each 1% past the worthless price is worth at least leverage percent of your amount.** In the long example, every $1,000 above $99,154 adds about $129 to the payout, which is about 26% of the $500 you entered.
+
+**Breakeven is the Profit above price**, or **Profit below** for a short. It is never more than one leverage-share past the worthless price: 1% at 100x, 4% at 25x, 10% at 10x, 20% at 5x.
+
+## The quote follows the market
+
+The quote updates as the price moves. If the price moves before your trade lands, the trade either opens close to the quote you saw or fails. A failed trade costs only the network fee, and an open one costs exactly the amount you entered.
+
+The **Max payout** and the price it stops at are set from the live price when the trade lands, so they can differ slightly from the quote if the price ticks in between.

@@ -1,0 +1,117 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Open your first position
+sidebarTitle: Quickstart
+description: Connect a wallet, fund it with USDG on Arbitrum or Robinhood Chain, and open a long or short position on Isometric in a few minutes.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Open your first position
+
+This walkthrough takes you from an empty wallet to an open position.
+
+<Tip>
+  To try it without real money, turn on **Demo** in the app header. Demo mode uses simulated funds,
+  so you can practise the whole flow without a wallet.
+</Tip>
+
+<Steps>
+
+<Step title="Connect a wallet" icon="lucide:wallet">
+
+Open [app.isometric.fi](https://app.isometric.fi) and choose **Connect**.
+
+</Step>
+
+<Step title="Fund it on Arbitrum or Robinhood Chain" icon="lucide:coins">
+
+Isometric runs on Arbitrum One and Robinhood Chain. You need two things in your wallet on the network you trade on:
+
+- **USDG** to pay for positions. USDG is Global Dollar, a dollar stablecoin issued by Paxos. The minimum position is $10.
+- **A little ETH** for network fees.
+
+There are three ways to get USDG on Arbitrum:
+
+- **From an exchange.** Withdraw USDG and ETH to Arbitrum from an exchange that supports it.
+- **From another network.** Bridge your funds to Arbitrum.
+- **From USDC on Arbitrum.** Swap it for USDG in the [USDG/USDC pool on Uniswap](https://app.uniswap.org/explore/pools/arbitrum/0x52b42d5f1e4a0d4bce86667bb069cf257e512d98ce617f549f6e4fbb0bee41e6).
+
+The USDG contract on Arbitrum One is `0x004B506865409877C9fA29bfb1ebA929984B9bbC`. Other tokens can use the same name, so check the address before you swap.
+
+On Robinhood Chain, USDG is the native stablecoin. Withdraw it from an exchange that supports Robinhood Chain, or bridge it from another network.
+
+</Step>
+
+<Step title="Pick a market" icon="lucide:search">
+
+The market picker sits at the top of the trade page. Bitcoin is the launch market. Other markets are listed so you can see what is coming, but only live markets can be traded. See [Markets](../markets.mdx).
+
+</Step>
+
+<Step title="Set up the trade" icon="lucide:sliders-horizontal">
+
+The ticket has four controls:
+
+- **Long or Short.** Long pays if the price settles above your target. Short pays if it settles below.
+- **Term.** 1, 3, 7, or 30 days.
+- **Amount.** The USDG to spend. The ticket shows it as **Max loss**: the whole cost, fee included, and the most you can lose.
+- **Leverage.** 5x, 10x, 25x, 50x, or 100x.
+
+The quote below the controls updates as you change them. [Direction, amount, term, and leverage](./three-inputs.mdx) explains what each one does to the trade.
+
+</Step>
+
+<Step title="Read the quote" icon="lucide:receipt">
+
+Before you confirm, check the numbers on the ticket. The three that matter most:
+
+- **Worthless at or below** (or above, for a short). Settle on the wrong side of this price and you lose what you paid.
+- **Profit above** (or below). Settle past this price and you come out ahead.
+- **Max payout.** The most the position can pay, however far the price runs.
+
+The quote follows the live price on its own. [Reading the quote](./reading-the-quote.mdx) walks through every number with an example.
+
+</Step>
+
+<Step title="Confirm" icon="lucide:check">
+
+Press **Confirm Long BTC** or **Confirm Short BTC**. Your wallet asks you to sign an approval for the premium, then to send the trade. The approval is a signature, not a transaction, so a trade costs one network fee.
+
+The position is open as soon as the transaction lands. You will see it in **Portfolio**.
+
+</Step>
+
+<Step title="Wait for settlement" icon="lucide:hourglass">
+
+Nothing else is required from you. The position cannot be closed early and cannot be liquidated. At the settlement time shown on the ticket, one price decides the result.
+
+If you win, USDG is normally sent to your wallet automatically. You can also open Portfolio and press **Claim** yourself. If you lose, there is nothing to do. See [Payouts and claims](./payouts-and-claims.mdx).
+
+</Step>
+
+</Steps>
+
+## What the button is telling you
+
+The confirm button doubles as a status line. If it does not say **Confirm**, it says why:
+
+| Button text                             | What it means                                                                                       |
+| --------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| Switch to Arbitrum One                  | Your wallet is on another network                                                                   |
+| Insufficient USDG                       | Your wallet holds less USDG than the position costs                                                 |
+| Min amount or Max amount, with a figure | The amount is under the minimum or over the most one position can take right now                    |
+| Amount too small for this trade         | The premium would be a negligible share of the position. Raise the amount or lower the leverage     |
+| Pool is at capacity                     | The position would take the pool past one of its limits. Try a smaller amount or another term       |
+| The price feed is unavailable           | The Chainlink price is stale or moved too far in one update. New positions wait until it is healthy |
+| The Arbitrum sequencer is down          | New positions wait until the network is back and has been up for a while                            |
+| Volatility data is behind               | The market's volatility record has not caught up. It normally does within minutes                   |
+| Market data is stale                    | The app has lost its live market feed. Trading resumes when it reconnects                           |
+| New trades are paused                   | The market is paused. Existing positions still settle and pay out                                   |
+
+If the price moves between the quote and your transaction, the trade either goes through within the limits you signed or fails with **The price moved. Check the new quote**. A failed trade charges nothing but the network fee.
+
+## Before you trade
+
+- Read [Know the risks](./risks.mdx). It is short.
+- Understand that a position runs to settlement. There is no early exit.
+- Never trade with money you cannot afford to lose in full.

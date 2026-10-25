@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg
+  viewBox="0 0 720 332"
+  xmlns="http://www.w3.org/2000/svg"
+  role="img"
+  aria-labelledby="dip-title dip-desc"
+  font-family="Inter, system-ui, -apple-system, sans-serif"
+>
+  <title id="dip-title">A dip through the liquidation level that later recovers</title>
+  <desc id="dip-desc">
+    A price path opens at the entry price, falls through the perp liquidation level early in the
+    term, and then recovers to finish well above the entry price at settlement. The perp is closed
+    at the liquidation level and misses the recovery. The Isometric position stays open and settles
+    in profit.
+  </desc>
+
+  <rect x="0.5" y="0.5" width="719" height="331" rx="12" fill="#f8f7f3" stroke="#e6e3db" />
+
+  <line x1="56" y1="280" x2="530" y2="280" stroke="#d9d5cb" stroke-width="1" />
+  <line x1="530" y1="40" x2="530" y2="280" stroke="#c9c5bb" stroke-width="1" stroke-dasharray="3 4" />
+
+  <line x1="56" y1="184" x2="530" y2="184" stroke="#5f6570" stroke-width="1" stroke-dasharray="4 4" opacity="0.55" />
+  <line x1="56" y1="220" x2="530" y2="220" stroke="#c11435" stroke-width="1.5" stroke-dasharray="6 4" />
+
+  <path
+    d="M56 184 C69 180.4 82 173.2 95 173.2 C106.7 173.2 118.3 183.4 130 188.8 C141.7 194.2 153.3 200 165 205.6 C176.7 211.2 188.3 215.6 200 222.4 C211.7 229.2 223.3 246.4 235 246.4 C246.7 246.4 258.3 241.8 270 236.8 C281.7 231.8 293.3 223.2 305 216.4 C316.7 209.6 328.3 203 340 196 C351.7 189 363.3 181.6 375 174.4 C386.7 167.2 398.3 160 410 152.8 C421.7 145.6 433.3 138 445 131.2 C456.7 124.4 468.3 117.4 480 112 C496.7 104.2 513.3 99.2 530 92.8"
+    fill="none"
+    stroke="#171717"
+    stroke-width="2.4"
+    stroke-linecap="round"
+  />
+
+  <line x1="195" y1="227" x2="190" y2="254" stroke="#c11435" stroke-width="1" opacity="0.6" />
+  <circle cx="195.8" cy="220" r="5.5" fill="#f8f7f3" />
+  <circle cx="195.8" cy="220" r="3.5" fill="#c11435" />
+  <text x="186" y="271" text-anchor="middle" font-size="14" font-weight="500" fill="#c11435">Perp closed here</text>
+
+  <circle cx="530" cy="92.8" r="5.5" fill="#f8f7f3" />
+  <circle cx="530" cy="92.8" r="3.5" fill="#316ce8" />
+
+  <text x="542" y="92" font-size="14" font-weight="600" fill="#316ce8">Isometric settles</text>
+  <text x="542" y="106" font-size="14" font-weight="600" fill="#316ce8">in profit</text>
+  <text x="542" y="188" font-size="14" fill="#5f6570">Entry price</text>
+  <text x="542" y="224" font-size="14" fill="#c11435">Perp liquidation level</text>
+
+  <text x="56" y="300" font-size="14" fill="#5f6570">Open</text>
+  <text x="530" y="300" text-anchor="middle" font-size="14" fill="#5f6570">Settlement</text>
+</svg>

@@ -1,0 +1,42 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Fees
+sidebarTitle: Fees
+description: What an Isometric position costs, where the fee is, and what you never pay.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Fees
+
+A position costs one payment, made when you open it, and nothing is charged on top.
+
+## Where the fee is
+
+Your payment is the **premium** for the trade, and it is exactly the amount you enter. It buys the position at the pool's price plus a **3% trading fee** on that price, so the fee is already included in **Max loss**. When much of the pool is already backing open positions, the pool's price also carries a busy-pool charge, which the pool keeps.
+
+The premium goes to the pool that takes the other side. The Isometric treasury keeps **up to 3% of the premium**, and the depositors backing your position keep the rest. Depositors always receive at least the pool's full price for the position, so the treasury's share can only come out of the fee.
+
+The opening price also includes a **0.10% entry spread**, as on any venue. It is inside the price, not added on top.
+
+## What you never pay
+
+| On a perp                  | On Isometric                     |
+| -------------------------- | -------------------------------- |
+| Funding every hour         | Nothing                          |
+| Closing fee                | Nothing. There is no close       |
+| Liquidation penalty        | Nothing. There is no liquidation |
+| Withdrawal fee on a payout | Nothing                          |
+| A cut of your winnings     | Nothing                          |
+
+## Network fees
+
+Every transaction on Arbitrum or Robinhood Chain costs a small amount of ETH. You pay it from your wallet for:
+
+- opening a position, which is one transaction;
+- claiming a payout, when you choose to claim rather than wait for the automatic payment.
+
+Approving the premium is a signature, not a transaction, so it costs nothing. Settlement and automatic payouts are sent by Isometric's keeper, which pays its own network fees. They are not charged to you or to depositors.
+
+## Can the fee change
+
+Governance can change the fee and the entry spread within limits fixed in the contract code. A change applies only to positions opened after it, never to one that is already open.

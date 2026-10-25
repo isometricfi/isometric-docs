@@ -1,0 +1,70 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Know the risks
+sidebarTitle: Risks
+description: What you can lose trading on Isometric, what can delay a payout, and what the protocol does not protect you from. Read this before you trade.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Know the risks
+
+Isometric removes liquidation and funding. It does not remove the possibility of losing money. Read this page once before you trade.
+
+<Warning>
+  Every position can lose 100% of what you paid. Never trade with money you cannot afford to lose in
+  full.
+</Warning>
+
+## You can lose everything you paid
+
+A position that settles on the wrong side of its worthless price pays nothing. The higher the leverage, the closer that price sits to today's price and the more often this happens. The amount you paid is gone, with no partial refund.
+
+## You cannot get out early
+
+There is no close button. A position you regret at hour one still runs to its settlement time, and a position that is winning on day three can still lose on day seven. Only the settlement price counts. Positions cannot be transferred to another wallet either.
+
+## One price at one hour decides
+
+Settlement uses the last Chainlink price published at or before the settlement hour. A spike or dip that happens a minute later does not count. If you need a position that tracks the price continuously, this is not that product.
+
+If the price feed had gone quiet for longer than its normal maximum gap before the hour, the first price published after the hour is used instead. That is a different price from the one you might expect, and it arrives later.
+
+## Your payout is capped
+
+Every position has a **Max payout**, fixed when it opens. A long stops growing at its cap price and a short at its floor price. However far the market runs beyond that, you receive the maximum and no more. Shorter terms have a nearer cap.
+
+## The quote can move before you confirm
+
+The quote follows the live price. If the price moves before your trade lands, the trade either opens close to the quote you saw or fails. A failed trade costs only the network fee, and an open one costs exactly the amount you entered. The cap price is set from the live price when the trade lands, so the **Max payout** can differ slightly from the quote.
+
+## New positions can pause
+
+The protocol refuses to open positions when the price feed is stale or jumps too far in one update, when the Arbitrum sequencer is down or has only just restarted, when the pool is at one of its limits, or when the market is paused. Existing positions are unaffected: they still settle and pay. But you may not be able to open a position at the moment you want to.
+
+## A payout can be delayed
+
+A winning payout waits for three things: the settlement price, someone recording it, and the transfer to you. An Arbitrum outage or a quiet price feed delays the first. A stalled keeper delays the second and third, although anyone can settle and you can always claim for yourself. A delay does not change what you are owed.
+
+If your wallet cannot receive USDG, the automatic payment fails and you must claim to another address.
+
+## Contract upgrades and governance
+
+The contracts are upgradeable. An upgrade can change anything, including how funds are held, so a faulty upgrade or a compromised upgrade owner can cause loss of funds. On Arbitrum One every upgrade must wait in a public timelock for at least 48 hours before it can take effect.
+
+Governance can change fees and risk limits within bounds fixed in the code, with no delay. A guardian can pause the market. A pause stops new positions and new pool deposits. It never stops settlement, claims, payouts, or pool withdrawals.
+
+## Smart contract and network risk
+
+Isometric is a set of smart contracts on Arbitrum and Robinhood Chain. Contracts can have bugs, oracles can fail, networks can halt, and USDG carries its own issuer and technical risk, including the issuer's ability to freeze an address. The protocol is designed to refuse an action rather than perform it on bad data, but no software is risk free.
+
+## This is not advice
+
+Nothing in the app or these docs is investment advice. Isometric does not review whether a trade suits you. Trading leveraged products may be restricted in your jurisdiction, and you are responsible for the taxes on any gains. See the [terms of service](https://app.isometric.fi/terms).
+
+## What the contract code protects
+
+- **Your maximum loss is fixed.** Nothing can be taken from you after you pay.
+- **Your payout is funded on day one.** The pool sets aside enough to pay every position at your expiry, at any settlement price, when the positions open.
+- **Nobody picks the price.** Exactly one Chainlink price is valid for a settlement hour, and no participant, including Isometric, can choose another.
+- **Claims never expire.** A payout waits for you indefinitely, and you can send it to any address.
+- **Bad data stops new trades rather than mispricing them.** A stale or jumping feed pauses new positions instead of using it.

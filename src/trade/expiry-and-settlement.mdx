@@ -1,0 +1,53 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Expiry and settlement
+sidebarTitle: Expiry and settlement
+description: What happens between opening an Isometric position and being paid, and how one price at the settlement hour decides the result.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Expiry and settlement
+
+An Isometric position has a fixed end. Between open and that end nothing is required from you, and nothing can be done to you.
+
+## The settlement time
+
+The ticket shows **Settles** as a date and an hour. Settlement lands on a fixed hour rather than exactly one, three, seven, or thirty days from the moment you click, so a "7 day" position can settle a few hours after exactly seven days. The exact time is on the ticket before you confirm and in Portfolio after.
+
+New positions can be opened at any time, including the minutes around someone else's settlement. An expiry never pauses trading.
+
+## While the position is open
+
+The position cannot be closed, resized, transferred, or liquidated. You can watch it in **Portfolio**, where each open position shows:
+
+- **Estimated value now**, what the pool's own model says the position is worth at the current price. This is a guide, not a price you can sell at.
+- **Max payout**, the most it can pay.
+- The time remaining to settlement.
+
+The pool set money aside for your payout when you opened, up to the full **Max payout**. It stays set aside until settlement, so the money to pay you is never in question.
+
+## At the settlement hour
+
+One price decides the result: the **last Chainlink price published at or before the settlement hour**. Nobody chooses the price, including Isometric. There is only one such price, and the contract refuses any other.
+
+The price is final as soon as the hour has passed. Anyone can then record it and settle every position at that hour in one go. Isometric runs a keeper that does it, normally within a minute or two. Until it lands the position shows **Settling**. A delay here does not change the result, because the price is already fixed.
+
+If the feed had gone quiet before the hour, the first price published after it is used instead, and settlement waits for that price.
+
+## After settlement
+
+| Status      | What happened                                                             | What you do                                          |
+| ----------- | ------------------------------------------------------------------------- | ---------------------------------------------------- |
+| Expired     | The price finished on the wrong side of your worthless price              | Nothing. The position paid nothing                   |
+| Claimable   | The price finished on your side and your payout is waiting                | Wait for the automatic payment, or claim it yourself |
+| Push failed | The automatic payment could not reach your wallet. The payout still waits | Claim it, to your wallet or to another address       |
+
+[Payouts and claims](./payouts-and-claims.mdx) explains how payouts arrive and when you need to claim.
+
+## What can delay settlement
+
+- **The keeper is behind.** Anyone can settle, so a stalled keeper delays a payout rather than blocking it.
+- **The feed went quiet before the hour.** Settlement then waits for the next price.
+- **Arbitrum itself is down.** Nothing can be recorded until the network is producing blocks again.
+
+None of these change what you are owed. Your payout is fixed by the settlement price, and the money backing it stays set aside until you receive it.

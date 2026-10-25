@@ -1,0 +1,63 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Perps versus Isometric
+sidebarTitle: Perps vs Isometric
+description: How an Isometric position compares with a perpetual future on liquidation, funding, exit, upside, and cost, and when each is the better tool.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Perps versus Isometric
+
+A perpetual future and an Isometric position express the same view: the price goes up, or it goes down. They differ in what can happen to you along the way.
+
+## Side by side
+
+|                       | Perpetual future                                       | Isometric                                                         |
+| --------------------- | ------------------------------------------------------ | ----------------------------------------------------------------- |
+| **What you put in**   | Margin, which can be topped up or taken                | A one-time payment, which is the whole cost                       |
+| **Most you can lose** | Your margin, and on some venues more                   | What you paid, never more                                         |
+| **Liquidation**       | Yes. A move past your liquidation price closes you out | None. The position runs to settlement whatever happens in between |
+| **Funding**           | Paid or received every few hours while open            | None                                                              |
+| **Exit**              | Any time                                               | At settlement only                                                |
+| **Upside**            | Uncapped                                               | Capped at the Max payout shown on the ticket                      |
+| **Duration**          | Open ended                                             | 1, 3, 7, or 30 days                                               |
+| **Counterparty**      | Other traders via an order book                        | The pool                                                          |
+| **What you receive**  | Margin plus or minus PnL                               | Payout in USDG, or nothing                                        |
+
+## Payoff at settlement
+
+Both pay the same for each 1% the price moves, because the same amount at the same leverage is the same position size. The perp counts that move from your entry. An Isometric position counts it from the worthless price and stops at the cap.
+
+## Where Isometric is better
+
+**You cannot be stopped out by noise.** A 25x perp is liquidated by a 4% wick. A 25x Isometric position ignores the wick and settles on the price at the hour. If your view is right on the day but wrong for an hour in between, only Isometric pays you.
+
+**Holding costs nothing.** A perp position held through a funding-heavy week can lose more to funding than to price. An Isometric position has no ongoing cost.
+
+**The downside is known before you sign.** There is no scenario in which you owe more than you paid, no margin call at 3am, and no cascade.
+
+**One price for the whole size.** There is no order book to walk and no partial fill. Within the pool's limits, the trade opens on the terms you confirmed or not at all.
+
+## Where a perp is better
+
+**You want to exit early.** A perp lets you take profit or cut a loss at any moment. An Isometric position does not, and a position that is winning on day three can still lose on day seven.
+
+**You want uncapped upside.** An Isometric position stops earning at its cap price. A perp keeps going.
+
+**You want to track the price continuously.** An Isometric position settles on one price at one hour. A perp's PnL is the live price at every moment.
+
+**You trade in and out all day.** Isometric positions have a minimum term of one day.
+
+## A dip that recovers
+
+The perp is closed when the price falls through its liquidation level on day two, and it misses the recovery. The Isometric position, opened at the same price with the same leverage, is still open when the recovery arrives and settles in profit.
+
+<Frame caption="The same price path for both positions. Only the price at the settlement hour decides an Isometric position.">
+
+![A price path that opens at the entry price, falls through the perp liquidation level early in the term, and recovers to finish well above the entry price at settlement. The perp is closed at the liquidation level. The Isometric position stays open and settles in profit.](/images/dip-that-recovers.svg)
+
+</Frame>
+
+## Same view, different machinery
+
+If you already trade perps, think of an Isometric position as the same directional bet with the margin engine removed. You give up the ability to leave early and the uncapped tail. You get a fixed cost, no liquidation, no funding, and a settlement that only cares where the price is at the end.

@@ -1,0 +1,207 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Frequently asked questions
+sidebarTitle: FAQ
+description: Short answers to the questions traders and depositors ask most about Isometric.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Frequently asked questions
+
+## Trading
+
+<AccordionGroup>
+
+<Accordion title="Can I close a position early?">
+
+No. A position runs to its settlement time. That is the trade-off for no liquidation and no funding. Choose a term you are happy to wait out.
+
+</Accordion>
+
+<Accordion title="Can I be liquidated?">
+
+No. Nothing happens to a position between open and settlement, however far the price moves against it. What you paid is the most you can lose, and it was paid at open.
+
+</Accordion>
+
+<Accordion title="Is there funding?">
+
+No. There is no cost to holding a position.
+
+</Accordion>
+
+<Accordion title="What decides whether I win?">
+
+One price: the last Chainlink price published at or before the settlement hour shown on your ticket. Above your worthless price pays a long. Below it pays a short.
+
+</Accordion>
+
+<Accordion title="What is the most I can win?">
+
+The **Max payout** on the ticket. Every position has one, fixed when it opens. A long reaches it at its cap price and a short at its floor price, shown on the open position in Portfolio as **Capped at** or **Floored at**. Longer terms and higher leverage have a larger maximum.
+
+</Accordion>
+
+<Accordion title="Am I charged exactly the amount I entered?">
+
+Yes. The amount you enter is the whole cost, fee included, and the ticket shows it as **Max loss**. If the price ticks before the trade lands, the position can open at a target a step or two further out, or the trade fails and you pay only the network fee.
+
+</Accordion>
+
+<Accordion title="How many transactions is a trade?">
+
+One. Your wallet first signs an approval for the premium, which is a signature and costs nothing, then sends the trade.
+
+</Accordion>
+
+<Accordion title="How do I get paid?">
+
+In USDG, long or short. A winning payout is normally sent to your wallet automatically within minutes of settlement. You can also claim it yourself in Portfolio at any time. See [Payouts and claims](./trade/payouts-and-claims.mdx).
+
+</Accordion>
+
+<Accordion title="Can I send a payout to a different wallet?">
+
+Yes. In the claim dialog choose **Another address**. The whole payout goes there and cannot be sent back, so check the address.
+
+</Accordion>
+
+<Accordion title="What does Push failed mean?">
+
+The automatic payment could not reach your wallet. Nothing is lost. Claim the payout yourself, to the same wallet or to another address that can receive USDG.
+
+</Accordion>
+
+<Accordion title="Do claims expire?">
+
+No. A payout waits for you indefinitely.
+
+</Accordion>
+
+<Accordion title="Why does the confirm button say something other than Confirm?">
+
+It is telling you why the trade cannot go through: the wrong network, not enough USDG, an amount outside the allowed range, a pool limit, an unavailable price feed, or a paused market. The [quickstart](./trade/quickstart.mdx) lists every message.
+
+</Accordion>
+
+<Accordion title="Why did the settlement time land a few hours after my term?">
+
+Settlement lands on a fixed schedule so that many positions settle together. A 7-day position settles at the next 12-hour mark at least seven days out. The exact time is always on the ticket before you confirm.
+
+</Accordion>
+
+<Accordion title="Does trading stop when other positions expire?">
+
+No. You can open a position at any time, including while an expiry is being settled.
+
+</Accordion>
+
+<Accordion title="What do I need in my wallet?">
+
+USDG to pay for positions and a little ETH for network fees, both on the network you trade on: Arbitrum or Robinhood Chain.
+
+</Accordion>
+
+</AccordionGroup>
+
+## Earning
+
+<AccordionGroup>
+
+<Accordion title="Where does the yield come from?">
+
+From the premium traders pay. The pool takes the other side of every trade, keeps what traders pay, and pays the winners. There is no lending, staking, or farming.
+
+</Accordion>
+
+<Accordion title="Is the pool return guaranteed?">
+
+No. The 30d APY shows how much a pool share grew over the last 30 days, as a yearly rate. It is a record, not a promise, and it can be negative.
+
+</Accordion>
+
+<Accordion title="Why is my deposit not in the pool yet?">
+
+Deposits and withdrawals are requests that fill once an hour. A request sent at least 10 minutes before the hour fills at that hour. A later one fills at the next. After the fill, claim your shares.
+
+</Accordion>
+
+<Accordion title="Can I cancel a request?">
+
+Yes, until its cutoff, 10 minutes before the fill. After that it will fill.
+
+</Accordion>
+
+<Accordion title="Why did my withdrawal only fill in part?">
+
+Withdrawals are paid from the part of the pool that is not set aside against open trades. If the withdrawals at one fill ask for more than that, each is filled in the same proportion and the rest of your shares are returned. Claim them and request again.
+
+</Accordion>
+
+<Accordion title="Why is the share price marked Estimate?">
+
+It is the price from the last hourly fill. Your request fills at the price set when its own hour closes, which nobody knows in advance.
+
+</Accordion>
+
+<Accordion title="Can the pool lose money?">
+
+Yes. Every winning trader is paid from it. The pool prices trades with an edge and caps how much can be at risk at once, but a strong trend can produce a run of winners.
+
+</Accordion>
+
+<Accordion title="Is there one pool for longs and one for shorts?">
+
+No. Each market has a single USDG pool that backs both directions.
+
+</Accordion>
+
+<Accordion title="Why is the fill late?">
+
+The fill needs a trustworthy price for the end of the hour. If the Arbitrum sequencer or the price feed was unavailable, the pool waits rather than fill on a bad price. See [Deposits and withdrawals](./earn/deposits-and-withdrawals.mdx).
+
+</Accordion>
+
+</AccordionGroup>
+
+## The protocol
+
+<AccordionGroup>
+
+<Accordion title="Is this an options protocol?">
+
+Yes, underneath. A long is a call spread and a short is a put spread, both fully collateralised at open and settled in USDG on one oracle price. You never need to know that to trade.
+
+</Accordion>
+
+<Accordion title="Who is the counterparty?">
+
+The market's pool. There is no order book and no other trader on the other side.
+
+</Accordion>
+
+<Accordion title="Can Isometric touch my funds?">
+
+Not through day-to-day controls. Governance can change fees and risk limits within ceilings fixed in the code and can unpause. A guardian can pause new positions and new deposits. Neither can move depositor funds, alter an open position, change a recorded settlement price, or stop settlement, claims, and withdrawals.
+
+The contracts are upgradeable, and an upgrade can change anything. Upgrades are owned by a timelock, and on Arbitrum One a proposed upgrade is public for at least 48 hours before it can take effect. [Know the risks](./trade/risks.mdx) says more.
+
+</Accordion>
+
+<Accordion title="What happens if the keeper stops?">
+
+Settlement, payouts, and hourly fills are delayed until someone else sends them. Anyone can. The settlement price is fixed by the Chainlink feed regardless of who records it, so a late settlement pays exactly what an on-time one would, and you can always claim your own payout.
+
+</Accordion>
+
+<Accordion title="What happens if the network or the price feed goes down?">
+
+New positions pause. Settlement and hourly fills wait for a trustworthy price. Nothing already owed to you changes.
+
+</Accordion>
+
+</AccordionGroup>
+
+## Still stuck
+
+Email [support@isometric.fi](mailto:support@isometric.fi) or ask in [Telegram](https://t.me/isometricfi).

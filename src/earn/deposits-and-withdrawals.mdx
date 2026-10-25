@@ -1,0 +1,89 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Deposits and withdrawals
+sidebarTitle: Deposits and withdrawals
+description: How to request a deposit or withdrawal from an Isometric pool, when requests fill, how the cutoff works, and why a withdrawal can fill in part.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Deposits and withdrawals
+
+Deposits and withdrawals are **requests**. Once an hour the pool sets one share price and fills every request that arrived in time, all at that price. Nobody gets a better price by being faster.
+
+## The hourly fill
+
+| Step    | What happens                                                                                     |
+| ------- | ------------------------------------------------------------------------------------------------ |
+| Request | You send a deposit or withdrawal request. Your USDG or your shares move into the pool and wait   |
+| Cutoff  | 10 minutes before the hour. Requests sent before it join this fill. Later ones join the next     |
+| Fill    | After the hour ends, the pool values its open trades at the hour's price and fills every request |
+| Claim   | You collect your shares or your USDG. They wait for you until you do                             |
+
+The ticket shows the times for a request sent right now: **Fills at**, the fill it joins, and **Cancel until**, the cutoff for that fill. Once sent, your pending request counts down to its fill on the pool page.
+
+In normal conditions a request waits at most about an hour and ten minutes for its fill.
+
+## Depositing
+
+Open **Earn**, pick the pool, press **Deposit**, and enter an amount in **You deposit**. The ticket shows:
+
+- **You get about**, the shares the deposit would buy at the last fill's share price. The real price is set when your request fills.
+- **Fills at**, the fill your request joins.
+- **Cancel until**, the cutoff for that fill.
+
+Press **Request deposit**. Your wallet approves the USDG, then sends the request. The USDG leaves your wallet now and waits in the pool. It does not earn or lose anything until it fills.
+
+**Deposits always fill in full.** After the fill, your new shares appear under **Ready to claim**. Press **Claim** to move them to your wallet.
+
+The pool can have a **deposit cap** at launch. If your request would take it over, the button says **The pool is full**.
+
+## Withdrawing
+
+Press **Withdraw** and enter a USDG amount in **You withdraw**, or press **Max** to withdraw every share. Press **Request withdrawal**. The shares leave your wallet and wait in the pool until the fill.
+
+A withdrawal is paid from the pool's **free USDG**, the part that is not set aside against open trades:
+
+- **Normally it fills in full.** The pool keeps most of its money free by capping utilisation.
+- **In a run on the pool it can fill in part.** If everyone's withdrawals at one fill add up to more than the free USDG, each request is filled in the same proportion. The shares that were not filled are returned to you under **Ready to claim**, marked **returned**. Claim them and request again for a later fill, when settled trades have freed more USDG.
+
+After the fill, your USDG appears under **Ready to claim**. Press **Claim** to receive it.
+
+Shares waiting to be claimed from a deposit cannot be withdrawn until you claim them.
+
+## Cancelling
+
+A request can be cancelled until its cutoff. Until then your pending request has a **Cancel** button. Press it and confirm, and the USDG or the shares return to your wallet. After the cutoff the button is gone and the request will fill.
+
+## The price you fill at
+
+Every request at a fill gets the same share price. Deposits and withdrawals are priced slightly in favour of the depositors who stay, so nobody joining or leaving can take value from them. The difference is small, and it is not a fee paid to Isometric.
+
+Until your request fills, every share price and USDG figure on the page is an **Estimate** from the last fill.
+
+## When a fill is delayed
+
+The fill needs a trustworthy price for the end of the hour and a running network.
+
+| Situation                                              | What happens                                                                   |
+| ------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| The Arbitrum sequencer was down or had just restarted  | The fill moves to a later hour. Requests keep their place and can be cancelled |
+| The price feed had gone quiet before the hour          | The fill waits for the next price from the feed                                |
+| Positions that expired by the hour are not yet settled | The fill settles them first, then prices the pool                              |
+| The keeper is behind                                   | The fill is late. Anyone can send it                                           |
+
+## When requests pause
+
+| Situation     | Deposit requests | Withdrawal requests | Fills and claims |
+| ------------- | ---------------- | ------------------- | ---------------- |
+| Normal        | Open             | Open                | Running          |
+| Market paused | Paused           | Open                | Running          |
+
+A pause stops new risk coming in. It never stops you from requesting a withdrawal, a fill from happening, or a claim.
+
+## Withdrawing everything
+
+Press **Max**, request the withdrawal, and claim after the fill. If the fill was partial, claim the returned shares and request again. Money set aside against open trades frees as those trades settle, and the longest term is 30 days.
+
+## Network fees
+
+Each step is a transaction and costs a little ETH on Arbitrum: the USDG approval, the request, a cancel if you make one, and the claim. The hourly fill is not your transaction and costs you nothing.

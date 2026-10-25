@@ -1,0 +1,115 @@
+{
+  "$schema": "https://holocron.so/docs.json",
+  "name": "Isometric",
+  "description": "How to trade and earn on Isometric.",
+  "favicon": "/favicon.svg",
+  "logo": {
+    "light": "/logo-light.svg",
+    "dark": "/logo-dark.svg",
+  },
+  "colors": {
+    "primary": "#316ce8",
+    "light": "#316ce8",
+    "dark": "#6f93ff",
+  },
+  "appearance": {
+    "default": "light",
+  },
+  "assistant": {
+    "enabled": false,
+  },
+  "fonts": {
+    "family": "Inter",
+  },
+  "icons": {
+    "library": "lucide",
+  },
+  "navbar": {
+    "primary": {
+      "type": "button",
+      "label": "Open the app",
+      "href": "https://app.isometric.fi",
+    },
+  },
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Trade",
+        "icon": "lucide:trending-up",
+        "groups": [
+          {
+            "group": "Start here",
+            "icon": "lucide:compass",
+            "pages": ["index", "trade/quickstart", "markets"],
+          },
+          {
+            "group": "Trading",
+            "icon": "lucide:sliders-horizontal",
+            "pages": [
+              "trade/three-inputs",
+              "trade/reading-the-quote",
+              "trade/leverage",
+              "trade/expiry-and-settlement",
+              "trade/payouts-and-claims",
+              "trade/fees",
+            ],
+          },
+          {
+            "group": "Know the risks",
+            "icon": "lucide:shield-alert",
+            "pages": ["trade/risks", "trade/perps-vs-isometric"],
+          },
+        ],
+      },
+      {
+        "tab": "Earn",
+        "icon": "lucide:vault",
+        "groups": [
+          {
+            "group": "Providing liquidity",
+            "icon": "lucide:waves",
+            "pages": [
+              "earn/overview",
+              "earn/yield",
+              "earn/fees",
+              "earn/deposits-and-withdrawals",
+              "earn/risks",
+            ],
+          },
+        ],
+      },
+      {
+        "tab": "Reference",
+        "icon": "lucide:list-tree",
+        "groups": [
+          {
+            "group": "Reference",
+            "icon": "lucide:list-tree",
+            "pages": ["glossary", "faq"],
+          },
+        ],
+      },
+    ],
+    "global": {
+      "anchors": [
+        {
+          "anchor": "Open the app",
+          "href": "https://app.isometric.fi",
+          "icon": "lucide:external-link",
+          "placement": "tabs",
+        },
+        {
+          "anchor": "X",
+          "href": "https://x.com/isometricfi",
+          "icon": "fontawesome:brands:x-twitter",
+          "placement": "tabs",
+        },
+      ],
+    },
+  },
+  "footer": {
+    "socials": {
+      "x": "https://x.com/isometricfi",
+    },
+  },
+}

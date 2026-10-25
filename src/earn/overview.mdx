@@ -1,0 +1,62 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Earn by backing trades
+sidebarTitle: Overview
+description: How an Isometric pool works for depositors. Deposit USDG, take the other side of every trade, and collect the premium traders pay.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Earn by backing trades
+
+Every Isometric position is written against a pool rather than another trader. Depositors fund the pool, the pool collects what traders pay, and the pool pays the winners. What is left is the depositors' return.
+
+## One USDG pool per market
+
+Each market has one pool. You deposit **USDG**, the pool backs every long and every short in that market, and it pays winners in USDG. Markets never share a pool, so the Bitcoin pool is only ever exposed to Bitcoin trades.
+
+Because one pool backs both directions, longs and shorts can partly offset each other.
+
+## What you receive
+
+A deposit gives you **shares** in the pool. Your balance is your shares times the share price.
+
+The share price rises as the pool earns premium and falls when traders win. It does not depend on which trades were open when you joined, because you do not back individual trades. You own a slice of everything.
+
+## Requests, not instant deposits
+
+Deposits and withdrawals are **requests** that fill **once an hour**:
+
+1. You request a deposit or a withdrawal.
+2. At the end of the hour the pool sets one share price, and every request sent at least 10 minutes before fills at it.
+3. After the fill you claim your shares or your USDG.
+
+[Deposits and withdrawals](./deposits-and-withdrawals.mdx) walks through each step, the cutoff, and what happens when a withdrawal can only fill in part.
+
+## What the pool page shows
+
+| Figure         | Meaning                                                                                        |
+| -------------- | ---------------------------------------------------------------------------------------------- |
+| Total deposits | Everything the pool holds for depositors, including the capital backing open trades            |
+| Utilisation    | How much of the pool is backing open trades, and the cap. New trades are refused above the cap |
+| Share price    | What one pool share was worth at the last hourly fill. Marked **Estimate** until your own fill |
+| 30d APY        | What a pool share earned over the last 30 days, as a yearly rate. Not a promise                |
+
+**Earned by depositors**, **Total deposits** and **Utilisation** chart the pool's history from its hourly fills.
+
+Further down, **Capital breakdown** shows how much of the pool is backing trades right now and how much is free. **Longs and shorts** shows what each side could still be owed, and what each has paid in and been paid since the market opened. **Trades** lists every trade against the pool, newest first, with what the pool made or lost on each one once it settles.
+
+## Your position
+
+| Line               | Meaning                                                                                                                                                                                    |
+| ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Your balance       | What your shares are worth in USDG at the last fill's share price, with the share count under it                                                                                           |
+| Earned             | What the pool has made or lost you on what you have in it now: your shares at the current share price, less what you paid for them. It starts again from zero once you withdraw everything |
+| Pending deposit    | A deposit request waiting for its fill, with the time left. You can cancel it until its cutoff                                                                                             |
+| Pending withdrawal | A withdrawal request waiting for its fill, with the time left. You can cancel it until its cutoff                                                                                          |
+| Ready to claim     | Shares from a filled deposit, USDG from a filled withdrawal, or shares returned unfilled                                                                                                   |
+
+**Deposit** and **Withdraw** at the bottom of the card open the ticket.
+
+## Is this for you
+
+A pool is the right place for money you can leave alone for a while and are comfortable putting at risk. It is not a savings account. Winning traders are paid from it, and a run of them lowers the share price. [Pool risks](./risks.mdx) says what can go wrong. [How the yield works](./yield.mdx) says where the return comes from.

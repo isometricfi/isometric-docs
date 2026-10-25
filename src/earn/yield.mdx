@@ -1,0 +1,50 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: How the yield works
+sidebarTitle: Yield
+description: Where an Isometric pool's return comes from, how premium turns into profit, what utilisation means, and how to read the APY.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# How the yield works
+
+A pool has one source of income: the premium traders pay. Everything else on the pool page is bookkeeping about what that premium is at risk against.
+
+## Premium is the only income
+
+When a trader opens a position, what they pay goes to the pool, less the [treasury's share](./fees.mdx). The pool does not lend, stake, or farm. It sells exposure to traders and keeps what they paid.
+
+## Premium turns into profit over the life of the trade
+
+The premium lands in the pool the moment a position opens. It is not profit yet, because the pool now owes that trader whatever the position turns out to be worth.
+
+Each hourly share price subtracts the current value of every open position. A new position is worth roughly what the trader just paid, so opening it barely moves the share price. As time passes and the position gets closer to settlement, its value moves toward its final payout. If it ends worthless, the whole premium has become profit. If it ends in the money, the pool pays out and keeps the difference, or wears the loss.
+
+## Utilisation is what is working
+
+**Utilisation** is the share of the pool set aside against open positions. For each settlement hour the pool sets aside enough to pay all positions at that hour at any single price. That money is what earns the premium, and it is also what pays winners. Money that is not set aside is free: it can back new trades or pay withdrawals.
+
+The pool has a **utilisation cap**, shown next to the figure. Above it the protocol refuses new positions. The cap keeps most of the pool free, so that a run of winning trades cannot hollow it out and withdrawals stay possible. The pool also limits how much one settlement hour and one position can take, and how much new exposure it adds in an hour.
+
+## Why the pool has an edge
+
+Each position is priced from live volatility with a margin built in, and over many trades that margin is the pool's return. A strong trend can still swamp it over any single stretch: the margin is an edge, not a guarantee.
+
+## Reading the APY
+
+The pool page shows **30d APY**: how much one pool share grew over the last 30 days, compounded into a yearly rate. It is calculated from the share prices at which withdrawals actually filled each hour, which already subtract what the pool expected to pay traders on open positions. The **Earned by depositors** chart shows the same share price change over the period you select.
+
+The APY appears once the pool has 7 days of hourly fills, because a yearly rate taken from a few days swings with every trade. It is not your personal return, which depends on when you deposited. Past returns do not predict future returns, and the rate can be negative.
+
+## What moves the share price
+
+| Event                                   | Effect on the share price                                      |
+| --------------------------------------- | -------------------------------------------------------------- |
+| A position opens                        | Little. The premium received is offset by the position's value |
+| Time passes on open positions           | Tends to rise, as open positions lose time value               |
+| The market moves against open positions | Falls, as the positions become worth more                      |
+| The market moves in the pool's favour   | Rises, as the positions become worth less                      |
+| A position settles worthless            | The premium is now fully the pool's                            |
+| A position settles in the money         | The payout leaves the pool                                     |
+
+The share price only changes once an hour, when the pool is revalued. Between fills the page shows the last one.
