@@ -28,6 +28,14 @@ flowchart LR
 
 Every position has a capped payout, so the pool knows the most it can owe and never promises more than it holds.
 
+## How the pool prices a trade
+
+The pool prices every position as an option, using the **Black-Scholes** model. The contract measures how much the market has been moving from the Chainlink price on chain, then prices with a margin above that. Targets far from today's price carry a larger margin. Nobody sets these prices by hand, and the inputs update as the market moves.
+
+Every possible target sits on a fixed grid of about 16,000 prices, and the pool can quote any of them. A trader never picks a target. They pick a leverage, and the contract matches them to the target closest to today's price that their amount can buy at that leverage.
+
+The trader pays that price plus a 3% trading fee, and a small extra charge when much of the pool is already backing open trades. Over many trades, the margin in the price is the pool's return. [How the yield works](./yield.mdx) covers what that means for the share price.
+
 ## One USDG pool per market
 
 Each market has one pool. You deposit **USDG**, the pool backs every long and every short in that market, and it pays winners in USDG. Markets never share a pool, so the Bitcoin pool backs Bitcoin trades and nothing else.
