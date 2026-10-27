@@ -25,11 +25,7 @@ Between the worthless price and the profit price the position pays something, bu
 
 ## Max payout
 
-Every position has a maximum payout, fixed when you open it. A long earns on the way up from its worthless price to its cap price and nothing beyond. A short earns on the way down from its worthless price to its floor price and nothing beyond.
-
-The cap sits further from today's price on a longer term and in a more volatile market, so a 7-day position has more room to run than a 1-day one. The ticket shows the dollar amount before you confirm. Once the position is open, its detail in Portfolio shows the price where the payout stops, as **Capped at** for a long and **Floored at** for a short. Neither changes afterwards.
-
-The cap is what lets the pool set aside the whole **Max payout** for you on day one instead of an open-ended amount.
+Every quote comes with a **Max payout**, calculated for that trade and fixed when it opens. Past a certain price the payout stops growing, so the pool can set the whole amount aside for you on day one. Longer terms leave more room to run, so their maximum is larger.
 
 ## A worked example
 
@@ -44,7 +40,7 @@ Bitcoin is at **$100,000**. You go **Long**, enter **$500**, choose **7 days** a
 | Max payout            | $3,309.85                    |
 | Max loss              | $500.00                      |
 
-The exact figures depend on the live price, how volatile the market has been, and how busy the pool is, so yours will differ. Once open, this position shows **Capped at $124,759** in Portfolio.
+The exact figures depend on the live price, how volatile the market has been, and how busy the pool is, so yours will differ.
 
 Settlement at different prices pays:
 
@@ -58,7 +54,7 @@ Settlement at different prices pays:
 | $120,000              | $2,695      | +$2,195 |
 | $124,759 and above    | $3,310      | +$2,810 |
 
-Two things to notice. Between $99,154 and $103,022 you get some money back but not all of it. And the payout stops growing at $124,759: Bitcoin at $150,000 pays the same $3,310.
+Between $99,154 and $103,022 you get some money back but not all of it. Past about $124,759 the payout stops growing: Bitcoin at $150,000 pays the same $3,310.
 
 ## The same idea as a short
 
@@ -72,8 +68,6 @@ Bitcoin is at $100,000. You go **Short**, enter **$400**, choose **1 day** and *
 | Max payout            | $1,250.46 |
 | Max loss              | $400.00   |
 
-Once open, this position shows **Floored at $90,857** in Portfolio.
-
 | Bitcoin at settlement | You receive | Result |
 | --------------------- | ----------- | ------ |
 | $103,712 or above     | $0          | −$400  |
@@ -83,7 +77,7 @@ Once open, this position shows **Floored at $90,857** in Portfolio.
 | $95,000               | $847        | +$447  |
 | $90,857 and below     | $1,250      | +$850  |
 
-In both examples the worthless price sits on the safe side of today's price and the profit price sits just past it. That is typical: a position starts with some value, and you come out ahead once the price moves a little further your way.
+In both examples the worthless price sits on the safe side of today's price and the profit price sits just past it. Most positions start like this: they have some value at open, and you come out ahead once the price moves a little further your way.
 
 ## Two shortcuts
 
@@ -95,4 +89,4 @@ In both examples the worthless price sits on the safe side of today's price and 
 
 The quote updates as the price moves. If the price moves before your trade lands, the trade either opens close to the quote you saw or fails. A failed trade costs only the network fee, and an open one costs exactly the amount you entered.
 
-The **Max payout** and the price it stops at are set from the live price when the trade lands, so they can differ slightly from the quote if the price ticks in between.
+The **Max payout** is set from the live price when the trade lands, so it can differ slightly from the quote if the price ticks in between.

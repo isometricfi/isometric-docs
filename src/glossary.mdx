@@ -13,7 +13,6 @@ og:image: https://isometric.fi/docs-opengraph.png
 | Amount                | The USDG you enter on the ticket. Sets position size with leverage and caps what you are charged                            |
 | Arbitrum              | The Ethereum layer-two network Isometric launches on. Arbitrum One is the main network and Arbitrum Sepolia the testnet     |
 | Breakeven             | The settlement price at which a position pays back exactly what it cost. Shown as **Profit above** or **Profit below**      |
-| Capped at             | For a long, the price past which the payout stops growing, shown on an open position. A short shows **Floored at**          |
 | Chainlink             | The oracle network whose BTC/USD feed prices and settles every position                                                     |
 | Claim                 | Taking a payout, or filled shares or USDG from a pool request, that is waiting for you                                      |
 | Claimable             | A settled position with a payout waiting. It is usually paid automatically, and you can claim it yourself                   |
@@ -24,7 +23,7 @@ og:image: https://isometric.fi/docs-opengraph.png
 | Estimate              | A pool figure taken from the last hourly fill. Your own request fills at the price set when its hour closes                 |
 | Expired               | A settled position that paid nothing                                                                                        |
 | Expiry                | The settlement time. Used interchangeably with settlement in these docs                                                     |
-| Fill                  | The hourly moment the pool sets one share price and completes every deposit and withdrawal request that arrived in time     |
+| Fill                  | The hourly moment the pool sets the share price and completes every deposit and withdrawal request that arrived in time     |
 | Funded claim          | A payout the pool has set aside for winners. It cannot be used for anything else                                            |
 | Keeper                | A worker that settles expiries, closes hourly fills, records volatility samples, and pushes payouts. Anyone can do the same |
 | Leverage              | Position size divided by your amount. Sets the size and places the target. Never a liquidation price                        |

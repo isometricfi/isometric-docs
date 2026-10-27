@@ -14,7 +14,7 @@ The ticket has four controls. Together they describe a position. Everything else
 
 **Long** pays if the settlement price is above your target. **Short** pays if it is below.
 
-That is the whole decision. You pay for the right to be paid if the price finishes on your side of a line, with no borrowing and no margin. Both directions are paid for in USDG and pay out in USDG.
+You pay for the right to be paid if the price finishes on your side of a line, with no borrowing and no margin. Both directions are paid for in USDG and pay out in USDG.
 
 ## Amount
 
@@ -50,13 +50,13 @@ Leverage does **not** create a liquidation price. A 25x position that goes the w
 
 ## How the four fit together
 
-| You change      | Position size | Worthless price                     | Profit price                  | Payout per 1% move past target | Max payout |
-| --------------- | ------------- | ----------------------------------- | ----------------------------- | ------------------------------ | ---------- |
-| Larger amount   | Bigger        | Same                                | Same                          | Bigger                         | Bigger     |
-| Longer term     | Same          | Closer to today's price or the same | Further away                  | Same                           | Bigger     |
-| Higher leverage | Bigger        | Closer to today's price             | Usually a little further away | Bigger                         | Bigger     |
+| You change      | Position size | Worthless price             | Profit price                  | Payout per 1% move past target | Max payout |
+| --------------- | ------------- | --------------------------- | ----------------------------- | ------------------------------ | ---------- |
+| Larger amount   | Bigger        | Same                        | Same                          | Bigger                         | Bigger     |
+| Longer term     | Same          | Moves against you, or stays | Further away                  | Same                           | Bigger     |
+| Higher leverage | Bigger        | Moves against you           | Usually a little further away | Bigger                         | Bigger     |
 
-One rule of thumb covers most of it. **Every 1% the price settles past your worthless price is worth leverage percent of your amount**, until the payout reaches its maximum. At 25x, each 1% is 25% of your amount. At 5x, each 1% is 5%.
+**Every 1% the price settles past your worthless price is worth leverage percent of your amount**, until the payout reaches its maximum. At 25x, each 1% is 25% of your amount. At 5x, each 1% is 5%.
 
 ## Next
 
