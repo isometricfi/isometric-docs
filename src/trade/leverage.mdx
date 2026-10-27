@@ -19,22 +19,18 @@ Your position size is your amount times the leverage, or a little more: the trad
 | $500   | 5x       | $2,500        |
 | $500   | 10x      | $5,000        |
 | $500   | 25x      | $12,500       |
-| $500   | 50x      | $25,000       |
-| $500   | 100x     | $50,000       |
 
 ## Leverage moves your target
 
-A bigger position for the same money means more risk. Higher leverage moves your **Worthless at or below** price closer to today's price, and at 50x and 100x past it, so less has to go wrong before the position is worth nothing.
+A bigger position for the same money means more risk. Higher leverage moves your **Worthless at or below** price closer to today's price, so less has to go wrong before the position is worth nothing.
 
-Five seven-day Bitcoin longs with Bitcoin at $100,000 and a $500 amount:
+Three seven-day Bitcoin longs with Bitcoin at $100,000 and a $500 amount:
 
 | Leverage | Position size | Worthless at or below | Profit above | Max payout |
 | -------- | ------------- | --------------------- | ------------ | ---------- |
-| 5x       | $2,500        | $83,880               | $100,652     | $1,219     |
-| 10x      | $5,061        | $91,998               | $101,088     | $1,802     |
-| 25x      | $12,817       | $99,154               | $103,022     | $3,310     |
-| 50x      | $25,441       | $103,453              | $105,486     | $5,240     |
-| 100x     | $50,657       | $107,401              | $108,462     | $8,187     |
+| 5x       | $2,509        | $83,880               | $100,593     | $1,177     |
+| 10x      | $5,072        | $91,540               | $100,563     | $1,755     |
+| 25x      | $12,686       | $97,680               | $101,529     | $3,316     |
 
 These are example figures. The exact prices move with the market and the ticket shows yours.
 
@@ -45,8 +41,6 @@ Read across a row and the trade at each tier is clear:
 | 5x       | Far on the safe side of today  | You get most of your money back    | 5% of your amount         |
 | 10x      | Closer                         | You get some of it back            | 10%                       |
 | 25x      | Close to today's price         | You can lose all of it             | 25%                       |
-| 50x      | Past today's price             | It needs a move your way to pay    | 50%                       |
-| 100x     | Further past today's price     | It needs a bigger move your way    | 100%                      |
 
 At low leverage the position behaves like a small, safe stake in the price: it is rarely worthless and rarely pays many times over. At high leverage a small move in your favour pays a lot and a small move against you costs the whole premium.
 
@@ -61,7 +55,7 @@ The cost of that protection is already inside what you paid. There is no margin 
 ## Breakeven and the cap
 
 - **Breakeven usually sits a little past today's price.** Each 1% past your worthless price pays back leverage percent of your amount, so breakeven is at most one leverage-share past the worthless price.
-- **The payout is capped.** A long stops earning at its cap price and a short at its floor price. The ticket shows the **Max payout** in dollars, and the open position in Portfolio shows the price as **Capped at** or **Floored at**. Longer terms put the cap further away.
+- **The payout is capped.** A long stops earning at its cap price and a short at its floor price. The ticket shows the **Max payout** in dollars, and the payoff chart on the open position in Portfolio goes flat at that price. Longer terms put the cap further away.
 
 ## Choosing a leverage
 

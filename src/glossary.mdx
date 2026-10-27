@@ -8,46 +8,46 @@ og:image: https://isometric.fi/docs-opengraph.png
 
 # Glossary
 
-| Term                  | Meaning                                                                                                                     |
-| --------------------- | --------------------------------------------------------------------------------------------------------------------------- |
-| Amount                | The USDG you enter on the ticket. Sets position size with leverage and caps what you are charged                            |
-| Arbitrum              | The Ethereum layer-two network Isometric launches on. Arbitrum One is the main network and Arbitrum Sepolia the testnet     |
-| Breakeven             | The settlement price at which a position pays back exactly what it cost. Shown as **Profit above** or **Profit below**      |
-| Capped at             | For a long, the price past which the payout stops growing, shown on an open position. A short shows **Floored at**          |
-| Chainlink             | The oracle network whose BTC/USD feed prices and settles every position                                                     |
-| Claim                 | Taking a payout, or filled shares or USDG from a pool request, that is waiting for you                                      |
-| Claimable             | A settled position with a payout waiting. It is usually paid automatically, and you can claim it yourself                   |
-| Contracts             | The size of a position in units of the market's asset                                                                       |
-| Cutoff                | Ten minutes before an hourly fill. A pool request sent after it joins the next fill, and cannot be cancelled once passed    |
-| Demo mode             | The app running with simulated funds. No wallet, gas, or chain needed                                                       |
-| Direction             | Long or short                                                                                                               |
-| Estimate              | A pool figure taken from the last hourly fill. Your own request fills at the price set when its hour closes                 |
-| Expired               | A settled position that paid nothing                                                                                        |
-| Expiry                | The settlement time. Used interchangeably with settlement in these docs                                                     |
-| Fill                  | The hourly moment the pool sets one share price and completes every deposit and withdrawal request that arrived in time     |
-| Funded claim          | A payout the pool has set aside for winners. It cannot be used for anything else                                            |
-| Keeper                | A worker that settles expiries, closes hourly fills, records volatility samples, and pushes payouts. Anyone can do the same |
-| Leverage              | Position size divided by your amount. Sets the size and places the target. Never a liquidation price                        |
-| Long                  | A position that pays if the settlement price is above the worthless price                                                   |
-| Max loss              | Your amount, paid at open with the trading fee included. The most a position can ever lose. Shown on the ticket             |
-| Max payout            | The most a position can pay, fixed when it opens                                                                            |
-| Pool                  | The USDG vault that takes the other side of every trade in one market and pays depositors the premium                       |
-| Position size         | Your amount times leverage, or a little more. Your exposure                                                                 |
-| Premium               | What a trader pays for a position. The pool's only income                                                                   |
-| Push failed           | The automatic payment to your wallet failed. The payout still waits for you to claim, to any address                        |
-| Request               | A deposit or withdrawal waiting for the next hourly fill                                                                    |
-| Returned shares       | The part of a withdrawal request the pool could not fill. Claim them and request again                                      |
-| Robinhood Chain       | Robinhood's layer-two network, built on Arbitrum. Isometric runs on it alongside Arbitrum One                               |
-| Series                | All positions with the same direction, target, cap, and settlement hour. Settled together                                   |
-| Settlement            | The moment one oracle price fixes the outcome of every position at a given hour                                             |
-| Settles               | The date and hour a position ends. Shown on the ticket                                                                      |
-| Settling              | A position past its settlement hour whose price has not yet been recorded                                                   |
-| Share                 | Your stake in a pool. A token whose price is set at each hourly fill                                                        |
-| Share price           | What one pool share is worth: the pool's USDG minus the value of open positions, per share                                  |
-| Short                 | A position that pays if the settlement price is below the worthless price                                                   |
-| Strike                | The options term for the worthless price                                                                                    |
-| Term                  | How long a position runs. 1, 3, 7, or 30 days                                                                               |
-| Timelock              | The contract that owns upgrades. A proposed upgrade waits in it, in public, before it can take effect                       |
-| USDG                  | Global Dollar, the dollar stablecoin used to pay for positions, pay winners, and fund pools                                 |
-| Utilisation           | The share of a pool set aside against open positions. Capped                                                                |
-| Worthless at or below | For a long, the price at or below which the position pays nothing. Shorts show **Worthless at or above**                    |
+| Term                  | Meaning                                                                                                                       |
+| --------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| Amount                | The USDG you enter on the ticket. Sets position size with leverage and caps what you are charged                              |
+| Arbitrum              | The Ethereum layer-two network Isometric launches on. Arbitrum One is the main network and Arbitrum Sepolia the testnet       |
+| Breakeven             | The settlement price at which a position pays back exactly what it cost. Shown as **Profit above** or **Profit below**        |
+| Cap                   | For a long, the price past which the payout stops growing. A short stops at its floor. Both are fixed when the position opens |
+| Chainlink             | The oracle network whose BTC/USD feed prices and settles every position                                                       |
+| Claim                 | Taking a payout, or filled shares or USDG from a pool request, that is waiting for you                                        |
+| Claimable             | A settled position with a payout waiting. It is usually paid automatically, and you can claim it yourself                     |
+| Contracts             | The size of a position in units of the market's asset                                                                         |
+| Cutoff                | Ten minutes before an hourly fill. A pool request sent after it joins the next fill, and cannot be cancelled once passed      |
+| Demo mode             | The app running with simulated funds. No wallet, gas, or chain needed                                                         |
+| Direction             | Long or short                                                                                                                 |
+| Estimate              | A pool figure taken from the last hourly fill. Your own request fills at the price set when its hour closes                   |
+| Expired               | A settled position that paid nothing                                                                                          |
+| Expiry                | The settlement time. Used interchangeably with settlement in these docs                                                       |
+| Fill                  | The hourly moment the pool sets one share price and completes every deposit and withdrawal request that arrived in time       |
+| Funded claim          | A payout the pool has set aside for winners. It cannot be used for anything else                                              |
+| Keeper                | A worker that settles expiries, closes hourly fills, records volatility samples, and pushes payouts. Anyone can do the same   |
+| Leverage              | Position size divided by your amount. Sets the size and places the target. Never a liquidation price                          |
+| Long                  | A position that pays if the settlement price is above the worthless price                                                     |
+| Max loss              | Your amount, paid at open with the trading fee included. The most a position can ever lose. Shown on the ticket               |
+| Max payout            | The most a position can pay, fixed when it opens                                                                              |
+| Pool                  | The USDG vault that takes the other side of every trade in one market and pays depositors the premium                         |
+| Position size         | Your amount times leverage, or a little more. Your exposure                                                                   |
+| Premium               | What a trader pays for a position. The pool's only income                                                                     |
+| Push failed           | The automatic payment to your wallet failed. The payout still waits for you to claim, to any address                          |
+| Request               | A deposit or withdrawal waiting for the next hourly fill                                                                      |
+| Returned shares       | The part of a withdrawal request the pool could not fill. Claim them and request again                                        |
+| Robinhood Chain       | Robinhood's layer-two network, built on Arbitrum. Isometric support is coming soon                                            |
+| Series                | All positions with the same direction, target, cap, and settlement hour. Settled together                                     |
+| Settlement            | The moment one oracle price fixes the outcome of every position at a given hour                                               |
+| Settles               | The date and hour a position ends. Shown on the ticket                                                                        |
+| Settling              | A position past its settlement hour whose price has not yet been recorded                                                     |
+| Share                 | Your stake in a pool. A token whose price is set at each hourly fill                                                          |
+| Share price           | What one pool share is worth: the pool's USDG minus the value of open positions, per share                                    |
+| Short                 | A position that pays if the settlement price is below the worthless price                                                     |
+| Strike                | The options term for the worthless price                                                                                      |
+| Term                  | How long a position runs. 1, 3, or 7 days                                                                                     |
+| Timelock              | The contract that owns upgrades. A proposed upgrade waits in it, in public, before it can take effect                         |
+| USDG                  | Global Dollar, the dollar stablecoin used to pay for positions, pay winners, and fund pools                                   |
+| Utilisation           | The share of a pool set aside against open positions. Capped                                                                  |
+| Worthless at or below | For a long, the price at or below which the position pays nothing. Shorts show **Worthless at or above**                      |

@@ -30,11 +30,11 @@ You are charged exactly the amount you enter, fee included. The ticket shows it 
 
 ## Term
 
-How long until the position settles: **1, 3, 7, or 30 days**. The ticket shows the exact date and hour, because settlement lands on a fixed schedule rather than exactly one day from the moment you click.
+How long until the position settles: **1, 3, or 7 days**. The ticket shows the exact date and hour, because settlement lands on a fixed schedule rather than exactly one day from the moment you click.
 
 Term changes the trade in three ways:
 
-- **More time costs more.** For the same amount and leverage, a longer term pushes your **Profit above** price further from today's price, because each unit of exposure is more expensive when it has longer to work.
+- **More time costs more.** For the same amount and leverage, a longer term usually pushes your **Profit above** price further from today's price, because each unit of exposure is more expensive when it has longer to work.
 - **More time to be right.** A 7-day position survives two days of going the wrong way. A 1-day position does not get that chance.
 - **More room to run.** The price at which the payout stops growing sits further away on a longer term, so the **Max payout** is larger.
 
@@ -42,7 +42,7 @@ There is no way to close before the term ends. Pick a term you are happy to wait
 
 ## Leverage
 
-**5x, 10x, 25x, 50x, or 100x.** Leverage sets how much a move pays. Enter $500 at 25x and you hold a position of at least $12,500, so every 1% past your target is worth at least $125. Lower the leverage and each 1% is worth less.
+**5x, 10x, or 25x.** Leverage sets how much a move pays. Enter $500 at 25x and you hold a position of at least $12,500, so every 1% past your target is worth at least $125. Lower the leverage and each 1% is worth less.
 
 Higher leverage also means higher risk. Your **Worthless at or below** price moves closer to today's price, so a smaller move against you leaves the position with nothing, and your **Profit above** price usually sits a little further away. [What leverage means here](./leverage.mdx) shows every tier side by side.
 
@@ -53,10 +53,10 @@ Leverage does **not** create a liquidation price. A 25x position that goes the w
 | You change      | Position size | Worthless price                     | Profit price                  | Payout per 1% move past target | Max payout |
 | --------------- | ------------- | ----------------------------------- | ----------------------------- | ------------------------------ | ---------- |
 | Larger amount   | Bigger        | Same                                | Same                          | Bigger                         | Bigger     |
-| Longer term     | Same          | Closer to today's price or the same | Further away                  | Same                           | Bigger     |
+| Longer term     | Same          | Closer to today's price or the same | Usually further away          | Same                           | Bigger     |
 | Higher leverage | Bigger        | Closer to today's price             | Usually a little further away | Bigger                         | Bigger     |
 
-One rule of thumb covers most of it. **Every 1% the price settles past your worthless price is worth leverage percent of your amount**, until the payout reaches its maximum. At 25x, each 1% is 25% of your amount. At 5x, each 1% is 5%.
+One rule of thumb covers most of it. **Every 1% the price settles past your worthless price is worth at least leverage percent of your amount**, until the payout reaches its maximum. At 25x, each 1% is at least 25% of your amount. At 5x, each 1% is at least 5%.
 
 ## Next
 

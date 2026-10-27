@@ -25,7 +25,7 @@ The claim dialog lets you choose where the money goes: **My wallet** or **Anothe
 
 <Warning>
   The whole payout goes to the address you enter and cannot be sent back. Check every character, and
-  make sure the address can receive USDG on the network you trade on.
+  make sure the address can receive USDG on Arbitrum One.
 </Warning>
 
 Before it sends anything, the dialog reads your balances and the settlement price directly from the chain through your wallet, and claims exactly that amount.
@@ -56,15 +56,15 @@ History shows what happened to each position: **Opened**, **Claimed**, **Claimed
 
 The account panel summarises your positions:
 
-| Figure                | Meaning                                                                          |
-| --------------------- | -------------------------------------------------------------------------------- |
-| Open value, estimated | What the pool's model says your open positions are worth right now. A guide only |
-| Open max payout       | The most your open positions could pay                                           |
-| Claimable             | Payouts waiting for you                                                          |
-| Realized PnL          | Payouts received minus the cost of positions that have paid or settled at zero   |
-| Win rate              | Of those positions, the share that paid more than they cost                      |
-| Premium paid          | Everything you have paid for positions                                           |
-| Paid out              | Everything that has been paid out to you                                         |
+| Figure                | Meaning                                                                               |
+| --------------------- | ------------------------------------------------------------------------------------- |
+| Open value, estimated | What your open positions would pay if they settled at the current price. A guide only |
+| Open max payout       | The most your open positions could pay                                                |
+| Claimable             | Payouts waiting for you                                                               |
+| Realized PnL          | Payouts received minus the cost of positions that have paid or settled at zero        |
+| Win rate              | Of those positions, the share that paid more than they cost                           |
+| Premium paid          | Everything you have paid for positions                                                |
+| Paid out              | Everything that has been paid out to you                                              |
 
 Each row links to its transaction, so every step can be checked on the chain.
 
