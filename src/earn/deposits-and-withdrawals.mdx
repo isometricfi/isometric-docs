@@ -8,7 +8,7 @@ og:image: https://isometric.fi/docs-opengraph.png
 
 # Deposits and withdrawals
 
-Deposits and withdrawals are **requests**. Once an hour the pool sets one share price and fills every request that arrived in time, all at that price. Nobody gets a better price by being faster.
+Deposits and withdrawals are **requests**. Once an hour the pool sets its share price and fills every request that arrived in time. Nobody gets a better price by being faster.
 
 ## The hourly fill
 
@@ -56,7 +56,7 @@ A request can be cancelled until its cutoff. Until then your pending request has
 
 ## The price you fill at
 
-Every request at a fill gets the same share price. Deposits and withdrawals are priced slightly in favour of the depositors who stay, so nobody joining or leaving can take value from them. The difference is small, and it is not a fee paid to Isometric.
+Every deposit at a fill buys at the same price, and every withdrawal at a fill sells at the same price. The deposit price is set slightly above the withdrawal price, in favour of the depositors who stay, so nobody joining or leaving can take value from them. The difference is small, and it is not a fee paid to Isometric.
 
 Until your request fills, every share price and USDG figure on the page is an **Estimate** from the last fill.
 

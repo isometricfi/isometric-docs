@@ -55,9 +55,13 @@
             ],
           },
           {
-            "group": "Know the risks",
-            "icon": "lucide:shield-alert",
-            "pages": ["trade/risks", "trade/perps-vs-isometric"],
+            "group": "Compare and risks",
+            "icon": "lucide:scale",
+            "pages": [
+              "trade/perps-vs-isometric",
+              "trade/prediction-markets-vs-isometric",
+              "trade/risks",
+            ],
           },
         ],
       },
@@ -66,15 +70,14 @@
         "icon": "lucide:vault",
         "groups": [
           {
+            "group": "Start here",
+            "icon": "lucide:compass",
+            "pages": ["earn/overview", "earn/quickstart"],
+          },
+          {
             "group": "Providing liquidity",
             "icon": "lucide:waves",
-            "pages": [
-              "earn/overview",
-              "earn/yield",
-              "earn/fees",
-              "earn/deposits-and-withdrawals",
-              "earn/risks",
-            ],
+            "pages": ["earn/yield", "earn/fees", "earn/deposits-and-withdrawals", "earn/risks"],
           },
         ],
       },

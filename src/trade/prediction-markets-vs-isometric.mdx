@@ -1,0 +1,56 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Prediction markets versus Isometric
+sidebarTitle: Prediction markets vs Isometric
+description: How an Isometric position compares with a yes-or-no price prediction market on payout, near misses, size, exit, and settlement.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Prediction markets versus Isometric
+
+A price prediction market asks a yes-or-no question: will Bitcoin be above $103,000 next Friday? An Isometric position looks similar at first, because one price at one time decides the result. The difference is the payout. A prediction market pays for being past a line. Isometric pays for how far past it the price goes.
+
+## Side by side
+
+|                       | Price prediction market                            | Isometric                                                          |
+| --------------------- | -------------------------------------------------- | ------------------------------------------------------------------ |
+| **What you choose**   | A listed question: a price line and a date         | Direction, amount, term, and leverage. The target is set for you   |
+| **Payout**            | All or nothing: a fixed amount per share if right  | Grows with each 1% past your worthless price, up to the Max payout |
+| **A near miss**       | Pays nothing                                       | Can pay back part of what you paid                                 |
+| **Most you can lose** | What you paid                                      | What you paid                                                      |
+| **Price you pay**     | Set by other traders, and only as deep as the book | Quoted by the pool, for the whole size at once                     |
+| **Exit**              | Usually any time, by selling to another trader     | At settlement only                                                 |
+| **Dates**             | The dates someone listed                           | 1, 3, 7, or 30 days from when you open                             |
+| **What decides it**   | The market's own resolution rules                  | The Chainlink price at the settlement hour                         |
+
+## The same view, two ways
+
+Bitcoin is at $100,000 and you think it will be higher in a week. You have $500.
+
+- **Prediction market.** You buy Yes on "Above $103,000 in 7 days?". Suppose Yes trades at 30 cents and pays $1 if right. $500 buys about 1,667 shares.
+- **Isometric.** You open the 7-day, 25x long from [Reading the quote](./reading-the-quote.mdx): worthless at or below $99,154, profit above $103,022, Max payout $3,310.
+
+| Bitcoin at settlement | Prediction market pays | Isometric pays |
+| --------------------- | ---------------------- | -------------- |
+| $99,000               | $0                     | $0             |
+| $102,000              | $0                     | $368           |
+| $105,000              | $1,667                 | $756           |
+| $110,000              | $1,667                 | $1,402         |
+| $120,000              | $1,667                 | $2,695         |
+
+The prediction market pays more for a move that only just clears its line. Isometric gives some money back on a near miss and keeps paying as the move grows, up to its maximum. The figures are examples: real prices on both sides move with the market.
+
+## Where Isometric fits better
+
+- **You have a direction, not a line.** You do not need to find a listed question at the right price and date. Pick long or short and a term, and the target is built for you.
+- **You want to be paid for the size of the move.** A big move pays more than a small one.
+- **You want a near miss to count.** Between the worthless price and the profit price you get part of your money back.
+- **You want one price for the whole size.** The pool quotes the full amount. There is no book to walk through.
+
+## Where a prediction market fits better
+
+- **You have a view on one exact line.** If you only care whether the price clears $103,000, a yes-or-no share says exactly that.
+- **You want to exit early.** You can usually sell your shares before resolution. An Isometric position runs to settlement.
+- **You want to trade something other than a price.** Isometric only trades market prices.
+
+Before you trade, read [Know the risks](./risks.mdx).

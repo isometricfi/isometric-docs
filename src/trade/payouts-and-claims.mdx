@@ -34,7 +34,7 @@ Before it sends anything, the dialog reads your balances and the settlement pric
 
 If the automatic payment cannot reach your wallet, for example because the wallet is blocked from receiving USDG, the position shows **Push failed**. Nothing is lost. The payout stays set aside for you, and you can claim it to the same wallet later or to another address.
 
-Automatic payments are retried for about a week after settlement. After that, an unpaid payout simply waits for you to claim it.
+The keeper retries automatic payments for about a week after settlement. After that, an unpaid payout waits for you to claim it.
 
 ## Losing position
 
@@ -58,7 +58,7 @@ The account panel summarises your positions:
 
 | Figure                | Meaning                                                                          |
 | --------------------- | -------------------------------------------------------------------------------- |
-| Open value, estimated | What the pool's model says your open positions are worth right now. A guide only |
+| Open value, estimated | What your open positions would pay if they settled at the current price. A guide |
 | Open max payout       | The most your open positions could pay                                           |
 | Claimable             | Payouts waiting for you                                                          |
 | Realized PnL          | Payouts received minus the cost of positions that have paid or settled at zero   |

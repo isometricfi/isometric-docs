@@ -8,13 +8,31 @@ og:image: https://isometric.fi/docs-opengraph.png
 
 # Earn by backing trades
 
-Every Isometric position is written against a pool rather than another trader. Depositors fund the pool, the pool collects what traders pay, and the pool pays the winners. What is left is the depositors' return.
+Deposit USDG into a market's pool and you become the other side of every trade in that market. Traders pay up front. The pool keeps what they pay and pays the ones who win. What is left is the depositors' return.
+
+## How the pool works
+
+In options terms, the pool **writes** every option a trader buys. When a trader picks a direction, amount, term, and leverage, the pool prices that trade and takes the other side itself.
+
+1. **A trader opens a position.** Their premium goes into the pool.
+2. **The pool sets aside the Max payout.** It moves enough of its free USDG into reserve to pay that position at any settlement price. That money stays locked until the position settles.
+3. **The position settles.** If the trader wins, they are paid from the reserve and the rest is freed. If they lose, the whole reserve is freed and the pool keeps the premium.
+
+```mermaid
+flowchart LR
+    T["Trader opens a position"] -->|premium| P["Pool"]
+    P -->|locks the Max payout| R["Reserve"]
+    R -->|trader wins: payout| W["Trader"]
+    R -->|everything not paid out| P
+```
+
+Every position has a capped payout, so the pool knows the most it can owe and never promises more than it holds.
 
 ## One USDG pool per market
 
-Each market has one pool. You deposit **USDG**, the pool backs every long and every short in that market, and it pays winners in USDG. Markets never share a pool, so the Bitcoin pool is only ever exposed to Bitcoin trades.
+Each market has one pool. You deposit **USDG**, the pool backs every long and every short in that market, and it pays winners in USDG. Markets never share a pool, so the Bitcoin pool backs Bitcoin trades and nothing else.
 
-Because one pool backs both directions, longs and shorts can partly offset each other.
+Because one pool backs both directions, a long and a short settling at the same hour can partly offset each other. The pool sets aside the most it could owe at that hour, which is often less than the two maximum payouts added together.
 
 ## What you receive
 
@@ -27,7 +45,7 @@ The share price rises as the pool earns premium and falls when traders win. It d
 Deposits and withdrawals are **requests** that fill **once an hour**:
 
 1. You request a deposit or a withdrawal.
-2. At the end of the hour the pool sets one share price, and every request sent at least 10 minutes before fills at it.
+2. At the end of the hour the pool sets its share price, and every request sent at least 10 minutes before fills at it.
 3. After the fill you claim your shares or your USDG.
 
 [Deposits and withdrawals](./deposits-and-withdrawals.mdx) walks through each step, the cutoff, and what happens when a withdrawal can only fill in part.
@@ -60,3 +78,5 @@ Further down, **Capital breakdown** shows how much of the pool is backing trades
 ## Is this for you
 
 A pool is the right place for money you can leave alone for a while and are comfortable putting at risk. It is not a savings account. Winning traders are paid from it, and a run of them lowers the share price. [Pool risks](./risks.mdx) says what can go wrong. [How the yield works](./yield.mdx) says where the return comes from.
+
+Ready to deposit? [Make your first deposit](./quickstart.mdx) walks through it step by step.

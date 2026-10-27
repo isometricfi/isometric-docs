@@ -31,11 +31,11 @@ If the price feed had gone quiet for longer than its normal maximum gap before t
 
 ## Your payout is capped
 
-Every position has a **Max payout**, fixed when it opens. A long stops growing at its cap price and a short at its floor price. However far the market runs beyond that, you receive the maximum and no more. Shorter terms have a nearer cap.
+Every position has a **Max payout**, fixed when it opens. However far the market runs, you receive that and no more. Shorter terms have a smaller maximum.
 
 ## The quote can move before you confirm
 
-The quote follows the live price. If the price moves before your trade lands, the trade either opens close to the quote you saw or fails. A failed trade costs only the network fee, and an open one costs exactly the amount you entered. The cap price is set from the live price when the trade lands, so the **Max payout** can differ slightly from the quote.
+The quote follows the live price. If the price moves before your trade lands, the trade either opens close to the quote you saw or fails. A failed trade costs only the network fee, and an open one costs exactly the amount you entered. The **Max payout** is set from the live price when the trade lands, so it can differ slightly from the quote.
 
 ## New positions can pause
 
