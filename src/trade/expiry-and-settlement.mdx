@@ -2,7 +2,7 @@
 $schema: https://holocron.so/frontmatter.json
 title: Expiry and settlement
 sidebarTitle: Expiry and settlement
-description: What happens between opening an Isometric position and being paid, and how one price at the settlement hour decides the result.
+description: What happens between opening an Isometric position and being paid, and how one price at expiry decides the result.
 og:image: https://isometric.fi/docs-opengraph.png
 ---
 
@@ -12,51 +12,37 @@ An Isometric position has a fixed end. Between open and that end nothing is requ
 
 ## The settlement time
 
-The ticket shows **Settles** as a date and an hour. Settlement lands on a fixed schedule rather than exactly one, three, seven, or thirty days from the moment you click, so positions opened around the same time settle together. Each term settles at the first mark on its schedule at or after the full term:
-
-| Term    | Settles on the next | So it can run up to |
-| ------- | ------------------- | ------------------- |
-| 1 day   | 2-hour mark         | 1 day 2 hours       |
-| 3 days  | 6-hour mark         | 3 days 6 hours      |
-| 7 days  | 12-hour mark        | 7 days 12 hours     |
-| 30 days | 48-hour mark        | 32 days             |
+The ticket shows **Settles** as a date and an hour. It is your term counted from the moment you request the quote, **rounded up to the next whole hour**. A 7-day position requested at 10:20 settles seven days later at 11:00.
 
 The exact time is on the ticket before you confirm and in Portfolio after.
 
-New positions can be opened at any time, including the minutes around someone else's settlement. An expiry never pauses trading.
-
 ## While the position is open
 
-The position cannot be closed, resized, transferred, or liquidated. You can watch it in **Portfolio**, where each open position shows:
+The position cannot be closed, resized, transferred, or liquidated. You can watch it in **Portfolio**, where each open position shows what it would pay if it expired now, its **Max payout**, and the time left.
 
-- **If it settled now**, what the position would pay if the current price were the settlement price. This is a guide, not a price you can sell at.
-- **Max payout**, the most it can pay.
-- The time remaining to settlement.
-
-The pool set money aside for your payout when you opened, up to the full **Max payout**. It stays set aside until settlement, so the money to pay you is never in question.
+The writer on the other side put up your full **Max payout** when the trade opened. The contract holds it until settlement, so the money to pay you is never in question.
 
 ## At the settlement hour
 
 One price decides the result: the **last Chainlink price published at or before the settlement hour**. Nobody chooses the price, including Isometric. There is only one such price, and the contract refuses any other.
 
-The price is final as soon as the hour has passed. Anyone can then record it and settle every position at that hour in one go. Isometric runs a keeper that does it, normally within a minute or two. Until it lands the position shows **Settling**. A delay here does not change the result, because the price is already fixed.
+Once the hour has passed, anyone can settle every position at that hour in one go. Isometric runs a keeper that does it, normally within a minute or two. Until it lands the position shows **Settling**. A delay does not change the result, because the price is already fixed.
 
-If the feed had gone quiet before the hour, the first price published after it is used instead, and settlement waits for that price.
+Settlement pays both sides in the same transaction. Your payout goes straight to your wallet, and the rest of the escrow goes back to the writer.
 
 ## After settlement
 
-| Status      | What happened                                                             | What you do                                          |
-| ----------- | ------------------------------------------------------------------------- | ---------------------------------------------------- |
-| Expired     | The price finished on the wrong side of your worthless price              | Nothing. The position paid nothing                   |
-| Claimable   | The price finished on your side and your payout is waiting                | Wait for the automatic payment, or claim it yourself |
-| Push failed | The automatic payment could not reach your wallet. The payout still waits | Claim it, to your wallet or to another address       |
-
-[Payouts and claims](./payouts-and-claims.mdx) explains how payouts arrive and when you need to claim.
+| Status   | What happened                                                      | What you do                                        |
+| -------- | ------------------------------------------------------------------ | -------------------------------------------------- |
+| Paid     | The price finished on your side and the payout reached your wallet | Nothing                                            |
+| Lost     | The price finished on the wrong side of your worthless price       | Nothing. The position paid nothing                 |
+| Won      | You won, but the transfer to your wallet failed. The payout waits  | [Claim it](./payouts-and-claims.mdx)               |
+| Refunded | No settlement price was published within 14 days of expiry         | Nothing. What you paid, less the fee, was returned |
 
 ## What can delay settlement
 
 - **The keeper is behind.** Anyone can settle, so a stalled keeper delays a payout rather than blocking it.
-- **The feed went quiet before the hour.** Settlement then waits for the next price.
-- **Arbitrum itself is down.** Nothing can be recorded until the network is producing blocks again.
+- **The price feed is late.** Settlement waits for the price, and if none arrives within 14 days of expiry, both sides are refunded.
+- **The network is down.** Nothing can be recorded until Arbitrum or Robinhood Chain is producing blocks again.
 
-None of these change what you are owed. Your payout is fixed by the settlement price, and the money backing it stays set aside until you receive it.
+None of these change what you are owed. The money backing your payout stays in the contract until it reaches you.

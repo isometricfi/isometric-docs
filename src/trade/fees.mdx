@@ -2,21 +2,19 @@
 $schema: https://holocron.so/frontmatter.json
 title: Fees
 sidebarTitle: Fees
-description: What an Isometric position costs, where the fee is, and what you never pay.
+description: What an Isometric position costs, how the fee is worked out, and what you never pay.
 og:image: https://isometric.fi/docs-opengraph.png
 ---
 
 # Fees
 
-A position costs one payment, made when you open it, and nothing is charged on top.
+A position costs one payment, made when you open it. The amount you enter is everything you pay, fee included.
 
-## Where the fee is
+## The trading fee
 
-Your payment is the **premium** for the trade, and it is exactly the amount you enter. It buys the position at the pool's price plus a **3% trading fee** on that price, so **Max loss** includes the fee. When much of the pool is already backing open positions, the pool's price also carries a busy-pool charge, which the pool keeps.
+The fee is **$0.50 plus 0.04% of your position size**. The ticket shows it before you confirm.
 
-The premium goes to the pool that takes the other side. The Isometric treasury keeps **up to 3% of the premium**, and the depositors backing your position keep the rest. Depositors always receive at least the pool's full price for the position, so the treasury's share can only come out of the fee.
-
-The opening price also includes a **0.10% entry spread**, as on any venue. It is inside the price, not added on top.
+The fee comes out of the amount you enter, and the rest buys the position. So **Max loss** is the amount you entered, fee included. The fee goes to the Isometric treasury. The rest goes to the writer who takes the other side.
 
 ## What you never pay
 
@@ -30,13 +28,10 @@ The opening price also includes a **0.10% entry spread**, as on any venue. It is
 
 ## Network fees
 
-Every transaction on Arbitrum or Robinhood Chain costs a small amount of ETH. You pay it from your wallet for:
+Opening a position is one transaction on Arbitrum or Robinhood Chain, paid in ETH from your wallet. Approving USDG is a signature, so it costs nothing.
 
-- opening a position, which is one transaction;
-- claiming a payout, when you choose to claim rather than wait for the automatic payment.
-
-Approving the premium is a signature, not a transaction, so it costs nothing. Settlement and automatic payouts are sent by Isometric's keeper, which pays its own network fees. They are not charged to you or to depositors.
+Settlement is sent by Isometric's keeper, which pays its own network fees, and it pays winners straight to their wallets. You only pay a network fee after settlement if you ever need to [claim](./payouts-and-claims.mdx) a payout yourself.
 
 ## Can the fee change
 
-Governance can change the fee and the entry spread within limits fixed in the contract code. A change applies only to positions opened after it, never to one that is already open.
+The fee can change within limits fixed in the contract code. A change applies only to positions opened after it, never to one that is already open.

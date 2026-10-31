@@ -15,7 +15,7 @@ Every quote shows the same six numbers. They do not change meaning between marke
 | Number                    | What it tells you                                                                                                               |
 | ------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
 | **Settles**               | The date and hour the position ends. One price at that hour decides the result. It cannot be closed before then.                |
-| **Position size**         | Your amount times leverage, or a little more. The exposure the position gives you.                                              |
+| **Position size**         | Your amount times leverage. The exposure the position gives you.                                                                |
 | **Worthless at or below** | For a long: settle at or below this price and you receive nothing. A short shows **Worthless at or above**.                     |
 | **Profit above**          | For a long: settle above this price and you get back more than you paid. A short shows **Profit below**.                        |
 | **Max payout**            | The most the position can pay in USDG. It is fixed when the trade opens.                                                        |
@@ -25,7 +25,7 @@ Between the worthless price and the profit price the position pays something, bu
 
 ## Max payout
 
-Every quote comes with a **Max payout**, calculated for that trade and fixed when it opens. Past a certain price the payout stops growing, so the pool can set the whole amount aside for you on day one. Longer terms leave more room to run, so their maximum is larger.
+Every quote comes with a **Max payout**, fixed when the trade opens. Past a certain price the payout stops growing, so the writer can lock the whole amount in the contract when your trade opens. Longer terms leave more room to run, so their maximum is larger.
 
 ## A worked example
 
@@ -34,59 +34,55 @@ Bitcoin is at **$100,000**. You go **Long**, enter **$500**, choose **7 days** a
 | Number                | Value                        |
 | --------------------- | ---------------------------- |
 | Settles               | 7 days from now, on the hour |
-| Position size         | $12,817                      |
-| Worthless at or below | $99,154                      |
-| Profit above          | $103,022                     |
-| Max payout            | $3,309.85                    |
+| Position size         | $12,500                      |
+| Worthless at or below | $98,552                      |
+| Profit above          | $102,495                     |
+| Max payout            | $2,086.13                    |
 | Max loss              | $500.00                      |
 
-The exact figures depend on the live price, how volatile the market has been, and how busy the pool is, so yours will differ.
+The exact figures depend on the live price and the quotes writers send, so yours will differ.
 
 Settlement at different prices pays:
 
 | Bitcoin at settlement | You receive | Result  |
 | --------------------- | ----------- | ------- |
-| $99,154 or below      | $0          | −$500   |
-| $101,000              | $239        | −$261   |
-| $103,022              | $500        | $0      |
-| $105,000              | $756        | +$256   |
-| $110,000              | $1,402      | +$902   |
-| $120,000              | $2,695      | +$2,195 |
-| $124,759 and above    | $3,310      | +$2,810 |
+| $98,552 or below      | $0          | −$500   |
+| $101,000              | $310        | −$190   |
+| $102,495              | $500        | $0      |
+| $105,000              | $818        | +$318   |
+| $110,000              | $1,452      | +$952   |
+| $115,000 and above    | $2,086      | +$1,586 |
 
-Between $99,154 and $103,022 you get some money back but not all of it. Past about $124,759 the payout stops growing: Bitcoin at $150,000 pays the same $3,310.
+Between $98,552 and $102,495 you get some money back but not all of it. Past $115,000 the payout stops growing: Bitcoin at $150,000 pays the same $2,086.
 
 ## The same idea as a short
 
 Bitcoin is at $100,000. You go **Short**, enter **$400**, choose **1 day** and **25x**. The ticket might show:
 
-| Number                | Value     |
-| --------------------- | --------- |
-| Position size         | $10,088   |
-| Worthless at or above | $103,712  |
-| Profit below          | $99,600   |
-| Max payout            | $1,250.46 |
-| Max loss              | $400.00   |
+| Number                | Value    |
+| --------------------- | -------- |
+| Position size         | $10,000  |
+| Worthless at or above | $104,015 |
+| Profit below          | $99,854  |
+| Max payout            | $866.71  |
+| Max loss              | $400.00  |
 
 | Bitcoin at settlement | You receive | Result |
 | --------------------- | ----------- | ------ |
-| $103,712 or above     | $0          | −$400  |
-| $101,000              | $264        | −$136  |
-| $99,600               | $400        | $0     |
-| $98,000               | $556        | +$156  |
-| $95,000               | $847        | +$447  |
-| $90,857 and below     | $1,250      | +$850  |
+| $104,015 or above     | $0          | −$400  |
+| $101,000              | $290        | −$110  |
+| $99,854               | $400        | $0     |
+| $98,000               | $578        | +$178  |
+| $95,000 and below     | $867        | +$467  |
 
 In both examples the worthless price sits on the safe side of today's price and the profit price sits just past it. Most positions start like this: they have some value at open, and you come out ahead once the price moves a little further your way.
 
 ## Two shortcuts
 
-**Each 1% past the worthless price is worth at least leverage percent of your amount.** In the long example, every $1,000 above $99,154 adds about $129 to the payout, which is about 26% of the $500 you entered.
+**Each 1% past the worthless price is worth leverage percent of your amount.** At 25x, every 1% is worth 25% of what you entered: in the long example, about $125 per 1%.
 
-**Breakeven is the Profit above price**, or **Profit below** for a short. It is never more than one leverage-share past the worthless price: 1% at 100x, 4% at 25x, 10% at 10x, 20% at 5x.
+**Breakeven is the Profit above price**, or **Profit below** for a short. It sits one leverage-share past the worthless price: 1% at 100x, 4% at 25x, 10% at 10x, 20% at 5x.
 
 ## The quote follows the market
 
-The quote updates as the price moves. If the price moves before your trade lands, the trade either opens close to the quote you saw or fails. A failed trade costs only the network fee, and an open one costs exactly the amount you entered.
-
-The **Max payout** is set from the live price when the trade lands, so it can differ slightly from the quote if the price ticks in between.
+The quote updates as the price moves. Each quote is firm for a short time, and the app refreshes it before you sign. Your trade opens on exactly the quote you confirmed, or not at all. A failed trade costs only the network fee.

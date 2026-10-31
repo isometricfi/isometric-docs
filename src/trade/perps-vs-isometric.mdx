@@ -21,7 +21,7 @@ A perpetual future and an Isometric position express the same view: the price go
 | **Exit**              | Any time                                               | At settlement only                                                |
 | **Upside**            | Uncapped                                               | Capped at the Max payout shown on the ticket                      |
 | **Duration**          | Open ended                                             | 1, 3, 7, or 30 days                                               |
-| **Counterparty**      | Other traders via an order book                        | The pool                                                          |
+| **Counterparty**      | Other traders via an order book                        | The writer whose quote fills, with your payout locked up front    |
 | **What you receive**  | Margin plus or minus PnL                               | Payout in USDG, or nothing                                        |
 
 ## Payoff at settlement
@@ -36,7 +36,7 @@ Both pay the same for each 1% the price moves, because the same amount at the sa
 
 **The downside is known before you sign.** There is no scenario in which you owe more than you paid, no margin call at 3am, and no cascade.
 
-**One price for the whole size.** There is no order book to walk and no partial fill. Within the pool's limits, the trade opens on the terms you confirmed or not at all.
+**One price for the whole size.** Writers quote the full amount. There is no order book to walk and no partial fill, and the trade opens on the quote you confirmed or not at all.
 
 ## Where a perp is better
 

@@ -35,23 +35,23 @@ Every position has a **Max payout**, fixed when it opens. However far the market
 
 ## The quote can move before you confirm
 
-The quote follows the live price. If the price moves before your trade lands, the trade either opens close to the quote you saw or fails. A failed trade costs only the network fee, and an open one costs exactly the amount you entered. The **Max payout** is set from the live price when the trade lands, so it can differ slightly from the quote.
+The quote follows the live price. Each quote is firm for a short time, and the app refreshes it before you sign. Your trade opens on exactly the quote you confirmed, or fails. A failed trade costs only the network fee.
 
-## New positions can pause
+## You may not get a quote
 
-The protocol refuses to open positions when the price feed is stale or jumps too far in one update, when the Arbitrum sequencer is down or has only just restarted, when the pool is at one of its limits, or when the market is paused. Existing positions are unaffected: they still settle and pay. But you may not be able to open a position at the moment you want to.
+A trade needs a writer willing to take the other side. If no writer quotes your trade, or the market is paused, you cannot open a position at that moment. Existing positions are unaffected: they still settle and pay.
 
 ## A payout can be delayed
 
-A winning payout waits for three things: the settlement price, someone recording it, and the transfer to you. An Arbitrum outage or a quiet price feed delays the first. A stalled keeper delays the second and third, although anyone can settle and you can always claim for yourself. A delay does not change what you are owed.
+A winning payout waits for the settlement price and for someone to settle. A network outage or a quiet price feed delays the first. A stalled keeper delays the second, although anyone can settle. A delay does not change what you are owed. If no price is published within 14 days of expiry, both sides are refunded instead, and the fee is not returned.
 
-If your wallet cannot receive USDG, the automatic payment fails and you must claim to another address.
+If your wallet cannot receive USDG, the transfer fails and you must claim to another address.
 
 ## Contract upgrades and governance
 
-The contracts are upgradeable. An upgrade can change anything, including how funds are held, so a faulty upgrade or a compromised upgrade owner can cause loss of funds. On Arbitrum One every upgrade must wait in a public timelock for at least 48 hours before it can take effect.
+The contracts are upgradeable. An upgrade can change anything, including how funds are held, so a faulty upgrade or a compromised upgrade owner can cause loss of funds. An upgrade takes effect without a delay.
 
-Governance can change fees and risk limits within bounds fixed in the code, with no delay. A guardian can pause the market. A pause stops new positions and new pool deposits. It never stops settlement, claims, payouts, or pool withdrawals.
+Governance can change the fee within bounds fixed in the code. A guardian can pause new positions. A pause never stops settlement, claims, or refunds.
 
 ## Smart contract and network risk
 
@@ -64,7 +64,7 @@ Nothing in the app or these docs is investment advice. Isometric does not review
 ## What the contract code protects
 
 - **Your maximum loss is fixed.** Nothing can be taken from you after you pay.
-- **Your payout is funded on day one.** The pool sets aside enough to pay every position at your expiry, at any settlement price, when the positions open.
+- **Your payout is funded on day one.** The writer's full collateral for your **Max payout** is locked in the contract when the trade opens, and held until settlement.
 - **Nobody picks the price.** Exactly one Chainlink price is valid for a settlement hour, and no participant, including Isometric, can choose another.
 - **Claims never expire.** A payout waits for you indefinitely, and you can send it to any address.
-- **Bad data stops new trades rather than mispricing them.** A stale or jumping feed pauses new positions instead of using it.
+- **The trade you sign is the trade you get.** A quote is signed by the writer, and the contract refuses any fill that differs from it.
