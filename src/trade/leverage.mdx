@@ -12,7 +12,7 @@ On a perp, leverage is how much you borrow, and it comes with a price at which y
 
 ## Leverage sets position size
 
-Your position size is your amount times the leverage, or a little more: the trade lands on the closest target that fits your leverage, and that target usually gives a few percent extra.
+Your position size is your amount times the leverage.
 
 | Amount | Leverage | Position size |
 | ------ | -------- | ------------- |
@@ -30,11 +30,11 @@ Five seven-day Bitcoin longs with Bitcoin at $100,000 and a $500 amount:
 
 | Leverage | Position size | Worthless at or below | Profit above | Max payout |
 | -------- | ------------- | --------------------- | ------------ | ---------- |
-| 5x       | $2,500        | $83,880               | $100,652     | $1,219     |
-| 10x      | $5,061        | $91,998               | $101,088     | $1,802     |
-| 25x      | $12,817       | $99,154               | $103,022     | $3,310     |
-| 50x      | $25,441       | $103,453              | $105,486     | $5,240     |
-| 100x     | $50,657       | $107,401              | $108,462     | $8,187     |
+| 5x       | $2,500        | $83,263               | $99,915      | $953       |
+| 10x      | $5,000        | $91,297               | $100,426     | $1,298     |
+| 25x      | $12,500       | $98,552               | $102,495     | $2,086     |
+| 50x      | $25,000       | $102,709              | $104,763     | $2,992     |
+| 100x     | $50,000       | $106,152              | $107,214     | $4,167     |
 
 These are example figures. The exact prices move with the market and the ticket shows yours.
 
@@ -50,7 +50,7 @@ Read across a row and the trade at each tier is clear:
 
 At low leverage the position behaves like a small, safe stake in the price: it is rarely worthless and rarely pays many times over. At high leverage a small move in your favour pays a lot and a small move against you costs the whole premium.
 
-The exact distances move with the market. When the market is calm the targets sit closer. When it is volatile they sit further away, because a big move is more likely and the pool prices it in.
+The exact distances move with the market. When the market is calm the targets sit closer. When it is volatile they sit further away, because a big move is more likely and writers price it in.
 
 ## Leverage does not create a liquidation price
 
@@ -60,7 +60,7 @@ The cost of that protection is already inside what you paid. There is no margin 
 
 ## Breakeven and the cap
 
-- **Breakeven usually sits a little past today's price.** Each 1% past your worthless price pays back leverage percent of your amount, so breakeven is at most one leverage-share past the worthless price.
+- **Breakeven usually sits a little past today's price.** Each 1% past your worthless price pays back leverage percent of your amount, so breakeven is one leverage-share past the worthless price.
 - **The payout is capped.** The ticket shows the **Max payout** in dollars. Longer terms have a larger one.
 
 ## Choosing a leverage

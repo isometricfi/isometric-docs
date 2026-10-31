@@ -1,0 +1,37 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Writers
+sidebarTitle: Writers
+description: Who takes the other side of Isometric trades, how quotes are chosen, and how every payout is locked when a trade opens.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Writers
+
+A writer is anyone who takes the other side of Isometric trades. Every trade goes out for quotes, and any writer can answer.
+
+## How a trade is quoted
+
+1. **A trader asks** for a long or a short with a term, an amount and a leverage. The request goes to every writer at once.
+2. **Writers answer** with a signed price. The best one fills.
+3. **The trade opens** in one transaction. The contract takes the trader's payment and the writer's collateral for the full **Max payout**, and holds both until expiry.
+4. **At expiry** one Chainlink price settles the trade. The trader is paid their payout, and the rest goes back to the writer.
+
+## What you are writing
+
+Every trade is a European, cash-settled option spread on the market's Chainlink price, paid in USDG.
+
+| Trader opens | You sell      | Payoff to the trader at price `P`       | Your collateral                |
+| ------------ | ------------- | --------------------------------------- | ------------------------------ |
+| Long         | A call spread | `contracts × (min(P, cap) − strike)⁺`   | `contracts × (cap − strike)`   |
+| Short        | A put spread  | `contracts × (strike − max(P, floor))⁺` | `contracts × (strike − floor)` |
+
+- **You quote only the strike.** The request fixes the side, expiry, cap or floor, notional and premium. The size follows from your strike: `contracts = notional ÷ strike`.
+- **The best strike wins.** The lowest strike for a long, the highest for a short. With the cap or floor fixed, that quote pays the trader more in every outcome.
+- **It is fully collateralised.** At fill the contract escrows the trader's premium and your top-up to the spread's full value. Nothing else is ever owed.
+- **It settles once.** At expiry the trader is paid the payoff and the rest of the escrow returns to you, in the same transaction.
+
+## Two ways to write
+
+- **Deposit into the [shared vault](./vault.mdx).** Its quoting bot writes trades on behalf of every depositor. The vault is not live yet.
+- **Quote directly.** Market makers can connect and answer trades with their own prices. Email [support@isometric.fi](mailto:support@isometric.fi) to get set up.

@@ -1,0 +1,29 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: How it works
+sidebarTitle: How it works
+description: What an Isometric position is underneath. Every trade is a fully collateralised option spread, settled at expiry on one Chainlink price.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# How it works
+
+Every Isometric position is an option spread.
+
+- **A long is a call spread.** It pays as the price rises above your worthless price, up to a cap.
+- **A short is a put spread.** It pays as the price falls below your worthless price, down to a floor.
+- **You buy the spread, a writer sells it.** Writers compete to quote your trade, and the best quote fills.
+- **It is fully collateralised.** When the trade opens, the writer locks the spread's full value, your **Max payout**, in the contract.
+- **It settles once, at expiry.** One Chainlink price decides the payout, paid in USDG. There is no early exercise and no early close.
+
+## The ticket in options terms
+
+| On the ticket         | In options terms                                |
+| --------------------- | ----------------------------------------------- |
+| Worthless at or below | The strike                                      |
+| Max payout            | The spread's full value, between strike and cap |
+| Position size         | The notional                                    |
+| Max loss              | The premium plus the trading fee                |
+| Settles               | The expiry                                      |
+
+Leverage is the notional divided by what you pay. It sets the size of the spread, not a margin requirement, so there is nothing to liquidate.

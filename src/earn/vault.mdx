@@ -1,0 +1,38 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: The shared vault
+sidebarTitle: The shared vault
+description: Deposit USDG into one shared vault, and its quoting bot takes the other side of Isometric trades on your behalf.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# The shared vault
+
+<Note>The shared vault is not live yet. Deposits open after it launches.</Note>
+
+The shared vault lets you take the other side of Isometric trades without quoting them yourself. You deposit USDG, and a quoting bot writes trades on the vault's behalf.
+
+## How it works
+
+1. **You deposit USDG** into one vault shared by every depositor.
+2. **The vault's quoting bot answers trades** like any other [writer](./writers.mdx), on longs and shorts.
+3. **When a quote fills,** the vault locks the trader's full **Max payout** from its deposits. It stays in the contract until the trade settles.
+4. **At expiry,** the trader's payout comes out of that locked amount and the rest returns to the vault. What traders paid stays with the vault.
+
+Your share of the vault rises and falls with those results.
+
+## Why pool deposits
+
+A trade can only be as large as a writer can cover. Pooling deposits lets the vault quote larger trades, so liquidity grows with every depositor and every trader gets deeper markets. You get exposure to the other side of every trade the vault fills, with nothing to quote, hedge or manage yourself.
+
+## Risks
+
+<Warning>
+  The vault can lose money. Depositing is taking the other side of traders, and traders sometimes
+  win.
+</Warning>
+
+- **Traders can win.** A strong move in one direction can pay out more than the vault collected.
+- **Money backing open trades is locked.** Deposits that back a trade stay in the contract until it settles.
+- **Past results are not a promise.** Any figure shown for the vault describes what happened, not what will.
+- **Smart contract and network risk.** The same contract, oracle, network and USDG risks as trading apply. See [Know the risks](../trade/risks.mdx).

@@ -2,13 +2,11 @@
 $schema: https://holocron.so/frontmatter.json
 title: Markets
 sidebarTitle: Markets
-description: The market Isometric launches with, the ones listed as coming soon, and what a market is made of.
+description: The markets live on Isometric, the ones coming soon, and what every market offers.
 og:image: https://isometric.fi/docs-opengraph.png
 ---
 
 # Markets
-
-Isometric launches with **Bitcoin on Arbitrum and Robinhood Chain**. Every market takes the same four inputs and settles the same way. Markets listed as coming soon appear in the app so you can see what is next, but they cannot be traded until they go live.
 
 <Note>
   Every position, long or short, is paid for in USDG and pays out in USDG. You never receive the
@@ -19,7 +17,7 @@ Isometric launches with **Bitcoin on Arbitrum and Robinhood Chain**. Every marke
 
 | Market                                                                                                | Status      |
 | ----------------------------------------------------------------------------------------------------- | ----------- |
-| <img src="/assets/btc.svg" alt="" width="20" height="20" className="inline align-middle" /> Bitcoin   | Launch      |
+| <img src="/assets/btc.svg" alt="" width="20" height="20" className="inline align-middle" /> Bitcoin   | Live        |
 | <img src="/assets/eth.svg" alt="" width="20" height="20" className="inline align-middle" /> Ether     | Coming soon |
 | <img src="/assets/sol.svg" alt="" width="20" height="20" className="inline align-middle" /> Solana    | Coming soon |
 | <img src="/assets/arb.svg" alt="" width="20" height="20" className="inline align-middle" /> Arbitrum  | Coming soon |
@@ -49,20 +47,20 @@ Isometric launches with **Bitcoin on Arbitrum and Robinhood Chain**. Every marke
 | <img src="/assets/gold.svg" alt="" width="20" height="20" className="inline align-middle" /> Gold     | Coming soon |
 | <img src="/assets/silver.svg" alt="" width="20" height="20" className="inline align-middle" /> Silver | Coming soon |
 
-## What a market is made of
-
-Each market has **one USDG pool**. The pool takes the other side of every long and every short in that market, collects what traders pay, and pays the winners. Markets never share a pool, so one market's trading never touches another market's liquidity. Adding a market adds a new pool and leaves the live ones alone.
-
 ## What is on offer
 
 | Setting  | Options                                            |
 | -------- | -------------------------------------------------- |
 | Terms    | 1, 3, 7, and 30 days                               |
 | Leverage | 5x, 10x, 25x, 50x, and 100x                        |
-| Amount   | $10 to $10,000 per position                        |
+| Amount   | From $10 per position                              |
 | Currency | USDG, in and out                                   |
 | Network  | Arbitrum One. The testnet runs on Arbitrum Sepolia |
 
+## Who takes the other side
+
+Every trade goes out for quotes. Writers answer with a price, and the best one fills. Each writer puts up the full **Max payout** for the trades it fills, so every market draws on the same writers and the same [shared vault](./earn/vault.mdx).
+
 ## Prices
 
-The chart and the header ticker read the exchange price, which is Coinbase for crypto. Trades are never priced from the chart. A trade is priced from the **Chainlink BTC/USD** price on Arbitrum at the moment you open, and settled from the same feed at expiry.
+The chart and the header ticker read the exchange price, which is Coinbase for crypto. Trades are never priced from the chart. Each quote starts from the **Chainlink** price on chain at the moment you ask, and the position settles from the same feed at expiry.

@@ -63,6 +63,11 @@
               "trade/risks",
             ],
           },
+          {
+            "group": "Under the hood",
+            "icon": "lucide:cog",
+            "pages": ["trade/how-it-works"],
+          },
         ],
       },
       {
@@ -70,14 +75,9 @@
         "icon": "lucide:vault",
         "groups": [
           {
-            "group": "Start here",
-            "icon": "lucide:compass",
-            "pages": ["earn/overview", "earn/quickstart"],
-          },
-          {
             "group": "Providing liquidity",
             "icon": "lucide:waves",
-            "pages": ["earn/yield", "earn/fees", "earn/deposits-and-withdrawals", "earn/risks"],
+            "pages": ["earn/vault", "earn/writers"],
           },
         ],
       },
