@@ -2,7 +2,7 @@
 $schema: https://holocron.so/frontmatter.json
 title: Frequently asked questions
 sidebarTitle: FAQ
-description: Short answers to the questions traders and depositors ask most about Isometric.
+description: Short answers to the questions traders and writers ask most about Isometric.
 og:image: https://isometric.fi/docs-opengraph.png
 ---
 
@@ -11,6 +11,12 @@ og:image: https://isometric.fi/docs-opengraph.png
 ## Trading
 
 <AccordionGroup>
+
+<Accordion title="How do I join the closed beta?">
+
+Trading is invite-only for now. Open an invite link, or enter your code when the app asks for it after you connect your wallet.
+
+</Accordion>
 
 <Accordion title="Can I close a position early?">
 
@@ -30,13 +36,13 @@ No. There is no cost to holding a position.
 
 </Accordion>
 
-<Accordion title="What decides whether I win?">
+<Accordion title="What decides whether a position pays?">
 
 One price: the last Chainlink price published at or before the settlement hour shown on your ticket. Above your worthless price pays a long. Below it pays a short.
 
 </Accordion>
 
-<Accordion title="What is the most I can win?">
+<Accordion title="What is the most a position can pay?">
 
 The **Max payout** on the ticket. Every quote has one, fixed when the position opens. Longer terms and higher leverage have a larger maximum.
 
@@ -44,13 +50,13 @@ The **Max payout** on the ticket. Every quote has one, fixed when the position o
 
 <Accordion title="Am I charged exactly the amount I entered?">
 
-Yes. The amount you enter is the whole cost, fee included, and the ticket shows it as **Max loss**. The trade opens on exactly the quote you confirmed, or it fails and you pay only the network fee.
+Yes. The amount you enter is the whole cost, fee included, and the ticket shows it as **Max loss**. The trade opens on exactly the quote you confirmed, or it fails and you pay only the network fee. If you pay with USDC or USDT, your amount is counted in USDG and the swap rate sets how much of the stablecoin it takes.
 
 </Accordion>
 
 <Accordion title="How many transactions is a trade?">
 
-One. Your wallet first signs an approval for the amount, which is a signature and costs nothing, then sends the trade.
+One when you pay with USDG. Any approval is either a free signature or sent together with the trade. Paying with USDC or USDT is also one transaction if your wallet can batch them. Otherwise the wallet sends the approval if one is needed and the swap first.
 
 </Accordion>
 
@@ -62,13 +68,13 @@ In USDG, long or short. Settlement pays your wallet directly, normally a minute 
 
 <Accordion title="What does Won mean?">
 
-You won, but the transfer to your wallet failed. Nothing is lost. Open the position in Portfolio and claim it, to the same wallet or to another address that can receive USDG. Claims never expire.
+The position paid out, but the transfer to your wallet failed. Nothing is lost. Open the position in Portfolio and claim it, to the same wallet or to another address that can receive USDG. Claims never expire.
 
 </Accordion>
 
 <Accordion title="Why does the confirm button say something other than Confirm?">
 
-It is telling you why the trade cannot go through: the wrong network, not enough USDG, an amount below the minimum, no quote for the trade, or a paused market.
+It is telling you why the trade cannot go through: the wrong network, not enough of the token you are paying with, an amount outside the limits, no quote for the trade, no swap route, or a paused market.
 
 </Accordion>
 
@@ -80,19 +86,37 @@ Settlement is your term counted from when you request the quote, rounded up to t
 
 <Accordion title="What do I need in my wallet?">
 
-USDG to pay for positions and a little ETH for network fees, both on the network you trade on: Arbitrum or Robinhood Chain.
+USDG, USDC, or USDT to pay for positions and a little ETH for network fees, all on Arbitrum One.
+
+</Accordion>
+
+<Accordion title="How large can a trade be?">
+
+The amount starts at $1, and amount times leverage cannot pass a position size of 5,000 USDG. That is $1,000 at 5x, $50 at 100x, and $5 at 1000x.
+
+</Accordion>
+
+<Accordion title="Do I need to hold USDG?">
+
+No. You can pay with USDC or USDT on Arbitrum One, and the app swaps it to USDG as the trade opens. The trade still settles in USDG and pays out in USDG. See [Pay and swap](./trade/pay-and-swap.mdx).
+
+</Accordion>
+
+<Accordion title="Can I bring money from another network, or move it back?">
+
+Yes. Open your account menu and choose **Swap (cross-chain)**. It moves money to and from Arbitrum One on networks including Ethereum, Base, Optimism, Polygon, BNB Chain, Avalanche, Hyperliquid, and Robinhood Chain. See [Pay and swap](./trade/pay-and-swap.mdx).
 
 </Accordion>
 
 </AccordionGroup>
 
-## Earning
+## Writing
 
 <AccordionGroup>
 
-<Accordion title="How do I earn?">
+<Accordion title="How do I become a writer?">
 
-By taking the other side of trades. Deposit USDG into the [shared vault](./earn/vault.mdx) and its quoting bot writes trades for you, or quote directly as a [writer](./earn/writers.mdx).
+Writers take the other side of trades by quoting their own prices. See [Writers](./write/writers.mdx).
 
 </Accordion>
 
@@ -102,15 +126,9 @@ From what traders pay for their positions. There is no lending, staking, or farm
 
 </Accordion>
 
-<Accordion title="Can the vault lose money?">
+<Accordion title="Can a writer lose money?">
 
-Yes. It pays the traders who win, and a strong move in one direction can pay out more than the vault collected.
-
-</Accordion>
-
-<Accordion title="Is there one vault for longs and one for shorts?">
-
-No. One shared vault backs both directions.
+Yes. A writer covers the payouts on the trades it fills, and a strong move in one direction can pay out more than it collected.
 
 </Accordion>
 
