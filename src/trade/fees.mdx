@@ -12,9 +12,7 @@ A position costs one payment, made when you open it. The amount you enter is eve
 
 ## The trading fee
 
-The fee is **$0.50 plus 0.04% of your position size**. The ticket shows it before you confirm.
-
-The fee comes out of the amount you enter, and the rest buys the position. So **Max loss** is the amount you entered, fee included. The fee goes to the Isometric treasury. The rest goes to the writer who takes the other side.
+The fee is **$0.50 plus 0.04% of your position size**, and never more than 10% of the amount you enter. The ticket shows it before you confirm.
 
 ## What you never pay
 
@@ -24,13 +22,17 @@ The fee comes out of the amount you enter, and the rest buys the position. So **
 | Closing fee                | Nothing. There is no close       |
 | Liquidation penalty        | Nothing. There is no liquidation |
 | Withdrawal fee on a payout | Nothing                          |
-| A cut of your winnings     | Nothing                          |
+| A cut of your profit       | Nothing                          |
 
 ## Network fees
 
-Opening a position is one transaction on Arbitrum or Robinhood Chain, paid in ETH from your wallet. Approving USDG is a signature, so it costs nothing.
+Opening a position with USDG is one transaction on Arbitrum, paid in ETH from your wallet. Any approval is either a free signature or sent together with the trade.
 
-Settlement is sent by Isometric's keeper, which pays its own network fees, and it pays winners straight to their wallets. You only pay a network fee after settlement if you ever need to [claim](./payouts-and-claims.mdx) a payout yourself.
+Settlement is sent by Isometric's keeper, which pays its own network fees, and payouts go straight to wallets. You only pay a network fee after settlement if you ever need to [claim](./payouts-and-claims.mdx) a payout yourself.
+
+## Swap costs
+
+Isometric charges no fee on swaps, including when you pay for a trade with USDC or USDT. The rate comes from the third party routing the swap. If your wallet cannot batch transactions, paying with USDC or USDT also costs the network fees of the approval and the swap. See [Pay and swap](./pay-and-swap.mdx).
 
 ## Can the fee change
 

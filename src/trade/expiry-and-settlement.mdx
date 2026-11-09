@@ -12,7 +12,7 @@ An Isometric position has a fixed end. Between open and that end nothing is requ
 
 ## The settlement time
 
-The ticket shows **Settles** as a date and an hour. It is your term counted from the moment you request the quote, **rounded up to the next whole hour**. A 7-day position requested at 10:20 settles seven days later at 11:00.
+The ticket shows **Settles** as a date and an hour. It is your term counted from the moment you request the quote, **rounded up to the next whole hour**. A 3-day position requested at 10:20 settles three days later at 11:00.
 
 The exact time is on the ticket before you confirm and in Portfolio after.
 
@@ -20,7 +20,7 @@ The exact time is on the ticket before you confirm and in Portfolio after.
 
 The position cannot be closed, resized, transferred, or liquidated. You can watch it in **Portfolio**, where each open position shows what it would pay if it expired now, its **Max payout**, and the time left.
 
-The writer on the other side put up your full **Max payout** when the trade opened. The contract holds it until settlement, so the money to pay you is never in question.
+The writer on the other side put up your full **Max payout** when the trade opened. The contract holds it until settlement.
 
 ## At the settlement hour
 
@@ -32,17 +32,17 @@ Settlement pays both sides in the same transaction. Your payout goes straight to
 
 ## After settlement
 
-| Status   | What happened                                                      | What you do                                        |
-| -------- | ------------------------------------------------------------------ | -------------------------------------------------- |
-| Paid     | The price finished on your side and the payout reached your wallet | Nothing                                            |
-| Lost     | The price finished on the wrong side of your worthless price       | Nothing. The position paid nothing                 |
-| Won      | You won, but the transfer to your wallet failed. The payout waits  | [Claim it](./payouts-and-claims.mdx)               |
-| Refunded | No settlement price was published within 14 days of expiry         | Nothing. What you paid, less the fee, was returned |
+| Status   | What happened                                                         | What you do                                        |
+| -------- | --------------------------------------------------------------------- | -------------------------------------------------- |
+| Paid     | The price finished on your side and the payout reached your wallet    | Nothing                                            |
+| Lost     | The price finished on the wrong side of your worthless price          | Nothing. The position paid nothing                 |
+| Won      | It paid out, but the transfer to your wallet failed. The payout waits | [Claim it](./payouts-and-claims.mdx)               |
+| Refunded | No settlement price was published within 14 days of expiry            | Nothing. What you paid, less the fee, was returned |
 
 ## What can delay settlement
 
 - **The keeper is behind.** Anyone can settle, so a stalled keeper delays a payout rather than blocking it.
 - **The price feed is late.** Settlement waits for the price, and if none arrives within 14 days of expiry, both sides are refunded.
-- **The network is down.** Nothing can be recorded until Arbitrum or Robinhood Chain is producing blocks again.
+- **The network is down.** Nothing can be recorded until Arbitrum is producing blocks again.
 
 None of these change what you are owed. The money backing your payout stays in the contract until it reaches you.

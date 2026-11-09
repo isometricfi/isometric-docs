@@ -1,0 +1,60 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Pay and swap
+sidebarTitle: Pay and swap
+description: Start an Isometric trade with USDC, USDT, or USDG, and move money between Arbitrum and other networks with the cross-chain swap.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Pay and swap
+
+Every trade settles in **USDG** and every payout is paid in **USDG**. You do not need to hold USDG to start one, and you can bring money in from other networks and take it back out.
+
+## Pay with USDC or USDT
+
+On the ticket, press the token next to **Amount** and choose USDG, USDC, or USDT on Arbitrum One. The dialog shows the swap price before you continue.
+
+Your amount is always counted in USDG. If you pay with USDC or USDT, the app buys exactly that much USDG as the trade opens, with a maximum slippage of 0.5%. The ticket sets aside about 1% of your balance for the swap, so you cannot spend all of it.
+
+How it reaches the chain depends on your wallet:
+
+- **If your wallet can batch transactions,** the swap and the trade go together. Both happen or neither does.
+- **If it cannot,** your wallet sends the token approval if one is needed, then the swap, then the trade. If the swap lands and the trade then fails, you keep the USDG and can trade again or swap it back.
+
+Paying with USDG needs no swap.
+
+## The swap
+
+Open your account menu and choose **Swap (cross-chain)**. Pick what you pay and what you receive, each with its network.
+
+| Swap                       | Runs through             | Takes                  |
+| -------------------------- | ------------------------ | ---------------------- |
+| Within Arbitrum One        | Velora, a DEX aggregator | A few seconds          |
+| To or from another network | Relay, a bridge          | Estimated on the quote |
+
+You can swap to or from Arbitrum One on Ethereum, Base, Optimism, Polygon, BNB Chain, Avalanche, HyperEVM, Hyperliquid, and Robinhood Chain.
+
+### Bring money in
+
+Pay with a token on another network and receive USDG, USDC, or USDT on Arbitrum One. You can then start a trade.
+
+### Take money back out
+
+Payouts arrive in your wallet as USDG on Arbitrum One. To move them, pay with USDG on Arbitrum One and choose the token and network you want to receive.
+
+### Before you confirm
+
+The swap shows the **Minimum received**, **Price impact**, **Max slippage**, **Route**, and **Estimated time**. If the price moves past your minimum before you send it, the app stops and asks you to review a new quote.
+
+### Costs
+
+Isometric charges no fee on swaps. The rate you see comes from the third party routing the swap, and you pay the network fee on the network you send from. A swap from Hyperliquid is signed rather than sent as a transaction.
+
+### If a cross-chain swap does not fill
+
+Open **Swap history** in the swap dialog to follow a swap. It shows **Pending**, **Done**, **Refunded**, or **Failed**. If Relay cannot fill a swap, it refunds your deposit on the network you sent from.
+
+<Warning>
+  Velora and Relay are third parties that Isometric does not operate. See [Know the
+  risks](./risks.mdx).
+</Warning>

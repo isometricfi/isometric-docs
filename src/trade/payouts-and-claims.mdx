@@ -2,15 +2,15 @@
 $schema: https://holocron.so/frontmatter.json
 title: Payouts and claims
 sidebarTitle: Payouts and claims
-description: How a winning Isometric position is paid, when you need to claim, and what Portfolio shows you.
+description: How an Isometric position is paid out, when you need to claim, and what Portfolio shows you.
 og:image: https://isometric.fi/docs-opengraph.png
 ---
 
 # Payouts and claims
 
-Every winning position, long or short, is paid in **USDG** from money the writer put up when you opened it.
+Every payout, long or short, is paid in **USDG** from money the writer put up when you opened it, even if you started the trade with USDC or USDT. To move a payout to another token or network, use the [swap](./pay-and-swap.mdx).
 
-## Winning position
+## When a position pays out
 
 Settlement pays you directly. Your payout goes to your wallet in the same transaction that settles the position, normally a minute or two after expiry. The position then shows **Paid**. There is nothing to press.
 
@@ -22,10 +22,10 @@ Open **Portfolio**, choose the position, and press **Claim**. The claim dialog l
 
 <Warning>
   The whole payout goes to the address you enter and cannot be sent back. Check every character, and
-  make sure the address can receive USDG on the network you trade on.
+  make sure the address can receive USDG on Arbitrum One.
 </Warning>
 
-## Losing position
+## When a position expires worthless
 
 A position that settles on the wrong side of its worthless price pays nothing. It shows as **Lost** in Portfolio, and there is nothing to claim or close. What you paid was the whole cost.
 

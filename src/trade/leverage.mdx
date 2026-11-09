@@ -12,29 +12,33 @@ On a perp, leverage is how much you borrow, and it comes with a price at which y
 
 ## Leverage sets position size
 
-Your position size is your amount times the leverage.
+Your position size is your amount times the leverage. It is currently capped at **5,000 USDG** per trade, so higher leverage lowers the most you can enter.
 
-| Amount | Leverage | Position size |
-| ------ | -------- | ------------- |
-| $500   | 5x       | $2,500        |
-| $500   | 10x      | $5,000        |
-| $500   | 25x      | $12,500       |
-| $500   | 50x      | $25,000       |
-| $500   | 100x     | $50,000       |
+| Largest amount | Leverage | Position size |
+| -------------- | -------- | ------------- |
+| $1,000         | 5x       | $5,000        |
+| $500           | 10x      | $5,000        |
+| $200           | 25x      | $5,000        |
+| $100           | 50x      | $5,000        |
+| $50            | 100x     | $5,000        |
+| $5             | 1000x    | $5,000        |
+
+Leverage comes in eleven tiers: 5x, 10x, 15x, 20x, 25x, 30x, 40x, 50x, 75x, 100x, and 1000x.
 
 ## Leverage moves your target
 
-A bigger position for the same money means more risk. Higher leverage moves your **Worthless at or below** price closer to today's price, and at 50x and 100x past it, so less has to go wrong before the position is worth nothing.
+Paying less for the same position means more risk. Higher leverage moves your **Worthless at or below** price closer to today's price, and from 50x past it, so less has to go wrong before the position is worth nothing.
 
-Five seven-day Bitcoin longs with Bitcoin at $100,000 and a $500 amount:
+Six three-day Bitcoin longs with Bitcoin at $100,000, each with a $5,000 position size:
 
-| Leverage | Position size | Worthless at or below | Profit above | Max payout |
-| -------- | ------------- | --------------------- | ------------ | ---------- |
-| 5x       | $2,500        | $83,263               | $99,915      | $953       |
-| 10x      | $5,000        | $91,297               | $100,426     | $1,298     |
-| 25x      | $12,500       | $98,552               | $102,495     | $2,086     |
-| 50x      | $25,000       | $102,709              | $104,763     | $2,992     |
-| 100x     | $50,000       | $106,152              | $107,214     | $4,167     |
+| Leverage | Amount | Worthless at or below | Profit above | Max payout |
+| -------- | ------ | --------------------- | ------------ | ---------- |
+| 5x       | $1,000 | $83,738               | $100,486     | $1,568     |
+| 10x      | $500   | $91,402               | $100,542     | $1,017     |
+| 25x      | $200   | $97,388               | $101,283     | $648       |
+| 50x      | $100   | $100,466              | $102,476     | $474       |
+| 100x     | $50    | $102,936              | $103,965     | $343       |
+| 1000x    | $5     | $108,283              | $108,391     | $79        |
 
 These are example figures. The exact prices move with the market and the ticket shows yours.
 
@@ -47,6 +51,7 @@ Read across a row and the trade at each tier is clear:
 | 25x      | Close to today's price         | You can lose all of it             | 25%                       |
 | 50x      | Past today's price             | It needs a move your way to pay    | 50%                       |
 | 100x     | Further past today's price     | It needs a bigger move your way    | 100%                      |
+| 1000x    | Near the Max payout price      | It needs a large move your way     | 1,000%                    |
 
 At low leverage the position behaves like a small, safe stake in the price: it is rarely worthless and rarely pays many times over. At high leverage a small move in your favour pays a lot and a small move against you costs the whole premium.
 
@@ -54,7 +59,7 @@ The exact distances move with the market. When the market is calm the targets si
 
 ## Leverage does not create a liquidation price
 
-Nothing happens to your position while it is open. If a 25x long goes 10% against you on day two and recovers on day six, it pays in full on day seven. A perp at the same leverage would have been closed out on day two.
+Nothing happens to your position while it is open. If a 25x long goes 10% against you on day one and recovers on day two, it pays in full on day three. A perp at the same leverage would have been closed out on day one.
 
 The cost of that protection is already inside what you paid. There is no margin to top up and no funding to pay.
 
@@ -65,7 +70,7 @@ The cost of that protection is already inside what you paid. There is no margin 
 
 ## Choosing a leverage
 
-Ask where you think the price will be at settlement, not how much you want to win.
+Ask where you think the price will be at settlement, not how much you want to make.
 
 - If you think it will drift your way or hold, pick low leverage. You keep most of your money across a wide range of outcomes.
 - If you think it will move decisively, pick high leverage. Each 1% of the move pays more.

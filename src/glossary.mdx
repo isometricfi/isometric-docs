@@ -8,38 +8,38 @@ og:image: https://isometric.fi/docs-opengraph.png
 
 # Glossary
 
-| Term                  | Meaning                                                                                                                 |
-| --------------------- | ----------------------------------------------------------------------------------------------------------------------- |
-| Amount                | The USDG you enter on the ticket. Sets position size with leverage and is everything you pay, fee included              |
-| Arbitrum              | The Ethereum layer-two network Isometric launches on. Arbitrum One is the main network and Arbitrum Sepolia the testnet |
-| Breakeven             | The settlement price at which a position pays back exactly what it cost. Shown as **Profit above** or **Profit below**  |
-| Chainlink             | The oracle network whose price feed starts every quote and settles every position                                       |
-| Claim                 | Taking a payout whose transfer to your wallet failed. You can send it to any address                                    |
-| Collateral            | What a writer locks for a trade: the trader's full **Max payout**, held in the contract until settlement                |
-| Contracts             | The size of a position in units of the market's asset                                                                   |
-| Demo mode             | The app running with simulated funds. No wallet, gas, or chain needed                                                   |
-| Direction             | Long or short                                                                                                           |
-| Expiry                | The settlement time. Used interchangeably with settlement in these docs                                                 |
-| Keeper                | A worker that settles positions after expiry. Anyone can do the same                                                    |
-| Leverage              | Position size divided by your amount. Sets the size and places the target. Never a liquidation price                    |
-| Long                  | A position that pays if the settlement price is above the worthless price                                               |
-| Lost                  | A settled position that paid nothing                                                                                    |
-| Max loss              | Your amount, paid at open with the trading fee included. The most a position can ever lose. Shown on the ticket         |
-| Max payout            | The most a position can pay, fixed when it opens                                                                        |
-| Paid                  | A settled position whose payout reached your wallet                                                                     |
-| Position size         | Your amount times leverage. Your exposure                                                                               |
-| Premium               | What a trader pays the writer for a position: the amount, less the trading fee                                          |
-| Quote                 | A writer's signed price for a trade. The best quote fills                                                               |
-| Refunded              | A position with no settlement price within 14 days of expiry. Both sides got their money back, less the fee             |
-| Robinhood Chain       | Robinhood's layer-two network, built on Arbitrum. Isometric runs on it alongside Arbitrum One                           |
-| Settlement            | The moment one oracle price fixes the outcome of every position at a given hour                                         |
-| Settles               | The date and hour a position ends. Shown on the ticket                                                                  |
-| Settling              | A position past its settlement hour whose price has not yet been recorded                                               |
-| Shared vault          | A USDG vault anyone can deposit into. Its quoting bot writes trades on behalf of every depositor                        |
-| Short                 | A position that pays if the settlement price is below the worthless price                                               |
-| Strike                | The options term for the worthless price                                                                                |
-| Term                  | How long a position runs. 1, 3, 7, or 30 days                                                                           |
-| USDG                  | Global Dollar, the dollar stablecoin used to pay for positions, pay winners, and back writers                           |
-| Won                   | A settled position with a payout whose transfer failed. Claim it                                                        |
-| Worthless at or below | For a long, the price at or below which the position pays nothing. Shorts show **Worthless at or above**                |
-| Writer                | Anyone who takes the other side of trades by quoting them, including the shared vault                                   |
+| Term                  | Meaning                                                                                                                       |
+| --------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
+| Amount                | What you enter on the ticket, counted in USDG. Sets position size with leverage and is everything you pay, fee included       |
+| Arbitrum              | The Ethereum layer-two network Isometric runs on. Arbitrum One is the main network and Arbitrum Sepolia the testnet           |
+| Breakeven             | The settlement price at which a position pays back exactly what it cost. Shown as **Profit above** or **Profit below**        |
+| Chainlink             | The oracle network whose price feed starts every quote and settles every position                                             |
+| Claim                 | Taking a payout whose transfer to your wallet failed. You can send it to any address                                          |
+| Closed beta           | The invite-only launch of Isometric on Arbitrum One, with each position capped at 5,000 USDG                                  |
+| Collateral            | What a writer locks for a trade: the trader's full **Max payout**, held in the contract until settlement                      |
+| Contracts             | The size of a position in units of the market's asset                                                                         |
+| Demo mode             | The app running with simulated funds. No wallet, gas, or chain needed                                                         |
+| Direction             | Long or short                                                                                                                 |
+| Expiry                | The settlement time. Used interchangeably with settlement in these docs                                                       |
+| Keeper                | A worker that settles positions after expiry. Anyone can do the same                                                          |
+| Leverage              | Position size divided by your amount. Sets the size and places the target. Never a liquidation price                          |
+| Long                  | A position that pays if the settlement price is above the worthless price                                                     |
+| Lost                  | A settled position that paid nothing                                                                                          |
+| Max loss              | Your amount, paid at open with the trading fee included. The most a position can ever lose. Shown on the ticket               |
+| Max payout            | The most a position can pay, fixed when it opens                                                                              |
+| Paid                  | A settled position whose payout reached your wallet                                                                           |
+| Position size         | Your amount times leverage. Your exposure, currently capped at 5,000 USDG per trade                                           |
+| Premium               | What a trader pays the writer for a position: the amount, less the trading fee                                                |
+| Quote                 | A writer's signed price for a trade. The best quote fills                                                                     |
+| Refunded              | A position with no settlement price within 14 days of expiry. Both sides got their money back, less the fee                   |
+| Settlement            | The moment one oracle price fixes the outcome of every position at a given hour                                               |
+| Settles               | The date and hour a position ends. Shown on the ticket                                                                        |
+| Settling              | A position past its settlement hour whose price has not yet been recorded                                                     |
+| Short                 | A position that pays if the settlement price is below the worthless price                                                     |
+| Strike                | The options term for the worthless price                                                                                      |
+| Swap                  | Exchanging one token for another, on Arbitrum or across networks. USDC and USDT are swapped to USDG when they pay for a trade |
+| Term                  | How long a position runs. 1 to 3 days                                                                                         |
+| USDG                  | Global Dollar, the dollar stablecoin that positions settle in, payouts are made in, and writers post                          |
+| Won                   | A settled position with a payout whose transfer failed. Claim it                                                              |
+| Worthless at or below | For a long, the price at or below which the position pays nothing. Shorts show **Worthless at or above**                      |
+| Writer                | Anyone who takes the other side of trades by quoting them                                                                     |

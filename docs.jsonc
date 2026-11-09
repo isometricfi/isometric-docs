@@ -1,7 +1,7 @@
 {
   "$schema": "https://holocron.so/docs.json",
   "name": "Isometric",
-  "description": "How to trade and earn on Isometric.",
+  "description": "How to trade and write on Isometric.",
   "favicon": "/favicon.svg",
   "logo": {
     "light": "/logo-light.svg",
@@ -40,7 +40,7 @@
           {
             "group": "Start here",
             "icon": "lucide:compass",
-            "pages": ["index", "trade/quickstart", "markets"],
+            "pages": ["index", "trade/quickstart", "trade/pay-and-swap", "markets"],
           },
           {
             "group": "Trading",
@@ -71,13 +71,13 @@
         ],
       },
       {
-        "tab": "Earn",
-        "icon": "lucide:vault",
+        "tab": "Write",
+        "icon": "lucide:pen-line",
         "groups": [
           {
-            "group": "Providing liquidity",
-            "icon": "lucide:waves",
-            "pages": ["earn/vault", "earn/writers"],
+            "group": "Writing",
+            "icon": "lucide:pen-line",
+            "pages": ["write/writers"],
           },
         ],
       },
