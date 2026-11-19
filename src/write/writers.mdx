@@ -14,14 +14,14 @@ A writer is anyone who takes the other side of Isometric trades and predictions.
 
 1. **A trader asks** for a prediction, or for a long or a short with a term, an amount and a leverage. The request goes to every writer at once.
 2. **Writers answer** with a signed price. The best one fills.
-3. **The position opens** in one transaction. The contract takes the trader's payment and the writer's collateral for the full **Max payout**, and holds both until expiry.
+3. **The position opens** in one transaction. The trader pays the premium and the writer deposits the rest of the **Max payout**. The contract holds both until settlement.
 4. **At expiry** one Chainlink price settles it. The trader is paid their payout, and the rest goes back to the writer.
 
 ## What you are writing
 
 Every trade is a European, cash-settled option spread on the market's Chainlink price, paid in USDG.
 
-| Trader opens | You sell      | Payoff to the trader at price `P`       | Your collateral                |
+| Trader opens | You sell      | Payoff to the trader at price `P`       | Max payout                     |
 | ------------ | ------------- | --------------------------------------- | ------------------------------ |
 | Long         | A call spread | `contracts × (min(P, cap) − strike)⁺`   | `contracts × (cap − strike)`   |
 | Short        | A put spread  | `contracts × (strike − max(P, floor))⁺` | `contracts × (strike − floor)` |
@@ -40,7 +40,7 @@ You can write predictions too. Under the hood a prediction is the same option sp
 | Up              | A call spread | `target × 0.999` | `target`     |
 | Down            | A put spread  | `target × 1.001` | `target`     |
 
-- **You quote only the size.** The request fixes the side, expiry, strike, cap or floor, and premium. You choose `contracts`, and your collateral is the payout: `contracts × (cap − strike)` or `contracts × (strike − floor)`.
+- **You quote only the size.** The request fixes the side, expiry, strike, cap or floor, and premium. You choose `contracts`. The max payout is `contracts × (cap − strike)` for Up or `contracts × (strike − floor)` for Down. You deposit that payout minus the trader's premium.
 - **The largest payout wins.** The quote with the most contracts pays the trader the most.
 - **Payouts are capped.** One prediction pays at most 1,500 USDG, and at most 10 times its amount.
 

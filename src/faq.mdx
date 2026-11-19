@@ -20,7 +20,7 @@ No. Connect a wallet on Arbitrum One and place a prediction or a trade.
 
 <Accordion title="What decides whether a prediction pays?">
 
-The last Chainlink price published at or before your end time. At or past your target pays in full, and 0.1% or more short pays nothing. See [How a prediction pays](./predict/how-it-pays.mdx).
+Normally the last Chainlink price at or before your end time. If it is too old, zero, or negative, the contract checks the first reading after the end time instead. At or past your target pays in full. Less than 0.1% short pays a proportional share; a larger miss or exactly 0.1% short pays nothing. See [How a prediction pays](./predict/how-it-pays.mdx).
 
 </Accordion>
 
@@ -68,7 +68,7 @@ No. There is no cost to holding a position.
 
 <Accordion title="What decides whether a position pays?">
 
-One price: the last Chainlink price published at or before the settlement hour shown on your ticket. Above your worthless price pays a long. Below it pays a short.
+One [Chainlink settlement price](./trade/expiry-and-settlement.mdx). Above your worthless price pays a long. Below it pays a short.
 
 </Accordion>
 
@@ -176,7 +176,7 @@ Yes, underneath. A long or an Up prediction is a call spread, and a short or a D
 
 <Accordion title="Who is the counterparty?">
 
-The writer whose quote filled your prediction or trade. Its collateral for your full **Max payout** is locked in the contract when the trade opens, so your payout never depends on the writer later.
+The writer whose quote filled your prediction or trade. Your premium and the writer's deposit cover your full **Max payout** when the position opens.
 
 </Accordion>
 

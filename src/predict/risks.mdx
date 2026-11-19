@@ -17,9 +17,9 @@ og:image: https://isometric.fi/docs-opengraph.png
 
 The contracts are unaudited, and limits can change during the beta. Only use what you are willing to lose.
 
-## A near miss pays nothing
+## How far short matters
 
-A prediction that ends 0.1% or more short of its target pays nothing. Being close does not count.
+A prediction that ends 0.1% or more short of its target pays nothing. A smaller miss pays only part of the quoted payout.
 
 ## You cannot get out early
 
@@ -27,7 +27,7 @@ A prediction runs to its end time. One that is on track today can still end shor
 
 ## One price at one time decides
 
-The last Chainlink price published at or before your end time decides the result. A move a minute later does not count. If the price feed had gone quiet for longer than its normal maximum gap, the first price published after the end time is used instead.
+Normally the last Chainlink price at or before your end time decides the result. If that reading is too old, zero, or negative, the contract checks the first reading after the end time instead. A later price can therefore decide your payout.
 
 ## You may not get a quote
 
