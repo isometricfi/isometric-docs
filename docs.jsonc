@@ -40,7 +40,7 @@
           {
             "group": "Start here",
             "icon": "lucide:compass",
-            "pages": ["index", "predict/quickstart", "trade/pay-and-swap", "markets"],
+            "pages": ["index", "predict/quickstart", "markets"],
           },
           {
             "group": "Predicting",
