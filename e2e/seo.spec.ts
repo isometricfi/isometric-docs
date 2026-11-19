@@ -58,7 +58,8 @@ function navigationPages(config: string): string[] {
     .split("\n")
     .filter((line) => !line.trim().startsWith("//"))
     .join("\n");
-  return Array.from(uncommented.matchAll(/"pages":\s*\[([^\]]*)\]/g)).flatMap((match) =>
+  const pages = Array.from(uncommented.matchAll(/"pages":\s*\[([^\]]*)\]/g)).flatMap((match) =>
     Array.from(match[1]?.matchAll(/"([^"]+)"/g) ?? [], (page) => page[1] ?? ""),
   );
+  return [...new Set(pages)];
 }

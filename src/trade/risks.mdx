@@ -15,9 +15,9 @@ Isometric removes liquidation and funding. It does not remove the possibility of
   full.
 </Warning>
 
-## Isometric is in closed beta
+## Isometric is in beta
 
-The contracts are unaudited. Trading is invite-only and each position is capped at 5,000 USDG, and limits can change during the beta. Only trade what you are willing to lose.
+The contracts are unaudited. Each position is capped at 5,000 USDG, and limits can change during the beta. Only trade what you are willing to lose.
 
 ## You can lose everything you paid
 
@@ -29,9 +29,9 @@ There is no close button. A position you regret at hour one still runs to its se
 
 ## One price at one hour decides
 
-Settlement uses the last Chainlink price published at or before the settlement hour. A spike or dip that happens a minute later does not count. If you need a position that tracks the price continuously, this is not that product.
+Settlement normally uses the last Chainlink price published at or before the settlement hour. If you need a position that tracks the price continuously, this is not that product.
 
-If the price feed had gone quiet for longer than its normal maximum gap before the hour, the first price published after the hour is used instead. That is a different price from the one you might expect, and it arrives later.
+If that reading is too old, zero, or negative, the contract checks the first price published after the hour instead. That is a different price from the one you might expect, and it arrives later.
 
 ## Your payout is capped
 
@@ -72,7 +72,7 @@ Nothing in the app or these docs is investment advice. Isometric does not review
 ## What the contract code protects
 
 - **Your maximum loss is fixed.** Nothing can be taken from you after you pay.
-- **Your payout is funded on day one.** The writer's full collateral for your **Max payout** is locked in the contract when the trade opens, and held until settlement.
+- **Your payout is funded on day one.** The contract holds your premium and the writer's deposit until settlement. Together they cover your **Max payout**.
 - **Nobody picks the price.** Exactly one Chainlink price is valid for a settlement hour, and no participant, including Isometric, can choose another.
 - **Claims never expire.** A payout waits for you indefinitely, and you can send it to any address.
 - **The trade you sign is the trade you get.** A quote is signed by the writer, and the contract refuses any fill that differs from it.

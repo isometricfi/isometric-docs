@@ -20,13 +20,13 @@ The exact time is on the ticket before you confirm and in Portfolio after.
 
 The position cannot be closed, resized, transferred, or liquidated. You can watch it in **Portfolio**, where each open position shows what it would pay if it expired now, its **Max payout**, and the time left.
 
-The writer on the other side put up your full **Max payout** when the trade opened. The contract holds it until settlement.
+Your premium and the writer's deposit funded the full **Max payout** when the trade opened. The contract holds it until settlement.
 
 ## At the settlement hour
 
-One price decides the result: the **last Chainlink price published at or before the settlement hour**. Nobody chooses the price, including Isometric. There is only one such price, and the contract refuses any other.
+The contract uses the **last Chainlink price published at or before the settlement hour**. If that reading is too old, zero, or negative, the contract checks the first reading after the hour instead. That reading must be positive for the trade to settle.
 
-Once the hour has passed, anyone can settle every position at that hour in one go. Isometric runs a keeper that does it, normally within a minute or two. Until it lands the position shows **Settling**. A delay does not change the result, because the price is already fixed.
+Once the hour has passed, anyone can settle every position at that hour in one go. Isometric runs a keeper that does it, normally within a minute or two. Until it lands the position shows **Settling**. Waiting to settle does not change which price counts.
 
 Settlement pays both sides in the same transaction. Your payout goes straight to your wallet, and the rest of the escrow goes back to the writer.
 

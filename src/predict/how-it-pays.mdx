@@ -1,0 +1,53 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: How a prediction pays
+sidebarTitle: How it pays
+description: What an Isometric prediction pays, what its price means, and how one Chainlink price at the end time decides it.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# How a prediction pays
+
+A prediction is a bet that a price ends above or below your target at your end time. You pay once, and the **Payout** is fixed when you place it.
+
+## The payout
+
+Your premium (what you pay after the fee) funds part of the payout. The writer deposits the rest when the prediction opens, so the contract already holds the maximum it can pay you.
+
+One prediction pays at most 1,500 USDG, and at most 10 times its amount. The target slider estimates which prices writers will quote. Picking a target does not guarantee a quote.
+
+## The price
+
+The ticket shows a **Price** in cents: what each $1 of payout costs. It works like a share price on a prediction market.
+
+| Price | Writers put the chance near | $100 pays about |
+| ----- | --------------------------- | --------------- |
+| 50¢   | 50%                         | $200            |
+| 25¢   | 25%                         | $400            |
+| 10¢   | 10%                         | $1,000          |
+
+A target further from today's price, or an end time sooner, is less likely to be reached, so it costs less and pays more.
+
+## What decides it
+
+The contract uses the **last Chainlink price published at or before your end time**. If that reading is older than the feed allows, zero, or negative, the first reading after the end time determines the result instead, provided it is positive.
+
+| The price ends                      | You get               |
+| ----------------------------------- | --------------------- |
+| At or past your target              | The full payout       |
+| Less than 0.1% short of your target | A share of the payout |
+| 0.1% or more short of your target   | Nothing               |
+
+For example, **BTC above $100,000** pays in full at $100,000 or higher, half at $99,950, and nothing at $99,900 or lower.
+
+## Getting paid
+
+Payouts are in USDG. Isometric's keeper settles every prediction shortly after its end time, and the payout goes straight to your wallet in the same transaction, normally within a minute or two. There is nothing to press. The prediction then shows **Won** with the amount, or **No payout**.
+
+If the transfer to your wallet fails, the payout waits in the contract and never expires. Open the prediction in **Portfolio** and press **Claim** to send it to your wallet or another address.
+
+If no Chainlink price is published within 14 days of the end time, the prediction is refunded, less the fee.
+
+## No early exit
+
+A prediction cannot be closed, resized, or transferred. It runs to its end time. Before then, the ticket shows whether it is **On track** or how far the price still needs to move.
