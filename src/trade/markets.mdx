@@ -1,0 +1,70 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Markets
+sidebarTitle: Markets
+description: The markets you can trade on Isometric, the ones coming soon, and what every market offers.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Markets
+
+<Note>
+  Every position, long or short, settles in USDG and pays out in USDG. You can start one with USDC
+  or USDT, which is swapped to USDG as the trade opens. You never receive the market's own asset.
+</Note>
+
+## Crypto
+
+| Market                                                                                                 | Status      |
+| ------------------------------------------------------------------------------------------------------ | ----------- |
+| <img src="/assets/btc.svg" alt="" width="20" height="20" className="inline align-middle" /> Bitcoin    | Live        |
+| <img src="/assets/eth.svg" alt="" width="20" height="20" className="inline align-middle" /> Ether      | Live        |
+| <img src="/assets/arb.svg" alt="" width="20" height="20" className="inline align-middle" /> Arbitrum   | Live        |
+| <img src="/assets/sol.svg" alt="" width="20" height="20" className="inline align-middle" /> Solana     | Live        |
+| <img src="/assets/bnb.svg" alt="" width="20" height="20" className="inline align-middle" /> BNB        | Live        |
+| <img src="/assets/avax.svg" alt="" width="20" height="20" className="inline align-middle" /> Avalanche | Live        |
+| <img src="/assets/doge.svg" alt="" width="20" height="20" className="inline align-middle" /> Dogecoin  | Live        |
+| <img src="/assets/uni.svg" alt="" width="20" height="20" className="inline align-middle" /> Uniswap    | Live        |
+| <img src="/assets/xrp.svg" alt="" width="20" height="20" className="inline align-middle" /> XRP        | Coming soon |
+
+## Stocks
+
+| Market                                                                                                 | Status      |
+| ------------------------------------------------------------------------------------------------------ | ----------- |
+| <img src="/assets/nvda.svg" alt="" width="20" height="20" className="inline align-middle" /> NVIDIA    | Coming soon |
+| <img src="/assets/aapl.svg" alt="" width="20" height="20" className="inline align-middle" /> Apple     | Coming soon |
+| <img src="/assets/msft.svg" alt="" width="20" height="20" className="inline align-middle" /> Microsoft | Coming soon |
+| <img src="/assets/googl.svg" alt="" width="20" height="20" className="inline align-middle" /> Alphabet | Coming soon |
+| <img src="/assets/amzn.svg" alt="" width="20" height="20" className="inline align-middle" /> Amazon    | Coming soon |
+| <img src="/assets/meta.svg" alt="" width="20" height="20" className="inline align-middle" /> Meta      | Coming soon |
+| <img src="/assets/tsla.svg" alt="" width="20" height="20" className="inline align-middle" /> Tesla     | Coming soon |
+| <img src="/assets/nflx.svg" alt="" width="20" height="20" className="inline align-middle" /> Netflix   | Coming soon |
+| <img src="/assets/mstr.svg" alt="" width="20" height="20" className="inline align-middle" /> Strategy  | Coming soon |
+| <img src="/assets/sndk.svg" alt="" width="20" height="20" className="inline align-middle" /> SanDisk   | Coming soon |
+| <img src="/assets/spcx.svg" alt="" width="20" height="20" className="inline align-middle" /> SpaceX    | Coming soon |
+
+## Commodities
+
+| Market                                                                                                | Status      |
+| ----------------------------------------------------------------------------------------------------- | ----------- |
+| <img src="/assets/gold.svg" alt="" width="20" height="20" className="inline align-middle" /> Gold     | Coming soon |
+| <img src="/assets/silver.svg" alt="" width="20" height="20" className="inline align-middle" /> Silver | Coming soon |
+
+## What is on offer
+
+| Setting  | Options                                                     |
+| -------- | ----------------------------------------------------------- |
+| Terms    | 1, 3, and 7 days, or a custom term from 24 to 168 hours     |
+| Leverage | 5x, 10x, 15x, 20x, 25x, 30x, 40x, 50x, 75x, 100x, and 1000x |
+| Amount   | From $1, up to a position size of 5,000 USDG                |
+| Pay with | USDG, USDC, or USDT. See [Pay and swap](./pay-and-swap.mdx) |
+| Payouts  | USDG                                                        |
+| Network  | Arbitrum One. The testnet runs on Arbitrum Sepolia          |
+
+## Who takes the other side
+
+Every trade goes out for quotes. Writers answer with a price, and the best one fills. Each writer puts up the full **Max payout** for the trades it fills, so every market draws on the same writers.
+
+## Prices
+
+The chart and the header ticker read the exchange price, which is Coinbase for crypto. Trades are never priced from the chart. Each quote starts from the **Chainlink** price on chain at the moment you ask, and the position settles from the same feed at expiry.

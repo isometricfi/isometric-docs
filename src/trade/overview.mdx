@@ -1,0 +1,60 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Leverage with no early liquidation
+sidebarTitle: Overview
+description: Go long or short up to 1000x on Isometric, and only the price at expiry decides your trade.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Leverage with no early liquidation
+
+<Note>
+  Isometric is in beta on Arbitrum One, and a position is capped at 5,000 USDG. The contracts are
+  unaudited, so only trade what you are willing to lose.
+</Note>
+
+Isometric lets you go **long or short with leverage** on Arbitrum. Every trade is an onchain option: you pay once, up front, and that payment is the most you can ever lose. A wick cannot close you out, because only the price at expiry counts.
+
+## The whole trade in four choices
+
+1. **Direction.** Long if you think the price will be higher at expiry. Short if lower.
+2. **Amount.** How much to spend, paid in USDG, USDC, or USDT.
+3. **Term.** One to seven days. The exact settlement time is shown before you confirm.
+4. **Leverage.** 5x to 1000x. It sets your position size, and with it how much every 1% of the move is worth.
+
+At the settlement time a single price decides the outcome. Finish past your breakeven and you come out ahead, up to your **Max payout**. Finish on the wrong side of your worthless price and the position pays nothing.
+
+## Why not a perp
+
+<Columns cols={3}>
+  <Card title="No liquidation" icon="lucide:shield-check">
+    A move against you does not close your position. It stays open to settlement, however far the
+    price wanders in between.
+  </Card>
+  <Card title="No funding" icon="lucide:clock">
+    Holding costs nothing for the whole term. What you pay at open is the entire cost.
+  </Card>
+  <Card title="Payout locked at open" icon="lucide:lock">
+    The other side puts up your full **Max payout** when the trade opens. It is held until expiry.
+  </Card>
+</Columns>
+
+The trade-off is that a position runs to its settlement time. You cannot close it early, and the payout stops growing at the **Max payout** shown on the ticket. [Perps versus Isometric](./perps-vs-isometric.mdx) lays out both sides, and [Prediction markets versus trading](./prediction-markets-vs-isometric.mdx) compares a trade with a yes-or-no price bet.
+
+## Keep reading
+
+<Columns cols={2}>
+  <Card title="Open your first position" icon="lucide:rocket" href="./quickstart.mdx" arrow>
+    Connect a wallet, fund it from any supported network, and place a trade.
+  </Card>
+  <Card title="Read the quote" icon="lucide:receipt" href="./reading-the-quote.mdx" arrow>
+    What the numbers on the ticket mean, with a worked example.
+  </Card>
+  <Card title="Know the risks" icon="lucide:shield-alert" href="./risks.mdx" arrow>
+    What you can lose, what can delay a payout, and what the protocol does not protect you from.
+  </Card>
+  <Card title="Markets" icon="lucide:layers" href="./markets.mdx" arrow>
+    Bitcoin, Ether, Solana, BNB, Avalanche, Dogecoin, Uniswap, and Arbitrum are live. More crypto,
+    stocks, and commodities are coming soon.
+  </Card>
+</Columns>

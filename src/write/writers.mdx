@@ -2,20 +2,20 @@
 $schema: https://holocron.so/frontmatter.json
 title: Writers
 sidebarTitle: Writers
-description: Who takes the other side of Isometric trades, how quotes are chosen, and how every payout is locked when a trade opens.
+description: Who takes the other side of Isometric trades and predictions, how quotes are chosen, and how every payout is locked when a position opens.
 og:image: https://isometric.fi/docs-opengraph.png
 ---
 
 # Writers
 
-A writer is anyone who takes the other side of Isometric trades. Every trade goes out for quotes, and any writer can answer.
+A writer is anyone who takes the other side of Isometric trades and predictions. Every one goes out for quotes, and any writer can answer.
 
-## How a trade is quoted
+## How a request is quoted
 
-1. **A trader asks** for a long or a short with a term, an amount and a leverage. The request goes to every writer at once.
+1. **A trader asks** for a prediction, or for a long or a short with a term, an amount and a leverage. The request goes to every writer at once.
 2. **Writers answer** with a signed price. The best one fills.
-3. **The trade opens** in one transaction. The contract takes the trader's payment and the writer's collateral for the full **Max payout**, and holds both until expiry.
-4. **At expiry** one Chainlink price settles the trade. The trader is paid their payout, and the rest goes back to the writer.
+3. **The position opens** in one transaction. The contract takes the trader's payment and the writer's collateral for the full **Max payout**, and holds both until expiry.
+4. **At expiry** one Chainlink price settles it. The trader is paid their payout, and the rest goes back to the writer.
 
 ## What you are writing
 
@@ -31,6 +31,19 @@ Every trade is a European, cash-settled option spread on the market's Chainlink 
 - **It is fully collateralised.** At fill the contract escrows the trader's premium and your top-up to the spread's full value. Nothing else is ever owed.
 - **It settles once.** At expiry the trader is paid the payoff and the rest of the escrow returns to you, in the same transaction.
 
+## Writing predictions
+
+You can write predictions too. Under the hood a prediction is the same option spread with a narrow band. The cap or floor is the trader's target, and the strike sits 0.1% short of it, so the spread pays in full at the target and nothing 0.1% short of it.
+
+| Trader predicts | You sell      | Strike           | Cap or floor |
+| --------------- | ------------- | ---------------- | ------------ |
+| Up              | A call spread | `target × 0.999` | `target`     |
+| Down            | A put spread  | `target × 1.001` | `target`     |
+
+- **You quote only the size.** The request fixes the side, expiry, strike, cap or floor, and premium. You choose `contracts`, and your collateral is the payout: `contracts × (cap − strike)` or `contracts × (strike − floor)`.
+- **The largest payout wins.** The quote with the most contracts pays the trader the most.
+- **Payouts are capped.** One prediction pays at most 1,500 USDG, and at most 10 times its amount.
+
 ## Become a writer
 
-Market makers can connect and answer trades with their own prices. Email [support@isometric.fi](mailto:support@isometric.fi) to get set up.
+Market makers can connect and answer predictions and trades with their own prices. Email [support@isometric.fi](mailto:support@isometric.fi) to get set up.

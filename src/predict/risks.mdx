@@ -1,0 +1,57 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Know the risks
+sidebarTitle: Risks
+description: What you can lose on an Isometric prediction, what can delay a payout, and what the protocol does not protect you from.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Know the risks
+
+<Warning>
+  Every prediction can lose 100% of what you paid. Never use money you cannot afford to lose in
+  full.
+</Warning>
+
+## Isometric is in beta
+
+The contracts are unaudited, and limits can change during the beta. Only use what you are willing to lose.
+
+## A near miss pays nothing
+
+A prediction that ends 0.1% or more short of its target pays nothing. Being close does not count.
+
+## You cannot get out early
+
+A prediction runs to its end time. One that is on track today can still end short tomorrow, and it cannot be sold or transferred.
+
+## One price at one time decides
+
+The last Chainlink price published at or before your end time decides the result. A move a minute later does not count. If the price feed had gone quiet for longer than its normal maximum gap, the first price published after the end time is used instead.
+
+## You may not get a quote
+
+A prediction needs a writer willing to take the other side. A target far from today's price, or a paused market, can leave you with no quote. Open predictions are unaffected.
+
+## A payout can be delayed
+
+A payout waits for the price and for someone to settle. A network outage, a quiet price feed, or a stalled keeper delays it, but does not change what you are owed. Anyone can settle. If no price is published within 14 days of the end time, the prediction is refunded, less the fee.
+
+## Swaps run through third parties
+
+Paying with USDC or USDT and the cross-chain swap use Velora and Relay, which Isometric does not operate. A swap can fail or fill at up to the slippage shown.
+
+## Contracts, upgrades, and USDG
+
+The contracts are upgradeable, and an upgrade takes effect without a delay. A faulty upgrade or a compromised upgrade owner can cause loss of funds. Contracts can have bugs, oracles can fail, and networks can halt. USDG carries its own issuer risk, including the issuer's ability to freeze an address.
+
+## This is not advice
+
+Nothing in the app or these docs is investment advice. Isometric is not available to residents of the United States, Canada, the United Kingdom, South Africa, or sanctioned countries. You are responsible for the taxes on any gains. See the [terms of service](https://app.isometric.fi/terms).
+
+## What the contract code protects
+
+- **Your loss is fixed.** Nothing can be taken from you after you pay.
+- **Your payout is funded when you place it.** The writer's collateral is locked in the contract until the end time.
+- **Nobody picks the price.** Exactly one Chainlink price is valid for an end time.
+- **Claims never expire.** A payout waits for you, and you can send it to any address.

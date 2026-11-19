@@ -1,0 +1,36 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Prediction markets versus Isometric
+sidebarTitle: Prediction markets vs Isometric
+description: How an Isometric prediction compares with a listed price prediction market on price, end time, fills, exit, and settlement.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Prediction markets versus Isometric
+
+A listed prediction market, such as Polymarket, offers questions someone else wrote: will Bitcoin be above $105,000 on Friday? You pick from the prices and dates on the list. On Isometric you write the question yourself.
+
+## Side by side
+
+|                       | Listed prediction market                 | Isometric                                     |
+| --------------------- | ---------------------------------------- | --------------------------------------------- |
+| **The price**         | A few preset levels                      | Any price writers quote                       |
+| **The end time**      | Preset dates                             | Any hour, one to seven days out               |
+| **Fills**             | As deep as the order book                | Writers quote your whole amount at once       |
+| **Payout**            | Fixed per share                          | Fixed when you place it                       |
+| **Most you can lose** | What you paid                            | What you paid                                 |
+| **Exit**              | Usually any time, by selling your shares | Held to the end time                          |
+| **What decides it**   | The market's own resolution rules        | One Chainlink price at the end time, on chain |
+
+## Where Isometric fits better
+
+- **You have a view on your own line.** BTC above $103,500 by Tuesday at 18:00 is a prediction you can place, even if nobody listed it.
+- **You want one price for the whole amount.** There is no book to walk through.
+- **You want a clear result.** One onchain price settles it, with no dispute or vote.
+
+## Where a listed market fits better
+
+- **You want to exit early.** You can usually sell your shares before the end. An Isometric prediction runs to its end time.
+- **You want to bet on something other than a price.** Isometric only predicts market prices.
+
+Before you predict, read [Know the risks](./risks.mdx).

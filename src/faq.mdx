@@ -8,15 +8,45 @@ og:image: https://isometric.fi/docs-opengraph.png
 
 # Frequently asked questions
 
-## Trading
+## Predictions
 
 <AccordionGroup>
 
-<Accordion title="How do I join the closed beta?">
+<Accordion title="Do I need an invite?">
 
-Trading is invite-only for now. Open an invite link, or enter your code when the app asks for it after you connect your wallet.
+No. Connect a wallet on Arbitrum One and place a prediction or a trade.
 
 </Accordion>
+
+<Accordion title="What decides whether a prediction pays?">
+
+The last Chainlink price published at or before your end time. At or past your target pays in full, and 0.1% or more short pays nothing. See [How a prediction pays](./predict/how-it-pays.mdx).
+
+</Accordion>
+
+<Accordion title="Can I sell a prediction before it ends?">
+
+No. A prediction runs to its end time.
+
+</Accordion>
+
+<Accordion title="What does the price in cents mean?">
+
+What each $1 of payout costs. 25¢ means the writers put the chance near 25%, and the payout is about four times your amount.
+
+</Accordion>
+
+<Accordion title="How large can a prediction be?">
+
+One prediction pays at most 1,500 USDG, and at most 10 times its amount.
+
+</Accordion>
+
+</AccordionGroup>
+
+## Trading
+
+<AccordionGroup>
 
 <Accordion title="Can I close a position early?">
 
@@ -116,7 +146,7 @@ Yes. Open your account menu and choose **Swap (cross-chain)**. It moves money to
 
 <Accordion title="How do I become a writer?">
 
-Writers take the other side of trades by quoting their own prices. See [Writers](./write/writers.mdx).
+Writers take the other side of predictions and trades by quoting their own prices. See [Writers](./write/writers.mdx).
 
 </Accordion>
 
@@ -128,7 +158,7 @@ From what traders pay for their positions. There is no lending, staking, or farm
 
 <Accordion title="Can a writer lose money?">
 
-Yes. A writer covers the payouts on the trades it fills, and a strong move in one direction can pay out more than it collected.
+Yes. A writer covers the payouts on the predictions and trades it fills, and a strong move in one direction can pay out more than it collected.
 
 </Accordion>
 
@@ -140,13 +170,13 @@ Yes. A writer covers the payouts on the trades it fills, and a strong move in on
 
 <Accordion title="Is this an options protocol?">
 
-Yes, underneath. A long is a call spread and a short is a put spread, both fully collateralised at open and settled in USDG on one oracle price. You never need to know that to trade.
+Yes, underneath. A long or an Up prediction is a call spread, and a short or a Down prediction is a put spread, both fully collateralised at open and settled in USDG on one oracle price. You never need to know that to predict or trade.
 
 </Accordion>
 
 <Accordion title="Who is the counterparty?">
 
-The writer whose quote filled your trade. Its collateral for your full **Max payout** is locked in the contract when the trade opens, so your payout never depends on the writer later.
+The writer whose quote filled your prediction or trade. Its collateral for your full **Max payout** is locked in the contract when the trade opens, so your payout never depends on the writer later.
 
 </Accordion>
 
