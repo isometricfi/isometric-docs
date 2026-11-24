@@ -1,0 +1,64 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Isometric'e hoş geldin
+sidebarTitle: Hoş geldin
+description: Senin şartlarınla işlem yap. Tasfiye olmadan 100x'e kadar kaldıraç; yalnızca bitiş saatindeki fiyat sayılır.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Senin şartlarınla işlem yap
+
+<Note>
+  Isometric, Arbitrum One üzerinde beta aşamasında ve bir pozisyon en fazla 5,000 USDG olabilir.
+  Sözleşmeler denetlenmedi; yalnızca kaybetmeyi göze alabileceğin kadarını kullan.
+</Note>
+
+Isometric ile tasfiye olmadan **100x'e kadar kaldıraçla long ya da short** açabilirsin. Baştan bir kez ödersin ve bu, kaybedebileceğin en fazla tutardır. Ani bir fitil seni pozisyondan atamaz, çünkü yalnızca bitiş saatindeki fiyat sayılır.
+
+## Üç adımda bir işlem
+
+1. **Long ya da Short seç.**
+2. İşlemin ne zaman biteceğini seçmek için grafikteki **bitiş çizgisini sürükle**: 12 saatten 7 güne kadar.
+3. **Yatıracağın tutarı ve kaldıracını belirle**, ardından **BTC long** ya da **BTC short** düğmesine bas.
+
+İşlem yapmadan önce grafik, her bitiş fiyatının ne ödediğini gösterir: tutarını kaybettiğin yer **Lose** (kayıp), bir kısmını geri aldığın yer **Some back** (kısmen geri), kâra geçtiğin yer ve en yüksek kârın **Max** (maksimum). Bkz. [Grafiği okuma](./trade/reading-the-chart.mdx).
+
+## Neden perp değil
+
+<Columns cols={3}>
+  <Card title="Tasfiye yok" icon="lucide:shield-check">
+    Aleyhine bir hareket pozisyonunu kapatmaz. Pozisyon bitiş saatine kadar açık kalır.
+  </Card>
+  <Card title="Fonlama yok" icon="lucide:clock">
+    Pozisyonu tutmanın bir maliyeti yoktur. Açılışta ödediğin tutar maliyetin tamamıdır.
+  </Card>
+  <Card title="Ödeme açılışta kilitlenir" icon="lucide:lock">
+    İşlem açıldığı andan itibaren ödediğin tutar ve satıcının yatırdığı tutar, maksimum ödemenin
+    tamamını karşılar.
+  </Card>
+</Columns>
+
+Ödünü şu: pozisyon bitiş saatine kadar sürer ve ödeme maksimuma ulaşınca büyümeyi bırakır. [Perp'ler ve Isometric](./trade/perps-vs-isometric.mdx) iki tarafı da ortaya koyar.
+
+## Isometric'te ayrıca
+
+<Columns cols={2}>
+  <Card title="Tahmin" icon="lucide:target" href="./predict/quickstart.mdx" arrow>
+    Fiyatın, kendi seçtiğin bitiş zamanında kendi hedefinin üstünde mi altında mı biteceğine oyna.
+    Ödeme, tahmini yaptığın anda sabitlenir.
+  </Card>
+  <Card title="Satış" icon="lucide:pen-line" href="./write/writers.mdx" arrow>
+    Kendi fiyatlarınla teklif vererek işlemlerin ve tahminlerin karşı tarafını al.
+  </Card>
+</Columns>
+
+## Okumaya devam et
+
+<Columns cols={2}>
+  <Card title="İlk işlemini aç" icon="lucide:rocket" href="./trade/quickstart.mdx" arrow>
+    Bir cüzdan bağla, desteklenen herhangi bir ağdan bakiye yükle ve bir pozisyon aç.
+  </Card>
+  <Card title="Riskleri öğren" icon="lucide:shield-alert" href="./trade/risks.mdx" arrow>
+    Neleri kaybedebileceğin ve bir ödemeyi neyin geciktirebileceği.
+  </Card>
+</Columns>

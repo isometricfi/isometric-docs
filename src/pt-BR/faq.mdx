@@ -1,0 +1,201 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Perguntas frequentes
+sidebarTitle: FAQ
+description: Respostas curtas para as perguntas que traders e lançadores mais fazem sobre a Isometric.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Perguntas frequentes
+
+## Alavancagem
+
+<AccordionGroup>
+
+<Accordion title="Posso fechar uma posição antes do término?">
+
+Não. A posição vai até o horário de término. Essa é a contrapartida de não ter liquidação forçada nem taxa de financiamento. Escolha um prazo que você esteja disposto a esperar.
+
+</Accordion>
+
+<Accordion title="Posso sofrer liquidação forçada?">
+
+Não. Nada acontece com a posição entre a abertura e o horário de término, por mais que o preço se mova contra ela. O que você pagou é o máximo que pode perder, e isso foi pago na abertura.
+
+</Accordion>
+
+<Accordion title="Existe taxa de financiamento?">
+
+Não. Manter uma posição não tem custo.
+
+</Accordion>
+
+<Accordion title="O que decide se uma posição paga?">
+
+Um único [preço da Chainlink no seu horário de término](./trade/expiry-and-settlement.mdx). As faixas no gráfico mostram quanto paga cada preço final.
+
+</Accordion>
+
+<Accordion title="Qual é o máximo que uma posição pode pagar?">
+
+O **Max** do gráfico. Toda cotação tem um, fixado quando a posição abre. Horários de término mais distantes e alavancagens maiores têm um máximo maior.
+
+</Accordion>
+
+<Accordion title="Sou cobrado exatamente o valor que informei?">
+
+Sim. O que você aplica é o custo total, com a taxa incluída, e o máximo que pode perder. A operação abre exatamente na cotação que você confirmou, ou falha e você paga só a taxa de rede. Se pagar com USDC ou USDT, o seu valor é contado em USDG, e a taxa de câmbio do swap define quanto da stablecoin é usado.
+
+</Accordion>
+
+<Accordion title="Quantas transações tem uma operação?">
+
+Uma, quando você paga com USDG. Qualquer aprovação é uma assinatura gratuita ou vai junto com a operação. Pagar com USDC ou USDT também é uma única transação se a sua carteira conseguir agrupá-las. Caso contrário, a carteira envia antes a aprovação, se for necessária, e o swap.
+
+</Accordion>
+
+<Accordion title="Como recebo o pagamento?">
+
+Em USDG, seja long ou short. O encerramento paga direto na sua carteira, normalmente um ou dois minutos após o horário de término. Veja [Pagamentos e resgates](./trade/payouts-and-claims.mdx).
+
+</Accordion>
+
+<Accordion title="O que significa Ganha?">
+
+A posição pagou, mas a transferência para a sua carteira falhou. Nada foi perdido. Abra a posição em Portfólio e resgate o pagamento, para a mesma carteira ou para outro endereço que possa receber USDG. Resgates nunca expiram.
+
+</Accordion>
+
+<Accordion title="Por que o botão mostra algo diferente de Long ou Short?">
+
+Ele está dizendo por que a operação não pode ser feita: rede errada, saldo insuficiente do token com que você está pagando, valor fora dos limites, nenhuma cotação para a operação, nenhuma rota de swap ou mercado pausado.
+
+</Accordion>
+
+<Accordion title="Como escolho quando a operação termina?">
+
+Arraste a linha marcada **Termina** no gráfico, ou toque em **12h**, **1d**, **3d** ou **1w** abaixo dele. Os prazos vão de 12 horas a 7 dias e são arredondados para cima, até a próxima hora cheia.
+
+</Accordion>
+
+<Accordion title="O que preciso ter na carteira?">
+
+USDG, USDC ou USDT para pagar as posições e um pouco de ETH para as taxas de rede, tudo na Arbitrum One.
+
+</Accordion>
+
+<Accordion title="Qual o tamanho máximo de uma operação?">
+
+O valor começa em $1, e o valor vezes a alavancagem não pode passar de um tamanho de posição de 5,000 USDG. Isso dá $1,000 a 5x e $50 a 100x, a maior alavancagem.
+
+</Accordion>
+
+<Accordion title="Preciso ter USDG?">
+
+Não. Você pode pagar com USDC ou USDT na Arbitrum One, e o app troca por USDG quando a operação abre. A operação continua sendo encerrada e paga em USDG. Veja [Pagar e trocar](./trade/pay-and-swap.mdx).
+
+</Accordion>
+
+<Accordion title="Posso trazer dinheiro de outra rede, ou levá-lo de volta?">
+
+Sim. Abra o menu da sua conta e escolha **Trocar (entre redes)**. Ele move dinheiro de e para a Arbitrum One a partir de redes como Ethereum, Base, Optimism, Polygon, BNB Chain, Avalanche, Hyperliquid e Robinhood Chain. Veja [Pagar e trocar](./trade/pay-and-swap.mdx).
+
+</Accordion>
+
+</AccordionGroup>
+
+## Previsões
+
+<AccordionGroup>
+
+<Accordion title="Preciso de convite?">
+
+Não. Conecte uma carteira na Arbitrum One e abra uma operação ou uma previsão.
+
+</Accordion>
+
+<Accordion title="O que decide se uma previsão paga?">
+
+Normalmente, o último preço da Chainlink publicado até o seu horário de término. Se ele for antigo demais, zero ou negativo, o contrato usa a primeira leitura após o horário de término. No seu alvo ou além dele, paga integralmente. Menos de 0.1% antes do alvo, paga uma parte proporcional; uma diferença maior, ou exatamente 0.1% antes, não paga nada. Veja [Como uma previsão paga](./predict/how-it-pays.mdx).
+
+</Accordion>
+
+<Accordion title="Posso vender uma previsão antes do término?">
+
+Não. A previsão vai até o horário de término.
+
+</Accordion>
+
+<Accordion title="Qual o tamanho máximo de uma previsão?">
+
+Uma previsão paga no máximo 1,000 USDG, e no máximo 10 vezes o seu valor.
+
+</Accordion>
+
+</AccordionGroup>
+
+## Lançamento
+
+<AccordionGroup>
+
+<Accordion title="Como me torno lançador?">
+
+Os lançadores ficam do outro lado de previsões e operações cotando os seus próprios preços. Veja [Lançadores](./write/writers.mdx).
+
+</Accordion>
+
+<Accordion title="De onde vem o retorno?">
+
+Do que os traders pagam pelas suas posições. Não há empréstimo, staking nem farming.
+
+</Accordion>
+
+<Accordion title="Um lançador pode perder dinheiro?">
+
+Sim. O lançador cobre os pagamentos das previsões e operações que executa, e um movimento forte em uma direção pode pagar mais do que ele recebeu.
+
+</Accordion>
+
+</AccordionGroup>
+
+## O protocolo
+
+<AccordionGroup>
+
+<Accordion title="Isto é um protocolo de opções?">
+
+Sim, por baixo. Um long ou uma previsão Sobe é um call spread, e um short ou uma previsão Cai é um put spread, ambos totalmente colateralizados na abertura e encerrados em USDG com base em um único preço de oráculo. Você nunca precisa saber disso para fazer previsões ou operar.
+
+</Accordion>
+
+<Accordion title="Quem é a contraparte?">
+
+O lançador cuja cotação executou a sua previsão ou operação. O seu prêmio e o depósito do lançador cobrem todo o seu **Pagamento máximo** quando a posição abre.
+
+</Accordion>
+
+<Accordion title="A Isometric pode mexer nos meus fundos?">
+
+Não pelos controles do dia a dia. A governança pode alterar a taxa dentro de tetos fixados no código. Um guardião pode pausar novas posições. Nenhum dos dois pode alterar uma posição aberta, mudar um preço final já registrado ou impedir encerramentos, resgates e reembolsos.
+
+Os contratos são atualizáveis, e uma atualização pode mudar qualquer coisa. [Conheça os riscos](./trade/risks.mdx) explica mais.
+
+</Accordion>
+
+<Accordion title="O que acontece se o keeper parar?">
+
+O encerramento atrasa até que outra pessoa o envie. Qualquer um pode. O preço final é definido pelo feed da Chainlink, independentemente de quem o registra, então um encerramento atrasado paga exatamente o mesmo que um feito no horário.
+
+</Accordion>
+
+<Accordion title="O que acontece se a rede ou o feed de preço cair?">
+
+O encerramento espera pelo preço. Se nenhum for publicado em até 14 dias após o horário de término, os dois lados são reembolsados, menos a taxa. Nada do que já é devido a você muda.
+
+</Accordion>
+
+</AccordionGroup>
+
+## Ainda com dúvidas
+
+Envie um e-mail para [support@isometric.fi](mailto:support@isometric.fi) ou pergunte no [Telegram](https://t.me/isometricfi).

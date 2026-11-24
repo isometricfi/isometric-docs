@@ -1,0 +1,56 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Thị trường dự đoán so với giao dịch
+sidebarTitle: Thị trường dự đoán so với giao dịch
+description: So sánh một giao dịch đòn bẩy trên Isometric với thị trường dự đoán giá có-hoặc-không về khoản chi trả, trường hợp suýt trúng, quy mô, thoát lệnh và cách kết thúc.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Thị trường dự đoán so với giao dịch
+
+Một thị trường dự đoán giá đặt ra câu hỏi có hoặc không: Bitcoin có trên $103,000 vào thứ Sáu tới không? Thoạt nhìn, một giao dịch Isometric trông tương tự, vì một mức giá tại một thời điểm quyết định kết quả. Khác biệt nằm ở khoản chi trả. Thị trường dự đoán trả tiền cho việc vượt qua một mốc. Isometric trả tiền theo việc giá vượt mốc đó bao xa.
+
+## So sánh trực tiếp
+
+|                        | Thị trường dự đoán giá                                           | Isometric                                                          |
+| ---------------------- | ---------------------------------------------------------------- | ------------------------------------------------------------------ |
+| **Bạn chọn gì**        | Một câu hỏi niêm yết sẵn: một mốc giá và một ngày                | Hướng, thời điểm kết thúc, số tiền và đòn bẩy                      |
+| **Khoản chi trả**      | Được ăn cả, ngã về không: một khoản cố định mỗi cổ phần nếu đúng | Tăng theo mỗi 1% vượt qua giá về 0 của bạn, tới mức Chi trả tối đa |
+| **Suýt trúng**         | Không trả gì                                                     | Có thể trả lại một phần số tiền bạn đã trả                         |
+| **Lỗ tối đa**          | Số tiền bạn đã trả                                               | Số tiền bạn đã trả                                                 |
+| **Giá bạn trả**        | Do các trader khác đặt, và chỉ sâu bằng sổ lệnh                  | Do bên bán báo giá, cho toàn bộ quy mô cùng lúc                    |
+| **Thoát lệnh**         | Thường là bất cứ lúc nào, bằng cách bán cho trader khác          | Chỉ khi kết thúc                                                   |
+| **Ngày**               | Những ngày ai đó đã niêm yết                                     | Kỳ hạn từ 12 giờ đến 7 ngày                                        |
+| **Điều gì quyết định** | Quy tắc phân xử riêng của thị trường                             | Giá Chainlink tại giờ kết thúc                                     |
+
+## Cùng một quan điểm, hai cách
+
+Bitcoin đang ở $100,000 và bạn nghĩ nó sẽ cao hơn sau ba ngày. Bạn có $100.
+
+- **Thị trường dự đoán.** Bạn mua Yes cho câu hỏi "Trên $103,000 sau 3 ngày?". Giả sử Yes được giao dịch ở 30 cent và trả $1 nếu đúng. $100 mua được khoảng 333 cổ phần.
+- **Isometric.** Bạn mở vị thế long 3 ngày, 25x trong [Đọc biểu đồ](./reading-the-chart.mdx): về 0 tại $97,400, hòa vốn tại $101,296, chi trả tối đa $323.
+
+| Bitcoin khi kết thúc | Thị trường dự đoán trả | Isometric trả |
+| -------------------- | ---------------------- | ------------- |
+| $99,000              | $0                     | $41           |
+| $102,000             | $0                     | $118          |
+| $105,000             | $333                   | $195          |
+| $107,000             | $333                   | $246          |
+| $112,000             | $333                   | $323          |
+
+Thị trường dự đoán trả nhiều hơn cho một biến động vừa đủ vượt mốc của nó. Isometric trả lại một phần tiền khi suýt trúng và tiếp tục trả thêm khi biến động lớn dần, tới mức tối đa. Đây là số liệu ví dụ: giá thực ở cả hai phía đều thay đổi theo thị trường.
+
+## Khi Isometric phù hợp hơn
+
+- **Bạn có một hướng, không phải một mốc.** Bạn không cần tìm một câu hỏi niêm yết sẵn đúng mức giá và đúng ngày. Chọn long hoặc short và một thời điểm kết thúc, và biểu đồ cho thấy mỗi mức giá trả bao nhiêu.
+- **Bạn muốn được trả theo độ lớn của biến động.** Biến động lớn trả nhiều hơn biến động nhỏ.
+- **Bạn muốn trường hợp suýt trúng vẫn được tính.** Trong vùng **Some back**, bạn nhận lại một phần tiền.
+- **Bạn muốn một mức giá cho toàn bộ quy mô.** Bên bán báo giá cho toàn bộ số tiền. Không phải ăn dần qua sổ lệnh.
+
+## Khi thị trường dự đoán phù hợp hơn
+
+- **Bạn có quan điểm về một mốc chính xác.** Nếu bạn chỉ quan tâm giá có vượt $103,000 hay không, một cổ phần có-hoặc-không thể hiện đúng điều đó.
+- **Bạn muốn thoát sớm.** Bạn thường có thể bán cổ phần trước khi thị trường được phân xử. Vị thế Isometric chạy đến lúc kết thúc.
+- **Bạn muốn giao dịch thứ gì đó không phải giá.** Isometric chỉ giao dịch giá thị trường.
+
+Trước khi giao dịch, hãy đọc [Hiểu rõ rủi ro](./risks.mdx).

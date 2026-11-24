@@ -1,0 +1,45 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Cómo paga una predicción
+sidebarTitle: Cómo paga
+description: Lo que paga una predicción en Isometric, qué significa su precio y cómo un solo precio de Chainlink a la hora de fin la decide.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Cómo paga una predicción
+
+Una predicción es una apuesta a que un precio termina por encima o por debajo de tu objetivo a tu hora de fin. Pagas una vez, y el pago, que aparece como **If you're right** (si aciertas), queda fijado al realizarla.
+
+## El pago
+
+Tu prima (lo que pagas después de la comisión) financia parte del pago. El emisor deposita el resto cuando se abre la predicción, así que el contrato ya tiene lo máximo que puede pagarte.
+
+Una predicción paga como máximo 1,000 USDG, y como máximo 10 veces su monto. Elegir un objetivo no garantiza una cotización.
+
+## Por qué algunos objetivos pagan más
+
+El pago refleja qué tan probable ven los emisores tu objetivo. Si **If you're right** muestra $400 por $100, ven una probabilidad cercana al 25%. Un objetivo más alejado del precio de hoy, o una hora de fin más cercana, tiene menos probabilidad de alcanzarse, así que paga más.
+
+## Qué la decide
+
+El contrato usa el **último precio de Chainlink publicado hasta tu hora de fin, inclusive**. Si esa lectura es más antigua de lo que permite el feed, cero o negativa, el resultado lo determina en su lugar la primera lectura posterior a la hora de fin, siempre que sea positiva.
+
+| El precio termina                  | Recibes            |
+| ---------------------------------- | ------------------ |
+| En tu objetivo o más allá          | El pago completo   |
+| Menos de 0.1% antes de tu objetivo | Una parte del pago |
+| 0.1% o más antes de tu objetivo    | Nada               |
+
+Por ejemplo, **BTC por encima de $100,000** paga completo en $100,000 o más, la mitad en $99,950 y nada en $99,900 o menos.
+
+## Cómo cobras
+
+Los pagos son en USDG. El keeper de Isometric resuelve cada predicción poco después de su hora de fin, y el pago va directo a tu billetera en la misma transacción, normalmente en uno o dos minutos. No tienes que presionar nada. Luego la predicción aparece como **Ganó** con el monto, o **Sin pago**.
+
+Si la transferencia a tu billetera falla, el pago espera en el contrato y nunca vence. Abre la predicción en **Cartera** y presiona **Reclamar** para enviarlo a tu billetera o a otra dirección.
+
+Si no se publica ningún precio de Chainlink en los 14 días posteriores a la hora de fin, la predicción se reembolsa, menos la comisión.
+
+## Sin salida anticipada
+
+Una predicción no se puede cerrar, cambiar de tamaño ni transferir. Dura hasta su hora de fin. Antes de eso, muestra si va **En rumbo** o cuánto necesita moverse todavía el precio.

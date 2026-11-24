@@ -1,0 +1,39 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Ücretler
+sidebarTitle: Ücretler
+description: Bir Isometric pozisyonunun maliyeti, ücretin nasıl hesaplandığı ve asla ödemediğin şeyler.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Ücretler
+
+Bir pozisyonun maliyeti, açarken yaptığın tek bir ödemedir. Yatırdığın tutar, ücret dahil ödediğin her şeydir.
+
+## İşlem ücreti
+
+Ücret, **$0.50 artı pozisyon büyüklüğünün %0.04'ü** kadardır ve asla yatırdığın tutarın %5'inden fazla olmaz. Bu tutarın içinden düşülür, asla üstüne eklenmez.
+
+## Asla ödemediklerin
+
+| Bir perp'te          | Isometric'te               |
+| -------------------- | -------------------------- |
+| Saatlik fonlama      | Hiçbir şey                 |
+| Kapanış ücreti       | Hiçbir şey. Kapanış yoktur |
+| Tasfiye cezası       | Hiçbir şey. Tasfiye yoktur |
+| Ödemede çekim ücreti | Hiçbir şey                 |
+| Kârından pay         | Hiçbir şey                 |
+
+## Ağ ücretleri
+
+USDG ile pozisyon açmak, Arbitrum'da cüzdanındaki ETH ile ödenen tek bir işlemdir. Gereken onay ya ücretsiz bir imzadır ya da işlemle birlikte gönderilir.
+
+Sonuçlandırma işlemini, kendi ağ ücretlerini ödeyen Isometric'in keeper'ı gönderir ve ödemeler doğrudan cüzdanlara gider. Sonuçlandırmadan sonra ağ ücreti yalnızca bir ödemeyi kendin [talep etmen](./payouts-and-claims.mdx) gerekirse ödersin.
+
+## Takas maliyetleri
+
+Isometric, bir işlemi USDC ya da USDT ile ödediğin durumlar dahil, takaslardan ücret almaz. Kur, takası yönlendiren üçüncü taraftan gelir. Cüzdanın işlemleri toplu gönderemiyorsa, USDC ya da USDT ile ödemek onay ve takas işlemlerinin ağ ücretlerine de mal olur. Bkz. [Ödeme ve takas](./pay-and-swap.mdx).
+
+## Ücret değişebilir mi
+
+Ücret, sözleşme kodunda sabitlenmiş sınırlar içinde değişebilir. Bir değişiklik yalnızca sonrasında açılan pozisyonlara uygulanır, zaten açık olan bir pozisyona asla uygulanmaz.

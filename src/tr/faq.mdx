@@ -1,0 +1,201 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Sık sorulan sorular
+sidebarTitle: SSS
+description: Trader'ların ve satıcıların Isometric hakkında en çok sorduğu sorulara kısa yanıtlar.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Sık sorulan sorular
+
+## Kaldıraç
+
+<AccordionGroup>
+
+<Accordion title="Bir pozisyonu erken kapatabilir miyim?">
+
+Hayır. Bir pozisyon bitiş saatine kadar sürer. Tasfiyesizliğin ve fonlamasızlığın karşılığı budur. Beklemeye razı olduğun bir vade seç.
+
+</Accordion>
+
+<Accordion title="Tasfiye edilebilir miyim?">
+
+Hayır. Fiyat aleyhine ne kadar giderse gitsin, açılış ile bitiş saati arasında pozisyona hiçbir şey olmaz. Ödediğin tutar kaybedebileceğin en fazla tutardır ve açılışta ödenmiştir.
+
+</Accordion>
+
+<Accordion title="Fonlama var mı?">
+
+Hayır. Bir pozisyonu tutmanın maliyeti yoktur.
+
+</Accordion>
+
+<Accordion title="Bir pozisyonun ödeme yapıp yapmayacağını ne belirler?">
+
+[Bitiş saatindeki tek bir Chainlink fiyatı](./trade/expiry-and-settlement.mdx). Grafikteki bantlar her bitiş fiyatının ne ödediğini gösterir.
+
+</Accordion>
+
+<Accordion title="Bir pozisyon en fazla ne kadar ödeyebilir?">
+
+Grafikteki **Max** (maksimum) kadar. Her teklifin açılışta sabitlenen bir maksimumu vardır. Daha geç bitiş saatlerinin ve daha yüksek kaldıraçların maksimumu daha büyüktür.
+
+</Accordion>
+
+<Accordion title="Tam olarak girdiğim tutar kadar mı ücretlendirilirim?">
+
+Evet. Yatırdığın tutar, ücret dahil maliyetin tamamıdır ve kaybedebileceğin en fazla tutardır. İşlem ya tam olarak onayladığın teklifle açılır ya da başarısız olur ve yalnızca ağ ücretini ödersin. USDC ya da USDT ile ödersen tutarın USDG cinsinden sayılır ve takas kuru, ne kadar stablecoin gerektiğini belirler.
+
+</Accordion>
+
+<Accordion title="Bir işlem kaç zincir işlemi gerektirir?">
+
+USDG ile ödediğinde bir. Gereken onay ya ücretsiz bir imzadır ya da işlemle birlikte gönderilir. Cüzdanın işlemleri toplu gönderebiliyorsa USDC ya da USDT ile ödemek de tek işlemdir. Aksi hâlde cüzdan önce gerekirse onayı, ardından takası gönderir.
+
+</Accordion>
+
+<Accordion title="Ödememi nasıl alırım?">
+
+Long ya da short, USDG olarak. Sonuçlandırma, normalde bitiş saatinden bir iki dakika sonra doğrudan cüzdanına ödeme yapar. Bkz. [Ödemeler ve talepler](./trade/payouts-and-claims.mdx).
+
+</Accordion>
+
+<Accordion title="Kazandı ne anlama gelir?">
+
+Pozisyon ödeme yaptı ama cüzdanına transfer başarısız oldu. Hiçbir şey kaybolmaz. Pozisyonu Portföy'de aç ve aynı cüzdana ya da USDG alabilen başka bir adrese talep et. Taleplerin süresi hiç dolmaz.
+
+</Accordion>
+
+<Accordion title="Düğme neden Long ya da Short dışında bir şey yazıyor?">
+
+Sana işlemin neden gerçekleşemediğini söylüyor: yanlış ağ, ödeme yaptığın tokenden yetersiz bakiye, limitlerin dışında bir tutar, işleme uygun teklif olmaması, takas yolu olmaması ya da duraklatılmış bir piyasa.
+
+</Accordion>
+
+<Accordion title="Bir işlemin ne zaman biteceğini nasıl seçerim?">
+
+Grafikte **Biter** yazan çizgiyi sürükle ya da altındaki **12h**, **1d**, **3d** veya **1w** düğmelerine bas. Vadeler 12 saatten 7 güne kadardır ve bir sonraki tam saate yuvarlanır.
+
+</Accordion>
+
+<Accordion title="Cüzdanımda neye ihtiyacım var?">
+
+Pozisyonların ödemesi için USDG, USDC ya da USDT ve ağ ücretleri için biraz ETH; hepsi Arbitrum One üzerinde.
+
+</Accordion>
+
+<Accordion title="Bir işlem ne kadar büyük olabilir?">
+
+Tutar $1'dan başlar ve tutar çarpı kaldıraç 5,000 USDG pozisyon büyüklüğünü geçemez. Bu, 5x'te $1,000, en yüksek kaldıraç olan 100x'te ise $50 demektir.
+
+</Accordion>
+
+<Accordion title="USDG tutmam gerekiyor mu?">
+
+Hayır. Arbitrum One üzerinde USDC ya da USDT ile ödeyebilirsin; uygulama bunu işlem açılırken USDG'ye takas eder. İşlem yine de USDG ile sonuçlanır ve USDG olarak öder. Bkz. [Ödeme ve takas](./trade/pay-and-swap.mdx).
+
+</Accordion>
+
+<Accordion title="Başka bir ağdan para getirebilir ya da geri taşıyabilir miyim?">
+
+Evet. Hesap menünü aç ve **Takas (zincirler arası)** seçeneğini seç. Ethereum, Base, Optimism, Polygon, BNB Chain, Avalanche, Hyperliquid ve Robinhood Chain gibi ağlar ile Arbitrum One arasında para taşır. Bkz. [Ödeme ve takas](./trade/pay-and-swap.mdx).
+
+</Accordion>
+
+</AccordionGroup>
+
+## Tahminler
+
+<AccordionGroup>
+
+<Accordion title="Davete ihtiyacım var mı?">
+
+Hayır. Arbitrum One üzerinde bir cüzdan bağla ve bir işlem aç ya da tahmin yap.
+
+</Accordion>
+
+<Accordion title="Bir tahminin ödeme yapıp yapmayacağını ne belirler?">
+
+Normalde bitiş zamanında ya da öncesindeki son Chainlink fiyatı. Bu fiyat çok eskiyse, sıfırsa ya da negatifse sözleşme bunun yerine bitiş zamanından sonraki ilk okumaya bakar. Hedefinde ya da ötesinde biterse tamamı ödenir. %0.1'den daha az geride kalırsa orantılı bir kısmı ödenir; daha büyük bir kaçırma ya da tam %0.1 geride kalmak hiçbir şey ödemez. Bkz. [Tahmin nasıl ödeme yapar](./predict/how-it-pays.mdx).
+
+</Accordion>
+
+<Accordion title="Bir tahmini bitmeden satabilir miyim?">
+
+Hayır. Bir tahmin bitiş zamanına kadar sürer.
+
+</Accordion>
+
+<Accordion title="Bir tahmin ne kadar büyük olabilir?">
+
+Bir tahmin en fazla 1,000 USDG ve tutarının en fazla 10 katını öder.
+
+</Accordion>
+
+</AccordionGroup>
+
+## Satış
+
+<AccordionGroup>
+
+<Accordion title="Nasıl satıcı olurum?">
+
+Satıcılar, kendi fiyatlarıyla teklif vererek tahminlerin ve işlemlerin karşı tarafını alır. Bkz. [Satıcılar](./write/writers.mdx).
+
+</Accordion>
+
+<Accordion title="Getiri nereden gelir?">
+
+Trader'ların pozisyonları için ödediklerinden. Borç verme, staking ya da farming yoktur.
+
+</Accordion>
+
+<Accordion title="Bir satıcı para kaybedebilir mi?">
+
+Evet. Satıcı, gerçekleştirdiği tahminlerin ve işlemlerin ödemelerini karşılar ve tek yönde güçlü bir hareket, topladığından fazlasını ödemesine yol açabilir.
+
+</Accordion>
+
+</AccordionGroup>
+
+## Protokol
+
+<AccordionGroup>
+
+<Accordion title="Bu bir opsiyon protokolü mü?">
+
+Evet, arka planda. Bir long ya da Yükselir tahmini bir call spread, bir short ya da Düşer tahmini ise bir put spread'dir; ikisi de açılışta tam teminatlıdır ve tek bir oracle fiyatıyla USDG olarak sonuçlanır. Tahmin yapmak ya da işlem açmak için bunu bilmen hiç gerekmez.
+
+</Accordion>
+
+<Accordion title="Karşı taraf kim?">
+
+Teklifi tahminini ya da işlemini gerçekleştiren satıcı. Pozisyon açıldığında primin ve satıcının yatırdığı tutar, **Maks. ödemenin** tamamını karşılar.
+
+</Accordion>
+
+<Accordion title="Isometric fonlarıma dokunabilir mi?">
+
+Günlük yetkilerle dokunamaz. Yönetişim, ücreti kodda sabitlenmiş tavanlar içinde değiştirebilir. Bir guardian yeni pozisyonları duraklatabilir. İkisi de açık bir pozisyonu değiştiremez, kaydedilmiş bir bitiş fiyatını değiştiremez ya da sonuçlandırmayı, talepleri ve iadeleri durduramaz.
+
+Sözleşmeler yükseltilebilir ve bir yükseltme her şeyi değiştirebilir. [Riskleri öğren](./trade/risks.mdx) sayfası daha fazlasını anlatır.
+
+</Accordion>
+
+<Accordion title="Keeper durursa ne olur?">
+
+Sonuçlandırma, başka biri gönderene kadar gecikir. Bunu herkes yapabilir. Bitiş fiyatı, kimin kaydettiğinden bağımsız olarak Chainlink fiyat akışı tarafından belirlenir; bu yüzden geç bir sonuçlandırma, zamanında yapılanla tam olarak aynı tutarı öder.
+
+</Accordion>
+
+<Accordion title="Ağ ya da fiyat akışı çökerse ne olur?">
+
+Sonuçlandırma fiyatı bekler. Bitiş zamanından sonraki 14 gün içinde hiçbir fiyat yayımlanmazsa iki tarafa da ücret düşülerek iade yapılır. Sana zaten borçlu olunan hiçbir şey değişmez.
+
+</Accordion>
+
+</AccordionGroup>
+
+## Hâlâ takıldın mı
+
+[support@isometric.fi](mailto:support@isometric.fi) adresine e-posta gönder ya da [Telegram](https://t.me/isometricfi)'da sor.

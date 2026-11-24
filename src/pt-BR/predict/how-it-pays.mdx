@@ -1,0 +1,45 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Como uma previsão paga
+sidebarTitle: Como paga
+description: Quanto uma previsão na Isometric paga, o que o seu preço significa e como um único preço da Chainlink no horário de término decide o resultado.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Como uma previsão paga
+
+Uma previsão é uma aposta de que um preço termina acima ou abaixo do seu alvo no seu horário de término. Você paga uma vez, e o pagamento, mostrado como **Se você acertar**, é fixado quando você faz a previsão.
+
+## O pagamento
+
+O seu prêmio (o que você paga depois da taxa) cobre parte do pagamento. O lançador deposita o restante quando a previsão abre, então o contrato já guarda o máximo que pode te pagar.
+
+Uma previsão paga no máximo 1,000 USDG, e no máximo 10 vezes o seu valor. Escolher um alvo não garante uma cotação.
+
+## Por que alguns alvos pagam mais
+
+O pagamento reflete o quanto os lançadores acham provável que o preço chegue ao seu alvo. Se **Se você acertar** mostra $400 para $100, eles estimam a chance em cerca de 25%. Um alvo mais longe do preço de hoje, ou um horário de término mais próximo, tem menos chance de ser atingido, então paga mais.
+
+## O que decide
+
+O contrato usa o **último preço da Chainlink publicado até o seu horário de término**. Se essa leitura for mais antiga do que o feed permite, zero ou negativa, a primeira leitura após o horário de término decide o resultado, desde que seja positiva.
+
+| O preço termina                 | Você recebe            |
+| ------------------------------- | ---------------------- |
+| No seu alvo ou além dele        | O pagamento integral   |
+| Menos de 0.1% antes do seu alvo | Uma parte do pagamento |
+| 0.1% ou mais antes do seu alvo  | Nada                   |
+
+Por exemplo, **BTC acima de $100,000** paga integralmente a $100,000 ou mais, metade a $99,950 e nada a $99,900 ou menos.
+
+## Como você recebe
+
+Os pagamentos são em USDG. O keeper da Isometric encerra cada previsão logo após o horário de término, e o pagamento vai direto para a sua carteira na mesma transação, normalmente em um ou dois minutos. Não há nada para tocar. A previsão então mostra **Ganhou** com o valor, ou **Sem pagamento**.
+
+Se a transferência para a sua carteira falhar, o pagamento fica aguardando no contrato e nunca expira. Abra a previsão no **Portfólio** e toque em **Resgatar** para enviá-lo para a sua carteira ou para outro endereço.
+
+Se nenhum preço da Chainlink for publicado em até 14 dias após o horário de término, a previsão é reembolsada, menos a taxa.
+
+## Sem saída antecipada
+
+Uma previsão não pode ser fechada, redimensionada nem transferida. Ela vai até o horário de término. Até lá, mostra se está **No rumo** ou quanto o preço ainda precisa se mover.

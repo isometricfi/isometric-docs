@@ -1,0 +1,63 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Perpétuos versus Isometric
+sidebarTitle: Perpétuos vs Isometric
+description: Como uma posição na Isometric se compara a um contrato futuro perpétuo em liquidação forçada, taxa de financiamento, saída, potencial de ganho e custo, e quando cada um é a melhor ferramenta.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Perpétuos versus Isometric
+
+Um contrato futuro perpétuo e uma posição na Isometric expressam a mesma visão: o preço sobe ou o preço cai. A diferença está no que pode acontecer com você no caminho.
+
+## Lado a lado
+
+|                           | Futuro perpétuo                                                      | Isometric                                                                       |
+| ------------------------- | -------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| **O que você aplica**     | Margem, que pode ser recomposta ou retirada                          | Um pagamento único, que é o custo total                                         |
+| **Perda máxima**          | A sua margem e, em algumas plataformas, mais                         | O que você pagou, nunca mais                                                    |
+| **Liquidação forçada**    | Sim. Um movimento além do seu preço de liquidação te tira da posição | Nenhuma. A posição vai até o encerramento, aconteça o que acontecer no meio     |
+| **Taxa de financiamento** | Paga ou recebida a cada poucas horas enquanto aberta                 | Nenhuma                                                                         |
+| **Saída**                 | A qualquer momento                                                   | Só no encerramento                                                              |
+| **Potencial de ganho**    | Sem limite                                                           | Limitado ao Max mostrado no gráfico                                             |
+| **Duração**               | Indeterminada                                                        | De 12 horas a 7 dias, definida arrastando a linha de término                    |
+| **Contraparte**           | Outros traders, por meio de um livro de ofertas                      | O lançador cuja cotação é executada, com o seu pagamento travado desde o início |
+| **O que você recebe**     | Margem mais ou menos o PnL                                           | Pagamento em USDG, ou nada                                                      |
+
+## Resultado no encerramento
+
+Os dois pagam o mesmo por cada 1% que o preço se move, porque o mesmo valor com a mesma alavancagem dá o mesmo tamanho de posição. O perpétuo conta esse movimento a partir da sua entrada. Uma posição na Isometric conta a partir do preço sem valor e para no teto.
+
+## Onde a Isometric é melhor
+
+**O ruído não te tira da posição.** Um perpétuo a 25x é liquidado por um pavio de 4%. Uma posição a 25x na Isometric ignora o pavio e é encerrada pelo preço naquela hora. Se a sua visão estiver certa no dia, mas errada por uma hora no meio do caminho, só a Isometric te paga.
+
+**Manter a posição não custa nada.** Uma posição em perpétuo mantida por alguns dias de taxa de financiamento alta pode perder mais com o financiamento do que com o preço. Uma posição na Isometric não tem custo contínuo.
+
+**A perda é conhecida antes de você assinar.** Não existe cenário em que você deva mais do que pagou, nenhuma chamada de margem às 3 da manhã e nenhum efeito cascata.
+
+**Um único preço para o tamanho inteiro.** Os lançadores cotam o valor total. Não há livro de ofertas para percorrer nem execução parcial, e a operação abre na cotação que você confirmou ou não abre.
+
+## Onde um perpétuo é melhor
+
+**Você quer sair antes.** Um perpétuo deixa você realizar lucro ou cortar uma perda a qualquer momento. Uma posição na Isometric não, e uma posição que está no lucro no primeiro dia ainda pode terminar sem valor no terceiro.
+
+**Você quer ganho sem limite.** Uma posição na Isometric para de render no seu **Max**. Um perpétuo continua.
+
+**Você quer acompanhar o preço continuamente.** Uma posição na Isometric é encerrada por um único preço em uma única hora. O PnL de um perpétuo é o preço ao vivo a cada momento.
+
+**Você entra e sai o dia todo.** As posições na Isometric têm prazo mínimo de 12 horas.
+
+## Uma queda que se recupera
+
+O perpétuo é fechado quando o preço cai abaixo do nível de liquidação no segundo dia, e perde a recuperação. A posição na Isometric, aberta no mesmo preço com a mesma alavancagem, ainda está aberta quando a recuperação chega e é encerrada no lucro.
+
+<Frame caption="O mesmo caminho de preço para as duas posições. Só o preço na hora do encerramento decide uma posição na Isometric.">
+
+![Um caminho de preço que começa no preço de entrada, cai abaixo do nível de liquidação do perpétuo no início do prazo e se recupera até terminar bem acima do preço de entrada no encerramento. O perpétuo é fechado no nível de liquidação. A posição na Isometric continua aberta e é encerrada no lucro.](/images/dip-that-recovers.svg)
+
+</Frame>
+
+## A mesma visão, mecanismos diferentes
+
+Se você já opera perpétuos, pense em uma posição na Isometric como a mesma operação direcional sem o motor de margem. Você abre mão de poder sair antes e do ganho ilimitado na cauda. Em troca, tem custo fixo, nenhuma liquidação forçada, nenhuma taxa de financiamento e um encerramento que só se importa com onde o preço está no fim.

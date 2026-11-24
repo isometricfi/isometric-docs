@@ -1,0 +1,56 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Mercados de previsão versus operações
+sidebarTitle: Mercados de previsão vs operações
+description: Como uma operação alavancada na Isometric se compara a um mercado de previsão de preço do tipo sim ou não em pagamento, quase acertos, tamanho, saída e encerramento.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Mercados de previsão versus operações
+
+Um mercado de previsão de preço faz uma pergunta de sim ou não: o Bitcoin vai estar acima de $103,000 na próxima sexta? Uma operação na Isometric lembra isso à primeira vista, porque um único preço em um único horário decide o resultado. A diferença está no pagamento. Um mercado de previsão paga por passar de uma linha. A Isometric paga por quanto o preço passa dela.
+
+## Lado a lado
+
+|                         | Mercado de previsão de preço                                    | Isometric                                                            |
+| ----------------------- | --------------------------------------------------------------- | -------------------------------------------------------------------- |
+| **O que você escolhe**  | Uma pergunta listada: uma linha de preço e uma data             | Direção, horário de término, valor e alavancagem                     |
+| **Pagamento**           | Tudo ou nada: um valor fixo por cota se você acertar            | Cresce a cada 1% além do seu preço sem valor, até o Pagamento máximo |
+| **Um quase acerto**     | Não paga nada                                                   | Pode devolver parte do que você pagou                                |
+| **Perda máxima**        | O que você pagou                                                | O que você pagou                                                     |
+| **Preço que você paga** | Definido por outros traders, e limitado à profundidade do livro | Cotado pelos lançadores, para o tamanho inteiro de uma vez           |
+| **Saída**               | Normalmente a qualquer momento, vendendo para outro trader      | Só no encerramento                                                   |
+| **Datas**               | As datas que alguém listou                                      | Prazos de 12 horas a 7 dias                                          |
+| **O que decide**        | As regras de resolução do próprio mercado                       | O preço da Chainlink na hora do encerramento                         |
+
+## A mesma visão, de dois jeitos
+
+O Bitcoin está a $100,000 e você acha que ele vai estar mais alto em três dias. Você tem $100.
+
+- **Mercado de previsão.** Você compra Sim em "Acima de $103,000 em 3 dias?". Suponha que o Sim seja negociado a 30 centavos e pague $1 se acertar. $100 compram cerca de 333 cotas.
+- **Isometric.** Você abre o long de 3 dias a 25x de [Como ler o gráfico](./reading-the-chart.mdx): sem valor em $97,400, ponto de equilíbrio em $101,296, pagamento máximo de $323.
+
+| Bitcoin no encerramento | Mercado de previsão paga | Isometric paga |
+| ----------------------- | ------------------------ | -------------- |
+| $99,000                 | $0                       | $41            |
+| $102,000                | $0                       | $118           |
+| $105,000                | $333                     | $195           |
+| $107,000                | $333                     | $246           |
+| $112,000                | $333                     | $323           |
+
+O mercado de previsão paga mais por um movimento que mal passa da linha. A Isometric devolve algum dinheiro em um quase acerto e continua pagando conforme o movimento cresce, até o máximo. Os números são exemplos: os preços reais dos dois lados mudam com o mercado.
+
+## Onde a Isometric se encaixa melhor
+
+- **Você tem uma direção, não uma linha.** Você não precisa encontrar uma pergunta listada no preço e na data certos. Escolha long ou short e um horário de término, e o gráfico mostra quanto cada preço paga.
+- **Você quer ser pago pelo tamanho do movimento.** Um movimento grande paga mais que um pequeno.
+- **Você quer que um quase acerto conte.** Na faixa **Some back**, você recebe parte do seu dinheiro de volta.
+- **Você quer um único preço para o tamanho inteiro.** Os lançadores cotam o valor total. Não há livro de ofertas para percorrer.
+
+## Onde um mercado de previsão se encaixa melhor
+
+- **Você tem uma visão sobre uma linha exata.** Se só importa saber se o preço passa de $103,000, uma cota de sim ou não diz exatamente isso.
+- **Você quer sair antes.** Normalmente dá para vender as suas cotas antes da resolução. Uma posição na Isometric vai até o encerramento.
+- **Você quer operar algo que não seja um preço.** A Isometric só opera preços de mercado.
+
+Antes de operar, leia [Conheça os riscos](./risks.mdx).

@@ -32,78 +32,672 @@
     },
   },
   "navigation": {
-    "tabs": [
+    "versions": [
       {
-        "tab": "Leverage",
-        "icon": "lucide:trending-up",
-        "groups": [
+        "version": "English",
+        "lang": "en",
+        "default": true,
+        "tabs": [
           {
-            "group": "Start here",
-            "icon": "lucide:compass",
-            "pages": ["index", "trade/quickstart", "trade/pay-and-swap", "markets"],
-          },
-          {
-            "group": "Trading",
-            "icon": "lucide:sliders-horizontal",
-            "pages": [
-              "trade/reading-the-chart",
-              "trade/leverage",
-              "trade/expiry-and-settlement",
-              "trade/payouts-and-claims",
-              "trade/fees",
+            "tab": "Leverage",
+            "icon": "lucide:trending-up",
+            "groups": [
+              {
+                "group": "Start here",
+                "icon": "lucide:compass",
+                "pages": ["index", "trade/quickstart", "trade/pay-and-swap", "markets"],
+              },
+              {
+                "group": "Trading",
+                "icon": "lucide:sliders-horizontal",
+                "pages": [
+                  "trade/reading-the-chart",
+                  "trade/leverage",
+                  "trade/expiry-and-settlement",
+                  "trade/payouts-and-claims",
+                  "trade/fees",
+                ],
+              },
+              {
+                "group": "Compare and risks",
+                "icon": "lucide:scale",
+                "pages": [
+                  "trade/perps-vs-isometric",
+                  "trade/prediction-markets-vs-isometric",
+                  "trade/risks",
+                ],
+              },
+              {
+                "group": "Under the hood",
+                "icon": "lucide:cog",
+                "pages": ["trade/how-it-works"],
+              },
             ],
           },
           {
-            "group": "Compare and risks",
-            "icon": "lucide:scale",
-            "pages": [
-              "trade/perps-vs-isometric",
-              "trade/prediction-markets-vs-isometric",
-              "trade/risks",
-            ],
-          },
-          {
-            "group": "Under the hood",
-            "icon": "lucide:cog",
-            "pages": ["trade/how-it-works"],
-          },
-        ],
-      },
-      {
-        "tab": "Predict",
-        "icon": "lucide:target",
-        "groups": [
-          {
-            "group": "Predicting",
+            "tab": "Predict",
             "icon": "lucide:target",
-            "pages": ["predict/quickstart", "predict/how-it-pays", "predict/fees"],
+            "groups": [
+              {
+                "group": "Predicting",
+                "icon": "lucide:target",
+                "pages": ["predict/quickstart", "predict/how-it-pays", "predict/fees"],
+              },
+              {
+                "group": "Compare and risks",
+                "icon": "lucide:scale",
+                "pages": ["predict/prediction-markets-vs-isometric", "predict/risks"],
+              },
+            ],
           },
           {
-            "group": "Compare and risks",
-            "icon": "lucide:scale",
-            "pages": ["predict/prediction-markets-vs-isometric", "predict/risks"],
-          },
-        ],
-      },
-      {
-        "tab": "Write",
-        "icon": "lucide:pen-line",
-        "groups": [
-          {
-            "group": "Writing",
+            "tab": "Write",
             "icon": "lucide:pen-line",
-            "pages": ["write/writers"],
+            "groups": [
+              {
+                "group": "Writing",
+                "icon": "lucide:pen-line",
+                "pages": ["write/writers"],
+              },
+            ],
+          },
+          {
+            "tab": "Reference",
+            "icon": "lucide:list-tree",
+            "groups": [
+              {
+                "group": "Reference",
+                "icon": "lucide:list-tree",
+                "pages": ["glossary", "faq"],
+              },
+            ],
           },
         ],
       },
       {
-        "tab": "Reference",
-        "icon": "lucide:list-tree",
-        "groups": [
+        "version": "简体中文",
+        "lang": "zh-CN",
+        "tabs": [
           {
-            "group": "Reference",
+            "tab": "杠杆",
+            "icon": "lucide:trending-up",
+            "groups": [
+              {
+                "group": "从这里开始",
+                "icon": "lucide:compass",
+                "pages": [
+                  "zh-CN/index",
+                  "zh-CN/trade/quickstart",
+                  "zh-CN/trade/pay-and-swap",
+                  "zh-CN/markets",
+                ],
+              },
+              {
+                "group": "交易",
+                "icon": "lucide:sliders-horizontal",
+                "pages": [
+                  "zh-CN/trade/reading-the-chart",
+                  "zh-CN/trade/leverage",
+                  "zh-CN/trade/expiry-and-settlement",
+                  "zh-CN/trade/payouts-and-claims",
+                  "zh-CN/trade/fees",
+                ],
+              },
+              {
+                "group": "对比与风险",
+                "icon": "lucide:scale",
+                "pages": [
+                  "zh-CN/trade/perps-vs-isometric",
+                  "zh-CN/trade/prediction-markets-vs-isometric",
+                  "zh-CN/trade/risks",
+                ],
+              },
+              {
+                "group": "运作原理",
+                "icon": "lucide:cog",
+                "pages": ["zh-CN/trade/how-it-works"],
+              },
+            ],
+          },
+          {
+            "tab": "预测",
+            "icon": "lucide:target",
+            "groups": [
+              {
+                "group": "预测",
+                "icon": "lucide:target",
+                "pages": [
+                  "zh-CN/predict/quickstart",
+                  "zh-CN/predict/how-it-pays",
+                  "zh-CN/predict/fees",
+                ],
+              },
+              {
+                "group": "对比与风险",
+                "icon": "lucide:scale",
+                "pages": ["zh-CN/predict/prediction-markets-vs-isometric", "zh-CN/predict/risks"],
+              },
+            ],
+          },
+          {
+            "tab": "卖方",
+            "icon": "lucide:pen-line",
+            "groups": [
+              {
+                "group": "做卖方",
+                "icon": "lucide:pen-line",
+                "pages": ["zh-CN/write/writers"],
+              },
+            ],
+          },
+          {
+            "tab": "参考",
             "icon": "lucide:list-tree",
-            "pages": ["glossary", "faq"],
+            "groups": [
+              {
+                "group": "参考",
+                "icon": "lucide:list-tree",
+                "pages": ["zh-CN/glossary", "zh-CN/faq"],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        "version": "繁體中文",
+        "lang": "zh-TW",
+        "tabs": [
+          {
+            "tab": "槓桿",
+            "icon": "lucide:trending-up",
+            "groups": [
+              {
+                "group": "從這裡開始",
+                "icon": "lucide:compass",
+                "pages": [
+                  "zh-TW/index",
+                  "zh-TW/trade/quickstart",
+                  "zh-TW/trade/pay-and-swap",
+                  "zh-TW/markets",
+                ],
+              },
+              {
+                "group": "交易",
+                "icon": "lucide:sliders-horizontal",
+                "pages": [
+                  "zh-TW/trade/reading-the-chart",
+                  "zh-TW/trade/leverage",
+                  "zh-TW/trade/expiry-and-settlement",
+                  "zh-TW/trade/payouts-and-claims",
+                  "zh-TW/trade/fees",
+                ],
+              },
+              {
+                "group": "比較與風險",
+                "icon": "lucide:scale",
+                "pages": [
+                  "zh-TW/trade/perps-vs-isometric",
+                  "zh-TW/trade/prediction-markets-vs-isometric",
+                  "zh-TW/trade/risks",
+                ],
+              },
+              {
+                "group": "運作原理",
+                "icon": "lucide:cog",
+                "pages": ["zh-TW/trade/how-it-works"],
+              },
+            ],
+          },
+          {
+            "tab": "預測",
+            "icon": "lucide:target",
+            "groups": [
+              {
+                "group": "預測",
+                "icon": "lucide:target",
+                "pages": [
+                  "zh-TW/predict/quickstart",
+                  "zh-TW/predict/how-it-pays",
+                  "zh-TW/predict/fees",
+                ],
+              },
+              {
+                "group": "比較與風險",
+                "icon": "lucide:scale",
+                "pages": ["zh-TW/predict/prediction-markets-vs-isometric", "zh-TW/predict/risks"],
+              },
+            ],
+          },
+          {
+            "tab": "賣方",
+            "icon": "lucide:pen-line",
+            "groups": [
+              {
+                "group": "做賣方",
+                "icon": "lucide:pen-line",
+                "pages": ["zh-TW/write/writers"],
+              },
+            ],
+          },
+          {
+            "tab": "參考",
+            "icon": "lucide:list-tree",
+            "groups": [
+              {
+                "group": "參考",
+                "icon": "lucide:list-tree",
+                "pages": ["zh-TW/glossary", "zh-TW/faq"],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        "version": "Español",
+        "lang": "es",
+        "tabs": [
+          {
+            "tab": "Apalancamiento",
+            "icon": "lucide:trending-up",
+            "groups": [
+              {
+                "group": "Empieza aquí",
+                "icon": "lucide:compass",
+                "pages": ["es/index", "es/trade/quickstart", "es/trade/pay-and-swap", "es/markets"],
+              },
+              {
+                "group": "Operar",
+                "icon": "lucide:sliders-horizontal",
+                "pages": [
+                  "es/trade/reading-the-chart",
+                  "es/trade/leverage",
+                  "es/trade/expiry-and-settlement",
+                  "es/trade/payouts-and-claims",
+                  "es/trade/fees",
+                ],
+              },
+              {
+                "group": "Comparación y riesgos",
+                "icon": "lucide:scale",
+                "pages": [
+                  "es/trade/perps-vs-isometric",
+                  "es/trade/prediction-markets-vs-isometric",
+                  "es/trade/risks",
+                ],
+              },
+              {
+                "group": "Cómo funciona",
+                "icon": "lucide:cog",
+                "pages": ["es/trade/how-it-works"],
+              },
+            ],
+          },
+          {
+            "tab": "Predecir",
+            "icon": "lucide:target",
+            "groups": [
+              {
+                "group": "Predicciones",
+                "icon": "lucide:target",
+                "pages": ["es/predict/quickstart", "es/predict/how-it-pays", "es/predict/fees"],
+              },
+              {
+                "group": "Comparación y riesgos",
+                "icon": "lucide:scale",
+                "pages": ["es/predict/prediction-markets-vs-isometric", "es/predict/risks"],
+              },
+            ],
+          },
+          {
+            "tab": "Emitir",
+            "icon": "lucide:pen-line",
+            "groups": [
+              {
+                "group": "Emisores",
+                "icon": "lucide:pen-line",
+                "pages": ["es/write/writers"],
+              },
+            ],
+          },
+          {
+            "tab": "Referencia",
+            "icon": "lucide:list-tree",
+            "groups": [
+              {
+                "group": "Referencia",
+                "icon": "lucide:list-tree",
+                "pages": ["es/glossary", "es/faq"],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        "version": "Português",
+        "lang": "pt-BR",
+        "tabs": [
+          {
+            "tab": "Alavancagem",
+            "icon": "lucide:trending-up",
+            "groups": [
+              {
+                "group": "Comece aqui",
+                "icon": "lucide:compass",
+                "pages": [
+                  "pt-BR/index",
+                  "pt-BR/trade/quickstart",
+                  "pt-BR/trade/pay-and-swap",
+                  "pt-BR/markets",
+                ],
+              },
+              {
+                "group": "Operar",
+                "icon": "lucide:sliders-horizontal",
+                "pages": [
+                  "pt-BR/trade/reading-the-chart",
+                  "pt-BR/trade/leverage",
+                  "pt-BR/trade/expiry-and-settlement",
+                  "pt-BR/trade/payouts-and-claims",
+                  "pt-BR/trade/fees",
+                ],
+              },
+              {
+                "group": "Comparação e riscos",
+                "icon": "lucide:scale",
+                "pages": [
+                  "pt-BR/trade/perps-vs-isometric",
+                  "pt-BR/trade/prediction-markets-vs-isometric",
+                  "pt-BR/trade/risks",
+                ],
+              },
+              {
+                "group": "Como funciona",
+                "icon": "lucide:cog",
+                "pages": ["pt-BR/trade/how-it-works"],
+              },
+            ],
+          },
+          {
+            "tab": "Prever",
+            "icon": "lucide:target",
+            "groups": [
+              {
+                "group": "Previsões",
+                "icon": "lucide:target",
+                "pages": [
+                  "pt-BR/predict/quickstart",
+                  "pt-BR/predict/how-it-pays",
+                  "pt-BR/predict/fees",
+                ],
+              },
+              {
+                "group": "Comparação e riscos",
+                "icon": "lucide:scale",
+                "pages": ["pt-BR/predict/prediction-markets-vs-isometric", "pt-BR/predict/risks"],
+              },
+            ],
+          },
+          {
+            "tab": "Lançar",
+            "icon": "lucide:pen-line",
+            "groups": [
+              {
+                "group": "Lançadores",
+                "icon": "lucide:pen-line",
+                "pages": ["pt-BR/write/writers"],
+              },
+            ],
+          },
+          {
+            "tab": "Referência",
+            "icon": "lucide:list-tree",
+            "groups": [
+              {
+                "group": "Referência",
+                "icon": "lucide:list-tree",
+                "pages": ["pt-BR/glossary", "pt-BR/faq"],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        "version": "한국어",
+        "lang": "ko",
+        "tabs": [
+          {
+            "tab": "레버리지",
+            "icon": "lucide:trending-up",
+            "groups": [
+              {
+                "group": "시작하기",
+                "icon": "lucide:compass",
+                "pages": ["ko/index", "ko/trade/quickstart", "ko/trade/pay-and-swap", "ko/markets"],
+              },
+              {
+                "group": "거래",
+                "icon": "lucide:sliders-horizontal",
+                "pages": [
+                  "ko/trade/reading-the-chart",
+                  "ko/trade/leverage",
+                  "ko/trade/expiry-and-settlement",
+                  "ko/trade/payouts-and-claims",
+                  "ko/trade/fees",
+                ],
+              },
+              {
+                "group": "비교와 위험",
+                "icon": "lucide:scale",
+                "pages": [
+                  "ko/trade/perps-vs-isometric",
+                  "ko/trade/prediction-markets-vs-isometric",
+                  "ko/trade/risks",
+                ],
+              },
+              {
+                "group": "작동 원리",
+                "icon": "lucide:cog",
+                "pages": ["ko/trade/how-it-works"],
+              },
+            ],
+          },
+          {
+            "tab": "예측",
+            "icon": "lucide:target",
+            "groups": [
+              {
+                "group": "예측하기",
+                "icon": "lucide:target",
+                "pages": ["ko/predict/quickstart", "ko/predict/how-it-pays", "ko/predict/fees"],
+              },
+              {
+                "group": "비교와 위험",
+                "icon": "lucide:scale",
+                "pages": ["ko/predict/prediction-markets-vs-isometric", "ko/predict/risks"],
+              },
+            ],
+          },
+          {
+            "tab": "매도",
+            "icon": "lucide:pen-line",
+            "groups": [
+              {
+                "group": "매도자",
+                "icon": "lucide:pen-line",
+                "pages": ["ko/write/writers"],
+              },
+            ],
+          },
+          {
+            "tab": "참고",
+            "icon": "lucide:list-tree",
+            "groups": [
+              {
+                "group": "참고",
+                "icon": "lucide:list-tree",
+                "pages": ["ko/glossary", "ko/faq"],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        "version": "Türkçe",
+        "lang": "tr",
+        "tabs": [
+          {
+            "tab": "Kaldıraç",
+            "icon": "lucide:trending-up",
+            "groups": [
+              {
+                "group": "Buradan başlayın",
+                "icon": "lucide:compass",
+                "pages": ["tr/index", "tr/trade/quickstart", "tr/trade/pay-and-swap", "tr/markets"],
+              },
+              {
+                "group": "İşlem",
+                "icon": "lucide:sliders-horizontal",
+                "pages": [
+                  "tr/trade/reading-the-chart",
+                  "tr/trade/leverage",
+                  "tr/trade/expiry-and-settlement",
+                  "tr/trade/payouts-and-claims",
+                  "tr/trade/fees",
+                ],
+              },
+              {
+                "group": "Karşılaştırma ve riskler",
+                "icon": "lucide:scale",
+                "pages": [
+                  "tr/trade/perps-vs-isometric",
+                  "tr/trade/prediction-markets-vs-isometric",
+                  "tr/trade/risks",
+                ],
+              },
+              {
+                "group": "Nasıl çalışır",
+                "icon": "lucide:cog",
+                "pages": ["tr/trade/how-it-works"],
+              },
+            ],
+          },
+          {
+            "tab": "Tahmin",
+            "icon": "lucide:target",
+            "groups": [
+              {
+                "group": "Tahminler",
+                "icon": "lucide:target",
+                "pages": ["tr/predict/quickstart", "tr/predict/how-it-pays", "tr/predict/fees"],
+              },
+              {
+                "group": "Karşılaştırma ve riskler",
+                "icon": "lucide:scale",
+                "pages": ["tr/predict/prediction-markets-vs-isometric", "tr/predict/risks"],
+              },
+            ],
+          },
+          {
+            "tab": "Satış",
+            "icon": "lucide:pen-line",
+            "groups": [
+              {
+                "group": "Satıcılar",
+                "icon": "lucide:pen-line",
+                "pages": ["tr/write/writers"],
+              },
+            ],
+          },
+          {
+            "tab": "Başvuru",
+            "icon": "lucide:list-tree",
+            "groups": [
+              {
+                "group": "Başvuru",
+                "icon": "lucide:list-tree",
+                "pages": ["tr/glossary", "tr/faq"],
+              },
+            ],
+          },
+        ],
+      },
+      {
+        "version": "Tiếng Việt",
+        "lang": "vi",
+        "tabs": [
+          {
+            "tab": "Đòn bẩy",
+            "icon": "lucide:trending-up",
+            "groups": [
+              {
+                "group": "Bắt đầu",
+                "icon": "lucide:compass",
+                "pages": ["vi/index", "vi/trade/quickstart", "vi/trade/pay-and-swap", "vi/markets"],
+              },
+              {
+                "group": "Giao dịch",
+                "icon": "lucide:sliders-horizontal",
+                "pages": [
+                  "vi/trade/reading-the-chart",
+                  "vi/trade/leverage",
+                  "vi/trade/expiry-and-settlement",
+                  "vi/trade/payouts-and-claims",
+                  "vi/trade/fees",
+                ],
+              },
+              {
+                "group": "So sánh và rủi ro",
+                "icon": "lucide:scale",
+                "pages": [
+                  "vi/trade/perps-vs-isometric",
+                  "vi/trade/prediction-markets-vs-isometric",
+                  "vi/trade/risks",
+                ],
+              },
+              {
+                "group": "Cách hoạt động",
+                "icon": "lucide:cog",
+                "pages": ["vi/trade/how-it-works"],
+              },
+            ],
+          },
+          {
+            "tab": "Dự đoán",
+            "icon": "lucide:target",
+            "groups": [
+              {
+                "group": "Dự đoán",
+                "icon": "lucide:target",
+                "pages": ["vi/predict/quickstart", "vi/predict/how-it-pays", "vi/predict/fees"],
+              },
+              {
+                "group": "So sánh và rủi ro",
+                "icon": "lucide:scale",
+                "pages": ["vi/predict/prediction-markets-vs-isometric", "vi/predict/risks"],
+              },
+            ],
+          },
+          {
+            "tab": "Bên bán",
+            "icon": "lucide:pen-line",
+            "groups": [
+              {
+                "group": "Bên bán",
+                "icon": "lucide:pen-line",
+                "pages": ["vi/write/writers"],
+              },
+            ],
+          },
+          {
+            "tab": "Tham khảo",
+            "icon": "lucide:list-tree",
+            "groups": [
+              {
+                "group": "Tham khảo",
+                "icon": "lucide:list-tree",
+                "pages": ["vi/glossary", "vi/faq"],
+              },
+            ],
           },
         ],
       },
@@ -126,8 +720,16 @@
     },
   },
   "redirects": [
-    { "source": "/trade/overview", "destination": "/", "permanent": true },
-    { "source": "/trade/markets", "destination": "/markets", "permanent": true },
+    {
+      "source": "/trade/overview",
+      "destination": "/",
+      "permanent": true,
+    },
+    {
+      "source": "/trade/markets",
+      "destination": "/markets",
+      "permanent": true,
+    },
     {
       "source": "/trade/reading-the-quote",
       "destination": "/trade/reading-the-chart",

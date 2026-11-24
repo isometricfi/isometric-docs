@@ -1,0 +1,62 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: 歡迎使用 Isometric
+sidebarTitle: 歡迎
+description: 交易，條件由你定。最高 100x 槓桿且不會被強平，只看你結束時間的價格。
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# 交易，條件由你定
+
+<Note>
+  Isometric 目前在 Arbitrum One 上處於測試版階段，每個部位上限為 5,000 USDG。合約尚未經過審計，
+  請只用你願意承擔損失的資金。
+</Note>
+
+在 Isometric，你可以用**最高 100x 的槓桿做多或做空**，而且不會被強平。你只需在開倉時付款一次，這筆錢就是你的最大虧損。插針無法讓你出局，因為只有結束時間的價格才算數。
+
+## 三步完成一筆交易
+
+1. **選擇做多或做空。**
+2. **拖曳圖表上的結束線**，決定交易何時結束，範圍從 12 小時到 7 天。
+3. **設定投入金額和槓桿**，然後按下**做多 BTC** 或**做空 BTC**。
+
+交易之前，圖表會顯示每個結束價的賠付：哪裡會 **Lose**（損失全部投入金額）、哪裡能 **Some back**（拿回部分），哪裡獲利，以及你的 **Max**（最高獲利）。請參閱[解讀圖表](./trade/reading-the-chart.mdx)。
+
+## 為什麼不用永續合約
+
+<Columns cols={3}>
+  <Card title="不會強平" icon="lucide:shield-check">
+    價格朝不利方向變動也不會讓你的部位平倉，部位會一直持有到結束時間。
+  </Card>
+  <Card title="沒有資金費率" icon="lucide:clock">
+    持有不需任何成本。開倉時支付的金額就是全部成本。
+  </Card>
+  <Card title="開倉即鎖定賠付" icon="lucide:lock">
+    從交易開立的那一刻起，你的付款和賣方的存入資金就足以支付你的全部最高賠付。
+  </Card>
+</Columns>
+
+代價是：部位會持有到結束時間，而且賠付達到上限後就不再增加。[永續合約與 Isometric 比較](./trade/perps-vs-isometric.mdx)列出了兩者的優缺點。
+
+## Isometric 還提供
+
+<Columns cols={2}>
+  <Card title="預測" icon="lucide:target" href="./predict/quickstart.mdx" arrow>
+    預測價格在你自訂的結束時間高於或低於你自訂的目標價格。賠付金額在下單時即已固定。
+  </Card>
+  <Card title="做賣方" icon="lucide:pen-line" href="./write/writers.mdx" arrow>
+    用你自己的報價，承接交易與預測的另一方。
+  </Card>
+</Columns>
+
+## 繼續閱讀
+
+<Columns cols={2}>
+  <Card title="開立你的第一筆交易" icon="lucide:rocket" href="./trade/quickstart.mdx" arrow>
+    連結錢包，從任一支援的網路入金，然後建立部位。
+  </Card>
+  <Card title="了解風險" icon="lucide:shield-alert" href="./trade/risks.mdx" arrow>
+    你可能損失什麼，以及哪些情況會延遲賠付。
+  </Card>
+</Columns>

@@ -1,0 +1,78 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Riskleri öğren
+sidebarTitle: Riskler
+description: Isometric'te işlem yaparken neler kaybedebileceğin, bir ödemeyi neyin geciktirebileceği ve protokolün seni nelere karşı korumadığı. İşlem yapmadan önce bunu oku.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Riskleri öğren
+
+Isometric tasfiyeyi ve fonlamayı ortadan kaldırır. Para kaybetme ihtimalini ortadan kaldırmaz. İşlem yapmadan önce bu sayfayı bir kez oku.
+
+<Warning>
+  Her pozisyon ödediğin tutarın %100'ünü kaybedebilir. Tamamını kaybetmeyi göze alamayacağın parayla
+  asla işlem yapma.
+</Warning>
+
+## Isometric beta aşamasında
+
+Sözleşmeler denetlenmedi. Her pozisyon 5,000 USDG ile sınırlıdır ve limitler beta süresince değişebilir. Yalnızca kaybetmeyi göze alabileceğin kadarıyla işlem yap.
+
+## Ödediğin her şeyi kaybedebilirsin
+
+Değersiz fiyatının yanlış tarafında sonuçlanan bir pozisyon hiçbir şey ödemez. Kaldıraç ne kadar yüksekse o fiyat bugünkü fiyata o kadar yakın durur ve bu o kadar sık yaşanır. Ödediğin tutar gider; kısmi iade yoktur.
+
+## Erken çıkamazsın
+
+Kapatma düğmesi yoktur. İlk saatinde pişman olduğun bir pozisyon yine de bitiş saatine kadar sürer; ilk gün kârda olan bir pozisyon üçüncü gün yine de değersiz bitebilir. Yalnızca bitiş fiyatı sayılır. Pozisyonlar başka bir cüzdana da devredilemez.
+
+## Sonucu tek bir zamandaki tek bir fiyat belirler
+
+Bitiş fiyatı normalde bitiş saatinde ya da öncesinde yayımlanan son Chainlink fiyatıdır. Fiyatı sürekli takip eden bir pozisyona ihtiyacın varsa bu ürün o değildir.
+
+Bu okuma çok eskiyse, sıfırsa ya da negatifse sözleşme bunun yerine bitiş saatinden sonra yayımlanan ilk fiyata bakar. Bu, beklediğin fiyattan farklı bir fiyattır ve daha geç gelir.
+
+## Ödemen sınırlıdır
+
+Her pozisyonun grafikte **Max** (maksimum) olarak gösterilen ve açılışta sabitlenen bir maksimum ödemesi vardır. Piyasa ne kadar giderse gitsin, bunu alırsın ve fazlasını almazsın. Daha kısa vadelerin maksimumu daha küçüktür.
+
+## Teklif, sen onaylamadan önce değişebilir
+
+Teklif canlı fiyatı takip eder. Her teklif kısa bir süre için bağlayıcıdır ve uygulama, sen imzalamadan önce teklifi yeniler. İşlemin ya tam olarak onayladığın teklifle açılır ya da başarısız olur. Başarısız bir işlemin maliyeti yalnızca ağ ücretidir.
+
+## Teklif alamayabilirsin
+
+Bir işlem, karşı tarafı almaya istekli bir satıcıya ihtiyaç duyar. Hiçbir satıcı işlemine teklif vermezse ya da piyasa duraklatılmışsa, o anda pozisyon açamazsın. Mevcut pozisyonlar etkilenmez: yine sonuçlanır ve öderler.
+
+## Bir ödeme gecikebilir
+
+Bir ödeme, bitiş fiyatını ve birinin pozisyonu sonuçlandırmasını bekler. Ağ kesintisi ya da sessiz kalan bir fiyat akışı ilkini geciktirir. Duran bir keeper ikincisini geciktirir, ancak sonuçlandırmayı herkes yapabilir. Gecikme sana borçlu olunan tutarı değiştirmez. Bitiş saatinden sonraki 14 gün içinde hiçbir fiyat yayımlanmazsa bunun yerine iki tarafa da iade yapılır ve ücret geri verilmez.
+
+Cüzdanın USDG alamıyorsa transfer başarısız olur ve başka bir adrese talep etmen gerekir.
+
+## Takaslar üçüncü taraflar üzerinden yapılır
+
+USDC ya da USDT ile ödeme ve zincirler arası takas, Isometric'in işletmediği Velora ve Relay'i kullanır. Bir takas başarısız olabilir, gösterilen kaymaya kadar bir fiyattan gerçekleşebilir ya da tahmin edilenden uzun sürebilir. Cüzdanın işlemleri toplu gönderemiyorsa takas ve işlem ayrı adımlardır; bu yüzden takas gerçekleşip ardından gelen işlem başarısız olabilir. Bu durumda elinde USDG kalır. Gerçekleştirilemeyen zincirler arası bir takas, gönderdiğin ağda iade edilir. Bkz. [Ödeme ve takas](./pay-and-swap.mdx).
+
+## Sözleşme yükseltmeleri ve yönetişim
+
+Sözleşmeler yükseltilebilir. Bir yükseltme, fonların nasıl tutulduğu dahil her şeyi değiştirebilir; bu yüzden hatalı bir yükseltme ya da ele geçirilmiş bir yükseltme yetkilisi fon kaybına yol açabilir. Bir yükseltme gecikme olmadan yürürlüğe girer.
+
+Yönetişim, ücreti kodda sabitlenmiş sınırlar içinde değiştirebilir. Bir guardian yeni pozisyonları duraklatabilir. Duraklatma sonuçlandırmayı, talepleri ya da iadeleri asla durdurmaz.
+
+## Akıllı sözleşme ve ağ riski
+
+Isometric, Arbitrum üzerindeki bir akıllı sözleşmeler setidir. Sözleşmelerde hata olabilir, oracle'lar başarısız olabilir, ağlar durabilir ve USDG, ihraççının bir adresi dondurma yetkisi dahil kendi ihraççı ve teknik risklerini taşır. Protokol, hatalı veriyle bir işlemi gerçekleştirmek yerine reddedecek şekilde tasarlanmıştır, ancak hiçbir yazılım risksiz değildir.
+
+## Bu bir tavsiye değildir
+
+Uygulamadaki ya da bu dokümanlardaki hiçbir şey yatırım tavsiyesi değildir. Isometric bir işlemin sana uygun olup olmadığını değerlendirmez. Isometric; Amerika Birleşik Devletleri, Kanada, Birleşik Krallık, Güney Afrika veya yaptırım uygulanan ülkelerde ikamet edenler için kullanılabilir değildir. Kaldıraçlı ürünlerle işlem yapmak senin yargı bölgende de kısıtlanmış olabilir ve kazançlarının vergilerinden sen sorumlusun. Bkz. [kullanım koşulları](https://app.isometric.fi/terms).
+
+## Sözleşme kodu neleri korur
+
+- **Maksimum zararın sabittir.** Ödeme yaptıktan sonra senden hiçbir şey alınamaz.
+- **Ödemen ilk günden fonlanmıştır.** Sözleşme, sonuçlanmaya kadar primini ve satıcının yatırdığı tutarı tutar. İkisi birlikte **Maks. ödemeni** karşılar.
+- **Fiyatı kimse seçmez.** Bir sonuçlanma saati için tam olarak bir Chainlink fiyatı geçerlidir ve Isometric dahil hiçbir katılımcı başka bir fiyat seçemez.
+- **Taleplerin süresi hiç dolmaz.** Bir ödeme seni süresiz bekler ve onu herhangi bir adrese gönderebilirsin.
+- **İmzaladığın işlem, aldığın işlemdir.** Teklif satıcı tarafından imzalanır ve sözleşme, ondan farklı olan her gerçekleşmeyi reddeder.

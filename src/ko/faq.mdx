@@ -1,0 +1,201 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: 자주 묻는 질문
+sidebarTitle: FAQ
+description: 트레이더와 매도자가 Isometric에 대해 가장 많이 묻는 질문에 짧게 답합니다.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# 자주 묻는 질문
+
+## 레버리지
+
+<AccordionGroup>
+
+<Accordion title="포지션을 조기 종료할 수 있나요?">
+
+아니요. 포지션은 종료 시간까지 유지됩니다. 청산과 펀딩비가 없는 대신 감수하는 점입니다. 끝까지 기다릴 수 있는 기간을 고르세요.
+
+</Accordion>
+
+<Accordion title="청산될 수 있나요?">
+
+아니요. 가격이 아무리 불리하게 움직여도 오픈부터 종료 시간까지 포지션에는 아무 일도 일어나지 않습니다. 지불한 금액이 최대 손실이며, 그 금액은 오픈할 때 이미 지불했습니다.
+
+</Accordion>
+
+<Accordion title="펀딩비가 있나요?">
+
+아니요. 포지션 보유에 드는 비용은 없습니다.
+
+</Accordion>
+
+<Accordion title="포지션의 지급 여부는 무엇이 결정하나요?">
+
+[종료 시간의 Chainlink 가격](./trade/expiry-and-settlement.mdx) 하나입니다. 차트의 구간이 종료 가격별 지급액을 보여 줍니다.
+
+</Accordion>
+
+<Accordion title="포지션이 지급할 수 있는 최대 금액은 얼마인가요?">
+
+차트의 **Max** (최대)입니다. 모든 견적에는 최대 지급액이 있으며 포지션이 열릴 때 확정됩니다. 종료 시간이 늦을수록, 레버리지가 높을수록 최대치가 커집니다.
+
+</Accordion>
+
+<Accordion title="입력한 금액만큼만 정확히 청구되나요?">
+
+네. 투입 금액이 수수료를 포함한 전체 비용이자 최대 손실입니다. 거래는 내가 확인한 견적 그대로 열리거나, 실패하면 네트워크 수수료만 냅니다. USDC나 USDT로 결제하면 금액은 USDG 기준으로 계산되고, 스왑 환율에 따라 필요한 스테이블코인 양이 정해집니다.
+
+</Accordion>
+
+<Accordion title="거래 한 번에 트랜잭션은 몇 개인가요?">
+
+USDG로 결제하면 하나입니다. 승인이 필요하면 무료 서명으로 처리되거나 거래와 함께 전송됩니다. USDC나 USDT로 결제할 때도 지갑이 트랜잭션을 묶어 보낼 수 있으면 하나입니다. 그렇지 않으면 지갑이 필요한 경우 승인을 보내고, 스왑을 먼저 보냅니다.
+
+</Accordion>
+
+<Accordion title="지급은 어떻게 받나요?">
+
+롱이든 숏이든 USDG로 받습니다. 정산 시 지갑으로 바로 지급되며, 보통 종료 시간 후 1~2분 안에 이루어집니다. [지급과 수령](./trade/payouts-and-claims.mdx)을 참고하세요.
+
+</Accordion>
+
+<Accordion title="수익 확정은 무슨 뜻인가요?">
+
+포지션은 지급되었지만 지갑으로의 전송이 실패했다는 뜻입니다. 잃은 것은 없습니다. 포트폴리오에서 포지션을 열고 같은 지갑이나 USDG를 받을 수 있는 다른 주소로 수령하세요. 수령에는 기한이 없습니다.
+
+</Accordion>
+
+<Accordion title="버튼에 롱이나 숏이 아닌 다른 문구가 표시되는 이유는 무엇인가요?">
+
+거래를 진행할 수 없는 이유를 알려 주는 것입니다. 잘못된 네트워크, 결제 토큰 잔액 부족, 한도를 벗어난 금액, 거래에 맞는 견적 없음, 스왑 경로 없음, 마켓 일시 중지 중 하나입니다.
+
+</Accordion>
+
+<Accordion title="거래 종료 시점은 어떻게 정하나요?">
+
+차트에서 **종료**로 표시된 선을 드래그하거나, 그 아래의 **12h**, **1d**, **3d**, **1w**를 누르세요. 기간은 12시간에서 7일까지이며, 다음 정각으로 올림됩니다.
+
+</Accordion>
+
+<Accordion title="지갑에 무엇이 필요한가요?">
+
+포지션 결제용 USDG, USDC 또는 USDT와 네트워크 수수료용 소량의 ETH가 필요합니다. 모두 Arbitrum One에 있어야 합니다.
+
+</Accordion>
+
+<Accordion title="거래 규모는 얼마까지 가능한가요?">
+
+금액은 $1부터 시작하며, 금액에 레버리지를 곱한 값이 포지션 규모 5,000 USDG를 넘을 수 없습니다. 5x에서는 $1,000, 최고 레버리지인 100x에서는 $50입니다.
+
+</Accordion>
+
+<Accordion title="USDG를 보유해야 하나요?">
+
+아니요. Arbitrum One의 USDC나 USDT로 결제하면 거래가 열릴 때 앱이 USDG로 스왑합니다. 거래는 여전히 USDG로 정산되고 USDG로 지급됩니다. [결제와 스왑](./trade/pay-and-swap.mdx)을 참고하세요.
+
+</Accordion>
+
+<Accordion title="다른 네트워크에서 자금을 가져오거나 다시 옮길 수 있나요?">
+
+네. 계정 메뉴를 열고 **스왑 (크로스체인)** 항목을 선택하세요. Ethereum, Base, Optimism, Polygon, BNB Chain, Avalanche, Hyperliquid, Robinhood Chain 등의 네트워크와 Arbitrum One 사이에서 자금을 옮길 수 있습니다. [결제와 스왑](./trade/pay-and-swap.mdx)을 참고하세요.
+
+</Accordion>
+
+</AccordionGroup>
+
+## 예측
+
+<AccordionGroup>
+
+<Accordion title="초대가 필요한가요?">
+
+아니요. Arbitrum One에서 지갑을 연결하고 거래나 예측을 시작하면 됩니다.
+
+</Accordion>
+
+<Accordion title="예측의 지급 여부는 무엇이 결정하나요?">
+
+보통 종료 시간 또는 그 이전에 마지막으로 게시된 Chainlink 가격입니다. 그 가격이 너무 오래되었거나, 0이거나, 음수이면 컨트랙트는 대신 종료 시간 이후의 첫 번째 가격을 확인합니다. 목표가에 닿거나 넘으면 전액 지급됩니다. 목표가에 0.1% 미만으로 못 미치면 비례한 금액이 지급되고, 그보다 크게 빗나가거나 정확히 0.1% 못 미치면 지급되지 않습니다. [예측 지급 방식](./predict/how-it-pays.mdx)을 참고하세요.
+
+</Accordion>
+
+<Accordion title="종료 전에 예측을 팔 수 있나요?">
+
+아니요. 예측은 종료 시간까지 유지됩니다.
+
+</Accordion>
+
+<Accordion title="예측 규모는 얼마까지 가능한가요?">
+
+예측 하나의 지급액은 최대 1,000 USDG이며, 금액의 10배를 넘을 수 없습니다.
+
+</Accordion>
+
+</AccordionGroup>
+
+## 매도
+
+<AccordionGroup>
+
+<Accordion title="매도자가 되려면 어떻게 하나요?">
+
+매도자는 직접 가격을 견적해 예측과 거래의 반대편을 맡습니다. [매도자](./write/writers.mdx)를 참고하세요.
+
+</Accordion>
+
+<Accordion title="수익은 어디서 나오나요?">
+
+트레이더가 포지션에 지불하는 금액에서 나옵니다. 대출, 스테이킹, 파밍은 없습니다.
+
+</Accordion>
+
+<Accordion title="매도자가 손실을 볼 수 있나요?">
+
+네. 매도자는 체결한 예측과 거래의 지급액을 부담하며, 한 방향으로 크게 움직이면 받은 금액보다 더 많이 지급할 수 있습니다.
+
+</Accordion>
+
+</AccordionGroup>
+
+## 프로토콜
+
+<AccordionGroup>
+
+<Accordion title="옵션 프로토콜인가요?">
+
+네, 내부적으로는 그렇습니다. 롱이나 상승 예측은 콜 스프레드이고, 숏이나 하락 예측은 풋 스프레드입니다. 둘 다 오픈 시 완전 담보되며 하나의 오라클 가격으로 USDG 정산됩니다. 예측하거나 거래하는 데 이를 알 필요는 없습니다.
+
+</Accordion>
+
+<Accordion title="거래 상대방은 누구인가요?">
+
+내 예측이나 거래를 체결한 견적의 매도자입니다. 포지션이 열릴 때 내 프리미엄과 매도자의 예치금이 **최대 지급액** 전체를 보장합니다.
+
+</Accordion>
+
+<Accordion title="Isometric이 내 자금에 손댈 수 있나요?">
+
+일상적인 관리 권한으로는 불가능합니다. 거버넌스는 코드에 정해진 상한 안에서 수수료를 바꿀 수 있습니다. 가디언은 신규 포지션을 일시 중지할 수 있습니다. 둘 다 열린 포지션을 바꾸거나, 기록된 정산 가격을 변경하거나, 정산·수령·환불을 막을 수 없습니다.
+
+컨트랙트는 업그레이드할 수 있으며, 업그레이드로는 무엇이든 바뀔 수 있습니다. 자세한 내용은 [위험 알아두기](./trade/risks.mdx)를 참고하세요.
+
+</Accordion>
+
+<Accordion title="키퍼가 멈추면 어떻게 되나요?">
+
+다른 누군가가 정산을 보낼 때까지 정산이 지연됩니다. 누구나 보낼 수 있습니다. 정산 가격은 누가 기록하든 Chainlink 피드로 정해지므로, 늦은 정산도 제때 한 정산과 정확히 같은 금액을 지급합니다.
+
+</Accordion>
+
+<Accordion title="네트워크나 가격 피드가 멈추면 어떻게 되나요?">
+
+정산은 가격을 기다립니다. 종료 시간 후 14일 안에 가격이 게시되지 않으면 양쪽 모두 수수료를 뺀 금액을 환불받습니다. 이미 받을 권리가 있는 금액은 바뀌지 않습니다.
+
+</Accordion>
+
+</AccordionGroup>
+
+## 해결되지 않았나요
+
+[support@isometric.fi](mailto:support@isometric.fi)로 이메일을 보내거나 [Telegram](https://t.me/isometricfi)에서 문의하세요.

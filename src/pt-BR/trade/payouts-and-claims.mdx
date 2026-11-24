@@ -1,0 +1,51 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Pagamentos e resgates
+sidebarTitle: Pagamentos e resgates
+description: Como uma posição na Isometric é paga, quando você precisa resgatar e o que o Portfólio mostra.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Pagamentos e resgates
+
+Todo pagamento, long ou short, é feito em **USDG**, mesmo que você tenha pagado com USDC ou USDT. Para levá-lo para outro token ou outra rede, use a [troca](./pay-and-swap.mdx).
+
+## Quando uma posição paga
+
+Você recebe automaticamente. O pagamento vai para a sua carteira na mesma transação que registra o preço final, normalmente um ou dois minutos após o horário de término. A posição então aparece como **Paga**.
+
+## Quando você precisa resgatar
+
+Se a transferência para a sua carteira falhar, por exemplo porque a carteira está bloqueada para receber USDG, a posição aparece como **Ganha**. Nada foi perdido. O pagamento fica aguardando no contrato e nunca expira.
+
+Abra o **Portfólio**, escolha a posição e toque em **Resgatar**. Envie para **Minha carteira** ou para **Outro endereço**.
+
+<Warning>
+  Todo o pagamento vai para o endereço que você informar e não pode ser devolvido. Confira cada
+  caractere e verifique se o endereço pode receber USDG na Arbitrum One.
+</Warning>
+
+## Status das posições
+
+| Status      | Significado                                                                                                   |
+| ----------- | ------------------------------------------------------------------------------------------------------------- |
+| Aberta      | O horário de término ainda não chegou                                                                         |
+| Terminando  | O horário de término passou e o preço final aguarda registro                                                  |
+| Paga        | Terminou e foi paga na sua carteira                                                                           |
+| Ganha       | Terminou com pagamento, mas a transferência falhou. Resgate-o                                                 |
+| Perdida     | Terminou fora da faixa, então não paga nada                                                                   |
+| Reembolsada | Sem preço final em até 14 dias após o horário de término, então o que você pagou, menos a taxa, foi devolvido |
+
+## O que o Portfólio mostra
+
+| Número                           | Significado                                                                      |
+| -------------------------------- | -------------------------------------------------------------------------------- |
+| Valor aberto se terminasse agora | Quanto as suas posições abertas pagariam pelo preço atual. Apenas uma referência |
+| Pagamento máximo em aberto       | O máximo que as suas posições abertas poderiam pagar                             |
+| A resgatar                       | Pagamentos aguardando o seu resgate                                              |
+| Taxa de acerto                   | A parcela das posições terminadas que pagaram mais do que custaram               |
+| Valor pago, com taxas            | Tudo o que você pagou por posições                                               |
+| Valor recebido                   | Tudo o que foi pago a você                                                       |
+| PnL realizado                    | Valor recebido menos valor pago, para posições que já terminaram                 |
+
+Cada linha leva à sua transação, então cada etapa pode ser conferida na blockchain.

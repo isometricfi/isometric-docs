@@ -1,0 +1,30 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Cách hoạt động
+sidebarTitle: Cách hoạt động
+description: Bản chất của một vị thế Isometric. Mọi giao dịch là một option spread được thế chấp đầy đủ, kết thúc tại thời điểm đáo hạn theo một mức giá Chainlink.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Cách hoạt động
+
+Mọi vị thế Isometric đều là một option spread (chênh lệch quyền chọn).
+
+- **Long là một call spread.** Vị thế trả tiền khi giá tăng trên giá về 0 của bạn, tới một mức trần.
+- **Short là một put spread.** Vị thế trả tiền khi giá giảm dưới giá về 0 của bạn, tới một mức sàn.
+- **Bạn mua spread, bên bán bán nó.** Các bên bán cạnh tranh báo giá cho giao dịch của bạn, và báo giá tốt nhất sẽ khớp.
+- **Được thế chấp đầy đủ.** Khi giao dịch mở, premium của bạn và khoản ký quỹ của bên bán bao trọn **Chi trả tối đa** của bạn.
+- **Kết thúc một lần, tại thời điểm kết thúc.** Một mức giá Chainlink quyết định khoản chi trả, trả bằng USDG. Không thực hiện sớm, không đóng sớm.
+
+## Biểu đồ theo thuật ngữ quyền chọn
+
+| Trên biểu đồ                 | Theo thuật ngữ quyền chọn                                  |
+| ---------------------------- | ---------------------------------------------------------- |
+| Đường **Lose**               | Giá thực hiện (strike)                                     |
+| Đường **Max**                | Mức trần (cap), hoặc mức sàn (floor) với short             |
+| Chi trả tối đa               | Toàn bộ giá trị của spread, giữa giá thực hiện và mức trần |
+| Số tiền bạn bỏ vào           | Premium cộng phí giao dịch                                 |
+| Số tiền bạn bỏ vào × đòn bẩy | Giá trị danh nghĩa (notional)                              |
+| **Kết thúc**                 | Thời điểm đáo hạn (expiry)                                 |
+
+Đòn bẩy là giá trị danh nghĩa chia cho số tiền bạn trả. Nó quyết định quy mô của spread, không phải yêu cầu ký quỹ, nên không có gì để thanh lý.

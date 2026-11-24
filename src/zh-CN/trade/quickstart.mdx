@@ -1,0 +1,81 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: 开立你的第一笔交易
+sidebarTitle: 快速上手
+description: 连接钱包，在 Arbitrum 上充值，几分钟内就能在 Isometric 上用杠杆做多或做空。
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# 开立你的第一笔交易
+
+本教程带你从一个空钱包走到一个已开立的仓位。
+
+<Tip>
+
+想不用真钱试一试，请在应用顶部打开**演示**。
+
+</Tip>
+
+<Steps>
+
+<Step title="连接钱包" icon="lucide:wallet">
+
+打开 [app.isometric.fi](https://app.isometric.fi)，进入**杠杆**，选择**连接**。无需邀请。
+
+</Step>
+
+<Step title="在 Arbitrum 上充值" icon="lucide:coins">
+
+Isometric 运行在 Arbitrum One 上。你的钱包在该网络上需要准备两样东西：
+
+- **USDG、USDC 或 USDT**，用于支付交易。每笔交易都以 USDG 赔付，所以 USDC 和 USDT 会在开仓时兑换为 USDG。
+- **少量 ETH**，用于支付网络费用。
+
+资金在其他网络上？打开账户菜单，选择**兑换（跨链）**。参见[支付与兑换](./pay-and-swap.mdx)。
+
+</Step>
+
+<Step title="选择市场和方向" icon="lucide:search">
+
+点击左上角的市场即可切换。如果你认为价格在结束时间会更高，点击**做多**；如果认为会更低，点击**做空**。
+
+</Step>
+
+<Step title="拖动结束线" icon="lucide:move-horizontal">
+
+图表左侧显示过去两天的价格，右侧是未来。拖动标有**结束**的线，选择交易何时结束，范围为 12 小时到 7 天。你也可以点击图表下方的 **12h**、**1d**、**3d** 或 **1w**。
+
+</Step>
+
+<Step title="设置投入金额和杠杆" icon="lucide:sliders-horizontal">
+
+- **投入金额。** 你要花多少钱，以 USDG 计。它是你支付的全部金额（含手续费），也是你的最大亏损。点击旁边的代币，可以改用 USDC 或 USDT 支付。
+- **杠杆。** 点击后在 5x 到 100x 之间选择。杠杆越高，每单位价格变动赚得越多，但也越快亏光。**最大**显示你当前杠杆允许的最高投入金额。
+
+</Step>
+
+<Step title="读懂图表" icon="lucide:chart-line">
+
+结束线右侧的区间显示每个结束价格对应的赔付：亏掉投入金额（**Lose**）、拿回一部分（**Some back**）、盈利，以及最高盈利（**Max**）。悬停或点按任意价格，即可看到它的确切赔付。[读懂图表](./reading-the-chart.mdx)中有一个完整示例。
+
+</Step>
+
+<Step title="开仓" icon="lucide:check">
+
+点击**做多 BTC** 或**做空 BTC**，并在钱包中确认。交易一上链，仓位即已开立，并显示在图表下方的**持仓**中。
+
+</Step>
+
+<Step title="等待结束时间" icon="lucide:hourglass">
+
+你无需再做任何事。仓位不能提前平仓，也不会被强平。到结束时间，由一个 Chainlink 价格决定结果，任何赔付都会以 USDG 发送到你的钱包。参见[赔付与领取](./payouts-and-claims.mdx)。
+
+</Step>
+
+</Steps>
+
+## 交易之前
+
+- 阅读[了解风险](./risks.mdx)，内容很短。
+- 仓位会一直持续到结束时间，无法提前退出。
+- 永远不要用你承受不起全部损失的资金交易。

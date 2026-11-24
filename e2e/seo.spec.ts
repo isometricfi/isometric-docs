@@ -9,8 +9,8 @@ test("serves a docs sitemap and Markdown guide for every public docs page", asyn
 }) => {
   // given
   const docsOrigin = "http://127.0.0.1:14302";
-  const paths = navigationPages(readFileSync("docs.jsonc", "utf8")).map((page) =>
-    page === "index" ? "/" : `/${page}`,
+  const paths = navigationPages(readFileSync("docs.jsonc", "utf8")).map(
+    (page) => `/${page.replace(/(^|\/)index$/, "")}`,
   );
 
   // when

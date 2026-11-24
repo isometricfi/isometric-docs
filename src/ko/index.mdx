@@ -1,0 +1,63 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Isometric에 오신 것을 환영합니다
+sidebarTitle: 환영합니다
+description: 내가 정한 조건으로 거래하세요. 청산 없이 최대 100x 레버리지를 쓰며, 종료 시간의 가격만 반영됩니다.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# 내가 정한 조건으로 거래하세요
+
+<Note>
+  Isometric은 Arbitrum One에서 베타로 운영 중이며, 포지션 한도는 5,000 USDG입니다. 컨트랙트는 감사를
+  받지 않았으므로 잃어도 괜찮은 금액만 사용하세요.
+</Note>
+
+Isometric에서는 청산 없이 **최대 100x 레버리지로 롱 또는 숏**을 잡을 수 있습니다. 처음에 한 번만 지불하며, 그 금액이 최대 손실입니다. 종료 시간의 가격만 반영되므로 순간적인 꼬리(윅)에 포지션이 정리되지 않습니다.
+
+## 세 단계로 끝나는 거래
+
+1. **롱 또는 숏을 고릅니다.**
+2. 차트에서 **종료선을 드래그해** 거래가 끝나는 시점을 12시간에서 7일 사이로 정합니다.
+3. **투입 금액과 레버리지를 정한 뒤** **BTC 롱** 또는 **BTC 숏**을 누릅니다.
+
+거래하기 전에 차트에서 종료 가격별 지급액을 확인할 수 있습니다. 투입 금액을 잃는 **Lose** (손실) 구간, 일부를 돌려받는 **Some back** (일부 회수) 구간, 수익 구간, 그리고 **Max** (최대) 수익이 표시됩니다. [차트 읽기](./trade/reading-the-chart.mdx)를 참고하세요.
+
+## 무기한 선물이 아닌 이유
+
+<Columns cols={3}>
+  <Card title="청산 없음" icon="lucide:shield-check">
+    가격이 불리하게 움직여도 포지션이 정리되지 않습니다. 종료 시간까지 그대로 유지됩니다.
+  </Card>
+  <Card title="펀딩비 없음" icon="lucide:clock">
+    보유 비용이 없습니다. 오픈할 때 지불한 금액이 전체 비용입니다.
+  </Card>
+  <Card title="오픈 시 지급액 확보" icon="lucide:lock">
+    거래가 열리는 순간부터 내 지불금과 매도자의 예치금이 최대 지급액 전체를 보장합니다.
+  </Card>
+</Columns>
+
+감수할 점도 있습니다. 포지션은 종료 시간까지 유지되고, 지급액은 최대치에 이르면 더 늘지 않습니다. [무기한 선물과 Isometric 비교](./trade/perps-vs-isometric.mdx)에서 양쪽을 정리했습니다.
+
+## Isometric의 또 다른 기능
+
+<Columns cols={2}>
+  <Card title="예측" icon="lucide:target" href="./predict/quickstart.mdx" arrow>
+    내가 정한 종료 시간에 가격이 내가 정한 목표가보다 위에서 끝날지, 아래에서 끝날지 예측합니다.
+    지급액은 예측 시점에 확정됩니다.
+  </Card>
+  <Card title="매도" icon="lucide:pen-line" href="./write/writers.mdx" arrow>
+    직접 가격을 견적해 거래와 예측의 반대편을 맡습니다.
+  </Card>
+</Columns>
+
+## 더 읽어보기
+
+<Columns cols={2}>
+  <Card title="첫 거래 시작하기" icon="lucide:rocket" href="./trade/quickstart.mdx" arrow>
+    지갑을 연결하고, 지원되는 네트워크에서 자금을 옮긴 뒤 포지션을 엽니다.
+  </Card>
+  <Card title="위험 알아두기" icon="lucide:shield-alert" href="./trade/risks.mdx" arrow>
+    잃을 수 있는 것과 지급을 지연시킬 수 있는 요인을 설명합니다.
+  </Card>
+</Columns>

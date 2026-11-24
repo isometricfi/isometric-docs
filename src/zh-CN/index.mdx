@@ -1,0 +1,62 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: 欢迎使用 Isometric
+sidebarTitle: 欢迎
+description: 交易条件由你定。最高 100x 杠杆，不会被强平，只看你结束时间的价格。
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# 交易条件由你定
+
+<Note>
+  Isometric 正在 Arbitrum One 上测试运行，单个仓位上限为 5,000 USDG。合约尚未经过审计，
+  请只用你愿意承担损失的资金。
+</Note>
+
+在 Isometric 上，你可以用**最高 100x 杠杆做多或做空**，而且不会被强平。你只需预先支付一次，这笔钱就是你的最大亏损。插针无法让你出局，因为只看你结束时间的价格。
+
+## 三步完成一笔交易
+
+1. **选择做多或做空。**
+2. **拖动图表上的结束线**，选择交易何时结束，范围为 12 小时到 7 天。
+3. **设置投入金额和杠杆**，然后点击**做多 BTC** 或**做空 BTC**。
+
+交易之前，图表会显示每个结束价格对应的赔付：在哪里会亏掉投入金额（**Lose**），在哪里能拿回一部分（**Some back**），在哪里盈利，以及你的最高盈利（**Max**）。参见[读懂图表](./trade/reading-the-chart.mdx)。
+
+## 为什么不用永续合约
+
+<Columns cols={3}>
+  <Card title="不会被强平" icon="lucide:shield-check">
+    价格反向波动不会让你的仓位被平掉。仓位会一直持有到结束时间。
+  </Card>
+  <Card title="没有资金费率" icon="lucide:clock">
+    持仓没有任何成本。开仓时支付的金额就是全部成本。
+  </Card>
+  <Card title="开仓即锁定赔付" icon="lucide:lock">
+    从交易开立的那一刻起，你的付款和卖方的存款就足以覆盖你的全部最高赔付。
+  </Card>
+</Columns>
+
+代价是：仓位会一直持续到结束时间，赔付达到上限后不再增长。[永续合约与 Isometric 对比](./trade/perps-vs-isometric.mdx)列出了两者的优劣。
+
+## Isometric 还提供
+
+<Columns cols={2}>
+  <Card title="预测" icon="lucide:target" href="./predict/quickstart.mdx" arrow>
+    押注价格在你自己定的结束时间高于或低于你自己定的目标价。赔付金额在下单时即已固定。
+  </Card>
+  <Card title="做卖方" icon="lucide:pen-line" href="./write/writers.mdx" arrow>
+    为交易和预测给出你自己的报价，成为它们的对手方。
+  </Card>
+</Columns>
+
+## 继续阅读
+
+<Columns cols={2}>
+  <Card title="开立你的第一笔交易" icon="lucide:rocket" href="./trade/quickstart.mdx" arrow>
+    连接钱包，从任意支持的网络充值，然后开立仓位。
+  </Card>
+  <Card title="了解风险" icon="lucide:shield-alert" href="./trade/risks.mdx" arrow>
+    你可能损失什么，以及什么会延迟赔付。
+  </Card>
+</Columns>

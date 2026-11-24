@@ -48,6 +48,9 @@ Cloudflare Worker.
 
 - Write for traders and liquidity providers, not for protocol developers.
 - Every page must be listed in the `docs.jsonc` navigation. A page left out of it is not published.
+- Each locale in `src/<locale>` mirrors the English pages. Change, add, or remove a page in every
+  locale together, and list it in each locale's `navigation.versions` entry.
+- Use the app's wording for translated terms.
 - Keep each page's `og:image` frontmatter on `https://isometric.fi/docs-opengraph.png`. The main
   site serves that card.
 - Keep numbers and parameters in step with the deployed contracts. Do not state a value the

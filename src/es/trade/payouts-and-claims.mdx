@@ -1,0 +1,51 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Pagos y reclamos
+sidebarTitle: Pagos y reclamos
+description: Cómo se paga una posición en Isometric, cuándo necesitas reclamar y qué te muestra la Cartera.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Pagos y reclamos
+
+Cada pago, sea de un largo o de un corto, se hace en **USDG**, aunque hayas pagado con USDC o USDT. Para pasarlo a otro token o a otra red, usa el [swap](./pay-and-swap.mdx).
+
+## Cuándo paga una posición
+
+Se te paga automáticamente. El pago llega a tu billetera en la misma transacción que registra el precio final, normalmente uno o dos minutos después de la hora de fin. Luego la posición aparece como **Pagada**.
+
+## Cuándo necesitas reclamar
+
+Si la transferencia a tu billetera falla, por ejemplo porque la billetera tiene bloqueado recibir USDG, la posición aparece como **Ganada**. No se pierde nada. El pago espera en el contrato y nunca vence.
+
+Abre **Cartera**, elige la posición y presiona **Reclamar**. Envíalo a **Mi billetera** o a **Otra dirección**.
+
+<Warning>
+  Todo el pago va a la dirección que ingreses y no se puede devolver. Revisa cada carácter y
+  asegúrate de que la dirección pueda recibir USDG en Arbitrum One.
+</Warning>
+
+## Estados de una posición
+
+| Estado      | Significado                                                                                                             |
+| ----------- | ----------------------------------------------------------------------------------------------------------------------- |
+| Abierta     | La hora de fin está en el futuro                                                                                        |
+| Terminando  | La hora de fin pasó y el precio final está pendiente de registrarse                                                     |
+| Pagada      | Terminó y se pagó a tu billetera                                                                                        |
+| Ganada      | Terminó con un pago, pero la transferencia falló. Reclámalo                                                             |
+| Perdida     | Terminó fuera de su rango, así que no paga nada                                                                         |
+| Reembolsada | No hubo precio final en los 14 días posteriores a la hora de fin, así que se devolvió lo que pagaste, menos la comisión |
+
+## Qué muestra la Cartera
+
+| Dato                             | Significado                                                                      |
+| -------------------------------- | -------------------------------------------------------------------------------- |
+| Valor abierto si terminara ahora | Lo que pagarían tus posiciones abiertas al precio actual. Solo es una referencia |
+| Pago máximo abierto              | Lo máximo que podrían pagar tus posiciones abiertas                              |
+| Reclamable                       | Pagos que esperan a que los reclames                                             |
+| Tasa de acierto                  | La proporción de posiciones terminadas que pagaron más de lo que costaron        |
+| Pagado, comisiones incluidas     | Todo lo que has pagado por posiciones                                            |
+| Cobrado                          | Todo lo que se te ha pagado                                                      |
+| PnL realizado                    | Lo cobrado menos lo pagado, en las posiciones que ya terminaron                  |
+
+Cada fila enlaza a su transacción, así que cada paso se puede verificar en la cadena.

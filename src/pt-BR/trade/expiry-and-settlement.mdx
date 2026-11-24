@@ -1,0 +1,44 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: O horário de término
+sidebarTitle: O horário de término
+description: O que acontece entre abrir uma posição na Isometric e receber o pagamento, e como um único preço no horário de término decide o resultado.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# O horário de término
+
+Uma posição na Isometric tem um fim fixo. Entre a abertura e esse fim, nada é exigido de você, e nada pode ser feito contra você.
+
+## Como escolher
+
+Arraste a linha marcada **Termina** no gráfico. O rótulo mostra o dia e a hora, como **Termina amanhã às 9h**. Os prazos vão de 12 horas a 7 dias, contados a partir do momento em que você pede a cotação e **arredondados para cima, até a próxima hora cheia**.
+
+## Enquanto a posição está aberta
+
+A posição não pode ser fechada, redimensionada, transferida nem sofrer liquidação forçada. Ela aparece abaixo do gráfico em **Abertas** e no **Portfólio**, com quanto pagaria se terminasse agora e o seu pagamento máximo.
+
+## No horário de término
+
+O contrato usa o **último preço da Chainlink publicado até o horário de término**. Se essa leitura for antiga demais, zero ou negativa, o contrato usa a primeira leitura após o horário de término. Essa leitura precisa ser positiva.
+
+Depois que o horário de término passa, qualquer pessoa pode enviar o preço final. A Isometric mantém um keeper que faz isso, normalmente em um ou dois minutos. Até lá, a posição aparece como **Terminando**. Esperar não muda qual preço conta.
+
+A mesma transação paga os dois lados. O seu pagamento vai direto para a sua carteira, e o restante volta para o lançador.
+
+## Depois do término
+
+| Status      | O que aconteceu                                                           | O que você faz                                      |
+| ----------- | ------------------------------------------------------------------------- | --------------------------------------------------- |
+| Paga        | O preço terminou do seu lado e o pagamento chegou à sua carteira          | Nada                                                |
+| Perdida     | O preço terminou no seu preço sem valor ou além dele                      | Nada. A posição não pagou nada                      |
+| Ganha       | Ela pagou, mas a transferência para a sua carteira falhou                 | [Resgate o pagamento](./payouts-and-claims.mdx)     |
+| Reembolsada | Nenhum preço final foi publicado em até 14 dias após o horário de término | Nada. O que você pagou, menos a taxa, foi devolvido |
+
+## O que pode atrasar um pagamento
+
+- **O keeper está atrasado.** Qualquer pessoa pode enviar o preço final, então um keeper parado atrasa o pagamento, mas não o impede.
+- **O feed de preço está atrasado.** Se nenhum preço chegar em até 14 dias após o horário de término, os dois lados são reembolsados.
+- **A rede está fora do ar.** Nada pode ser registrado até a Arbitrum voltar a produzir blocos.
+
+Nada disso muda o que é devido a você. O dinheiro que garante o seu pagamento fica no contrato até chegar a você.

@@ -1,0 +1,201 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: 常見問題
+sidebarTitle: 常見問題
+description: 交易者和賣方最常問的 Isometric 問題，簡短解答。
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# 常見問題
+
+## 槓桿
+
+<AccordionGroup>
+
+<Accordion title="我可以提前平倉嗎？">
+
+不行。部位會持有到結束時間。這是換取不會強平、沒有資金費率的代價。請選擇你願意等到結束的天期。
+
+</Accordion>
+
+<Accordion title="我會被強平嗎？">
+
+不會。從開倉到結束時間，不論價格朝不利方向走多遠，部位都不會受到影響。你支付的金額就是最大虧損，而且在開倉時就已付清。
+
+</Accordion>
+
+<Accordion title="有資金費率嗎？">
+
+沒有。持有部位不需要任何成本。
+
+</Accordion>
+
+<Accordion title="什麼決定部位是否有賠付？">
+
+一個[結束時間的 Chainlink 價格](./trade/expiry-and-settlement.mdx)。圖表上的色帶顯示每個結束價的賠付。
+
+</Accordion>
+
+<Accordion title="一個部位最多能賠付多少？">
+
+圖表上的 **Max**。每筆報價都有一個上限，在開倉時就已固定。結束時間越晚、槓桿越高，上限就越大。
+
+</Accordion>
+
+<Accordion title="實際扣款會剛好等於我輸入的金額嗎？">
+
+會。你的投入金額就是全部成本（含手續費），也是你的最大虧損。交易會完全依照你確認的報價開立，否則就會失敗，你只需支付網路手續費。如果你用 USDC 或 USDT 支付，金額以 USDG 計算，所需的穩定幣數量由兌換匯率決定。
+
+</Accordion>
+
+<Accordion title="一筆交易要送出幾筆鏈上交易？">
+
+用 USDG 支付時只需一筆。任何授權要嘛是免費簽名，要嘛和交易一起送出。如果你的錢包支援批次交易，用 USDC 或 USDT 支付也只需一筆。否則錢包會先送出授權（如有需要）和兌換。
+
+</Accordion>
+
+<Accordion title="我如何收到賠付？">
+
+不論做多或做空，都以 USDG 賠付。結算會直接把錢付到你的錢包，通常在結束時間後一兩分鐘內完成。請參閱[賠付與領取](./trade/payouts-and-claims.mdx)。
+
+</Accordion>
+
+<Accordion title="「獲利」是什麼意思？">
+
+部位已產生賠付，但轉入你錢包的轉帳失敗了。你不會損失任何東西。在投資組合中打開該部位並領取，可以領到同一個錢包，或另一個可接收 USDG 的地址。領取永不過期。
+
+</Accordion>
+
+<Accordion title="為什麼按鈕顯示的不是做多或做空？">
+
+按鈕是在告訴你交易無法送出的原因：網路錯誤、支付代幣餘額不足、金額超出限制、這筆交易沒有報價、沒有兌換路徑，或市場已暫停。
+
+</Accordion>
+
+<Accordion title="如何選擇交易的結束時間？">
+
+拖曳圖表上標示**結束**的線，或按下線下方的 **12h**、**1d**、**3d** 或 **1w**。天期範圍為 12 小時至 7 天，並無條件進位到下一個整點。
+
+</Accordion>
+
+<Accordion title="我的錢包裡需要準備什麼？">
+
+用來支付部位的 USDG、USDC 或 USDT，以及少量支付網路手續費的 ETH，全部都在 Arbitrum One 上。
+
+</Accordion>
+
+<Accordion title="一筆交易最大可以多大？">
+
+金額最低 $1，且金額乘以槓桿不得超過 5,000 USDG 的部位規模。也就是 5x 時為 $1,000，最高槓桿 100x 時為 $50。
+
+</Accordion>
+
+<Accordion title="我需要持有 USDG 嗎？">
+
+不需要。你可以用 Arbitrum One 上的 USDC 或 USDT 支付，App 會在開倉時將其兌換為 USDG。交易仍以 USDG 結算並以 USDG 賠付。請參閱[支付與兌換](./trade/pay-and-swap.mdx)。
+
+</Accordion>
+
+<Accordion title="我可以從其他網路轉入資金，或轉回去嗎？">
+
+可以。打開帳戶選單並選擇**兌換（跨鏈）**。它可以在 Arbitrum One 與 Ethereum、Base、Optimism、Polygon、BNB Chain、Avalanche、Hyperliquid 和 Robinhood Chain 等網路之間轉移資金。請參閱[支付與兌換](./trade/pay-and-swap.mdx)。
+
+</Accordion>
+
+</AccordionGroup>
+
+## 預測
+
+<AccordionGroup>
+
+<Accordion title="需要邀請碼嗎？">
+
+不需要。在 Arbitrum One 上連結錢包，就能開立交易或預測。
+
+</Accordion>
+
+<Accordion title="什麼決定預測是否有賠付？">
+
+通常是結束時間當下或之前最後一個 Chainlink 價格。如果該價格太舊、為零或為負，合約會改用結束時間之後的第一個讀數。達到或越過你的目標價格即全額賠付。差距小於 0.1% 時按比例賠付；差距更大或剛好差 0.1% 則無賠付。請參閱[預測如何賠付](./predict/how-it-pays.mdx)。
+
+</Accordion>
+
+<Accordion title="我可以在預測結束前賣掉嗎？">
+
+不行。預測會持有到結束時間。
+
+</Accordion>
+
+<Accordion title="一筆預測最大可以多大？">
+
+一筆預測最多賠付 1,000 USDG，且不超過其金額的 10 倍。
+
+</Accordion>
+
+</AccordionGroup>
+
+## 做賣方
+
+<AccordionGroup>
+
+<Accordion title="如何成為賣方？">
+
+賣方用自己的報價承接預測和交易的另一方。請參閱[賣方](./write/writers.mdx)。
+
+</Accordion>
+
+<Accordion title="收益從哪裡來？">
+
+來自交易者為部位支付的金額。沒有借貸、質押或流動性挖礦。
+
+</Accordion>
+
+<Accordion title="賣方會虧錢嗎？">
+
+會。賣方要負擔其成交的預測和交易的賠付，單一方向的強勁行情可能讓賠付超過收取的金額。
+
+</Accordion>
+
+</AccordionGroup>
+
+## 協議
+
+<AccordionGroup>
+
+<Accordion title="這是選擇權協議嗎？">
+
+是的，底層是。做多或「上漲」預測是買權價差，做空或「下跌」預測是賣權價差，兩者都在開倉時足額擔保，並依單一預言機價格以 USDG 結算。你不需要了解這些也能預測或交易。
+
+</Accordion>
+
+<Accordion title="交易對手是誰？">
+
+報價成交你的預測或交易的那位賣方。開倉時，你的權利金和賣方的存入資金就足以支付你全部的**最高賠付**。
+
+</Accordion>
+
+<Accordion title="Isometric 能動用我的資金嗎？">
+
+日常管理權限無法做到。治理可以在程式碼設定的上限內調整手續費。守護者（guardian）可以暫停開立新部位。兩者都無法更改已開立的部位、修改已記錄的結束價，也無法阻止結算、領取和退款。
+
+合約可以升級，而升級可以改變任何東西。詳見[了解風險](./trade/risks.mdx)。
+
+</Accordion>
+
+<Accordion title="如果 keeper 停止運作會怎樣？">
+
+結算會延後，直到有其他人送出。任何人都可以送出。結束價由 Chainlink 價格來源決定，與誰記錄無關，所以延遲的結算與準時的結算賠付完全相同。
+
+</Accordion>
+
+<Accordion title="如果網路或價格來源中斷會怎樣？">
+
+結算會等待價格。如果結束時間後 14 天內都沒有發布價格，雙方都會獲得退款（扣除手續費）。你已應得的金額不會改變。
+
+</Accordion>
+
+</AccordionGroup>
+
+## 還有問題
+
+寄信至 [support@isometric.fi](mailto:support@isometric.fi)，或到 [Telegram](https://t.me/isometricfi) 詢問。

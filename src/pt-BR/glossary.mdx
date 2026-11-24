@@ -1,0 +1,45 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Glossário
+sidebarTitle: Glossário
+description: Todos os termos usados no app da Isometric e nesta documentação, em linguagem simples.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Glossário
+
+| Termo               | Significado                                                                                                                                               |
+| ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Valor               | O que você informa em **Você aplica**, contado em USDG. Define o tamanho da posição junto com a alavancagem e é tudo o que você paga, com a taxa incluída |
+| Arbitrum            | A rede de camada 2 do Ethereum em que a Isometric funciona. A Arbitrum One é a rede principal, e a Arbitrum Sepolia, a testnet                            |
+| Beta                | O lançamento atual da Isometric na Arbitrum One, com contratos não auditados e tamanhos de posição limitados                                              |
+| Ponto de equilíbrio | O preço final em que uma posição devolve exatamente o que custou. O preço verde no gráfico                                                                |
+| Chainlink           | A rede de oráculos cujo feed de preço é o ponto de partida de toda cotação e decide toda posição no horário de término                                    |
+| Resgate             | Receber um pagamento cuja transferência para a sua carteira falhou. Você pode enviá-lo para qualquer endereço                                             |
+| Colateral           | O que um lançador deposita quando uma posição abre: o **Pagamento máximo** menos o prêmio do trader                                                       |
+| Contratos           | O tamanho de uma posição em unidades do ativo do mercado                                                                                                  |
+| Modo demo           | O app funcionando com fundos simulados. Não precisa de carteira, gas nem blockchain                                                                       |
+| Direção             | Long ou short                                                                                                                                             |
+| Horário de término  | O dia e a hora em que uma operação ou previsão termina, mostrado como **Termina**. Um único preço da Chainlink nesse horário decide o resultado           |
+| Terminando          | Uma posição que já passou do horário de término e cujo preço final ainda não foi registrado                                                               |
+| Keeper              | Um serviço automático que registra o preço final e paga as posições depois do horário de término. Qualquer pessoa pode fazer o mesmo                      |
+| Alavancagem         | O tamanho da posição dividido pelo seu valor, de 5x a 100x. Define o tamanho e posiciona a linha de perda. Nunca cria um preço de liquidação forçada      |
+| Long                | Uma posição que paga se o preço final ficar acima do preço sem valor                                                                                      |
+| Perdida             | Uma posição terminada que não pagou nada                                                                                                                  |
+| Pagamento máximo    | O máximo que uma posição pode pagar, fixado na abertura. O rótulo **Max** do gráfico mostra esse valor como lucro                                         |
+| Paga                | Uma posição terminada cujo pagamento chegou à sua carteira                                                                                                |
+| Pagamento           | O que uma previsão paga se o preço terminar no alvo ou além dele, mostrado como **Se você acertar**                                                       |
+| Tamanho da posição  | O seu valor vezes a alavancagem. A sua exposição, hoje limitada a 5,000 USDG por operação                                                                 |
+| Previsão            | Uma aposta de que um preço termina acima ou abaixo de um alvo em um horário de término                                                                    |
+| Prêmio              | O que o trader paga ao lançador por uma posição: o valor, menos a taxa de negociação                                                                      |
+| Cotação             | O preço assinado de um lançador para uma operação. A melhor cotação é executada                                                                           |
+| Reembolsada         | Uma posição sem preço final em até 14 dias após o horário de término. Os dois lados receberam o dinheiro de volta, menos a taxa                           |
+| Short               | Uma posição que paga se o preço final ficar abaixo do preço sem valor                                                                                     |
+| Preço de exercício  | O termo de opções para o preço sem valor                                                                                                                  |
+| Alvo                | O preço em que a previsão precisa terminar, ou além dele, para pagar integralmente                                                                        |
+| Troca (swap)        | Trocar um token por outro, na Arbitrum ou entre redes. USDC e USDT são trocados por USDG quando pagam uma operação                                        |
+| Prazo               | Quanto tempo uma posição fica aberta. De 12 horas a 7 dias                                                                                                |
+| USDG                | Global Dollar, a stablecoin de dólar em que as posições são encerradas, os pagamentos são feitos e os lançadores depositam                                |
+| Ganha               | Uma posição terminada com pagamento cuja transferência falhou. Resgate-a                                                                                  |
+| Preço sem valor     | O preço final no qual, ou além do qual, uma posição não paga nada. A linha vermelha **Lose** no gráfico                                                   |
+| Lançador            | Qualquer pessoa que fica do outro lado de previsões e operações cotando-as                                                                                |

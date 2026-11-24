@@ -1,0 +1,45 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Dự đoán chi trả thế nào
+sidebarTitle: Cách chi trả
+description: Một dự đoán Isometric trả bao nhiêu, giá của nó nghĩa là gì, và một mức giá Chainlink tại thời điểm kết thúc quyết định kết quả ra sao.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Dự đoán chi trả thế nào
+
+Một dự đoán là một cược rằng giá kết thúc trên hoặc dưới mục tiêu của bạn tại thời điểm kết thúc của bạn. Bạn trả một lần, và khoản chi trả, hiển thị là **If you're right**, được cố định khi bạn đặt.
+
+## Khoản chi trả
+
+Premium của bạn (số bạn trả sau phí) cấp vốn cho một phần khoản chi trả. Bên bán ký quỹ phần còn lại khi dự đoán mở, nên hợp đồng đã giữ sẵn mức tối đa có thể trả cho bạn.
+
+Một dự đoán chi trả tối đa 1,000 USDG, và tối đa gấp 10 lần số tiền của nó. Chọn một mục tiêu không đảm bảo sẽ có báo giá.
+
+## Vì sao một số mục tiêu trả nhiều hơn
+
+Khoản chi trả phản ánh mức độ bên bán cho rằng mục tiêu của bạn có khả năng xảy ra. Nếu **If you're right** hiển thị $400 cho $100, họ ước xác suất khoảng 25%. Một mục tiêu xa giá hôm nay hơn, hoặc thời điểm kết thúc gần hơn, ít khả năng đạt được hơn, nên trả nhiều hơn.
+
+## Điều gì quyết định kết quả
+
+Hợp đồng dùng **giá Chainlink cuối cùng được công bố tại hoặc trước thời điểm kết thúc của bạn**. Nếu giá đó cũ hơn mức nguồn giá cho phép, bằng 0 hoặc âm, thì lần đọc giá đầu tiên sau thời điểm kết thúc sẽ quyết định kết quả, miễn là giá đó dương.
+
+| Giá kết thúc                          | Bạn nhận               |
+| ------------------------------------- | ---------------------- |
+| Bằng hoặc vượt mục tiêu của bạn       | Toàn bộ khoản chi trả  |
+| Thiếu dưới 0.1% so với mục tiêu       | Một phần khoản chi trả |
+| Thiếu từ 0.1% trở lên so với mục tiêu | Không gì cả            |
+
+Ví dụ, **BTC trên $100,000** trả trọn vẹn ở mức $100,000 trở lên, một nửa ở $99,950, và không gì ở $99,900 trở xuống.
+
+## Nhận tiền
+
+Khoản chi trả bằng USDG. Keeper của Isometric kết thúc mọi dự đoán ngay sau thời điểm kết thúc, và khoản chi trả đi thẳng vào ví của bạn trong cùng giao dịch, thường trong vòng một hoặc hai phút. Bạn không cần nhấn gì. Dự đoán khi đó hiển thị **Thắng** kèm số tiền, hoặc **Không có khoản trả**.
+
+Nếu việc chuyển vào ví của bạn thất bại, khoản chi trả chờ trong hợp đồng và không bao giờ hết hạn. Mở dự đoán trong **Danh mục** và nhấn **Nhận** để gửi về ví của bạn hoặc một địa chỉ khác.
+
+Nếu không có giá Chainlink nào được công bố trong vòng 14 ngày sau thời điểm kết thúc, dự đoán được hoàn tiền, trừ phí.
+
+## Không thoát sớm
+
+Một dự đoán không thể bị đóng, thay đổi quy mô hay chuyển nhượng. Nó chạy đến thời điểm kết thúc. Trước đó, nó hiển thị **Đúng hướng** hoặc giá còn cần biến động bao nhiêu.

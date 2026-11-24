@@ -1,0 +1,70 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: 마켓
+sidebarTitle: 마켓
+description: Isometric에서 거래하고 예측할 수 있는 마켓, 출시 예정 마켓, 그리고 각 상품이 제공하는 내용입니다.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# 마켓
+
+<Note>
+  모든 거래와 예측은 USDG로 지급됩니다. USDC나 USDT로 결제할 수 있으며, 오픈 시 USDG로 스왑됩니다.
+  마켓의 기초 자산 자체를 받는 일은 없습니다.
+</Note>
+
+## 암호화폐
+
+| 마켓                                                                                                  | 상태      |
+| ----------------------------------------------------------------------------------------------------- | --------- |
+| <img src="/assets/btc.svg" alt="" width="20" height="20" className="inline align-middle" /> 비트코인  | 거래 가능 |
+| <img src="/assets/eth.svg" alt="" width="20" height="20" className="inline align-middle" /> 이더      | 거래 가능 |
+| <img src="/assets/arb.svg" alt="" width="20" height="20" className="inline align-middle" /> Arbitrum  | 거래 가능 |
+| <img src="/assets/sol.svg" alt="" width="20" height="20" className="inline align-middle" /> 솔라나    | 거래 가능 |
+| <img src="/assets/bnb.svg" alt="" width="20" height="20" className="inline align-middle" /> BNB       | 거래 가능 |
+| <img src="/assets/avax.svg" alt="" width="20" height="20" className="inline align-middle" /> 아발란체 | 거래 가능 |
+| <img src="/assets/doge.svg" alt="" width="20" height="20" className="inline align-middle" /> 도지코인 | 거래 가능 |
+| <img src="/assets/uni.svg" alt="" width="20" height="20" className="inline align-middle" /> 유니스왑  | 거래 가능 |
+| <img src="/assets/xrp.svg" alt="" width="20" height="20" className="inline align-middle" /> XRP       | 출시 예정 |
+
+## 주식
+
+| 마켓                                                                                                        | 상태      |
+| ----------------------------------------------------------------------------------------------------------- | --------- |
+| <img src="/assets/nvda.svg" alt="" width="20" height="20" className="inline align-middle" /> 엔비디아       | 출시 예정 |
+| <img src="/assets/aapl.svg" alt="" width="20" height="20" className="inline align-middle" /> 애플           | 출시 예정 |
+| <img src="/assets/msft.svg" alt="" width="20" height="20" className="inline align-middle" /> 마이크로소프트 | 출시 예정 |
+| <img src="/assets/googl.svg" alt="" width="20" height="20" className="inline align-middle" /> 알파벳        | 출시 예정 |
+| <img src="/assets/amzn.svg" alt="" width="20" height="20" className="inline align-middle" /> 아마존         | 출시 예정 |
+| <img src="/assets/meta.svg" alt="" width="20" height="20" className="inline align-middle" /> 메타           | 출시 예정 |
+| <img src="/assets/tsla.svg" alt="" width="20" height="20" className="inline align-middle" /> 테슬라         | 출시 예정 |
+| <img src="/assets/nflx.svg" alt="" width="20" height="20" className="inline align-middle" /> 넷플릭스       | 출시 예정 |
+| <img src="/assets/mstr.svg" alt="" width="20" height="20" className="inline align-middle" /> 스트래티지     | 출시 예정 |
+| <img src="/assets/sndk.svg" alt="" width="20" height="20" className="inline align-middle" /> 샌디스크       | 출시 예정 |
+| <img src="/assets/spcx.svg" alt="" width="20" height="20" className="inline align-middle" /> 스페이스X      | 출시 예정 |
+
+## 원자재
+
+| 마켓                                                                                              | 상태      |
+| ------------------------------------------------------------------------------------------------- | --------- |
+| <img src="/assets/gold.svg" alt="" width="20" height="20" className="inline align-middle" /> 금   | 출시 예정 |
+| <img src="/assets/silver.svg" alt="" width="20" height="20" className="inline align-middle" /> 은 | 출시 예정 |
+
+## 제공 내용
+
+| 설정      | 레버리지                                                           | 예측                                                      |
+| --------- | ------------------------------------------------------------------ | --------------------------------------------------------- |
+| 선택      | 롱 또는 숏, 5x~100x                                                | 매도자가 견적하는 모든 목표가, 현재 가격보다 위 또는 아래 |
+| 종료 시간 | 12시간~7일, 1시간 단위                                             | 12시간~7일, 1시간 단위                                    |
+| 금액      | $1부터, 포지션 규모 5,000 USDG까지                                 | $1부터, 지급액은 최대 1,000 USDG이자 금액의 10배까지      |
+| 결제 수단 | USDG, USDC 또는 USDT. [결제와 스왑](./trade/pay-and-swap.mdx) 참고 | USDG, USDC 또는 USDT                                      |
+| 지급      | USDG                                                               | USDG                                                      |
+| 네트워크  | Arbitrum One                                                       | Arbitrum One                                              |
+
+## 반대편은 누가 맡나요
+
+모든 거래와 예측은 견적 요청으로 나가며, 가장 좋은 견적으로 체결됩니다. 오픈 시 내가 낸 프리미엄과 낙찰된 매도자의 예치금이 지급액 전체를 보장합니다.
+
+## 가격
+
+차트와 상단 티커는 거래소 가격을 표시하며, 암호화폐는 Coinbase 가격입니다. 거래와 예측의 가격은 차트에서 정해지지 않습니다. 모든 견적은 요청한 순간 온체인 **Chainlink** 가격에서 출발하며, 종료 시간에도 같은 피드가 결과를 결정합니다.

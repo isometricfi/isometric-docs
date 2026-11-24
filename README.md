@@ -5,7 +5,7 @@ Public user documentation for Isometric, served at `docs.isometric.fi`. A
 
 | Path         | Role                                                     |
 | ------------ | -------------------------------------------------------- |
-| `src`        | MDX pages                                                |
+| `src`        | English MDX pages; `src/<locale>` holds each translation |
 | `docs.jsonc` | Site settings and navigation; only listed pages publish  |
 | `public`     | Logos, favicon, figures, and `robots.txt`                |
 | `e2e`        | Playwright check of the sitemap and Markdown page output |
@@ -28,6 +28,13 @@ vp run dev   # http://localhost:4302
 | `vp run deploy`   | Builds and publishes `isometric-docs-production`        |
 
 Run `vp exec playwright install chromium` once before the first browser check.
+
+## Locales
+
+The site matches the app's languages: `zh-CN`, `zh-TW`, `es`, `pt-BR`, `ko`, `tr`, and `vi`. Each
+is a `navigation.versions` entry in `docs.jsonc` with its own `lang`, served under `/<locale>/`.
+English stays at the root. A translated page mirrors the English path, so `src/trade/fees.mdx` is
+`src/ko/trade/fees.mdx` at `/ko/trade/fees`.
 
 ## Deployment
 

@@ -1,0 +1,81 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: 開立你的第一筆交易
+sidebarTitle: 快速入門
+description: 連結錢包、在 Arbitrum 上入金，幾分鐘內就能在 Isometric 用槓桿做多或做空。
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# 開立你的第一筆交易
+
+本教學帶你從空錢包一路到建立部位。
+
+<Tip>
+
+想先不用真錢試試看，請開啟 App 頁首的**示範**。
+
+</Tip>
+
+<Steps>
+
+<Step title="連結錢包" icon="lucide:wallet">
+
+開啟 [app.isometric.fi](https://app.isometric.fi)，前往**槓桿**，然後選擇**連結**。不需要邀請碼。
+
+</Step>
+
+<Step title="在 Arbitrum 上入金" icon="lucide:coins">
+
+Isometric 運行於 Arbitrum One。你的錢包在該網路上需要兩樣東西：
+
+- **USDG、USDC 或 USDT**，用來支付交易。每筆交易都以 USDG 賠付，所以 USDC 和 USDT 會在開倉時兌換為 USDG。
+- **少量 ETH**，用來支付網路手續費。
+
+資金在其他網路上？打開帳戶選單並選擇**兌換（跨鏈）**。請參閱[支付與兌換](./pay-and-swap.mdx)。
+
+</Step>
+
+<Step title="選擇市場和方向" icon="lucide:search">
+
+按左上角的市場即可切換。如果你認為結束時間的價格會更高，按**做多**；會更低，則按**做空**。
+
+</Step>
+
+<Step title="拖曳結束線" icon="lucide:move-horizontal">
+
+圖表左側顯示過去兩天的價格，右側是未來。拖曳標示**結束**的線，選擇交易何時結束，範圍從 12 小時到 7 天。你也可以按圖表下方的 **12h**、**1d**、**3d** 或 **1w**。
+
+</Step>
+
+<Step title="設定金額和槓桿" icon="lucide:sliders-horizontal">
+
+- **投入金額。** 要花多少錢，以 USDG 計算。這是你支付的全部費用（含手續費），也是你的最大虧損。按旁邊的代幣即可改用 USDC 或 USDT 支付。
+- **槓桿。** 按下後選擇 5x 至 100x。槓桿越高，每單位價格變動賠付越多，但也越快虧光。**最大**會顯示你的槓桿所允許的最高金額。
+
+</Step>
+
+<Step title="解讀圖表" icon="lucide:chart-line">
+
+結束線右側的色帶顯示每個結束價的賠付：**Lose**（損失全部金額）、**Some back**（拿回部分）、獲利，以及 **Max**（最高獲利）。將游標移到或點按任一價格，即可看到確切的賠付金額。[解讀圖表](./reading-the-chart.mdx)提供一個完整範例。
+
+</Step>
+
+<Step title="開倉" icon="lucide:check">
+
+按下**做多 BTC** 或**做空 BTC**，並在錢包中確認。交易一上鏈，部位就會開立，並顯示在圖表下方的**持有中**。
+
+</Step>
+
+<Step title="等待結束時間" icon="lucide:hourglass">
+
+你不需要再做任何事。部位無法提前平倉，也不會被強平。到了結束時間，由一個 Chainlink 價格決定結果，任何賠付都會以 USDG 發送到你的錢包。請參閱[賠付與領取](./payouts-and-claims.mdx)。
+
+</Step>
+
+</Steps>
+
+## 交易之前
+
+- 閱讀[了解風險](./risks.mdx)，內容很短。
+- 部位會持有到結束時間，無法提前出場。
+- 絕對不要用你無法承受全部損失的資金交易。

@@ -1,0 +1,78 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Conheça os riscos
+sidebarTitle: Riscos
+description: O que você pode perder operando na Isometric, o que pode atrasar um pagamento e contra o que o protocolo não te protege. Leia antes de operar.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Conheça os riscos
+
+A Isometric elimina a liquidação forçada e a taxa de financiamento. Ela não elimina a possibilidade de perder dinheiro. Leia esta página uma vez antes de operar.
+
+<Warning>
+  Toda posição pode perder 100% do que você pagou. Nunca opere com dinheiro que você não pode perder
+  por inteiro.
+</Warning>
+
+## A Isometric está em beta
+
+Os contratos não foram auditados. Cada posição tem limite de 5,000 USDG, e os limites podem mudar durante o beta. Opere apenas o que você aceita perder.
+
+## Você pode perder tudo o que pagou
+
+Uma posição que termina do lado errado do seu preço sem valor não paga nada. Quanto maior a alavancagem, mais perto esse preço fica do preço de hoje e mais vezes isso acontece. O valor que você pagou é perdido, sem reembolso parcial.
+
+## Você não pode sair antes
+
+Não existe botão de fechar. Uma posição da qual você se arrepende na primeira hora continua até o horário de término, e uma posição que está no lucro no primeiro dia ainda pode terminar sem valor no terceiro. Só o preço final conta. As posições também não podem ser transferidas para outra carteira.
+
+## Um único preço em um único horário decide
+
+O preço final normalmente é o último preço da Chainlink publicado até o horário de término. Se você precisa de uma posição que acompanhe o preço continuamente, este não é o produto certo.
+
+Se essa leitura for antiga demais, zero ou negativa, o contrato usa o primeiro preço publicado após o horário de término. Esse preço é diferente do que você talvez espere, e chega mais tarde.
+
+## O seu pagamento tem limite
+
+Toda posição tem um pagamento máximo, mostrado como **Max** no gráfico e fixado na abertura. Por mais que o mercado avance, você recebe esse valor e nada além. Prazos mais curtos têm um máximo menor.
+
+## A cotação pode mudar antes de você confirmar
+
+A cotação acompanha o preço ao vivo. Cada cotação vale por pouco tempo, e o app a atualiza antes de você assinar. A sua operação abre exatamente na cotação que você confirmou, ou falha. Uma operação que falha custa só a taxa de rede.
+
+## Você pode não receber cotação
+
+Uma operação precisa de um lançador disposto a ficar do outro lado. Se nenhum lançador cotar a sua operação, ou se o mercado estiver pausado, você não consegue abrir uma posição naquele momento. As posições existentes não são afetadas: elas continuam sendo encerradas e pagas.
+
+## Um pagamento pode atrasar
+
+Um pagamento depende do preço final e de alguém fazer o encerramento. Uma queda da rede ou um feed de preço parado atrasa o primeiro. Um keeper parado atrasa o segundo, embora qualquer pessoa possa fazer o encerramento. Um atraso não muda o que é devido a você. Se nenhum preço for publicado em até 14 dias após o horário de término, os dois lados são reembolsados, e a taxa não é devolvida.
+
+Se a sua carteira não puder receber USDG, a transferência falha e você precisa resgatar para outro endereço.
+
+## As trocas passam por terceiros
+
+Pagar com USDC ou USDT e a troca entre redes usam a Velora e a Relay, que a Isometric não opera. Uma troca pode falhar, ser executada com até o slippage mostrado ou demorar mais do que o estimado. Se a sua carteira não consegue agrupar transações, a troca e a operação são etapas separadas, então a troca pode ser confirmada e a operação depois dela falhar. Nesse caso, você fica com USDG. Uma troca entre redes que não pode ser concluída é reembolsada na rede de onde você enviou. Veja [Pagar e trocar](./pay-and-swap.mdx).
+
+## Atualizações de contrato e governança
+
+Os contratos são atualizáveis. Uma atualização pode mudar qualquer coisa, inclusive como os fundos são mantidos, então uma atualização com defeito ou um dono de atualizações comprometido pode causar perda de fundos. Uma atualização entra em vigor sem prazo de espera.
+
+A governança pode alterar a taxa dentro de limites fixados no código. Um guardião pode pausar novas posições. Uma pausa nunca interrompe encerramentos, resgates ou reembolsos.
+
+## Risco de contrato inteligente e de rede
+
+A Isometric é um conjunto de contratos inteligentes na Arbitrum. Contratos podem ter bugs, oráculos podem falhar, redes podem parar, e o USDG tem o seu próprio risco de emissor e técnico, incluindo a capacidade do emissor de congelar um endereço. O protocolo foi desenhado para recusar uma ação em vez de executá-la com dados ruins, mas nenhum software é livre de risco.
+
+## Isto não é recomendação
+
+Nada no app ou nesta documentação é recomendação de investimento. A Isometric não avalia se uma operação é adequada para você. A Isometric não está disponível para residentes dos Estados Unidos, Canadá, Reino Unido, África do Sul ou países sancionados. Operar produtos alavancados também pode ser restrito na sua jurisdição, e você é responsável pelos impostos sobre qualquer ganho. Veja os [termos de serviço](https://app.isometric.fi/terms).
+
+## O que o código do contrato protege
+
+- **A sua perda máxima é fixa.** Nada pode ser tirado de você depois que você paga.
+- **O seu pagamento está garantido desde o primeiro dia.** O contrato guarda o seu prêmio e o depósito do lançador até o encerramento. Juntos, eles cobrem o seu **Pagamento máximo**.
+- **Ninguém escolhe o preço.** Exatamente um preço da Chainlink é válido para cada hora de encerramento, e nenhum participante, nem mesmo a Isometric, pode escolher outro.
+- **Resgates nunca expiram.** Um pagamento espera por você indefinidamente, e você pode enviá-lo para qualquer endereço.
+- **A operação que você assina é a operação que você recebe.** A cotação é assinada pelo lançador, e o contrato recusa qualquer execução diferente dela.

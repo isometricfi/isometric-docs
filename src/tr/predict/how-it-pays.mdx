@@ -1,0 +1,45 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Tahmin nasıl ödeme yapar
+sidebarTitle: Nasıl ödeme yapar
+description: Bir Isometric tahmininin ne ödediği, fiyatının ne anlama geldiği ve bitiş zamanındaki tek bir Chainlink fiyatının sonucu nasıl belirlediği.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Tahmin nasıl ödeme yapar
+
+Tahmin, bir fiyatın senin bitiş zamanında hedefinin üstünde ya da altında biteceğine dair bir bahistir. Bir kez ödersin ve **If you're right** (haklıysan) olarak gösterilen ödeme, tahmini yaptığın anda sabitlenir.
+
+## Ödeme
+
+Primin (ücretten sonra ödediğin tutar) ödemenin bir kısmını fonlar. Kalanını tahmin açıldığında satıcı yatırır; böylece sözleşme, sana ödeyebileceği maksimum tutarı zaten elinde tutar.
+
+Bir tahmin en fazla 1,000 USDG ve tutarının en fazla 10 katını öder. Bir hedef seçmek teklif almayı garanti etmez.
+
+## Bazı hedefler neden daha fazla öder
+
+Ödeme, satıcıların hedefini ne kadar olası gördüğünü yansıtır. **If you're right** $100 için $400 gösteriyorsa, olasılığı %25 civarında görüyorlardır. Bugünkü fiyattan daha uzak bir hedefe ya da daha yakın bir bitiş zamanına ulaşılması daha az olasıdır, bu yüzden daha fazla öder.
+
+## Sonucu ne belirler
+
+Sözleşme, **bitiş zamanında ya da öncesinde yayımlanan son Chainlink fiyatını** kullanır. Bu okuma fiyat akışının izin verdiğinden eskiyse, sıfırsa ya da negatifse, pozitif olması şartıyla bunun yerine bitiş zamanından sonraki ilk okuma sonucu belirler.
+
+| Fiyatın bittiği yer                       | Aldığın            |
+| ----------------------------------------- | ------------------ |
+| Hedefinde ya da ötesinde                  | Ödemenin tamamı    |
+| Hedefinin %0.1'den daha az gerisinde      | Ödemenin bir kısmı |
+| Hedefinin %0.1 ya da daha fazla gerisinde | Hiçbir şey         |
+
+Örneğin **BTC $100,000 üstünde**, $100,000 ya da üzerinde tamamını, $99,950'de yarısını, $99,900 ya da altında hiçbir şey ödemez.
+
+## Ödeme almak
+
+Ödemeler USDG olarak yapılır. Isometric'in keeper'ı her tahmini bitiş zamanından kısa süre sonra sonuçlandırır ve ödeme aynı işlemle doğrudan cüzdanına gider; normalde bir iki dakika içinde. Basman gereken bir şey yoktur. Tahmin ardından tutarıyla birlikte **Kazandı** ya da **Ödeme yok** olarak görünür.
+
+Cüzdanına transfer başarısız olursa ödeme sözleşmede bekler ve süresi hiç dolmaz. Ödemeyi cüzdanına ya da başka bir adrese göndermek için tahmini **Portföy**'de aç ve **Talep et**'e bas.
+
+Bitiş zamanından sonraki 14 gün içinde hiçbir Chainlink fiyatı yayımlanmazsa tahmin, ücret düşülerek iade edilir.
+
+## Erken çıkış yok
+
+Bir tahmin kapatılamaz, büyüklüğü değiştirilemez ve devredilemez. Bitiş zamanına kadar sürer. O zamana kadar **Yolunda** olup olmadığını ya da fiyatın daha ne kadar hareket etmesi gerektiğini gösterir.

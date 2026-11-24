@@ -1,0 +1,61 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Como ler o gráfico
+sidebarTitle: Como ler o gráfico
+description: Como o gráfico de alavancagem da Isometric mostra quanto paga cada preço final, com um exemplo completo, para você saber exatamente com o que está concordando antes de operar.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Como ler o gráfico
+
+O gráfico é a boleta. À esquerda ficam os últimos dois dias de preço. À direita, depois da linha marcada **Termina**, ficam faixas que mostram quanto a sua operação paga em cada preço final possível. Só o preço nessa linha conta. Uma queda no meio do caminho não decide nada.
+
+## As faixas
+
+Para um long, de cima para baixo:
+
+| Faixa         | O que significa                                                                                 |
+| ------------- | ----------------------------------------------------------------------------------------------- |
+| **Max**       | No preço de cima ou além dele, o pagamento para de crescer. O rótulo mostra o seu lucro máximo. |
+| Verde         | Entre o preço do meio e o preço de cima, você recebe mais do que aplicou.                       |
+| **Some back** | Entre o preço de baixo e o preço do meio, você recebe de volta parte do que aplicou.            |
+| **Lose**      | No preço de baixo ou abaixo dele, a operação não paga nada. O rótulo mostra quanto você perde.  |
+
+Um short é o mesmo gráfico de cabeça para baixo: a faixa **Max** fica embaixo e a **Lose** em cima.
+
+Os três preços na borda direita são o **preço sem valor** (vermelho), o **ponto de equilíbrio** (verde) e o **teto** (onde começa o **Max**). Passe o mouse ou toque em qualquer ponto das faixas para ver um preço final e exatamente quanto ele paga.
+
+## O que move as faixas
+
+- **Alavancagem.** Uma alavancagem maior aproxima a linha **Lose** do preço de hoje, então um movimento menor contra você faz perder tudo. Cada 1% além do preço sem valor paga mais. Veja [Alavancagem](./leverage.mdx).
+- **A linha de término.** Um horário de término mais distante afasta um pouco o ponto de equilíbrio e afasta mais a faixa **Max**, então o pagamento máximo cresce.
+- **O seu valor.** Um valor maior aumenta proporcionalmente todos os pagamentos. Os preços continuam os mesmos.
+
+## Um exemplo completo
+
+O Bitcoin está a **$100,000**. Você entra **Long**, aplica **$100** a **25x** e arrasta a linha de término para **3 dias**. O gráfico pode mostrar:
+
+| Preço no gráfico    | Valor                                |
+| ------------------- | ------------------------------------ |
+| Teto                | $110,000, com o rótulo **Max +$223** |
+| Ponto de equilíbrio | $101,296                             |
+| Sem valor           | $97,400, com o rótulo **Lose $100**  |
+
+Quanto cada preço final paga:
+
+| Bitcoin no término | Você recebe | Resultado |
+| ------------------ | ----------- | --------- |
+| $97,400 ou menos   | $0          | −$100     |
+| $100,000           | $67         | −$33      |
+| $101,296           | $100        | $0        |
+| $104,000           | $169        | +$69      |
+| $107,000           | $246        | +$146     |
+| $110,000 ou mais   | $323        | +$223     |
+
+A 25x, cada 1% além do preço sem valor vale cerca de 25% do que você aplicou, aqui cerca de $25. Acima de $110,000 o pagamento para de crescer: o Bitcoin a $150,000 paga os mesmos $323.
+
+Esses números são exemplos. Os seus dependem do preço ao vivo e das cotações que os lançadores enviam.
+
+## A cotação acompanha o mercado
+
+As faixas se atualizam conforme o preço se move. Cada cotação vale por pouco tempo, e o app a atualiza antes de você assinar. A sua operação abre exatamente na cotação que você confirmou, ou não abre. Uma operação que falha custa só a taxa de rede.

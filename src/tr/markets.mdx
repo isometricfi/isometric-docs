@@ -1,0 +1,70 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Piyasalar
+sidebarTitle: Piyasalar
+description: Isometric'te işlem yapabileceğin ve tahminde bulunabileceğin piyasalar, yakında gelecek olanlar ve her birinin sundukları.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Piyasalar
+
+<Note>
+  Her işlem ve tahmin USDG olarak ödenir. USDC ya da USDT ile ödeyebilirsin; bunlar pozisyon
+  açılırken USDG'ye takas edilir. Piyasanın kendi varlığını hiçbir zaman almazsın.
+</Note>
+
+## Kripto
+
+| Piyasa                                                                                                 | Durum   |
+| ------------------------------------------------------------------------------------------------------ | ------- |
+| <img src="/assets/btc.svg" alt="" width="20" height="20" className="inline align-middle" /> Bitcoin    | Aktif   |
+| <img src="/assets/eth.svg" alt="" width="20" height="20" className="inline align-middle" /> Ether      | Aktif   |
+| <img src="/assets/arb.svg" alt="" width="20" height="20" className="inline align-middle" /> Arbitrum   | Aktif   |
+| <img src="/assets/sol.svg" alt="" width="20" height="20" className="inline align-middle" /> Solana     | Aktif   |
+| <img src="/assets/bnb.svg" alt="" width="20" height="20" className="inline align-middle" /> BNB        | Aktif   |
+| <img src="/assets/avax.svg" alt="" width="20" height="20" className="inline align-middle" /> Avalanche | Aktif   |
+| <img src="/assets/doge.svg" alt="" width="20" height="20" className="inline align-middle" /> Dogecoin  | Aktif   |
+| <img src="/assets/uni.svg" alt="" width="20" height="20" className="inline align-middle" /> Uniswap    | Aktif   |
+| <img src="/assets/xrp.svg" alt="" width="20" height="20" className="inline align-middle" /> XRP        | Yakında |
+
+## Hisseler
+
+| Piyasa                                                                                                 | Durum   |
+| ------------------------------------------------------------------------------------------------------ | ------- |
+| <img src="/assets/nvda.svg" alt="" width="20" height="20" className="inline align-middle" /> NVIDIA    | Yakında |
+| <img src="/assets/aapl.svg" alt="" width="20" height="20" className="inline align-middle" /> Apple     | Yakında |
+| <img src="/assets/msft.svg" alt="" width="20" height="20" className="inline align-middle" /> Microsoft | Yakında |
+| <img src="/assets/googl.svg" alt="" width="20" height="20" className="inline align-middle" /> Alphabet | Yakında |
+| <img src="/assets/amzn.svg" alt="" width="20" height="20" className="inline align-middle" /> Amazon    | Yakında |
+| <img src="/assets/meta.svg" alt="" width="20" height="20" className="inline align-middle" /> Meta      | Yakında |
+| <img src="/assets/tsla.svg" alt="" width="20" height="20" className="inline align-middle" /> Tesla     | Yakında |
+| <img src="/assets/nflx.svg" alt="" width="20" height="20" className="inline align-middle" /> Netflix   | Yakında |
+| <img src="/assets/mstr.svg" alt="" width="20" height="20" className="inline align-middle" /> Strategy  | Yakında |
+| <img src="/assets/sndk.svg" alt="" width="20" height="20" className="inline align-middle" /> SanDisk   | Yakında |
+| <img src="/assets/spcx.svg" alt="" width="20" height="20" className="inline align-middle" /> SpaceX    | Yakında |
+
+## Emtialar
+
+| Piyasa                                                                                               | Durum   |
+| ---------------------------------------------------------------------------------------------------- | ------- |
+| <img src="/assets/gold.svg" alt="" width="20" height="20" className="inline align-middle" /> Altın   | Yakında |
+| <img src="/assets/silver.svg" alt="" width="20" height="20" className="inline align-middle" /> Gümüş | Yakında |
+
+## Neler sunuluyor
+
+| Ayar        | Kaldıraç                                                               | Tahmin                                                                         |
+| ----------- | ---------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
+| Seçim       | Long ya da short, 5x ile 100x arası                                    | Satıcıların teklif verdiği herhangi bir hedef, bugünkü fiyatın üstü ya da altı |
+| Bitiş saati | 12 saatten 7 güne kadar tam saatler                                    | 12 saatten 7 güne kadar tam saatler                                            |
+| Tutar       | $1'dan başlayarak, 5,000 USDG pozisyon büyüklüğüne kadar               | $1'dan başlayarak; ödeme en fazla 1,000 USDG ve tutarın 10 katı                |
+| Ödeme aracı | USDG, USDC ya da USDT. Bkz. [Ödeme ve takas](./trade/pay-and-swap.mdx) | USDG, USDC ya da USDT                                                          |
+| Ödemeler    | USDG                                                                   | USDG                                                                           |
+| Ağ          | Arbitrum One                                                           | Arbitrum One                                                                   |
+
+## Karşı tarafı kim alır
+
+Her işlem ve tahmin teklif almaya çıkar ve en iyi teklif gerçekleşir. Pozisyon açıldığında, ödediğin prim ve kazanan satıcının yatırdığı tutar ödemenin tamamını karşılar.
+
+## Fiyatlar
+
+Grafik ve üstteki fiyat şeridi borsa fiyatını okur; kripto için bu Coinbase'dir. İşlemler ve tahminler hiçbir zaman grafikten fiyatlanmaz. Her teklif, talep ettiğin anda zincir üstündeki **Chainlink** fiyatından başlar ve her biri, bitiş saatinde aynı fiyat akışıyla sonuçlanır.

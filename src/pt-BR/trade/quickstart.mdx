@@ -1,0 +1,81 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Abra sua primeira operação
+sidebarTitle: Início rápido
+description: Conecte uma carteira, coloque fundos na Arbitrum e abra um long ou short alavancado na Isometric em poucos minutos.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Abra sua primeira operação
+
+Este passo a passo leva você de uma carteira vazia até uma posição aberta.
+
+<Tip>
+
+Para testar sem dinheiro de verdade, ative **Demo** no cabeçalho do app.
+
+</Tip>
+
+<Steps>
+
+<Step title="Conecte uma carteira" icon="lucide:wallet">
+
+Abra [app.isometric.fi](https://app.isometric.fi), vá até **Alavancagem** e escolha **Conectar**. Não precisa de convite.
+
+</Step>
+
+<Step title="Coloque fundos na Arbitrum" icon="lucide:coins">
+
+A Isometric funciona na Arbitrum One. Você precisa de duas coisas na sua carteira nessa rede:
+
+- **USDG, USDC ou USDT** para pagar as operações. Toda operação paga em USDG, então USDC e USDT são trocados por USDG quando a operação abre.
+- **Um pouco de ETH** para as taxas de rede.
+
+Tem dinheiro em outra rede? Abra o menu da sua conta e escolha **Trocar (entre redes)**. Veja [Pagar e trocar](./pay-and-swap.mdx).
+
+</Step>
+
+<Step title="Escolha um mercado e um lado" icon="lucide:search">
+
+Toque no mercado no canto superior esquerdo para trocá-lo. Toque em **Long** se acha que o preço vai estar mais alto no seu horário de término, ou em **Short** se acha que vai estar mais baixo.
+
+</Step>
+
+<Step title="Arraste a linha de término" icon="lucide:move-horizontal">
+
+O gráfico mostra os últimos dois dias de preço à esquerda e o futuro à direita. Arraste a linha marcada **Termina** para escolher quando a sua operação termina, de 12 horas a 7 dias. Você também pode tocar em **12h**, **1d**, **3d** ou **1w** abaixo do gráfico.
+
+</Step>
+
+<Step title="Defina o valor e a alavancagem" icon="lucide:sliders-horizontal">
+
+- **Você aplica.** Quanto gastar, contado em USDG. É tudo o que você paga, com a taxa incluída, e o máximo que pode perder. Toque no token ao lado para pagar com USDC ou USDT.
+- **Alavancagem.** Toque e escolha de 5x a 100x. Uma alavancagem maior paga mais por movimento e perde mais rápido. **Máx.** mostra o maior valor que a sua alavancagem permite.
+
+</Step>
+
+<Step title="Leia o gráfico" icon="lucide:chart-line">
+
+As faixas à direita da linha de término mostram quanto paga cada preço final: **Lose** (você perde o valor aplicado), **Some back** (recebe parte de volta), lucro e **Max** (lucro máximo). Passe o mouse ou toque em qualquer preço para ver exatamente quanto ele paga. [Como ler o gráfico](./reading-the-chart.mdx) mostra um exemplo completo.
+
+</Step>
+
+<Step title="Abra a posição" icon="lucide:check">
+
+Toque em **Long em BTC** ou **Short em BTC** e confirme na sua carteira. A posição fica aberta assim que a transação é confirmada e aparece abaixo do gráfico em **Abertas**.
+
+</Step>
+
+<Step title="Aguarde o horário de término" icon="lucide:hourglass">
+
+Nada mais é necessário. A posição não pode ser fechada antes e não pode sofrer liquidação forçada. No horário de término, um único preço da Chainlink decide o resultado, e qualquer pagamento é enviado para a sua carteira em USDG. Veja [Pagamentos e resgates](./payouts-and-claims.mdx).
+
+</Step>
+
+</Steps>
+
+## Antes de operar
+
+- Leia [Conheça os riscos](./risks.mdx). É curto.
+- A posição vai até o horário de término. Não há saída antecipada.
+- Nunca opere com dinheiro que você não pode perder por inteiro.

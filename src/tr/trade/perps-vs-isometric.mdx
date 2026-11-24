@@ -1,0 +1,63 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Perp'ler ve Isometric
+sidebarTitle: Perp'ler ve Isometric
+description: Bir Isometric pozisyonunun tasfiye, fonlama, çıkış, kazanç potansiyeli ve maliyet açısından perpetual vadeli sözleşmeyle karşılaştırması ve hangisinin ne zaman daha iyi araç olduğu.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Perp'ler ve Isometric
+
+Perpetual vadeli sözleşme (perp) ve Isometric pozisyonu aynı görüşü ifade eder: fiyat yükselir ya da düşer. Fark, yol boyunca başına neler gelebileceğindedir.
+
+## Yan yana
+
+|                               | Perpetual vadeli sözleşme                                              | Isometric                                                      |
+| ----------------------------- | ---------------------------------------------------------------------- | -------------------------------------------------------------- |
+| **Yatırdığın**                | Eklenebilen ya da çekilebilen marjin                                   | Maliyetin tamamı olan tek seferlik bir ödeme                   |
+| **Kaybedebileceğin en fazla** | Marjinin; bazı platformlarda daha fazlası                              | Ödediğin tutar, asla fazlası değil                             |
+| **Tasfiye**                   | Var. Tasfiye fiyatının ötesine geçen bir hareket seni pozisyondan atar | Yok. Arada ne olursa olsun pozisyon sonuçlanmaya kadar sürer   |
+| **Fonlama**                   | Açıkken birkaç saatte bir ödenir ya da alınır                          | Yok                                                            |
+| **Çıkış**                     | İstediğin zaman                                                        | Yalnızca sonuçlanmada                                          |
+| **Kazanç potansiyeli**        | Sınırsız                                                               | Grafikte gösterilen Max (maksimum) ile sınırlı                 |
+| **Süre**                      | Süresiz                                                                | 12 saatten 7 güne kadar, bitiş çizgisi sürüklenerek belirlenir |
+| **Karşı taraf**               | Emir defteri üzerinden diğer trader'lar                                | Teklifi gerçekleşen satıcı; ödemen baştan kilitlenir           |
+| **Aldığın**                   | Marjin artı ya da eksi K&Z                                             | USDG olarak ödeme ya da hiçbir şey                             |
+
+## Sonuçlanmada getiri
+
+İkisi de fiyatın hareket ettiği her %1 için aynı tutarı öder, çünkü aynı kaldıraçta aynı tutar aynı pozisyon büyüklüğü demektir. Perp bu hareketi giriş fiyatından sayar. Isometric pozisyonu ise değersiz fiyatından sayar ve tavanda durur.
+
+## Isometric'in daha iyi olduğu durumlar
+
+**Gürültü yüzünden stop olmazsın.** 25x'lik bir perp, %4'lük bir fitille tasfiye olur. 25x'lik bir Isometric pozisyonu fitili yok sayar ve o saatteki fiyattan sonuçlanır. Görüşün o gün için doğru ama arada bir saatliğine yanlışsa, sana yalnızca Isometric öder.
+
+**Pozisyonu tutmanın maliyeti yoktur.** Fonlamanın yüksek olduğu birkaç gün boyunca tutulan bir perp pozisyonu, fiyattan çok fonlamaya kaybedebilir. Bir Isometric pozisyonunun süregelen bir maliyeti yoktur.
+
+**Zarar, imzalamadan önce bellidir.** Ödediğinden fazlasını borçlu kalacağın bir senaryo, gece 3'te marjin çağrısı ya da zincirleme tasfiye yoktur.
+
+**Tüm büyüklük için tek fiyat.** Satıcılar tutarın tamamına teklif verir. Gezilecek bir emir defteri ya da kısmi gerçekleşme yoktur; işlem ya onayladığın teklifle açılır ya da hiç açılmaz.
+
+## Perp'in daha iyi olduğu durumlar
+
+**Erken çıkmak istiyorsan.** Perp, istediğin an kâr almana ya da zararı kesmene izin verir. Isometric pozisyonu izin vermez; ilk gün kârda olan bir pozisyon üçüncü gün yine de değersiz bitebilir.
+
+**Sınırsız kazanç istiyorsan.** Isometric pozisyonu **Max** seviyesinde kazanmayı bırakır. Perp devam eder.
+
+**Fiyatı sürekli takip etmek istiyorsan.** Isometric pozisyonu tek bir saatteki tek bir fiyattan sonuçlanır. Perp'in K&Z'si her an canlı fiyattır.
+
+**Gün boyu girip çıkıyorsan.** Isometric pozisyonlarının en kısa vadesi 12 saattir.
+
+## Toparlanan bir düşüş
+
+Fiyat ikinci gün tasfiye seviyesinin altına düştüğünde perp kapatılır ve toparlanmayı kaçırır. Aynı fiyattan aynı kaldıraçla açılan Isometric pozisyonu, toparlanma geldiğinde hâlâ açıktır ve kârla sonuçlanır.
+
+<Frame caption="İki pozisyon için aynı fiyat yolu. Bir Isometric pozisyonunu yalnızca sonuçlanma saatindeki fiyat belirler.">
+
+![Giriş fiyatından açılan, vadenin başlarında perp tasfiye seviyesinin altına düşen ve sonuçlanmada giriş fiyatının epey üzerinde bitecek şekilde toparlanan bir fiyat yolu. Perp tasfiye seviyesinde kapatılır. Isometric pozisyonu açık kalır ve kârla sonuçlanır.](/images/dip-that-recovers.svg)
+
+</Frame>
+
+## Aynı görüş, farklı mekanizma
+
+Zaten perp işlemi yapıyorsan, Isometric pozisyonunu marjin motoru çıkarılmış aynı yönlü işlem olarak düşün. Erken çıkma imkânından ve sınırsız kazançtan vazgeçersin. Karşılığında sabit bir maliyet, tasfiyesizlik, fonlamasızlık ve yalnızca fiyatın sonda nerede olduğuyla ilgilenen bir sonuçlanma elde edersin.

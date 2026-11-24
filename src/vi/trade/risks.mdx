@@ -1,0 +1,78 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Hiểu rõ rủi ro
+sidebarTitle: Rủi ro
+description: Bạn có thể mất gì khi giao dịch trên Isometric, điều gì có thể làm chậm khoản chi trả, và giao thức không bảo vệ bạn khỏi những gì. Hãy đọc trước khi giao dịch.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Hiểu rõ rủi ro
+
+Isometric loại bỏ thanh lý và phí funding. Nó không loại bỏ khả năng mất tiền. Hãy đọc trang này một lần trước khi giao dịch.
+
+<Warning>
+  Mọi vị thế đều có thể mất 100% số tiền bạn đã trả. Đừng bao giờ giao dịch bằng số tiền mà bạn
+  không thể chấp nhận mất toàn bộ.
+</Warning>
+
+## Isometric đang ở bản beta
+
+Hợp đồng chưa được kiểm toán. Mỗi vị thế bị giới hạn ở 5,000 USDG, và các giới hạn có thể thay đổi trong giai đoạn beta. Chỉ giao dịch số tiền bạn sẵn sàng mất.
+
+## Bạn có thể mất toàn bộ số tiền đã trả
+
+Một vị thế kết thúc ở phía sai của giá về 0 sẽ không trả gì. Đòn bẩy càng cao, mức giá đó càng gần giá hôm nay và điều này càng hay xảy ra. Số tiền bạn đã trả mất hẳn, không được hoàn lại một phần nào.
+
+## Bạn không thể thoát sớm
+
+Không có nút đóng vị thế. Một vị thế bạn hối hận ngay giờ đầu vẫn chạy đến thời điểm kết thúc, và một vị thế đang lãi vào ngày đầu vẫn có thể kết thúc về 0 vào ngày thứ ba. Chỉ giá kết thúc mới được tính. Vị thế cũng không thể chuyển sang ví khác.
+
+## Một mức giá tại một thời điểm quyết định
+
+Giá kết thúc thông thường là giá Chainlink cuối cùng được công bố tại hoặc trước thời điểm kết thúc. Nếu bạn cần một vị thế bám theo giá liên tục, đây không phải sản phẩm đó.
+
+Nếu giá đó quá cũ, bằng 0 hoặc âm, hợp đồng sẽ dùng giá đầu tiên được công bố sau thời điểm kết thúc. Đó là một mức giá khác với mức bạn có thể mong đợi, và nó đến muộn hơn.
+
+## Khoản chi trả của bạn bị giới hạn
+
+Mọi vị thế đều có mức chi trả tối đa, hiển thị là **Max** trên biểu đồ và được cố định khi mở. Dù thị trường chạy xa đến đâu, bạn nhận đúng mức đó và không hơn. Kỳ hạn ngắn hơn có mức tối đa nhỏ hơn.
+
+## Báo giá có thể thay đổi trước khi bạn xác nhận
+
+Báo giá đi theo giá trực tiếp. Mỗi báo giá có hiệu lực trong một thời gian ngắn, và ứng dụng làm mới báo giá trước khi bạn ký. Giao dịch của bạn mở đúng theo báo giá bạn đã xác nhận, hoặc thất bại. Một giao dịch thất bại chỉ tốn phí mạng.
+
+## Bạn có thể không nhận được báo giá
+
+Một giao dịch cần một bên bán sẵn sàng đứng về phía còn lại. Nếu không bên bán nào báo giá cho giao dịch của bạn, hoặc thị trường đang tạm dừng, bạn không thể mở vị thế vào lúc đó. Các vị thế hiện có không bị ảnh hưởng: chúng vẫn kết thúc và chi trả.
+
+## Khoản chi trả có thể bị chậm
+
+Khoản chi trả chờ giá kết thúc và chờ ai đó thực hiện việc kết thúc. Sự cố mạng hoặc nguồn giá ngừng cập nhật làm chậm điều thứ nhất. Keeper bị đình trệ làm chậm điều thứ hai, dù bất kỳ ai cũng có thể thực hiện việc kết thúc. Sự chậm trễ không thay đổi số tiền bạn được nhận. Nếu không có giá nào được công bố trong vòng 14 ngày sau thời điểm kết thúc, cả hai bên sẽ được hoàn tiền thay vào đó, và phí không được hoàn lại.
+
+Nếu ví của bạn không thể nhận USDG, việc chuyển tiền thất bại và bạn phải nhận về một địa chỉ khác.
+
+## Hoán đổi chạy qua bên thứ ba
+
+Thanh toán bằng USDC hoặc USDT và hoán đổi đa chuỗi dùng Velora và Relay, không do Isometric vận hành. Một lệnh hoán đổi có thể thất bại, khớp với mức trượt giá tới mức đã hiển thị, hoặc mất nhiều thời gian hơn ước tính. Nếu ví của bạn không thể gộp giao dịch, lệnh hoán đổi và giao dịch là hai bước riêng, nên lệnh hoán đổi có thể thành công còn giao dịch sau đó thất bại. Khi đó bạn giữ USDG. Lệnh hoán đổi đa chuỗi không khớp được sẽ được hoàn tiền trên mạng bạn đã gửi đi. Xem [Thanh toán và hoán đổi](./pay-and-swap.mdx).
+
+## Nâng cấp hợp đồng và quản trị
+
+Hợp đồng có thể nâng cấp. Một bản nâng cấp có thể thay đổi bất cứ điều gì, kể cả cách giữ tiền, nên một bản nâng cấp lỗi hoặc chủ sở hữu quyền nâng cấp bị xâm phạm có thể gây mất tiền. Bản nâng cấp có hiệu lực ngay, không có độ trễ.
+
+Bộ phận quản trị có thể thay đổi phí trong giới hạn cố định trong mã. Người giám hộ (guardian) có thể tạm dừng vị thế mới. Việc tạm dừng không bao giờ chặn việc kết thúc, nhận hay hoàn tiền.
+
+## Rủi ro hợp đồng thông minh và mạng
+
+Isometric là một tập hợp hợp đồng thông minh trên Arbitrum. Hợp đồng có thể có lỗi, oracle có thể hỏng, mạng có thể ngừng, và USDG mang rủi ro riêng về đơn vị phát hành và kỹ thuật, bao gồm khả năng đơn vị phát hành đóng băng một địa chỉ. Giao thức được thiết kế để từ chối một thao tác thay vì thực hiện nó trên dữ liệu sai, nhưng không phần mềm nào không có rủi ro.
+
+## Đây không phải lời khuyên
+
+Không nội dung nào trong ứng dụng hay tài liệu này là lời khuyên đầu tư. Isometric không đánh giá liệu một giao dịch có phù hợp với bạn hay không. Isometric không dành cho cư dân Hoa Kỳ, Canada, Vương quốc Anh, Nam Phi hoặc các quốc gia bị trừng phạt. Giao dịch sản phẩm có đòn bẩy cũng có thể bị hạn chế ở khu vực pháp lý của bạn, và bạn chịu trách nhiệm về thuế trên mọi khoản lãi. Xem [điều khoản dịch vụ](https://app.isometric.fi/terms).
+
+## Mã hợp đồng bảo vệ những gì
+
+- **Mức lỗ tối đa của bạn được cố định.** Không ai có thể lấy thêm gì của bạn sau khi bạn đã trả.
+- **Khoản chi trả của bạn được bảo đảm từ ngày đầu.** Hợp đồng giữ premium của bạn và khoản ký quỹ của bên bán cho đến khi kết thúc. Cộng lại, chúng bao trọn **Chi trả tối đa** của bạn.
+- **Không ai chọn giá.** Chỉ đúng một mức giá Chainlink hợp lệ cho một giờ kết thúc, và không bên tham gia nào, kể cả Isometric, có thể chọn mức khác.
+- **Khoản cần nhận không bao giờ hết hạn.** Khoản chi trả chờ bạn vô thời hạn, và bạn có thể gửi nó đến bất kỳ địa chỉ nào.
+- **Giao dịch bạn ký là giao dịch bạn nhận.** Báo giá được bên bán ký, và hợp đồng từ chối mọi lệnh khớp khác với báo giá đó.

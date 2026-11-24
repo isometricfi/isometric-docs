@@ -1,0 +1,56 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Tahmin piyasaları ve işlem
+sidebarTitle: Tahmin piyasaları ve işlem
+description: Kaldıraçlı bir Isometric işleminin ödeme, kıl payı kaçırma, büyüklük, çıkış ve sonuçlanma açısından evet-hayır fiyat tahmin piyasasıyla karşılaştırması.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Tahmin piyasaları ve işlem
+
+Bir fiyat tahmin piyasası evet-hayır sorusu sorar: Bitcoin gelecek cuma $103,000'in üzerinde olacak mı? Bir Isometric işlemi ilk bakışta buna benzer, çünkü sonucu tek bir zamandaki tek bir fiyat belirler. Fark ödemededir. Tahmin piyasası bir çizgiyi geçmiş olmana göre öder. Isometric ise fiyatın o çizgiyi ne kadar geçtiğine göre öder.
+
+## Yan yana
+
+|                               | Fiyat tahmin piyasası                                             | Isometric                                                           |
+| ----------------------------- | ----------------------------------------------------------------- | ------------------------------------------------------------------- |
+| **Seçtiğin**                  | Listelenmiş bir soru: bir fiyat çizgisi ve bir tarih              | Yön, bitiş saati, tutar ve kaldıraç                                 |
+| **Ödeme**                     | Ya hep ya hiç: haklıysan pay başına sabit bir tutar               | Değersiz fiyatının ötesindeki her %1 ile büyür, Maks. ödemeye kadar |
+| **Kıl payı kaçırma**          | Hiçbir şey ödemez                                                 | Ödediğinin bir kısmını geri verebilir                               |
+| **Kaybedebileceğin en fazla** | Ödediğin tutar                                                    | Ödediğin tutar                                                      |
+| **Ödediğin fiyat**            | Diğer trader'lar belirler ve yalnızca emir defteri kadar derindir | Satıcılar tüm büyüklük için tek seferde teklif verir                |
+| **Çıkış**                     | Genellikle istediğin zaman, başka bir trader'a satarak            | Yalnızca sonuçlanmada                                               |
+| **Tarihler**                  | Birinin listelediği tarihler                                      | 12 saatten 7 güne kadar vadeler                                     |
+| **Sonucu belirleyen**         | Piyasanın kendi sonuçlanma kuralları                              | Sonuçlanma saatindeki Chainlink fiyatı                              |
+
+## Aynı görüş, iki yol
+
+Bitcoin $100,000'de ve üç gün içinde daha yüksek olacağını düşünüyorsun. $100'ün var.
+
+- **Tahmin piyasası.** "3 gün içinde $103,000'in üzerinde mi?" sorusunda Evet alıyorsun. Evet'in 30 sentten işlem gördüğünü ve haklıysan $1 ödediğini varsayalım. $100 yaklaşık 333 pay alır.
+- **Isometric.** [Grafiği okuma](./reading-the-chart.mdx) sayfasındaki 3 günlük, 25x'lik long'u açıyorsun: değersiz fiyatı $97,400, başa baş $101,296, maks. ödeme $323.
+
+| Sonuçlanmada Bitcoin | Tahmin piyasasının ödediği | Isometric'in ödediği |
+| -------------------- | -------------------------- | -------------------- |
+| $99,000              | $0                         | $41                  |
+| $102,000             | $0                         | $118                 |
+| $105,000             | $333                       | $195                 |
+| $107,000             | $333                       | $246                 |
+| $112,000             | $333                       | $323                 |
+
+Tahmin piyasası, çizgisini kıl payı geçen bir hareket için daha fazla öder. Isometric ise kıl payı kaçırmada paranın bir kısmını geri verir ve hareket büyüdükçe maksimumuna kadar ödemeye devam eder. Rakamlar örnektir: iki taraftaki gerçek fiyatlar da piyasayla birlikte hareket eder.
+
+## Isometric'in daha uygun olduğu durumlar
+
+- **Bir çizgin değil, bir yönün varsa.** Doğru fiyat ve tarihte listelenmiş bir soru bulman gerekmez. Long ya da short ile bir bitiş saati seç; grafik her fiyatın ne ödediğini gösterir.
+- **Hareketin büyüklüğü için ödeme almak istiyorsan.** Büyük bir hareket küçük bir hareketten daha fazla öder.
+- **Kıl payı kaçırmanın da sayılmasını istiyorsan.** **Some back** (kısmen geri) bandında paranın bir kısmını geri alırsın.
+- **Tüm büyüklük için tek fiyat istiyorsan.** Satıcılar tutarın tamamına teklif verir. Gezilecek bir emir defteri yoktur.
+
+## Tahmin piyasasının daha uygun olduğu durumlar
+
+- **Tam olarak tek bir çizgi hakkında görüşün varsa.** Yalnızca fiyatın $103,000'i geçip geçmeyeceğini önemsiyorsan, evet-hayır payı tam olarak bunu söyler.
+- **Erken çıkmak istiyorsan.** Paylarını genellikle sonuçlanmadan önce satabilirsin. Isometric pozisyonu sonuçlanmaya kadar sürer.
+- **Fiyat dışında bir şey üzerine işlem yapmak istiyorsan.** Isometric yalnızca piyasa fiyatları üzerine işlem yapar.
+
+İşlem yapmadan önce [Riskleri öğren](./risks.mdx) sayfasını oku.

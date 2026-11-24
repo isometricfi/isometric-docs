@@ -1,0 +1,30 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Como funciona
+sidebarTitle: Como funciona
+description: O que é uma posição na Isometric por baixo. Toda operação é uma trava de opções totalmente colateralizada, encerrada no vencimento com base em um único preço da Chainlink.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Como funciona
+
+Toda posição na Isometric é uma trava de opções (option spread).
+
+- **Um long é um call spread.** Ele paga conforme o preço sobe acima do seu preço sem valor, até um teto.
+- **Um short é um put spread.** Ele paga conforme o preço cai abaixo do seu preço sem valor, até um piso.
+- **Você compra a trava, um lançador a vende.** Os lançadores competem para cotar a sua operação, e a melhor cotação é executada.
+- **Ela é totalmente colateralizada.** Quando a operação abre, o seu prêmio e o depósito do lançador cobrem todo o seu **Pagamento máximo**.
+- **Ela é encerrada uma única vez, no horário de término.** Um único preço da Chainlink decide o pagamento, feito em USDG. Não há exercício antecipado nem fechamento antecipado.
+
+## O gráfico em termos de opções
+
+| No gráfico                      | Em termos de opções                                         |
+| ------------------------------- | ----------------------------------------------------------- |
+| A linha **Lose**                | O preço de exercício                                        |
+| A linha **Max**                 | O teto, ou o piso no caso de um short                       |
+| Pagamento máximo                | O valor total da trava, entre o preço de exercício e o teto |
+| O que você aplica               | O prêmio mais a taxa de negociação                          |
+| O que você aplica × alavancagem | O valor nocional                                            |
+| **Termina**                     | O vencimento                                                |
+
+A alavancagem é o valor nocional dividido pelo que você paga. Ela define o tamanho da trava, não uma exigência de margem, então não há nada a liquidar.

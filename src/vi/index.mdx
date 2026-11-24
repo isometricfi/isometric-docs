@@ -1,0 +1,64 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Chào mừng đến với Isometric
+sidebarTitle: Chào mừng
+description: Giao dịch theo điều kiện của bạn. Đòn bẩy tới 100x, không bị thanh lý, chỉ giá tại thời điểm kết thúc của bạn mới được tính.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Giao dịch theo điều kiện của bạn
+
+<Note>
+  Isometric đang ở bản beta trên Arbitrum One, và mỗi vị thế bị giới hạn ở 5,000 USDG. Hợp đồng chưa
+  được kiểm toán, vì vậy chỉ dùng số tiền bạn sẵn sàng mất.
+</Note>
+
+Isometric cho phép bạn **long hoặc short với đòn bẩy tới 100x** mà không bị thanh lý. Bạn trả một lần, ngay từ đầu, và đó là mức lỗ tối đa của bạn. Một cây râu nến không thể đóng vị thế của bạn, vì chỉ giá tại thời điểm kết thúc mới được tính.
+
+## Một giao dịch trong ba bước
+
+1. **Chọn Long hoặc Short.**
+2. **Kéo đường kết thúc** trên biểu đồ để chọn thời điểm giao dịch kết thúc, từ 12 giờ đến 7 ngày.
+3. **Đặt số tiền bỏ vào và đòn bẩy**, rồi nhấn **Long BTC** hoặc **Short BTC**.
+
+Trước khi giao dịch, biểu đồ cho thấy mỗi mức giá kết thúc trả bao nhiêu: vùng bạn mất số tiền đã bỏ vào (**Lose**), vùng bạn nhận lại một phần (**Some back**), vùng có lãi, và mức lãi tối đa (**Max**). Xem [Đọc biểu đồ](./trade/reading-the-chart.mdx).
+
+## Vì sao không dùng perp
+
+<Columns cols={3}>
+  <Card title="Không thanh lý" icon="lucide:shield-check">
+    Giá đi ngược bạn không đóng vị thế của bạn. Vị thế vẫn mở đến thời điểm kết thúc.
+  </Card>
+  <Card title="Không phí funding" icon="lucide:clock">
+    Giữ vị thế không tốn gì. Số tiền bạn trả khi mở là toàn bộ chi phí.
+  </Card>
+  <Card title="Khoản chi trả được khóa khi mở" icon="lucide:lock">
+    Khoản bạn trả và khoản ký quỹ của bên bán bao trọn mức chi trả tối đa của bạn ngay từ lúc giao
+    dịch mở.
+  </Card>
+</Columns>
+
+Đánh đổi: vị thế chạy đến thời điểm kết thúc, và khoản chi trả ngừng tăng khi chạm mức tối đa. [Perp so với Isometric](./trade/perps-vs-isometric.mdx) trình bày cả hai phía.
+
+## Cũng có trên Isometric
+
+<Columns cols={2}>
+  <Card title="Dự đoán" icon="lucide:target" href="./predict/quickstart.mdx" arrow>
+    Đặt cược rằng giá kết thúc trên hoặc dưới mức mục tiêu của chính bạn, vào thời điểm kết thúc do
+    bạn chọn. Khoản chi trả được cố định khi bạn đặt.
+  </Card>
+  <Card title="Bên bán" icon="lucide:pen-line" href="./write/writers.mdx" arrow>
+    Đứng về phía còn lại của các giao dịch và dự đoán bằng cách tự báo giá.
+  </Card>
+</Columns>
+
+## Đọc tiếp
+
+<Columns cols={2}>
+  <Card title="Mở giao dịch đầu tiên" icon="lucide:rocket" href="./trade/quickstart.mdx" arrow>
+    Kết nối ví, nạp tiền từ bất kỳ mạng nào được hỗ trợ, và mở một vị thế.
+  </Card>
+  <Card title="Hiểu rõ rủi ro" icon="lucide:shield-alert" href="./trade/risks.mdx" arrow>
+    Bạn có thể mất gì và điều gì có thể làm chậm khoản chi trả.
+  </Card>
+</Columns>

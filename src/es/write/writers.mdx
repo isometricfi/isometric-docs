@@ -1,0 +1,49 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Emisores
+sidebarTitle: Emisores
+description: Quién toma el otro lado de las operaciones y predicciones de Isometric, cómo se eligen las cotizaciones y cómo cada pago queda bloqueado al abrirse una posición.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Emisores
+
+Un emisor es cualquiera que toma el otro lado de las operaciones y predicciones de Isometric. Cada una sale a cotización, y cualquier emisor puede responder.
+
+## Cómo se cotiza una solicitud
+
+1. **Un trader pide** una predicción, o un largo o un corto con un plazo, un monto y un apalancamiento. La solicitud llega a todos los emisores a la vez.
+2. **Los emisores responden** con un precio firmado. Se ejecuta el mejor.
+3. **La posición se abre** en una sola transacción. El trader paga la prima y el emisor deposita el resto del **Pago máximo**. El contrato guarda ambos hasta la resolución.
+4. **Al vencimiento** un solo precio de Chainlink la resuelve. El trader recibe su pago, y el resto vuelve al emisor.
+
+## Qué emites
+
+Cada operación es un spread de opciones europeo, liquidado en efectivo, sobre el precio de Chainlink del mercado y pagado en USDG.
+
+| El trader abre | Tú vendes      | Pago al trader con el precio `P`        | Pago máximo                    |
+| -------------- | -------------- | --------------------------------------- | ------------------------------ |
+| Largo          | Un call spread | `contracts × (min(P, cap) − strike)⁺`   | `contracts × (cap − strike)`   |
+| Corto          | Un put spread  | `contracts × (strike − max(P, floor))⁺` | `contracts × (strike − floor)` |
+
+- **Solo cotizas el precio de ejercicio.** La solicitud fija el lado, el vencimiento, el tope o el piso, el nocional y la prima. El tamaño se deriva de tu precio de ejercicio: `contracts = notional ÷ strike`.
+- **Gana el mejor precio de ejercicio.** El más bajo para un largo, el más alto para un corto. Con el tope o el piso fijos, esa cotización le paga más al trader en cualquier resultado.
+- **Está totalmente colateralizado.** Al ejecutarse, el contrato deposita en garantía la prima del trader y tu aporte hasta el valor total del spread. Nunca se debe nada más.
+- **Se resuelve una sola vez.** Al vencimiento, el trader recibe el pago y el resto del depósito en garantía vuelve a ti, en la misma transacción.
+
+## Emitir predicciones
+
+También puedes emitir predicciones. Por dentro, una predicción es el mismo spread de opciones con una banda estrecha. El tope o el piso es el objetivo del trader, y el precio de ejercicio queda 0.1% antes, así que el spread paga completo en el objetivo y nada 0.1% antes.
+
+| El trader predice | Tú vendes      | Precio de ejercicio | Tope o piso |
+| ----------------- | -------------- | ------------------- | ----------- |
+| Sube              | Un call spread | `target × 0.999`    | `target`    |
+| Baja              | Un put spread  | `target × 1.001`    | `target`    |
+
+- **Solo cotizas el tamaño.** La solicitud fija el lado, el vencimiento, el precio de ejercicio, el tope o el piso y la prima. Tú eliges `contracts`. El pago máximo es `contracts × (cap − strike)` para Sube o `contracts × (strike − floor)` para Baja. Depositas ese pago menos la prima del trader.
+- **Gana el pago más grande.** La cotización con más contratos es la que más le paga al trader.
+- **Los pagos tienen tope.** Una predicción paga como máximo 1,000 USDG, y como máximo 10 veces su monto.
+
+## Hazte emisor
+
+Los market makers pueden conectarse y responder a predicciones y operaciones con sus propios precios. Escribe a [support@isometric.fi](mailto:support@isometric.fi) para configurarlo.
