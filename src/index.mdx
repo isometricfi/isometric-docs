@@ -2,61 +2,63 @@
 $schema: https://holocron.so/frontmatter.json
 title: Welcome to Isometric
 sidebarTitle: Welcome
-description: Prediction markets on your terms. Pick any price and any end time, and writers quote your prediction on the spot.
+description: Trade on your terms. Leverage up to 100x with no liquidation, where only the price at your end time counts.
 og:image: https://isometric.fi/docs-opengraph.png
 ---
 
-# Prediction markets on your terms
+# Trade on your terms
 
 <Note>
-  Isometric is in beta on Arbitrum One. The contracts are unaudited, so only use what you are
-  willing to lose.
+  Isometric is in beta on Arbitrum One, and a position is capped at 5,000 USDG. The contracts are
+  unaudited, so only use what you are willing to lose.
 </Note>
 
-On a listed prediction market you pick from questions someone else wrote. On Isometric you write your own: the market, the price, and the end time. Writers quote it on the spot, and the payout is fixed when you place it.
+Isometric lets you go **long or short with up to 100x leverage** and no liquidation. You pay once, up front, and that is the most you can lose. A wick cannot close you out, because only the price at your end time counts.
 
-## A prediction in three choices
+## A trade in three moves
 
-1. **Your price.** Pick a target above today's price to bet it ends higher, or below to bet it ends lower. Further from today's price pays more.
-2. **Your end time.** Choose a term from 12 hours to 7 days. The end time rounds up to the next whole hour.
-3. **Your amount.** What to spend, paid in USDG, USDC, or USDT.
+1. **Pick Long or Short.**
+2. **Drag the end line** on the chart to choose when the trade ends, from 12 hours to 7 days.
+3. **Set what you put in and your leverage**, then press **Long BTC** or **Short BTC**.
 
-The ticket shows your **Payout** before you place it. If the Chainlink settlement price is at or past your target, you get the full payout. If it falls short by less than 0.1%, you get a proportional share. At 0.1% short or more, you get nothing.
+Before you trade, the chart shows what every end price pays: where you **Lose** your amount, where you get **Some back**, where you profit, and your **Max** profit. See [Reading the chart](./trade/reading-the-chart.mdx).
 
-## Three ways to use Isometric
+## Why not a perp
 
 <Columns cols={3}>
-  <Card title="Predict" icon="lucide:target" href="./predict/quickstart.mdx" arrow>
-    Bet that a price ends above or below your target. Pay once, and the payout is fixed when you
-    place it.
+  <Card title="No liquidation" icon="lucide:shield-check">
+    A move against you does not close your position. It stays open to the end time.
   </Card>
-  <Card title="Trade" icon="lucide:trending-up" href="./trade/overview.mdx" arrow>
-    Go long or short with up to 1000x leverage and no early liquidation.
+  <Card title="No funding" icon="lucide:clock">
+    Holding costs nothing. What you pay at open is the entire cost.
+  </Card>
+  <Card title="Payout locked at open" icon="lucide:lock">
+    Your payment and the writer's deposit cover your full max payout from the moment the trade
+    opens.
+  </Card>
+</Columns>
+
+The trade-off: a position runs to its end time, and the payout stops growing at its max. [Perps versus Isometric](./trade/perps-vs-isometric.mdx) lays out both sides.
+
+## Also on Isometric
+
+<Columns cols={2}>
+  <Card title="Predict" icon="lucide:target" href="./predict/quickstart.mdx" arrow>
+    Bet that a price ends above or below your own target at your own end time. The payout is fixed
+    when you place it.
   </Card>
   <Card title="Write" icon="lucide:pen-line" href="./write/writers.mdx" arrow>
-    Take the other side of predictions and trades by quoting your own prices.
+    Take the other side of trades and predictions by quoting your own prices.
   </Card>
 </Columns>
 
 ## Keep reading
 
 <Columns cols={2}>
-  <Card
-    title="Place your first prediction"
-    icon="lucide:rocket"
-    href="./predict/quickstart.mdx"
-    arrow
-  >
-    Connect a wallet, fund it from any supported network, and place a prediction.
+  <Card title="Open your first trade" icon="lucide:rocket" href="./trade/quickstart.mdx" arrow>
+    Connect a wallet, fund it from any supported network, and open a position.
   </Card>
-  <Card title="How a prediction pays" icon="lucide:receipt" href="./predict/how-it-pays.mdx" arrow>
-    The payout, the price, and the one price that decides it.
-  </Card>
-  <Card title="Know the risks" icon="lucide:shield-alert" href="./predict/risks.mdx" arrow>
+  <Card title="Know the risks" icon="lucide:shield-alert" href="./trade/risks.mdx" arrow>
     What you can lose and what can delay a payout.
-  </Card>
-  <Card title="Markets" icon="lucide:layers" href="./markets.mdx" arrow>
-    Bitcoin, Ether, Solana, BNB, Avalanche, Dogecoin, Uniswap, and Arbitrum are live. More crypto,
-    stocks, and commodities are coming soon.
   </Card>
 </Columns>

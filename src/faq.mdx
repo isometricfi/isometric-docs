@@ -8,13 +8,109 @@ og:image: https://isometric.fi/docs-opengraph.png
 
 # Frequently asked questions
 
+## Leverage
+
+<AccordionGroup>
+
+<Accordion title="Can I close a position early?">
+
+No. A position runs to its end time. That is the trade-off for no liquidation and no funding. Choose a term you are happy to wait out.
+
+</Accordion>
+
+<Accordion title="Can I be liquidated?">
+
+No. Nothing happens to a position between open and its end time, however far the price moves against it. What you paid is the most you can lose, and it was paid at open.
+
+</Accordion>
+
+<Accordion title="Is there funding?">
+
+No. There is no cost to holding a position.
+
+</Accordion>
+
+<Accordion title="What decides whether a position pays?">
+
+One [Chainlink price at your end time](./trade/expiry-and-settlement.mdx). The bands on the chart show what each end price pays.
+
+</Accordion>
+
+<Accordion title="What is the most a position can pay?">
+
+The **Max** on the chart. Every quote has one, fixed when the position opens. Later end times and higher leverage have a larger maximum.
+
+</Accordion>
+
+<Accordion title="Am I charged exactly the amount I entered?">
+
+Yes. What you put in is the whole cost, fee included, and the most you can lose. The trade opens on exactly the quote you confirmed, or it fails and you pay only the network fee. If you pay with USDC or USDT, your amount is counted in USDG and the swap rate sets how much of the stablecoin it takes.
+
+</Accordion>
+
+<Accordion title="How many transactions is a trade?">
+
+One when you pay with USDG. Any approval is either a free signature or sent together with the trade. Paying with USDC or USDT is also one transaction if your wallet can batch them. Otherwise the wallet sends the approval if one is needed and the swap first.
+
+</Accordion>
+
+<Accordion title="How do I get paid?">
+
+In USDG, long or short. Settlement pays your wallet directly, normally a minute or two after the end time. See [Payouts and claims](./trade/payouts-and-claims.mdx).
+
+</Accordion>
+
+<Accordion title="What does Won mean?">
+
+The position paid out, but the transfer to your wallet failed. Nothing is lost. Open the position in Portfolio and claim it, to the same wallet or to another address that can receive USDG. Claims never expire.
+
+</Accordion>
+
+<Accordion title="Why does the button say something other than Long or Short?">
+
+It is telling you why the trade cannot go through: the wrong network, not enough of the token you are paying with, an amount outside the limits, no quote for the trade, no swap route, or a paused market.
+
+</Accordion>
+
+<Accordion title="How do I pick when a trade ends?">
+
+Drag the line marked **Ends** on the chart, or press **12h**, **1d**, **3d**, or **1w** under it. Terms run from 12 hours to 7 days and round up to the next whole hour.
+
+</Accordion>
+
+<Accordion title="What do I need in my wallet?">
+
+USDG, USDC, or USDT to pay for positions and a little ETH for network fees, all on Arbitrum One.
+
+</Accordion>
+
+<Accordion title="How large can a trade be?">
+
+The amount starts at $1, and amount times leverage cannot pass a position size of 5,000 USDG. That is $1,000 at 5x and $50 at 100x, the highest leverage.
+
+</Accordion>
+
+<Accordion title="Do I need to hold USDG?">
+
+No. You can pay with USDC or USDT on Arbitrum One, and the app swaps it to USDG as the trade opens. The trade still settles in USDG and pays out in USDG. See [Pay and swap](./trade/pay-and-swap.mdx).
+
+</Accordion>
+
+<Accordion title="Can I bring money from another network, or move it back?">
+
+Yes. Open your account menu and choose **Swap (cross-chain)**. It moves money to and from Arbitrum One on networks including Ethereum, Base, Optimism, Polygon, BNB Chain, Avalanche, Hyperliquid, and Robinhood Chain. See [Pay and swap](./trade/pay-and-swap.mdx).
+
+</Accordion>
+
+</AccordionGroup>
+
 ## Predictions
 
 <AccordionGroup>
 
 <Accordion title="Do I need an invite?">
 
-No. Connect a wallet on Arbitrum One and place a prediction or a trade.
+No. Connect a wallet on Arbitrum One and open a trade or a prediction.
 
 </Accordion>
 
@@ -30,111 +126,9 @@ No. A prediction runs to its end time.
 
 </Accordion>
 
-<Accordion title="What does the price in cents mean?">
-
-What each $1 of payout costs. 25¢ means the writers put the chance near 25%, and the payout is about four times your amount.
-
-</Accordion>
-
 <Accordion title="How large can a prediction be?">
 
-One prediction pays at most 1,500 USDG, and at most 10 times its amount.
-
-</Accordion>
-
-</AccordionGroup>
-
-## Trading
-
-<AccordionGroup>
-
-<Accordion title="Can I close a position early?">
-
-No. A position runs to its settlement time. That is the trade-off for no liquidation and no funding. Choose a term you are happy to wait out.
-
-</Accordion>
-
-<Accordion title="Can I be liquidated?">
-
-No. Nothing happens to a position between open and settlement, however far the price moves against it. What you paid is the most you can lose, and it was paid at open.
-
-</Accordion>
-
-<Accordion title="Is there funding?">
-
-No. There is no cost to holding a position.
-
-</Accordion>
-
-<Accordion title="What decides whether a position pays?">
-
-One [Chainlink settlement price](./trade/expiry-and-settlement.mdx). Above your worthless price pays a long. Below it pays a short.
-
-</Accordion>
-
-<Accordion title="What is the most a position can pay?">
-
-The **Max payout** on the ticket. Every quote has one, fixed when the position opens. Longer terms and higher leverage have a larger maximum.
-
-</Accordion>
-
-<Accordion title="Am I charged exactly the amount I entered?">
-
-Yes. The amount you enter is the whole cost, fee included, and the ticket shows it as **Max loss**. The trade opens on exactly the quote you confirmed, or it fails and you pay only the network fee. If you pay with USDC or USDT, your amount is counted in USDG and the swap rate sets how much of the stablecoin it takes.
-
-</Accordion>
-
-<Accordion title="How many transactions is a trade?">
-
-One when you pay with USDG. Any approval is either a free signature or sent together with the trade. Paying with USDC or USDT is also one transaction if your wallet can batch them. Otherwise the wallet sends the approval if one is needed and the swap first.
-
-</Accordion>
-
-<Accordion title="How do I get paid?">
-
-In USDG, long or short. Settlement pays your wallet directly, normally a minute or two after expiry. See [Payouts and claims](./trade/payouts-and-claims.mdx).
-
-</Accordion>
-
-<Accordion title="What does Won mean?">
-
-The position paid out, but the transfer to your wallet failed. Nothing is lost. Open the position in Portfolio and claim it, to the same wallet or to another address that can receive USDG. Claims never expire.
-
-</Accordion>
-
-<Accordion title="Why does the confirm button say something other than Confirm?">
-
-It is telling you why the trade cannot go through: the wrong network, not enough of the token you are paying with, an amount outside the limits, no quote for the trade, no swap route, or a paused market.
-
-</Accordion>
-
-<Accordion title="Why does the settlement time land later than my term?">
-
-Settlement is your term counted from when you request the quote, rounded up to the next whole hour. The exact time is always on the ticket before you confirm.
-
-</Accordion>
-
-<Accordion title="What do I need in my wallet?">
-
-USDG, USDC, or USDT to pay for positions and a little ETH for network fees, all on Arbitrum One.
-
-</Accordion>
-
-<Accordion title="How large can a trade be?">
-
-The amount starts at $1, and amount times leverage cannot pass a position size of 5,000 USDG. That is $1,000 at 5x, $50 at 100x, and $5 at 1000x.
-
-</Accordion>
-
-<Accordion title="Do I need to hold USDG?">
-
-No. You can pay with USDC or USDT on Arbitrum One, and the app swaps it to USDG as the trade opens. The trade still settles in USDG and pays out in USDG. See [Pay and swap](./trade/pay-and-swap.mdx).
-
-</Accordion>
-
-<Accordion title="Can I bring money from another network, or move it back?">
-
-Yes. Open your account menu and choose **Swap (cross-chain)**. It moves money to and from Arbitrum One on networks including Ethereum, Base, Optimism, Polygon, BNB Chain, Avalanche, Hyperliquid, and Robinhood Chain. See [Pay and swap](./trade/pay-and-swap.mdx).
+One prediction pays at most 1,000 USDG, and at most 10 times its amount.
 
 </Accordion>
 
@@ -196,7 +190,7 @@ Settlement is delayed until someone else sends it. Anyone can. The settlement pr
 
 <Accordion title="What happens if the network or the price feed goes down?">
 
-Settlement waits for the price. If none is published within 14 days of expiry, both sides are refunded, less the fee. Nothing already owed to you changes.
+Settlement waits for the price. If none is published within 14 days of the end time, both sides are refunded, less the fee. Nothing already owed to you changes.
 
 </Accordion>
 

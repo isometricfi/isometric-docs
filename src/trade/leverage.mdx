@@ -2,78 +2,60 @@
 $schema: https://holocron.so/frontmatter.json
 title: What leverage means here
 sidebarTitle: Leverage
-description: Leverage on Isometric sets your position size and where your target sits. It never creates a liquidation price.
+description: Leverage on Isometric sets your position size and where your lose line sits. It never creates a liquidation price.
 og:image: https://isometric.fi/docs-opengraph.png
 ---
 
 # What leverage means here
 
-On a perp, leverage is how much you borrow, and it comes with a price at which you get wiped out. On Isometric there is no borrowing and no liquidation. Leverage does two things: it sets how big your position is, and where your target sits.
+On a perp, leverage is how much you borrow, and it comes with a price at which you get wiped out. On Isometric there is no borrowing and no liquidation. Leverage does two things: it sets how big your position is, and where the **Lose** line sits on the chart.
+
+Pick it from **Leverage** on the ticket: 5x, 10x, 15x, 20x, 25x, 30x, 40x, 50x, 75x, or 100x.
 
 ## Leverage sets position size
 
-Your position size is your amount times the leverage. It is currently capped at **5,000 USDG** per trade, so higher leverage lowers the most you can enter.
+Your position size is what you put in times the leverage, capped at **5,000 USDG** per trade. Higher leverage lowers the most you can put in, which the ticket shows as **Max**.
 
-| Largest amount | Leverage | Position size |
-| -------------- | -------- | ------------- |
-| $1,000         | 5x       | $5,000        |
-| $500           | 10x      | $5,000        |
-| $200           | 25x      | $5,000        |
-| $100           | 50x      | $5,000        |
-| $50            | 100x     | $5,000        |
-| $5             | 1000x    | $5,000        |
+| Leverage | Most you can put in |
+| -------- | ------------------- |
+| 5x       | $1,000              |
+| 10x      | $500                |
+| 25x      | $200                |
+| 50x      | $100                |
+| 100x     | $50                 |
 
-Leverage comes in eleven tiers: 5x, 10x, 15x, 20x, 25x, 30x, 40x, 50x, 75x, 100x, and 1000x.
+The minimum is $1.
 
-## Leverage moves your target
+## Leverage moves the lose line
 
-Paying less for the same position means more risk. Higher leverage moves your **Worthless at or below** price closer to today's price, and from 50x past it, so less has to go wrong before the position is worth nothing.
+Paying less for the same position means more risk. Higher leverage moves the worthless price closer to today's price, and from about 50x past it, so less has to go wrong before you lose it all.
 
-Six three-day Bitcoin longs with Bitcoin at $100,000, each with a $5,000 position size:
+Five three-day Bitcoin longs with Bitcoin at $100,000, each with a $5,000 position size:
 
-| Leverage | Amount | Worthless at or below | Profit above | Max payout |
-| -------- | ------ | --------------------- | ------------ | ---------- |
-| 5x       | $1,000 | $83,738               | $100,486     | $1,568     |
-| 10x      | $500   | $91,402               | $100,542     | $1,017     |
-| 25x      | $200   | $97,388               | $101,283     | $648       |
-| 50x      | $100   | $100,466              | $102,476     | $474       |
-| 100x     | $50    | $102,936              | $103,965     | $343       |
-| 1000x    | $5     | $108,283              | $108,391     | $79        |
+| Leverage | You put in | Worthless at | Breakeven | Max payout |
+| -------- | ---------- | ------------ | --------- | ---------- |
+| 5x       | $1,000     | $83,738      | $100,486  | $1,568     |
+| 10x      | $500       | $91,402      | $100,542  | $1,017     |
+| 25x      | $200       | $97,388      | $101,283  | $648       |
+| 50x      | $100       | $100,466     | $102,476  | $474       |
+| 100x     | $50        | $102,936     | $103,965  | $343       |
 
-These are example figures. The exact prices move with the market and the ticket shows yours.
+These are example figures. The chart shows yours.
 
-Read across a row and the trade at each tier is clear:
+- **Low leverage** is a safe, small stake in the price. It rarely loses everything and rarely pays many times over.
+- **High leverage** pays a lot for a small move your way and loses everything on a small move against you.
 
-| Leverage | Where the worthless price sits | What a small move against you does | Payout per 1% past target |
-| -------- | ------------------------------ | ---------------------------------- | ------------------------- |
-| 5x       | Far on the safe side of today  | You get most of your money back    | 5% of your amount         |
-| 10x      | Closer                         | You get some of it back            | 10%                       |
-| 25x      | Close to today's price         | You can lose all of it             | 25%                       |
-| 50x      | Past today's price             | It needs a move your way to pay    | 50%                       |
-| 100x     | Further past today's price     | It needs a bigger move your way    | 100%                      |
-| 1000x    | Near the Max payout price      | It needs a large move your way     | 1,000%                    |
+**Each 1% past the worthless price pays leverage percent of your amount**, up to the max. At 25x, each 1% is 25% of what you put in. When the market is calm the lines sit closer to today's price. When it is volatile they sit further away, because writers price in a bigger move.
 
-At low leverage the position behaves like a small, safe stake in the price: it is rarely worthless and rarely pays many times over. At high leverage a small move in your favour pays a lot and a small move against you costs the whole premium.
-
-The exact distances move with the market. When the market is calm the targets sit closer. When it is volatile they sit further away, because a big move is more likely and writers price it in.
-
-## Leverage does not create a liquidation price
+## No liquidation price
 
 Nothing happens to your position while it is open. If a 25x long goes 10% against you on day one and recovers on day two, it pays in full on day three. A perp at the same leverage would have been closed out on day one.
 
-The cost of that protection is already inside what you paid. There is no margin to top up and no funding to pay.
-
-## Breakeven and the cap
-
-- **Breakeven usually sits a little past today's price.** Each 1% past your worthless price pays back leverage percent of your amount, so breakeven is one leverage-share past the worthless price.
-- **The payout is capped.** The ticket shows the **Max payout** in dollars. Longer terms have a larger one.
-
 ## Choosing a leverage
 
-Ask where you think the price will be at settlement, not how much you want to make.
+Ask where you think the price will be at the end time, not how much you want to make.
 
-- If you think it will drift your way or hold, pick low leverage. You keep most of your money across a wide range of outcomes.
-- If you think it will move decisively, pick high leverage. Each 1% of the move pays more.
-- If you are not sure, the middle tiers split the difference.
+- If you think it will drift your way or hold, pick low leverage.
+- If you think it will move decisively, pick high leverage.
 
-The ticket shows exactly where each tier puts the target. Move the slider and watch the worthless price, the profit price, and the max payout shift before you decide.
+Change the leverage and watch the bands on the chart move before you decide.

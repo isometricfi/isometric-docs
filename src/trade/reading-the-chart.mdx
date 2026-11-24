@@ -1,0 +1,61 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Reading the chart
+sidebarTitle: Reading the chart
+description: How the Isometric leverage chart shows what every end price pays, with a worked example, so you know exactly what you are agreeing to before you trade.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Reading the chart
+
+The chart is the ticket. On the left is the last two days of price. On the right, past the line marked **Ends**, are bands that show what your trade pays at every possible end price. Only the price at that line counts. A dip along the way decides nothing.
+
+## The bands
+
+For a long, from top to bottom:
+
+| Band          | What it means                                                                        |
+| ------------- | ------------------------------------------------------------------------------------ |
+| **Max**       | At or past the top price the payout stops growing. The label shows your most profit. |
+| Green         | Between the middle price and the top price you get back more than you put in.        |
+| **Some back** | Between the bottom price and the middle price you get back part of what you put in.  |
+| **Lose**      | At or below the bottom price the trade pays nothing. The label shows what you lose.  |
+
+A short is the same chart upside down: the **Max** band sits at the bottom and **Lose** at the top.
+
+The three prices on the right edge are the **worthless price** (red), the **breakeven** (green), and the **cap** (where **Max** starts). Hover or tap anywhere in the bands to see an end price and exactly what it pays.
+
+## What moves the bands
+
+- **Leverage.** Higher leverage pulls the **Lose** line closer to today's price, so a smaller move against you loses it all. Each 1% past the worthless price pays more. See [Leverage](./leverage.mdx).
+- **The end line.** A later end time pushes the breakeven a little further away and the **Max** band further out, so the max payout grows.
+- **Your amount.** A larger amount scales every payout. The prices stay the same.
+
+## A worked example
+
+Bitcoin is at **$100,000**. You go **Long**, put in **$100** at **25x**, and drag the end line to **3 days**. The chart might show:
+
+| Price on the chart | Value                            |
+| ------------------ | -------------------------------- |
+| Cap                | $110,000, labelled **Max +$223** |
+| Breakeven          | $101,296                         |
+| Worthless          | $97,400, labelled **Lose $100**  |
+
+What each end price pays:
+
+| Bitcoin at the end | You receive | Result |
+| ------------------ | ----------- | ------ |
+| $97,400 or below   | $0          | −$100  |
+| $100,000           | $67         | −$33   |
+| $101,296           | $100        | $0     |
+| $104,000           | $169        | +$69   |
+| $107,000           | $246        | +$146  |
+| $110,000 and above | $323        | +$223  |
+
+At 25x, each 1% past the worthless price is worth about 25% of what you put in, here about $25. Past $110,000 the payout stops growing: Bitcoin at $150,000 pays the same $323.
+
+These are example figures. Yours depend on the live price and the quotes writers send.
+
+## The quote follows the market
+
+The bands update as the price moves. Each quote is firm for a short time, and the app refreshes it before you sign. Your trade opens on exactly the quote you confirmed, or not at all. A failed trade costs only the network fee.

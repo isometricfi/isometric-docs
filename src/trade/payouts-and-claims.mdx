@@ -8,48 +8,44 @@ og:image: https://isometric.fi/docs-opengraph.png
 
 # Payouts and claims
 
-Every payout, long or short, is paid in **USDG** from the premium and writer's deposit the contract has held since you opened it, even if you started the trade with USDC or USDT. To move a payout to another token or network, use the [swap](./pay-and-swap.mdx).
+Every payout, long or short, is paid in **USDG**, even if you paid with USDC or USDT. To move it to another token or network, use the [swap](./pay-and-swap.mdx).
 
 ## When a position pays out
 
-Settlement pays you directly. Your payout goes to your wallet in the same transaction that settles the position, normally a minute or two after expiry. The position then shows **Paid**. There is nothing to press.
+You are paid automatically. The payout goes to your wallet in the same transaction that records the end price, normally a minute or two after the end time. The position then shows **Paid**.
 
 ## When you need to claim
 
-If the transfer to your wallet fails, for example because the wallet is blocked from receiving USDG, the position shows **Won** instead. Nothing is lost. The payout waits in the contract until you take it, and it never expires.
+If the transfer to your wallet fails, for example because the wallet is blocked from receiving USDG, the position shows **Won** instead. Nothing is lost. The payout waits in the contract and never expires.
 
-Open **Portfolio**, choose the position, and press **Claim**. The claim dialog lets you choose where the money goes: **My wallet** or **Another address**.
+Open **Portfolio**, choose the position, and press **Claim**. Send it to **My wallet** or **Another address**.
 
 <Warning>
   The whole payout goes to the address you enter and cannot be sent back. Check every character, and
   make sure the address can receive USDG on Arbitrum One.
 </Warning>
 
-## When a position expires worthless
-
-A position that settles on the wrong side of its worthless price pays nothing. It shows as **Lost** in Portfolio, and there is nothing to claim or close. What you paid was the whole cost.
-
 ## Position statuses
 
-| Status   | Meaning                                                                                    |
-| -------- | ------------------------------------------------------------------------------------------ |
-| Open     | The settlement time is in the future                                                       |
-| Settling | The settlement time has passed and the price is waiting to be recorded                     |
-| Paid     | Settled and paid to your wallet                                                            |
-| Won      | Settled with a payout, but the transfer failed. Claim it                                   |
-| Lost     | Settled outside its range, so it pays nothing                                              |
-| Refunded | No settlement price within 14 days of expiry, so what you paid, less the fee, was returned |
+| Status   | Meaning                                                                                   |
+| -------- | ----------------------------------------------------------------------------------------- |
+| Open     | The end time is in the future                                                             |
+| Ending   | The end time has passed and the end price is waiting to be recorded                       |
+| Paid     | Ended and paid to your wallet                                                             |
+| Won      | Ended with a payout, but the transfer failed. Claim it                                    |
+| Lost     | Ended outside its range, so it pays nothing                                               |
+| Refunded | No end price within 14 days of the end time, so what you paid, less the fee, was returned |
 
 ## What Portfolio shows
 
-| Figure                    | Meaning                                                               |
-| ------------------------- | --------------------------------------------------------------------- |
-| Open value if expired now | What your open positions would pay at the current price. A guide only |
-| Open max payout           | The most your open positions could pay                                |
-| Claimable                 | Payouts waiting for you to claim                                      |
-| Win rate                  | The share of settled positions that paid more than they cost          |
-| Paid in, fees included    | Everything you have paid for positions                                |
-| Paid out                  | Everything that has been paid to you                                  |
-| Realized PnL              | Paid out minus paid in, for positions that have settled               |
+| Figure                  | Meaning                                                               |
+| ----------------------- | --------------------------------------------------------------------- |
+| Open value if ended now | What your open positions would pay at the current price. A guide only |
+| Open max payout         | The most your open positions could pay                                |
+| Claimable               | Payouts waiting for you to claim                                      |
+| Win rate                | The share of ended positions that paid more than they cost            |
+| Paid in, fees included  | Everything you have paid for positions                                |
+| Paid out                | Everything that has been paid to you                                  |
+| Realized PnL            | Paid out minus paid in, for positions that have ended                 |
 
-Each row links to its transaction, so every step can be checked on the chain.
+Each row links to its transaction, so every step can be checked on chain.

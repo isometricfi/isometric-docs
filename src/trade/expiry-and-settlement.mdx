@@ -1,48 +1,44 @@
 ---
 $schema: https://holocron.so/frontmatter.json
-title: Expiry and settlement
-sidebarTitle: Expiry and settlement
-description: What happens between opening an Isometric position and being paid, and how one price at expiry decides the result.
+title: The end time
+sidebarTitle: The end time
+description: What happens between opening an Isometric position and being paid, and how one price at the end time decides the result.
 og:image: https://isometric.fi/docs-opengraph.png
 ---
 
-# Expiry and settlement
+# The end time
 
 An Isometric position has a fixed end. Between open and that end nothing is required from you, and nothing can be done to you.
 
-## The settlement time
+## Choosing it
 
-The ticket shows **Settles** as a date and an hour. It is your term counted from the moment you request the quote, **rounded up to the next whole hour**. A 3-day position requested at 10:20 settles three days later at 11:00.
-
-The exact time is on the ticket before you confirm and in Portfolio after.
+Drag the line marked **Ends** on the chart. Its label shows the day and hour, such as **Ends Tomorrow 9 AM**. Terms run from 12 hours to 7 days, counted from when you request the quote and **rounded up to the next whole hour**.
 
 ## While the position is open
 
-The position cannot be closed, resized, transferred, or liquidated. You can watch it in **Portfolio**, where each open position shows what it would pay if it expired now, its **Max payout**, and the time left.
+The position cannot be closed, resized, transferred, or liquidated. It shows under the chart in **Open** and in **Portfolio**, with what it would pay if it ended now and its max payout.
 
-Your premium and the writer's deposit funded the full **Max payout** when the trade opened. The contract holds it until settlement.
+## At the end time
 
-## At the settlement hour
+The contract uses the **last Chainlink price published at or before the end time**. If that reading is too old, zero, or negative, the contract checks the first reading after the end time instead. That reading must be positive.
 
-The contract uses the **last Chainlink price published at or before the settlement hour**. If that reading is too old, zero, or negative, the contract checks the first reading after the hour instead. That reading must be positive for the trade to settle.
+Once the end time has passed, anyone can submit the end price. Isometric runs a keeper that does it, normally within a minute or two. Until then the position shows **Ending**. Waiting does not change which price counts.
 
-Once the hour has passed, anyone can settle every position at that hour in one go. Isometric runs a keeper that does it, normally within a minute or two. Until it lands the position shows **Settling**. Waiting to settle does not change which price counts.
+The same transaction pays both sides. Your payout goes straight to your wallet, and the rest goes back to the writer.
 
-Settlement pays both sides in the same transaction. Your payout goes straight to your wallet, and the rest of the escrow goes back to the writer.
+## After the end
 
-## After settlement
+| Status   | What happened                                                   | What you do                                        |
+| -------- | --------------------------------------------------------------- | -------------------------------------------------- |
+| Paid     | The price ended on your side and the payout reached your wallet | Nothing                                            |
+| Lost     | The price ended at or past your worthless price                 | Nothing. The position paid nothing                 |
+| Won      | It paid out, but the transfer to your wallet failed             | [Claim it](./payouts-and-claims.mdx)               |
+| Refunded | No end price was published within 14 days of the end time       | Nothing. What you paid, less the fee, was returned |
 
-| Status   | What happened                                                         | What you do                                        |
-| -------- | --------------------------------------------------------------------- | -------------------------------------------------- |
-| Paid     | The price finished on your side and the payout reached your wallet    | Nothing                                            |
-| Lost     | The price finished on the wrong side of your worthless price          | Nothing. The position paid nothing                 |
-| Won      | It paid out, but the transfer to your wallet failed. The payout waits | [Claim it](./payouts-and-claims.mdx)               |
-| Refunded | No settlement price was published within 14 days of expiry            | Nothing. What you paid, less the fee, was returned |
+## What can delay a payout
 
-## What can delay settlement
-
-- **The keeper is behind.** Anyone can settle, so a stalled keeper delays a payout rather than blocking it.
-- **The price feed is late.** Settlement waits for the price, and if none arrives within 14 days of expiry, both sides are refunded.
+- **The keeper is behind.** Anyone can submit the end price, so a stalled keeper delays a payout rather than blocking it.
+- **The price feed is late.** If no price arrives within 14 days of the end time, both sides are refunded.
 - **The network is down.** Nothing can be recorded until Arbitrum is producing blocks again.
 
 None of these change what you are owed. The money backing your payout stays in the contract until it reaches you.
