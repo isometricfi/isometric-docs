@@ -14,7 +14,7 @@ A price prediction market asks a yes-or-no question: will Bitcoin be above $103,
 
 |                       | Price prediction market                            | Isometric                                                          |
 | --------------------- | -------------------------------------------------- | ------------------------------------------------------------------ |
-| **What you choose**   | A listed question: a price line and a date         | Direction, amount, term, and leverage. The target is set for you   |
+| **What you choose**   | A listed question: a price line and a date         | Direction, end time, amount, and leverage                          |
 | **Payout**            | All or nothing: a fixed amount per share if right  | Grows with each 1% past your worthless price, up to the Max payout |
 | **A near miss**       | Pays nothing                                       | Can pay back part of what you paid                                 |
 | **Most you can lose** | What you paid                                      | What you paid                                                      |
@@ -28,7 +28,7 @@ A price prediction market asks a yes-or-no question: will Bitcoin be above $103,
 Bitcoin is at $100,000 and you think it will be higher in three days. You have $100.
 
 - **Prediction market.** You buy Yes on "Above $103,000 in 3 days?". Suppose Yes trades at 30 cents and pays $1 if right. $100 buys about 333 shares.
-- **Isometric.** You open the 3-day, 25x long from [Reading the quote](./reading-the-quote.mdx): worthless at or below $97,400, profit above $101,296, Max payout $323.
+- **Isometric.** You open the 3-day, 25x long from [Reading the chart](./reading-the-chart.mdx): worthless at $97,400, breakeven at $101,296, max payout $323.
 
 | Bitcoin at settlement | Prediction market pays | Isometric pays |
 | --------------------- | ---------------------- | -------------- |
@@ -42,9 +42,9 @@ The prediction market pays more for a move that only just clears its line. Isome
 
 ## Where Isometric fits better
 
-- **You have a direction, not a line.** You do not need to find a listed question at the right price and date. Pick long or short and a term, and the target is built for you.
+- **You have a direction, not a line.** You do not need to find a listed question at the right price and date. Pick long or short and an end time, and the chart shows what every price pays.
 - **You want to be paid for the size of the move.** A big move pays more than a small one.
-- **You want a near miss to count.** Between the worthless price and the profit price you get part of your money back.
+- **You want a near miss to count.** In the **Some back** band you get part of your money back.
 - **You want one price for the whole size.** Writers quote the full amount. There is no book to walk through.
 
 ## Where a prediction market fits better

@@ -19,8 +19,8 @@ A perpetual future and an Isometric position express the same view: the price go
 | **Liquidation**       | Yes. A move past your liquidation price closes you out | None. The position runs to settlement whatever happens in between |
 | **Funding**           | Paid or received every few hours while open            | None                                                              |
 | **Exit**              | Any time                                               | At settlement only                                                |
-| **Upside**            | Uncapped                                               | Capped at the Max payout shown on the ticket                      |
-| **Duration**          | Open ended                                             | 12 hours to 7 days                                                |
+| **Upside**            | Uncapped                                               | Capped at the Max shown on the chart                              |
+| **Duration**          | Open ended                                             | 12 hours to 7 days, set by dragging the end line                  |
 | **Counterparty**      | Other traders via an order book                        | The writer whose quote fills, with your payout locked up front    |
 | **What you receive**  | Margin plus or minus PnL                               | Payout in USDG, or nothing                                        |
 
@@ -42,7 +42,7 @@ Both pay the same for each 1% the price moves, because the same amount at the sa
 
 **You want to exit early.** A perp lets you take profit or cut a loss at any moment. An Isometric position does not, and a position that is in profit on day one can still expire worthless on day three.
 
-**You want uncapped upside.** An Isometric position stops earning at its **Max payout**. A perp keeps going.
+**You want uncapped upside.** An Isometric position stops earning at its **Max**. A perp keeps going.
 
 **You want to track the price continuously.** An Isometric position settles on one price at one hour. A perp's PnL is the live price at every moment.
 

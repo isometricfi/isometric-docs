@@ -8,25 +8,17 @@ og:image: https://isometric.fi/docs-opengraph.png
 
 # How a prediction pays
 
-A prediction is a bet that a price ends above or below your target at your end time. You pay once, and the **Payout** is fixed when you place it.
+A prediction is a bet that a price ends above or below your target at your end time. You pay once, and the payout, shown as **If you're right**, is fixed when you place it.
 
 ## The payout
 
 Your premium (what you pay after the fee) funds part of the payout. The writer deposits the rest when the prediction opens, so the contract already holds the maximum it can pay you.
 
-One prediction pays at most 1,500 USDG, and at most 10 times its amount. The target slider estimates which prices writers will quote. Picking a target does not guarantee a quote.
+One prediction pays at most 1,000 USDG, and at most 10 times its amount. Picking a target does not guarantee a quote.
 
-## The price
+## Why some targets pay more
 
-The ticket shows a **Price** in cents: what each $1 of payout costs. It works like a share price on a prediction market.
-
-| Price | Writers put the chance near | $100 pays about |
-| ----- | --------------------------- | --------------- |
-| 50¢   | 50%                         | $200            |
-| 25¢   | 25%                         | $400            |
-| 10¢   | 10%                         | $1,000          |
-
-A target further from today's price, or an end time sooner, is less likely to be reached, so it costs less and pays more.
+The payout reflects how likely writers think your target is. If **If you're right** shows $400 for $100, they put the chance near 25%. A target further from today's price, or an end time sooner, is less likely to be reached, so it pays more.
 
 ## What decides it
 
@@ -50,4 +42,4 @@ If no Chainlink price is published within 14 days of the end time, the predictio
 
 ## No early exit
 
-A prediction cannot be closed, resized, or transferred. It runs to its end time. Before then, the ticket shows whether it is **On track** or how far the price still needs to move.
+A prediction cannot be closed, resized, or transferred. It runs to its end time. Before then, it shows whether it is **On track** or how far the price still needs to move.

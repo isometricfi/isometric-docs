@@ -1,7 +1,7 @@
 {
   "$schema": "https://holocron.so/docs.json",
   "name": "Isometric",
-  "description": "How to predict, trade, and write on Isometric.",
+  "description": "How to trade with leverage, predict, and write on Isometric.",
   "favicon": "/favicon.svg",
   "logo": {
     "light": "/logo-light.svg",
@@ -34,41 +34,19 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Predict",
-        "icon": "lucide:target",
-        "groups": [
-          {
-            "group": "Start here",
-            "icon": "lucide:compass",
-            "pages": ["index", "predict/quickstart", "markets"],
-          },
-          {
-            "group": "Predicting",
-            "icon": "lucide:sliders-horizontal",
-            "pages": ["predict/how-it-pays", "predict/fees"],
-          },
-          {
-            "group": "Compare and risks",
-            "icon": "lucide:scale",
-            "pages": ["predict/prediction-markets-vs-isometric", "predict/risks"],
-          },
-        ],
-      },
-      {
-        "tab": "Trade",
+        "tab": "Leverage",
         "icon": "lucide:trending-up",
         "groups": [
           {
             "group": "Start here",
             "icon": "lucide:compass",
-            "pages": ["trade/overview", "trade/quickstart", "trade/pay-and-swap", "trade/markets"],
+            "pages": ["index", "trade/quickstart", "trade/pay-and-swap", "markets"],
           },
           {
             "group": "Trading",
             "icon": "lucide:sliders-horizontal",
             "pages": [
-              "trade/three-inputs",
-              "trade/reading-the-quote",
+              "trade/reading-the-chart",
               "trade/leverage",
               "trade/expiry-and-settlement",
               "trade/payouts-and-claims",
@@ -88,6 +66,22 @@
             "group": "Under the hood",
             "icon": "lucide:cog",
             "pages": ["trade/how-it-works"],
+          },
+        ],
+      },
+      {
+        "tab": "Predict",
+        "icon": "lucide:target",
+        "groups": [
+          {
+            "group": "Predicting",
+            "icon": "lucide:target",
+            "pages": ["predict/quickstart", "predict/how-it-pays", "predict/fees"],
+          },
+          {
+            "group": "Compare and risks",
+            "icon": "lucide:scale",
+            "pages": ["predict/prediction-markets-vs-isometric", "predict/risks"],
           },
         ],
       },
@@ -131,6 +125,20 @@
       ],
     },
   },
+  "redirects": [
+    { "source": "/trade/overview", "destination": "/", "permanent": true },
+    { "source": "/trade/markets", "destination": "/markets", "permanent": true },
+    {
+      "source": "/trade/reading-the-quote",
+      "destination": "/trade/reading-the-chart",
+      "permanent": true,
+    },
+    {
+      "source": "/trade/three-inputs",
+      "destination": "/trade/reading-the-chart",
+      "permanent": true,
+    },
+  ],
   "footer": {
     "socials": {
       "x": "https://x.com/isometricfi",

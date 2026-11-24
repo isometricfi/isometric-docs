@@ -25,17 +25,17 @@ A position that settles on the wrong side of its worthless price pays nothing. T
 
 ## You cannot get out early
 
-There is no close button. A position you regret at hour one still runs to its settlement time, and a position that is in profit on day one can still expire worthless on day three. Only the settlement price counts. Positions cannot be transferred to another wallet either.
+There is no close button. A position you regret at hour one still runs to its end time, and a position that is in profit on day one can still expire worthless on day three. Only the end price counts. Positions cannot be transferred to another wallet either.
 
-## One price at one hour decides
+## One price at one time decides
 
-Settlement normally uses the last Chainlink price published at or before the settlement hour. If you need a position that tracks the price continuously, this is not that product.
+The end price is normally the last Chainlink price published at or before the end time. If you need a position that tracks the price continuously, this is not that product.
 
-If that reading is too old, zero, or negative, the contract checks the first price published after the hour instead. That is a different price from the one you might expect, and it arrives later.
+If that reading is too old, zero, or negative, the contract checks the first price published after the end time instead. That is a different price from the one you might expect, and it arrives later.
 
 ## Your payout is capped
 
-Every position has a **Max payout**, fixed when it opens. However far the market runs, you receive that and no more. Shorter terms have a smaller maximum.
+Every position has a max payout, shown as **Max** on the chart and fixed when it opens. However far the market runs, you receive that and no more. Shorter terms have a smaller maximum.
 
 ## The quote can move before you confirm
 
@@ -47,7 +47,7 @@ A trade needs a writer willing to take the other side. If no writer quotes your 
 
 ## A payout can be delayed
 
-A payout waits for the settlement price and for someone to settle. A network outage or a quiet price feed delays the first. A stalled keeper delays the second, although anyone can settle. A delay does not change what you are owed. If no price is published within 14 days of expiry, both sides are refunded instead, and the fee is not returned.
+A payout waits for the settlement price and for someone to settle. A network outage or a quiet price feed delays the first. A stalled keeper delays the second, although anyone can settle. A delay does not change what you are owed. If no price is published within 14 days of the end time, both sides are refunded instead, and the fee is not returned.
 
 If your wallet cannot receive USDG, the transfer fails and you must claim to another address.
 

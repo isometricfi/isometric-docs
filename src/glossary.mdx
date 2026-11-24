@@ -8,43 +8,38 @@ og:image: https://isometric.fi/docs-opengraph.png
 
 # Glossary
 
-| Term                  | Meaning                                                                                                                       |
-| --------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| Amount                | What you enter on the ticket, counted in USDG. Sets position size with leverage and is everything you pay, fee included       |
-| Arbitrum              | The Ethereum layer-two network Isometric runs on. Arbitrum One is the main network and Arbitrum Sepolia the testnet           |
-| Beta                  | The current launch of Isometric on Arbitrum One, with unaudited contracts and capped position sizes                           |
-| Breakeven             | The settlement price at which a position pays back exactly what it cost. Shown as **Profit above** or **Profit below**        |
-| Chainlink             | The oracle network whose price feed starts every quote and settles every position                                             |
-| Claim                 | Taking a payout whose transfer to your wallet failed. You can send it to any address                                          |
-| Collateral            | What a writer deposits when a position opens: the **Max payout** minus the trader's premium                                   |
-| Contracts             | The size of a position in units of the market's asset                                                                         |
-| Demo mode             | The app running with simulated funds. No wallet, gas, or chain needed                                                         |
-| Direction             | Long or short                                                                                                                 |
-| End time              | The day and hour a prediction ends. One Chainlink price at that time decides it                                               |
-| Expiry                | The settlement time. Used interchangeably with settlement in these docs                                                       |
-| Keeper                | A worker that settles positions after expiry. Anyone can do the same                                                          |
-| Leverage              | Position size divided by your amount. Sets the size and places the target. Never a liquidation price                          |
-| Long                  | A position that pays if the settlement price is above the worthless price                                                     |
-| Lost                  | A settled position that paid nothing                                                                                          |
-| Max loss              | Your amount, paid at open with the trading fee included. The most a position can ever lose. Shown on the ticket               |
-| Max payout            | The most a position can pay, fixed when it opens                                                                              |
-| Paid                  | A settled position whose payout reached your wallet                                                                           |
-| Payout                | What a prediction pays if the price ends at or past its target, fixed when you place it                                       |
-| Position size         | Your amount times leverage. Your exposure, currently capped at 5,000 USDG per trade                                           |
-| Prediction            | A bet that a price ends above or below a target at an end time                                                                |
-| Premium               | What a trader pays the writer for a position: the amount, less the trading fee                                                |
-| Price                 | On a prediction, what each $1 of payout costs, in cents. Close to the chance writers put on it                                |
-| Quote                 | A writer's signed price for a trade. The best quote fills                                                                     |
-| Refunded              | A position with no settlement price within 14 days of expiry. Both sides got their money back, less the fee                   |
-| Settlement            | The moment one oracle price fixes the outcome of every position at a given hour                                               |
-| Settles               | The date and hour a position ends. Shown on the ticket                                                                        |
-| Settling              | A position past its settlement hour whose price has not yet been recorded                                                     |
-| Short                 | A position that pays if the settlement price is below the worthless price                                                     |
-| Strike                | The options term for the worthless price                                                                                      |
-| Target                | The price a prediction must end at or past to pay in full                                                                     |
-| Swap                  | Exchanging one token for another, on Arbitrum or across networks. USDC and USDT are swapped to USDG when they pay for a trade |
-| Term                  | How long a position runs. 12 hours to 7 days                                                                                  |
-| USDG                  | Global Dollar, the dollar stablecoin that positions settle in, payouts are made in, and writers post                          |
-| Won                   | A settled position with a payout whose transfer failed. Claim it                                                              |
-| Worthless at or below | For a long, the price at or below which the position pays nothing. Shorts show **Worthless at or above**                      |
-| Writer                | Anyone who takes the other side of predictions and trades by quoting them                                                     |
+| Term            | Meaning                                                                                                                        |
+| --------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| Amount          | What you enter under **You put in**, counted in USDG. Sets position size with leverage and is everything you pay, fee included |
+| Arbitrum        | The Ethereum layer-two network Isometric runs on. Arbitrum One is the main network and Arbitrum Sepolia the testnet            |
+| Beta            | The current launch of Isometric on Arbitrum One, with unaudited contracts and capped position sizes                            |
+| Breakeven       | The end price at which a position pays back exactly what it cost. The green price on the chart                                 |
+| Chainlink       | The oracle network whose price feed starts every quote and decides every position at its end time                              |
+| Claim           | Taking a payout whose transfer to your wallet failed. You can send it to any address                                           |
+| Collateral      | What a writer deposits when a position opens: the **Max payout** minus the trader's premium                                    |
+| Contracts       | The size of a position in units of the market's asset                                                                          |
+| Demo mode       | The app running with simulated funds. No wallet, gas, or chain needed                                                          |
+| Direction       | Long or short                                                                                                                  |
+| End time        | The day and hour a trade or prediction ends, shown as **Ends**. One Chainlink price at that time decides it                    |
+| Ending          | A position past its end time whose end price has not yet been recorded                                                         |
+| Keeper          | A worker that records the end price and pays positions after their end time. Anyone can do the same                            |
+| Leverage        | Position size divided by your amount, 5x to 100x. Sets the size and places the lose line. Never a liquidation price            |
+| Long            | A position that pays if the end price is above the worthless price                                                             |
+| Lost            | An ended position that paid nothing                                                                                            |
+| Max payout      | The most a position can pay, fixed when it opens. The chart's **Max** label shows it as profit                                 |
+| Paid            | An ended position whose payout reached your wallet                                                                             |
+| Payout          | What a prediction pays if the price ends at or past its target, shown as **If you're right**                                   |
+| Position size   | Your amount times leverage. Your exposure, currently capped at 5,000 USDG per trade                                            |
+| Prediction      | A bet that a price ends above or below a target at an end time                                                                 |
+| Premium         | What a trader pays the writer for a position: the amount, less the trading fee                                                 |
+| Quote           | A writer's signed price for a trade. The best quote fills                                                                      |
+| Refunded        | A position with no end price within 14 days of its end time. Both sides got their money back, less the fee                     |
+| Short           | A position that pays if the end price is below the worthless price                                                             |
+| Strike          | The options term for the worthless price                                                                                       |
+| Target          | The price a prediction must end at or past to pay in full                                                                      |
+| Swap            | Exchanging one token for another, on Arbitrum or across networks. USDC and USDT are swapped to USDG when they pay for a trade  |
+| Term            | How long a position runs. 12 hours to 7 days                                                                                   |
+| USDG            | Global Dollar, the dollar stablecoin that positions settle in, payouts are made in, and writers post                           |
+| Won             | An ended position with a payout whose transfer failed. Claim it                                                                |
+| Worthless price | The end price at or past which a position pays nothing. The red **Lose** line on the chart                                     |
+| Writer          | Anyone who takes the other side of predictions and trades by quoting them                                                      |

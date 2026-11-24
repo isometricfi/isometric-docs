@@ -2,15 +2,15 @@
 $schema: https://holocron.so/frontmatter.json
 title: Markets
 sidebarTitle: Markets
-description: The markets you can predict on Isometric, the ones coming soon, and what every prediction offers.
+description: The markets you can trade and predict on Isometric, the ones coming soon, and what each offers.
 og:image: https://isometric.fi/docs-opengraph.png
 ---
 
 # Markets
 
 <Note>
-  Every prediction pays out in USDG. You can pay with USDC or USDT, which is swapped to USDG as you
-  place it. You never receive the market's own asset.
+  Every trade and prediction pays out in USDG. You can pay with USDC or USDT, which is swapped to
+  USDG as it opens. You never receive the market's own asset.
 </Note>
 
 ## Crypto
@@ -52,19 +52,19 @@ og:image: https://isometric.fi/docs-opengraph.png
 
 ## What is on offer
 
-| Setting  | Options                                                            |
-| -------- | ------------------------------------------------------------------ |
-| Target   | Any price writers quote, above or below today's price              |
-| End time | Whole-hour terms from 12 hours to 7 days                           |
-| Amount   | From $1, paying at most 1,500 USDG and at most 10 times the amount |
-| Pay with | USDG, USDC, or USDT. See [Pay and swap](./trade/pay-and-swap.mdx)  |
-| Payouts  | USDG                                                               |
-| Network  | Arbitrum One                                                       |
+| Setting  | Leverage                                                          | Predict                                                    |
+| -------- | ----------------------------------------------------------------- | ---------------------------------------------------------- |
+| Choose   | Long or short, 5x to 100x                                         | Any target writers quote, above or below today's price     |
+| End time | Whole hours from 12 hours to 7 days                               | Whole hours from 12 hours to 7 days                        |
+| Amount   | From $1, up to a position size of 5,000 USDG                      | From $1, paying at most 1,000 USDG and 10 times the amount |
+| Pay with | USDG, USDC, or USDT. See [Pay and swap](./trade/pay-and-swap.mdx) | USDG, USDC, or USDT                                        |
+| Payouts  | USDG                                                              | USDG                                                       |
+| Network  | Arbitrum One                                                      | Arbitrum One                                               |
 
 ## Who takes the other side
 
-Every prediction goes out for quotes. Writers answer with a payout, and the largest one fills. Your premium and the winning writer’s collateral cover that payout when your prediction opens.
+Every trade and prediction goes out for quotes, and the best one fills. Your premium and the winning writer's deposit cover the full payout when it opens.
 
 ## Prices
 
-The chart and the header ticker read the exchange price, which is Coinbase for crypto. Predictions are never priced from the chart. Each quote starts from the **Chainlink** price on chain at the moment you ask, and the prediction settles from the same feed at its end time.
+The chart and the header ticker read the exchange price, which is Coinbase for crypto. Trades and predictions are never priced from the chart. Each quote starts from the **Chainlink** price on chain at the moment you ask, and each one is decided by the same feed at its end time.
