@@ -1,0 +1,57 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Riskleri öğren
+sidebarTitle: Riskler
+description: Bir Isometric tahmininde neler kaybedebileceğin, bir ödemeyi neyin geciktirebileceği ve protokolün seni nelere karşı korumadığı.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Riskleri öğren
+
+<Warning>
+  Her tahmin ödediğin tutarın %100'ünü kaybedebilir. Tamamını kaybetmeyi göze alamayacağın parayı
+  asla kullanma.
+</Warning>
+
+## Isometric beta aşamasında
+
+Sözleşmeler denetlenmedi ve limitler beta süresince değişebilir. Yalnızca kaybetmeyi göze alabileceğin kadarını kullan.
+
+## Ne kadar geride kaldığı önemlidir
+
+Hedefinin %0.1 ya da daha fazla gerisinde biten bir tahmin hiçbir şey ödemez. Daha küçük bir kaçırma, teklif edilen ödemenin yalnızca bir kısmını öder.
+
+## Erken çıkamazsın
+
+Bir tahmin bitiş zamanına kadar sürer. Bugün yolunda olan bir tahmin yarın yine de hedefin gerisinde bitebilir ve satılamaz ya da devredilemez.
+
+## Sonucu tek bir zamandaki tek bir fiyat belirler
+
+Normalde sonucu bitiş zamanında ya da öncesindeki son Chainlink fiyatı belirler. Bu okuma çok eskiyse, sıfırsa ya da negatifse sözleşme bunun yerine bitiş zamanından sonraki ilk okumaya bakar. Bu nedenle ödemeni daha sonraki bir fiyat belirleyebilir.
+
+## Teklif alamayabilirsin
+
+Bir tahmin, karşı tarafı almaya istekli bir satıcıya ihtiyaç duyar. Bugünkü fiyattan uzak bir hedef ya da duraklatılmış bir piyasa seni tekliften yoksun bırakabilir. Açık tahminler etkilenmez.
+
+## Bir ödeme gecikebilir
+
+Bir ödeme, fiyatı ve birinin tahmini sonuçlandırmasını bekler. Ağ kesintisi, sessiz kalan bir fiyat akışı ya da duran bir keeper ödemeyi geciktirir, ancak sana borçlu olunan tutarı değiştirmez. Sonuçlandırmayı herkes yapabilir. Bitiş zamanından sonraki 14 gün içinde hiçbir fiyat yayımlanmazsa tahmin, ücret düşülerek iade edilir.
+
+## Takaslar üçüncü taraflar üzerinden yapılır
+
+USDC ya da USDT ile ödeme ve zincirler arası takas, Isometric'in işletmediği Velora ve Relay'i kullanır. Bir takas başarısız olabilir ya da gösterilen kaymaya kadar bir fiyattan gerçekleşebilir.
+
+## Sözleşmeler, yükseltmeler ve USDG
+
+Sözleşmeler yükseltilebilir ve bir yükseltme gecikme olmadan yürürlüğe girer. Hatalı bir yükseltme ya da ele geçirilmiş bir yükseltme yetkilisi fon kaybına yol açabilir. Sözleşmelerde hata olabilir, oracle'lar başarısız olabilir ve ağlar durabilir. USDG, ihraççının bir adresi dondurma yetkisi dahil kendi ihraççı riskini taşır.
+
+## Bu bir tavsiye değildir
+
+Uygulamadaki ya da bu dokümanlardaki hiçbir şey yatırım tavsiyesi değildir. Isometric; Amerika Birleşik Devletleri, Kanada, Birleşik Krallık, Güney Afrika veya yaptırım uygulanan ülkelerde ikamet edenler için kullanılabilir değildir. Kazançlarının vergilerinden sen sorumlusun. Bkz. [kullanım koşulları](https://app.isometric.fi/terms).
+
+## Sözleşme kodu neleri korur
+
+- **Zararın sabittir.** Ödeme yaptıktan sonra senden hiçbir şey alınamaz.
+- **Ödemen, tahmini yaptığın anda fonlanır.** Satıcının teminatı bitiş zamanına kadar sözleşmede kilitli kalır.
+- **Fiyatı kimse seçmez.** Bir bitiş zamanı için tam olarak bir Chainlink fiyatı geçerlidir.
+- **Taleplerin süresi hiç dolmaz.** Bir ödeme seni bekler ve onu herhangi bir adrese gönderebilirsin.

@@ -1,0 +1,61 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Đòn bẩy ở đây nghĩa là gì
+sidebarTitle: Đòn bẩy
+description: Trên Isometric, đòn bẩy quyết định quy mô vị thế và vị trí đường Lose của bạn. Nó không bao giờ tạo ra giá thanh lý.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Đòn bẩy ở đây nghĩa là gì
+
+Trên perp, đòn bẩy là số tiền bạn vay, và đi kèm một mức giá mà tại đó bạn bị xóa sạch vị thế. Trên Isometric không có vay mượn và không có thanh lý. Đòn bẩy làm hai việc: quyết định vị thế của bạn lớn đến đâu, và đường **Lose** nằm ở đâu trên biểu đồ.
+
+Chọn đòn bẩy ở mục **Đòn bẩy** trên phiếu lệnh: 5x, 10x, 15x, 20x, 25x, 30x, 40x, 50x, 75x hoặc 100x.
+
+## Đòn bẩy quyết định quy mô vị thế
+
+Quy mô vị thế của bạn là số tiền bạn bỏ vào nhân với đòn bẩy, giới hạn ở **5,000 USDG** mỗi giao dịch. Đòn bẩy càng cao thì số tiền tối đa bạn có thể bỏ vào càng thấp, phiếu lệnh hiển thị số này là **Tối đa**.
+
+| Đòn bẩy | Số tiền tối đa có thể bỏ vào |
+| ------- | ---------------------------- |
+| 5x      | $1,000                       |
+| 10x     | $500                         |
+| 25x     | $200                         |
+| 50x     | $100                         |
+| 100x    | $50                          |
+
+Mức tối thiểu là $1.
+
+## Đòn bẩy dịch chuyển đường Lose
+
+Trả ít hơn cho cùng một vị thế nghĩa là rủi ro cao hơn. Đòn bẩy cao hơn kéo giá về 0 lại gần giá hôm nay, và từ khoảng 50x thì vượt qua cả giá hôm nay, nên chỉ cần ít biến động bất lợi hơn là bạn mất trắng.
+
+Năm vị thế long Bitcoin ba ngày khi Bitcoin ở $100,000, mỗi vị thế có quy mô $5,000:
+
+| Đòn bẩy | Bạn bỏ vào | Về 0 tại | Hòa vốn  | Chi trả tối đa |
+| ------- | ---------- | -------- | -------- | -------------- |
+| 5x      | $1,000     | $83,738  | $100,486 | $1,568         |
+| 10x     | $500       | $91,402  | $100,542 | $1,017         |
+| 25x     | $200       | $97,388  | $101,283 | $648           |
+| 50x     | $100       | $100,466 | $102,476 | $474           |
+| 100x    | $50        | $102,936 | $103,965 | $343           |
+
+Đây là số liệu ví dụ. Biểu đồ hiển thị số liệu của bạn.
+
+- **Đòn bẩy thấp** là một khoản đặt cược nhỏ, an toàn vào giá. Hiếm khi mất trắng và hiếm khi trả gấp nhiều lần.
+- **Đòn bẩy cao** trả nhiều cho một biến động nhỏ theo hướng của bạn và mất trắng khi có một biến động nhỏ ngược hướng.
+
+**Mỗi 1% vượt qua giá về 0 trả số phần trăm bằng mức đòn bẩy trên số tiền của bạn**, tới mức tối đa. Ở 25x, mỗi 1% bằng 25% số tiền bạn bỏ vào. Khi thị trường yên ả, các đường nằm gần giá hôm nay hơn. Khi thị trường biến động mạnh, chúng nằm xa hơn, vì bên bán tính đến một biến động lớn hơn khi định giá.
+
+## Không có giá thanh lý
+
+Không có gì xảy ra với vị thế của bạn khi nó đang mở. Nếu một vị thế long 25x đi ngược bạn 10% trong ngày đầu và hồi phục vào ngày thứ hai, nó vẫn trả trọn vẹn vào ngày thứ ba. Một perp với cùng đòn bẩy đã bị đóng ngay ngày đầu.
+
+## Chọn đòn bẩy
+
+Hãy tự hỏi bạn nghĩ giá sẽ ở đâu vào thời điểm kết thúc, chứ không phải bạn muốn kiếm bao nhiêu.
+
+- Nếu bạn nghĩ giá sẽ trôi dần theo hướng của bạn hoặc đi ngang, hãy chọn đòn bẩy thấp.
+- Nếu bạn nghĩ giá sẽ biến động dứt khoát, hãy chọn đòn bẩy cao.
+
+Thay đổi đòn bẩy và xem các vùng trên biểu đồ dịch chuyển trước khi quyết định.

@@ -1,0 +1,59 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Ödeme ve takas
+sidebarTitle: Ödeme ve takas
+description: Isometric'te bir tahmine ya da işleme USDC, USDT veya USDG ile başla; zincirler arası takasla parayı Arbitrum ile diğer ağlar arasında taşı.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Ödeme ve takas
+
+Her tahmin ve işlem **USDG** ile sonuçlanır ve her ödeme **USDG** olarak yapılır. Başlamak için USDG tutman gerekmez; başka ağlardan para getirebilir ve geri çıkarabilirsin.
+
+## USDC ya da USDT ile öde
+
+İşlem panelinde **You put in** (yatırdığın tutar) alanının yanındaki tokene bas ve Arbitrum One üzerinde USDG, USDC ya da USDT'yi seç. Pencere, devam etmeden önce takas fiyatını gösterir.
+
+Tutarın her zaman USDG cinsinden sayılır. USDC ya da USDT ile ödersen uygulama, pozisyon açılırken en fazla %0.5 kaymayla tam o kadar USDG satın alır. Panel, takas için bakiyenin yaklaşık %1'ini ayırır; bu yüzden bakiyenin tamamını harcayamazsın.
+
+Zincire nasıl ulaştığı cüzdanına bağlıdır:
+
+- **Cüzdanın işlemleri toplu gönderebiliyorsa,** takas ve işlem birlikte gider. İkisi de gerçekleşir ya da hiçbiri gerçekleşmez.
+- **Gönderemiyorsa,** cüzdanın gerekirse önce token onayını, ardından takası, sonra da işlemi gönderir. Takas gerçekleşir de işlem başarısız olursa USDG sende kalır; yeniden işlem yapabilir ya da geri takas edebilirsin.
+
+USDG ile ödemek takas gerektirmez.
+
+## Takas
+
+Hesap menünü aç ve **Takas (zincirler arası)** seçeneğini seç. Ne ödeyeceğini ve ne alacağını, her birinin ağıyla birlikte seç.
+
+| Takas                     | Üzerinden geçtiği           | Süre                        |
+| ------------------------- | --------------------------- | --------------------------- |
+| Arbitrum One içinde       | Velora, bir DEX toplayıcısı | Birkaç saniye               |
+| Başka bir ağa ya da ağdan | Relay, bir köprü            | Teklifte tahmini gösterilir |
+
+Arbitrum One'a Ethereum, Base, Optimism, Polygon, BNB Chain, Avalanche, HyperEVM, Hyperliquid ve Robinhood Chain'den takas yapabilir ya da Arbitrum One'dan bu ağlara takas yapabilirsin.
+
+### Para getir
+
+Başka bir ağdaki bir tokenle öde ve Arbitrum One üzerinde USDG, USDC ya da USDT al. Ardından bir tahmin yapabilir ya da işlem açabilirsin.
+
+### Parayı geri çıkar
+
+Ödemeler cüzdanına Arbitrum One üzerinde USDG olarak gelir. Bunları taşımak için Arbitrum One üzerinde USDG ile öde ve almak istediğin token ile ağı seç.
+
+### Onaylamadan önce
+
+Takas ekranı **Asgari alınan**, **Fiyat etkisi**, **Azami kayma**, **Yol** ve **Tahmini süre** bilgilerini gösterir. Sen göndermeden önce fiyat asgari tutarının ötesine geçerse uygulama durur ve yeni bir teklifi incelemeni ister.
+
+### Maliyetler
+
+Isometric takaslardan ücret almaz. Gördüğün kur, takası yönlendiren üçüncü taraftan gelir ve ağ ücretini gönderdiğin ağda ödersin. Hyperliquid'den yapılan bir takas, işlem olarak gönderilmek yerine imzalanır.
+
+### Zincirler arası takas gerçekleşmezse
+
+Bir takası takip etmek için takas penceresinde **Takas geçmişi**'ni aç. Takas **Bekliyor**, **Tamamlandı**, **İade edildi** ya da **Başarısız** olarak görünür. Relay bir takası gerçekleştiremezse, yatırdığın tutarı gönderdiğin ağda iade eder.
+
+<Warning>
+  Velora ve Relay, Isometric'in işletmediği üçüncü taraflardır. Bkz. [Riskleri öğren](./risks.mdx).
+</Warning>

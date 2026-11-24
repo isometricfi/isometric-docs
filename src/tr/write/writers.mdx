@@ -1,0 +1,49 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Satıcılar
+sidebarTitle: Satıcılar
+description: Isometric işlemlerinin ve tahminlerinin karşı tarafını kimin aldığı, tekliflerin nasıl seçildiği ve bir pozisyon açıldığında her ödemenin nasıl kilitlendiği.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Satıcılar
+
+Satıcı, Isometric işlemlerinin ve tahminlerinin karşı tarafını alan herkestir. Her biri teklif almaya çıkar ve herhangi bir satıcı yanıt verebilir.
+
+## Bir talebe nasıl teklif verilir
+
+1. **Bir trader talepte bulunur**: bir tahmin ya da vadesi, tutarı ve kaldıracı belirlenmiş bir long veya short ister. Talep aynı anda her satıcıya gider.
+2. **Satıcılar imzalı bir fiyatla yanıt verir.** En iyisi gerçekleşir.
+3. **Pozisyon tek bir işlemle açılır.** Trader primi öder, satıcı da **Maks. ödemenin** kalanını yatırır. Sözleşme, sonuçlanmaya kadar ikisini de tutar.
+4. **Vade sonunda** tek bir Chainlink fiyatı pozisyonu sonuçlandırır. Trader'a ödemesi yapılır, kalanı satıcıya geri döner.
+
+## Ne satıyorsun
+
+Her işlem, piyasanın Chainlink fiyatı üzerine Avrupa tipi, nakit uzlaşmalı ve USDG olarak ödenen bir opsiyon spread'idir.
+
+| Trader'ın açtığı | Senin sattığın  | `P` fiyatında trader'a getiri           | Maks. ödeme                    |
+| ---------------- | --------------- | --------------------------------------- | ------------------------------ |
+| Long             | Bir call spread | `contracts × (min(P, cap) − strike)⁺`   | `contracts × (cap − strike)`   |
+| Short            | Bir put spread  | `contracts × (strike − max(P, floor))⁺` | `contracts × (strike − floor)` |
+
+- **Yalnızca kullanım fiyatına teklif verirsin.** Talep; yönü, vade sonunu, tavanı ya da tabanı, nominal değeri ve primi sabitler. Büyüklük senin kullanım fiyatından çıkar: `contracts = notional ÷ strike`.
+- **En iyi kullanım fiyatı kazanır.** Long için en düşük, short için en yüksek kullanım fiyatı. Tavan ya da taban sabitken bu teklif, her senaryoda trader'a daha fazla öder.
+- **Tam teminatlıdır.** Gerçekleşmede sözleşme, trader'ın primini ve senin spread'in tam değerine kadar tamamladığın tutarı emanete kilitler. Bunun dışında hiçbir zaman başka bir borç doğmaz.
+- **Bir kez sonuçlanır.** Vade sonunda trader'a getirisi ödenir ve emanetin kalanı aynı işlemle sana döner.
+
+## Tahmin satmak
+
+Tahmin de satabilirsin. Arka planda bir tahmin, dar bantlı aynı opsiyon spread'idir. Tavan ya da taban trader'ın hedefidir ve kullanım fiyatı ondan %0.1 geride durur; böylece spread hedefte tam öder, %0.1 gerisinde hiçbir şey ödemez.
+
+| Trader'ın tahmini | Senin sattığın  | Kullanım fiyatı  | Tavan ya da taban |
+| ----------------- | --------------- | ---------------- | ----------------- |
+| Yükselir          | Bir call spread | `target × 0.999` | `target`          |
+| Düşer             | Bir put spread  | `target × 1.001` | `target`          |
+
+- **Yalnızca büyüklüğe teklif verirsin.** Talep; yönü, vade sonunu, kullanım fiyatını, tavanı ya da tabanı ve primi sabitler. Sen `contracts` değerini seçersin. Maks. ödeme, Yükselir için `contracts × (cap − strike)`, Düşer için `contracts × (strike − floor)` olur. Bu ödemeden trader'ın primini düşüp kalanını yatırırsın.
+- **En büyük ödeme kazanır.** En çok kontratı içeren teklif trader'a en fazla ödemeyi yapar.
+- **Ödemeler sınırlıdır.** Bir tahmin en fazla 1,000 USDG ve tutarının en fazla 10 katını öder.
+
+## Satıcı ol
+
+Piyasa yapıcılar bağlanabilir ve tahminlere ve işlemlere kendi fiyatlarıyla yanıt verebilir. Kurulum için [support@isometric.fi](mailto:support@isometric.fi) adresine e-posta gönder.

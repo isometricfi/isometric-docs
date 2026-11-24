@@ -1,0 +1,57 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: 支付與兌換
+sidebarTitle: 支付與兌換
+description: 用 USDC、USDT 或 USDG 開立 Isometric 預測或交易，並透過跨鏈兌換在 Arbitrum 與其他網路之間轉移資金。
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# 支付與兌換
+
+每筆預測和交易都以 **USDG** 結算，每筆賠付也都以 **USDG** 支付。你不需要持有 USDG 就能開始，也可以從其他網路轉入資金，再轉出去。
+
+## 用 USDC 或 USDT 支付
+
+在下單介面中，按**投入金額**旁的代幣，選擇 Arbitrum One 上的 USDG、USDC 或 USDT。對話框會在你繼續之前顯示兌換價格。
+
+你的金額一律以 USDG 計算。如果你用 USDC 或 USDT 支付，App 會在開倉時剛好買入那麼多的 USDG，最大滑點為 0.5%。下單介面會保留約 1% 的餘額給兌換使用，所以你無法全部花完。
+
+上鏈方式取決於你的錢包：
+
+- **如果你的錢包支援批次交易，** 兌換和交易會一起送出，要嘛都成功，要嘛都不執行。
+- **如果不支援，** 你的錢包會先送出代幣授權（如有需要），接著是兌換，最後才是交易。如果兌換成功但交易失敗，你會保有 USDG，可以再交易一次或兌換回去。
+
+用 USDG 支付則不需要兌換。
+
+## 兌換
+
+打開帳戶選單並選擇**兌換（跨鏈）**。分別選擇你要支付和收到的代幣及其網路。
+
+| 兌換類型           | 經由                    | 所需時間     |
+| ------------------ | ----------------------- | ------------ |
+| Arbitrum One 內部  | Velora，一個 DEX 聚合器 | 幾秒鐘       |
+| 轉入或轉出其他網路 | Relay，一個跨鏈橋       | 報價中會預估 |
+
+你可以在 Arbitrum One 與 Ethereum、Base、Optimism、Polygon、BNB Chain、Avalanche、HyperEVM、Hyperliquid 和 Robinhood Chain 之間互相兌換。
+
+### 轉入資金
+
+用其他網路上的代幣支付，在 Arbitrum One 上收到 USDG、USDC 或 USDT。之後就可以下預測或交易。
+
+### 轉出資金
+
+賠付會以 Arbitrum One 上的 USDG 進入你的錢包。若要轉移，請以 Arbitrum One 上的 USDG 支付，並選擇你想收到的代幣和網路。
+
+### 確認之前
+
+兌換會顯示**最少收到**、**價格影響**、**最大滑點**、**路徑**和**預計時間**。如果在你送出前價格變動超過最低收到金額，App 會停止並請你查看新的報價。
+
+### 成本
+
+Isometric 不收取任何兌換手續費。你看到的匯率來自負責兌換路由的第三方，你需要在送出資金的網路上支付網路手續費。從 Hyperliquid 兌換是用簽名完成，而不是送出一筆交易。
+
+### 跨鏈兌換未成交時
+
+在兌換對話框中打開**兌換紀錄**即可追蹤兌換。狀態會顯示**處理中**、**完成**、**已退款**或**失敗**。如果 Relay 無法完成兌換，會在你送出資金的網路上退還你的存款。
+
+<Warning>Velora 和 Relay 是並非由 Isometric 營運的第三方。請參閱[了解風險](./risks.mdx)。</Warning>

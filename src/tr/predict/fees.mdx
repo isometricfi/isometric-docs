@@ -1,0 +1,29 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Ücretler
+sidebarTitle: Ücretler
+description: Bir Isometric tahmininin maliyeti ve asla ödemediğin şeyler.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Ücretler
+
+Bir tahminin maliyeti, tahmini yaparken yaptığın tek bir ödemedir. Girdiğin tutar, ücret dahil ödediğin her şeydir.
+
+## Ücret
+
+Ücret **tutarının %5'idir** ve üstüne eklenmez, tutarın içinden düşülür. $100'lük bir tahminde $5 ücrettir ve $95 ödemeyi satın alır.
+
+## Asla ödemediklerin
+
+- Ödeme almak için ücret yok. Ödeme cüzdanına gönderilir.
+- Kazancından pay alınmaz.
+- Takaslarda ücret yok. USDC ya da USDT ile ödemek, takası yönlendiren üçüncü tarafın kurunu kullanır. Bkz. [Ödeme ve takas](../trade/pay-and-swap.mdx).
+
+## Ağ ücretleri
+
+USDG ile tahmin yapmak, Arbitrum'da cüzdanındaki ETH ile ödenen tek bir işlemdir. Sonuçlandırma işlemini Isometric'in keeper'ı gönderir ve ücretini o öder. Bitiş zamanından sonra ağ ücreti yalnızca bir ödemeyi kendin talep etmen gerekirse ödersin.
+
+## Ücret değişebilir mi
+
+Ücret, sözleşme kodunda sabitlenmiş sınırlar içinde değişebilir. Bir değişiklik yalnızca sonrasında yapılan tahminlere uygulanır.

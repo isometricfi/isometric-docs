@@ -1,0 +1,81 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Mở giao dịch đầu tiên
+sidebarTitle: Bắt đầu nhanh
+description: Kết nối ví, nạp tiền trên Arbitrum, và mở một vị thế long hoặc short có đòn bẩy trên Isometric trong vài phút.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Mở giao dịch đầu tiên
+
+Hướng dẫn này đưa bạn từ một ví trống đến một vị thế đang mở.
+
+<Tip>
+
+Để thử mà không dùng tiền thật, hãy bật **Demo** ở thanh đầu ứng dụng.
+
+</Tip>
+
+<Steps>
+
+<Step title="Kết nối ví" icon="lucide:wallet">
+
+Mở [app.isometric.fi](https://app.isometric.fi), vào **Đòn bẩy**, và chọn **Kết nối**. Không cần lời mời.
+
+</Step>
+
+<Step title="Nạp tiền trên Arbitrum" icon="lucide:coins">
+
+Isometric chạy trên Arbitrum One. Bạn cần hai thứ trong ví trên mạng đó:
+
+- **USDG, USDC hoặc USDT** để thanh toán giao dịch. Mọi giao dịch đều chi trả bằng USDG, nên USDC và USDT được hoán đổi sang USDG khi giao dịch mở.
+- **Một ít ETH** cho phí mạng.
+
+Đang có tiền trên mạng khác? Mở menu tài khoản và chọn **Hoán đổi (đa chuỗi)**. Xem [Thanh toán và hoán đổi](./pay-and-swap.mdx).
+
+</Step>
+
+<Step title="Chọn thị trường và hướng" icon="lucide:search">
+
+Nhấn vào thị trường ở góc trên bên trái để đổi thị trường. Nhấn **Long** nếu bạn nghĩ giá sẽ cao hơn vào thời điểm kết thúc, **Short** nếu thấp hơn.
+
+</Step>
+
+<Step title="Kéo đường kết thúc" icon="lucide:move-horizontal">
+
+Biểu đồ hiển thị giá hai ngày gần nhất ở bên trái và tương lai ở bên phải. Kéo đường có nhãn **Kết thúc** để chọn khi nào giao dịch kết thúc, bất kỳ lúc nào từ 12 giờ đến 7 ngày. Bạn cũng có thể nhấn **12h**, **1d**, **3d** hoặc **1w** bên dưới biểu đồ.
+
+</Step>
+
+<Step title="Đặt số tiền và đòn bẩy" icon="lucide:sliders-horizontal">
+
+- **You put in.** Số tiền bạn muốn bỏ ra, tính bằng USDG. Đây là toàn bộ số bạn trả, đã gồm phí, và là mức lỗ tối đa. Nhấn vào token bên cạnh để thanh toán bằng USDC hoặc USDT thay thế.
+- **Đòn bẩy.** Nhấn vào và chọn từ 5x đến 100x. Đòn bẩy cao hơn trả nhiều hơn cho mỗi biến động và mất trắng sớm hơn. **Tối đa** hiển thị số tiền lớn nhất mà đòn bẩy của bạn cho phép.
+
+</Step>
+
+<Step title="Đọc biểu đồ" icon="lucide:chart-line">
+
+Các vùng bên phải đường kết thúc cho thấy mỗi mức giá kết thúc trả bao nhiêu: mất số tiền đã bỏ vào (**Lose**), nhận lại một phần (**Some back**), có lãi, và lãi tối đa (**Max**). Di chuột hoặc chạm vào bất kỳ mức giá nào để xem chính xác nó trả bao nhiêu. [Đọc biểu đồ](./reading-the-chart.mdx) đi qua một ví dụ cụ thể.
+
+</Step>
+
+<Step title="Mở vị thế" icon="lucide:check">
+
+Nhấn **Long BTC** hoặc **Short BTC** và xác nhận trong ví. Vị thế được mở ngay khi giao dịch được ghi lên chuỗi và hiển thị dưới biểu đồ ở mục **Đang mở**.
+
+</Step>
+
+<Step title="Chờ đến thời điểm kết thúc" icon="lucide:hourglass">
+
+Bạn không cần làm gì thêm. Vị thế không thể đóng sớm và không thể bị thanh lý. Tại thời điểm kết thúc, một mức giá Chainlink quyết định kết quả, và mọi khoản chi trả được gửi vào ví của bạn bằng USDG. Xem [Chi trả và nhận](./payouts-and-claims.mdx).
+
+</Step>
+
+</Steps>
+
+## Trước khi giao dịch
+
+- Đọc [Hiểu rõ rủi ro](./risks.mdx). Trang này ngắn thôi.
+- Vị thế chạy đến thời điểm kết thúc. Không có cách thoát sớm.
+- Đừng bao giờ giao dịch bằng số tiền mà bạn không thể chấp nhận mất toàn bộ.

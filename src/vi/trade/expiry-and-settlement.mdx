@@ -1,0 +1,44 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Thời điểm kết thúc
+sidebarTitle: Thời điểm kết thúc
+description: Điều gì xảy ra từ lúc mở một vị thế Isometric đến lúc được chi trả, và một mức giá tại thời điểm kết thúc quyết định kết quả như thế nào.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Thời điểm kết thúc
+
+Một vị thế Isometric có điểm kết thúc cố định. Từ lúc mở đến lúc kết thúc, bạn không phải làm gì, và không ai có thể làm gì vị thế của bạn.
+
+## Chọn thời điểm kết thúc
+
+Kéo đường có nhãn **Kết thúc** trên biểu đồ. Nhãn hiển thị ngày và giờ, ví dụ **Kết thúc ngày mai 9 giờ sáng**. Kỳ hạn từ 12 giờ đến 7 ngày, tính từ lúc bạn yêu cầu báo giá và **làm tròn lên giờ chẵn tiếp theo**.
+
+## Khi vị thế đang mở
+
+Vị thế không thể bị đóng, thay đổi quy mô, chuyển nhượng hay thanh lý. Vị thế hiển thị dưới biểu đồ ở mục **Đang mở** và trong **Danh mục**, kèm số tiền nó sẽ trả nếu kết thúc ngay và mức chi trả tối đa.
+
+## Tại thời điểm kết thúc
+
+Hợp đồng dùng **giá Chainlink cuối cùng được công bố tại hoặc trước thời điểm kết thúc**. Nếu giá đó quá cũ, bằng 0 hoặc âm, hợp đồng sẽ dùng lần đọc giá đầu tiên sau thời điểm kết thúc. Giá đó phải dương.
+
+Khi thời điểm kết thúc đã qua, bất kỳ ai cũng có thể gửi giá kết thúc. Isometric vận hành một keeper làm việc này, thường trong vòng một hoặc hai phút. Cho đến lúc đó, vị thế hiển thị **Đang kết thúc**. Chờ đợi không làm thay đổi mức giá được tính.
+
+Cùng một giao dịch trên chuỗi chi trả cho cả hai bên. Khoản chi trả của bạn đi thẳng vào ví của bạn, phần còn lại trả về cho bên bán.
+
+## Sau khi kết thúc
+
+| Trạng thái   | Điều đã xảy ra                                                                   | Bạn cần làm gì                                                  |
+| ------------ | -------------------------------------------------------------------------------- | --------------------------------------------------------------- |
+| Đã chi trả   | Giá kết thúc ở phía của bạn và khoản chi trả đã về ví của bạn                    | Không cần làm gì                                                |
+| Thua         | Giá kết thúc tại hoặc vượt qua giá về 0 của bạn                                  | Không cần làm gì. Vị thế không trả gì                           |
+| Thắng        | Vị thế đã được chi trả, nhưng việc chuyển vào ví của bạn thất bại                | [Nhận khoản chi trả](./payouts-and-claims.mdx)                  |
+| Đã hoàn tiền | Không có giá kết thúc nào được công bố trong vòng 14 ngày sau thời điểm kết thúc | Không cần làm gì. Số tiền bạn đã trả, trừ phí, đã được hoàn lại |
+
+## Điều gì có thể làm chậm khoản chi trả
+
+- **Keeper bị chậm.** Bất kỳ ai cũng có thể gửi giá kết thúc, nên keeper bị đình trệ chỉ làm chậm khoản chi trả chứ không chặn nó.
+- **Nguồn giá bị trễ.** Nếu không có giá nào trong vòng 14 ngày sau thời điểm kết thúc, cả hai bên được hoàn tiền.
+- **Mạng ngừng hoạt động.** Không gì có thể được ghi nhận cho đến khi Arbitrum tạo block trở lại.
+
+Không điều nào trong số này thay đổi số tiền bạn được nhận. Số tiền bảo đảm cho khoản chi trả của bạn nằm trong hợp đồng cho đến khi đến tay bạn.

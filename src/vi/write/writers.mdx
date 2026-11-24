@@ -1,0 +1,49 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Bên bán
+sidebarTitle: Bên bán
+description: Ai đứng về phía còn lại của các giao dịch và dự đoán Isometric, báo giá được chọn thế nào, và mọi khoản chi trả được khóa ra sao khi vị thế mở.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Bên bán
+
+Bên bán là bất kỳ ai đứng về phía còn lại của các giao dịch và dự đoán Isometric. Mỗi giao dịch và dự đoán đều được gửi đi để lấy báo giá, và bất kỳ bên bán nào cũng có thể trả lời.
+
+## Một yêu cầu được báo giá thế nào
+
+1. **Trader gửi yêu cầu** cho một dự đoán, hoặc cho một vị thế long hay short với kỳ hạn, số tiền và đòn bẩy. Yêu cầu được gửi đến mọi bên bán cùng lúc.
+2. **Bên bán trả lời** bằng một mức giá đã ký. Báo giá tốt nhất sẽ khớp.
+3. **Vị thế mở** trong một giao dịch. Trader trả premium và bên bán ký quỹ phần còn lại của **Chi trả tối đa**. Hợp đồng giữ cả hai cho đến khi kết thúc.
+4. **Tại thời điểm đáo hạn**, một mức giá Chainlink quyết định kết quả. Trader nhận khoản chi trả của mình, và phần còn lại trả về cho bên bán.
+
+## Bạn đang bán gì
+
+Mọi giao dịch là một option spread kiểu châu Âu, thanh toán bằng tiền mặt, dựa trên giá Chainlink của thị trường, trả bằng USDG.
+
+| Trader mở | Bạn bán         | Lãi lỗ cho trader tại giá `P`           | Chi trả tối đa                 |
+| --------- | --------------- | --------------------------------------- | ------------------------------ |
+| Long      | Một call spread | `contracts × (min(P, cap) − strike)⁺`   | `contracts × (cap − strike)`   |
+| Short     | Một put spread  | `contracts × (strike − max(P, floor))⁺` | `contracts × (strike − floor)` |
+
+- **Bạn chỉ báo giá thực hiện.** Yêu cầu đã cố định hướng, thời điểm đáo hạn, mức trần hoặc sàn, giá trị danh nghĩa và premium. Quy mô suy ra từ giá thực hiện của bạn: `contracts = notional ÷ strike`.
+- **Giá thực hiện tốt nhất thắng.** Thấp nhất với long, cao nhất với short. Khi mức trần hoặc sàn đã cố định, báo giá đó trả cho trader nhiều hơn trong mọi kịch bản.
+- **Được thế chấp đầy đủ.** Khi khớp, hợp đồng ký quỹ premium của trader và phần bạn bù thêm cho đủ toàn bộ giá trị của spread. Không còn khoản nào khác phải trả.
+- **Kết thúc một lần.** Tại thời điểm đáo hạn, trader nhận khoản lãi, và phần còn lại của khoản ký quỹ trả về cho bạn, trong cùng một giao dịch.
+
+## Bán dự đoán
+
+Bạn cũng có thể bán dự đoán. Ở lớp bên dưới, một dự đoán là cùng loại option spread nhưng với một khoảng hẹp. Mức trần hoặc sàn là mục tiêu của trader, và giá thực hiện nằm thiếu 0.1% so với mục tiêu, nên spread trả trọn vẹn tại mục tiêu và không trả gì khi thiếu 0.1%.
+
+| Trader dự đoán | Bạn bán         | Giá thực hiện    | Mức trần hoặc sàn |
+| -------------- | --------------- | ---------------- | ----------------- |
+| Tăng           | Một call spread | `target × 0.999` | `target`          |
+| Giảm           | Một put spread  | `target × 1.001` | `target`          |
+
+- **Bạn chỉ báo quy mô.** Yêu cầu đã cố định hướng, thời điểm đáo hạn, giá thực hiện, mức trần hoặc sàn, và premium. Bạn chọn `contracts`. Chi trả tối đa là `contracts × (cap − strike)` với Tăng hoặc `contracts × (strike − floor)` với Giảm. Bạn ký quỹ khoản chi trả đó trừ đi premium của trader.
+- **Khoản chi trả lớn nhất thắng.** Báo giá có nhiều contracts nhất trả cho trader nhiều nhất.
+- **Khoản chi trả có giới hạn.** Một dự đoán chi trả tối đa 1,000 USDG, và tối đa gấp 10 lần số tiền của nó.
+
+## Trở thành bên bán
+
+Các nhà tạo lập thị trường có thể kết nối và trả lời các dự đoán và giao dịch bằng mức giá của riêng mình. Gửi email đến [support@isometric.fi](mailto:support@isometric.fi) để được thiết lập.

@@ -1,0 +1,45 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Sözlük
+sidebarTitle: Sözlük
+description: Isometric uygulamasında ve bu dokümanlarda kullanılan her terim, sade bir dille.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Sözlük
+
+| Terim              | Anlamı                                                                                                                                                         |
+| ------------------ | -------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Arbitrum           | Isometric'in üzerinde çalıştığı Ethereum katman 2 ağı. Arbitrum One ana ağ, Arbitrum Sepolia ise testnet'tir                                                   |
+| Başa baş           | Bir pozisyonun tam olarak maliyetini geri ödediği bitiş fiyatı. Grafikteki yeşil fiyat                                                                         |
+| Beta               | Isometric'in Arbitrum One üzerindeki, denetlenmemiş sözleşmeler ve sınırlı pozisyon büyüklükleriyle yapılan mevcut lansmanı                                    |
+| Bitiş saati        | Bir işlemin ya da tahminin bittiği gün ve saat, **Biter** olarak gösterilir. Sonucu o andaki tek bir Chainlink fiyatı belirler                                 |
+| Bitiyor            | Bitiş saati geçmiş ama bitiş fiyatı henüz kaydedilmemiş bir pozisyon                                                                                           |
+| Chainlink          | Fiyat akışı her teklifin başlangıç noktası olan ve her pozisyonu bitiş saatinde sonuçlandıran oracle ağı                                                       |
+| Değersiz fiyatı    | Bir pozisyonun, o fiyatta ya da ötesinde hiçbir şey ödemediği bitiş fiyatı. Grafikteki kırmızı **Lose** (kayıp) çizgisi                                        |
+| Demo modu          | Uygulamanın simüle edilmiş bakiyeyle çalışması. Cüzdan, gas ya da zincir gerekmez                                                                              |
+| Hedef              | Bir tahminin tamamını ödemesi için fiyatın bitmesi gereken seviye ya da ötesi                                                                                  |
+| İade edildi        | Bitiş saatinden sonraki 14 gün içinde bitiş fiyatı gelmeyen pozisyon. İki taraf da parasını ücret düşülerek geri aldı                                          |
+| Kaldıraç           | Pozisyon büyüklüğünün tutarına bölümü, 5x ile 100x arası. Büyüklüğü belirler ve kayıp çizgisini yerleştirir. Asla bir tasfiye fiyatı değildir                  |
+| Kaybetti           | Hiçbir ödeme yapmadan biten pozisyon                                                                                                                           |
+| Kazandı            | Ödemeyle bitmiş ama transferi başarısız olmuş pozisyon. Talep et                                                                                               |
+| Keeper             | Bitiş saatinden sonra bitiş fiyatını kaydeden ve pozisyonlara ödeme yapan bir servis. Aynısını herkes yapabilir                                                |
+| Kontratlar         | Bir pozisyonun, piyasanın varlığı cinsinden büyüklüğü                                                                                                          |
+| Kullanım fiyatı    | Değersiz fiyatının opsiyon terimindeki karşılığı                                                                                                               |
+| Long               | Bitiş fiyatı değersiz fiyatının üzerindeyse ödeme yapan pozisyon                                                                                               |
+| Maks. ödeme        | Bir pozisyonun ödeyebileceği, açılışta sabitlenen en yüksek tutar. Grafikteki **Max** (maksimum) etiketi bunu kâr olarak gösterir                              |
+| Ödeme              | Fiyat hedefinde ya da ötesinde biterse bir tahminin ödediği tutar, **If you're right** (haklıysan) olarak gösterilir                                           |
+| Ödendi             | Ödemesi cüzdanına ulaşmış, bitmiş pozisyon                                                                                                                     |
+| Pozisyon büyüklüğü | Tutarın çarpı kaldıraç. Maruziyetin; şu anda işlem başına 5,000 USDG ile sınırlı                                                                               |
+| Prim               | Trader'ın bir pozisyon için satıcıya ödediği tutar: tutar eksi işlem ücreti                                                                                    |
+| Satıcı             | Tahminlere ve işlemlere teklif vererek karşı tarafını alan herkes                                                                                              |
+| Short              | Bitiş fiyatı değersiz fiyatının altındaysa ödeme yapan pozisyon                                                                                                |
+| Tahmin             | Bir fiyatın bir bitiş zamanında bir hedefin üstünde ya da altında biteceğine dair bahis                                                                        |
+| Takas              | Arbitrum'da ya da ağlar arasında bir tokeni başka bir tokenle değiştirmek. USDC ve USDT bir işlemin ödemesinde kullanıldığında USDG'ye takas edilir            |
+| Talep              | Cüzdanına transferi başarısız olan bir ödemeyi almak. Herhangi bir adrese gönderebilirsin                                                                      |
+| Teklif             | Bir satıcının bir işlem için verdiği imzalı fiyat. En iyi teklif gerçekleşir                                                                                   |
+| Teminat            | Bir pozisyon açıldığında satıcının yatırdığı tutar: **Maks. ödeme** eksi trader'ın primi                                                                       |
+| Tutar              | **You put in** (yatırdığın tutar) alanına USDG cinsinden girdiğin miktar. Kaldıraçla birlikte pozisyon büyüklüğünü belirler ve ücret dahil ödediğin her şeydir |
+| USDG               | Global Dollar; pozisyonların sonuçlandığı, ödemelerin yapıldığı ve satıcıların yatırdığı dolar stablecoin'i                                                    |
+| Vade               | Bir pozisyonun ne kadar sürdüğü. 12 saatten 7 güne kadar                                                                                                       |
+| Yön                | Long ya da short                                                                                                                                               |

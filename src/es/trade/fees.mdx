@@ -1,0 +1,39 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Comisiones
+sidebarTitle: Comisiones
+description: Lo que cuesta una posición en Isometric, cómo se calcula la comisión y lo que nunca pagas.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Comisiones
+
+Una posición cuesta un solo pago, que haces al abrirla. Lo que aportas es todo lo que pagas, comisión incluida.
+
+## La comisión de trading
+
+La comisión es de **$0.50 más el 0.04% del tamaño de tu posición**, y nunca supera el 5% de lo que aportas. Sale de ese monto, nunca se suma encima.
+
+## Lo que nunca pagas
+
+| En un perpetuo                   | En Isometric             |
+| -------------------------------- | ------------------------ |
+| Financiación cada hora           | Nada                     |
+| Comisión de cierre               | Nada. No hay cierre      |
+| Penalización por liquidación     | Nada. No hay liquidación |
+| Comisión de retiro sobre un pago | Nada                     |
+| Una parte de tu ganancia         | Nada                     |
+
+## Comisiones de red
+
+Abrir una posición con USDG es una sola transacción en Arbitrum, pagada en ETH desde tu billetera. Cualquier aprobación es una firma gratuita o se envía junto con la operación.
+
+La resolución la envía el keeper de Isometric, que paga sus propias comisiones de red, y los pagos van directo a las billeteras. Solo pagas una comisión de red después de la resolución si alguna vez necesitas [reclamar](./payouts-and-claims.mdx) un pago tú mismo.
+
+## Costos de los swaps
+
+Isometric no cobra comisión por los swaps, tampoco cuando pagas una operación con USDC o USDT. La tasa viene del tercero que enruta el swap. Si tu billetera no puede agrupar transacciones, pagar con USDC o USDT también cuesta las comisiones de red de la aprobación y del swap. Consulta [Pagar y cambiar](./pay-and-swap.mdx).
+
+## ¿Puede cambiar la comisión?
+
+La comisión puede cambiar dentro de límites fijados en el código del contrato. Un cambio solo se aplica a las posiciones abiertas después de él, nunca a una que ya está abierta.

@@ -1,0 +1,61 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Đọc biểu đồ
+sidebarTitle: Đọc biểu đồ
+description: Cách biểu đồ đòn bẩy của Isometric cho thấy mỗi mức giá kết thúc trả bao nhiêu, kèm một ví dụ cụ thể, để bạn biết chính xác mình đồng ý với điều gì trước khi giao dịch.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Đọc biểu đồ
+
+Biểu đồ chính là phiếu lệnh. Bên trái là giá hai ngày gần nhất. Bên phải, sau đường có nhãn **Kết thúc**, là các vùng cho thấy giao dịch của bạn trả bao nhiêu ở mọi mức giá kết thúc có thể xảy ra. Chỉ giá tại đường đó mới được tính. Một cú giảm giữa chừng không quyết định gì cả.
+
+## Các vùng
+
+Với vị thế long, từ trên xuống dưới:
+
+| Vùng          | Ý nghĩa                                                                                        |
+| ------------- | ---------------------------------------------------------------------------------------------- |
+| **Max**       | Tại hoặc vượt qua mức giá trên cùng, khoản chi trả ngừng tăng. Nhãn hiển thị mức lãi lớn nhất. |
+| Xanh lá       | Giữa mức giá ở giữa và mức giá trên cùng, bạn nhận lại nhiều hơn số đã bỏ vào.                 |
+| **Some back** | Giữa mức giá dưới cùng và mức giá ở giữa, bạn nhận lại một phần số đã bỏ vào.                  |
+| **Lose**      | Tại hoặc dưới mức giá dưới cùng, giao dịch không trả gì. Nhãn hiển thị số tiền bạn mất.        |
+
+Với vị thế short, biểu đồ lộn ngược: vùng **Max** nằm dưới cùng và **Lose** nằm trên cùng.
+
+Ba mức giá ở mép phải là **giá về 0** (đỏ), **giá hòa vốn** (xanh lá), và **mức trần** (nơi **Max** bắt đầu). Di chuột hoặc chạm vào bất kỳ đâu trong các vùng để xem một mức giá kết thúc và chính xác nó trả bao nhiêu.
+
+## Điều gì làm các vùng dịch chuyển
+
+- **Đòn bẩy.** Đòn bẩy cao hơn kéo đường **Lose** lại gần giá hôm nay, nên một biến động ngược nhỏ hơn đã khiến bạn mất trắng. Mỗi 1% vượt qua giá về 0 trả nhiều hơn. Xem [Đòn bẩy](./leverage.mdx).
+- **Đường kết thúc.** Thời điểm kết thúc muộn hơn đẩy giá hòa vốn ra xa hơn một chút và vùng **Max** ra xa hơn, nên mức chi trả tối đa tăng lên.
+- **Số tiền của bạn.** Số tiền lớn hơn nhân mọi khoản chi trả lên theo tỷ lệ. Các mức giá giữ nguyên.
+
+## Một ví dụ cụ thể
+
+Bitcoin đang ở **$100,000**. Bạn chọn **Long**, bỏ vào **$100** với **25x**, và kéo đường kết thúc đến **3 ngày**. Biểu đồ có thể hiển thị:
+
+| Mức giá trên biểu đồ | Giá trị                      |
+| -------------------- | ---------------------------- |
+| Mức trần             | $110,000, nhãn **Max +$223** |
+| Hòa vốn              | $101,296                     |
+| Về 0                 | $97,400, nhãn **Lose $100**  |
+
+Mỗi mức giá kết thúc trả bao nhiêu:
+
+| Bitcoin khi kết thúc | Bạn nhận | Kết quả |
+| -------------------- | -------- | ------- |
+| $97,400 trở xuống    | $0       | −$100   |
+| $100,000             | $67      | −$33    |
+| $101,296             | $100     | $0      |
+| $104,000             | $169     | +$69    |
+| $107,000             | $246     | +$146   |
+| $110,000 trở lên     | $323     | +$223   |
+
+Ở 25x, mỗi 1% vượt qua giá về 0 đáng khoảng 25% số tiền bạn bỏ vào, ở đây là khoảng $25. Vượt qua $110,000 thì khoản chi trả ngừng tăng: Bitcoin ở $150,000 vẫn trả đúng $323.
+
+Đây là số liệu ví dụ. Số liệu của bạn phụ thuộc vào giá trực tiếp và các báo giá bên bán gửi.
+
+## Báo giá đi theo thị trường
+
+Các vùng cập nhật khi giá thay đổi. Mỗi báo giá có hiệu lực trong một thời gian ngắn, và ứng dụng làm mới báo giá trước khi bạn ký. Giao dịch của bạn mở đúng theo báo giá bạn đã xác nhận, hoặc không mở. Một giao dịch thất bại chỉ tốn phí mạng.

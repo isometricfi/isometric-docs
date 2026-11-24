@@ -1,0 +1,45 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Glosario
+sidebarTitle: Glosario
+description: Cada término que se usa en la app de Isometric y en esta documentación, en lenguaje sencillo.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Glosario
+
+| Término               | Significado                                                                                                                                                       |
+| --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Apalancamiento        | El tamaño de la posición dividido por tu monto, de 5x a 100x. Fija el tamaño y ubica la línea de pérdida. Nunca es un precio de liquidación                       |
+| Arbitrum              | La red de capa dos de Ethereum en la que funciona Isometric. Arbitrum One es la red principal y Arbitrum Sepolia la testnet                                       |
+| Beta                  | El lanzamiento actual de Isometric en Arbitrum One, con contratos no auditados y tamaños de posición limitados                                                    |
+| Chainlink             | La red de oráculos cuyo feed de precios inicia cada cotización y decide cada posición a su hora de fin                                                            |
+| Colateral             | Lo que deposita un emisor cuando se abre una posición: el **Pago máximo** menos la prima del trader                                                               |
+| Contratos             | El tamaño de una posición en unidades del activo del mercado                                                                                                      |
+| Corto                 | Una posición que paga si el precio final está por debajo del precio sin valor                                                                                     |
+| Cotización            | El precio firmado de un emisor para una operación. Se ejecuta la mejor cotización                                                                                 |
+| Dirección             | Largo o corto                                                                                                                                                     |
+| Emisor                | Cualquiera que toma el otro lado de predicciones y operaciones cotizándolas                                                                                       |
+| Ganada                | Una posición terminada con un pago cuya transferencia falló. Reclámalo                                                                                            |
+| Hora de fin           | El día y la hora en que termina una operación o una predicción, indicados como **Termina**. Un solo precio de Chainlink a esa hora la decide                      |
+| Keeper                | Un proceso que registra el precio final y paga las posiciones después de su hora de fin. Cualquiera puede hacer lo mismo                                          |
+| Largo                 | Una posición que paga si el precio final está por encima del precio sin valor                                                                                     |
+| Modo demo             | La app funcionando con fondos simulados. No necesitas billetera, gas ni cadena                                                                                    |
+| Monto                 | Lo que ingresas en **You put in** (aportas), contado en USDG. Fija el tamaño de la posición junto con el apalancamiento y es todo lo que pagas, comisión incluida |
+| Objetivo              | El precio en el que una predicción debe terminar, o más allá, para pagar completo                                                                                 |
+| Pagada                | Una posición terminada cuyo pago llegó a tu billetera                                                                                                             |
+| Pago                  | Lo que paga una predicción si el precio termina en su objetivo o más allá, indicado como **If you're right** (si aciertas)                                        |
+| Pago máximo           | Lo máximo que puede pagar una posición, fijado al abrirse. La etiqueta **Max** (máximo) del gráfico lo muestra como ganancia                                      |
+| Perdida               | Una posición terminada que no pagó nada                                                                                                                           |
+| Plazo                 | Cuánto dura una posición. De 12 horas a 7 días                                                                                                                    |
+| Precio de ejercicio   | El término de opciones para el precio sin valor                                                                                                                   |
+| Precio sin valor      | El precio final en el que, o más allá del cual, una posición no paga nada. La línea roja **Lose** (pierdes) del gráfico                                           |
+| Predicción            | Una apuesta a que un precio termina por encima o por debajo de un objetivo a una hora de fin                                                                      |
+| Prima                 | Lo que un trader le paga al emisor por una posición: el monto, menos la comisión de trading                                                                       |
+| Punto de equilibrio   | El precio final en el que una posición devuelve exactamente lo que costó. El precio verde del gráfico                                                             |
+| Reclamar              | Cobrar un pago cuya transferencia a tu billetera falló. Puedes enviarlo a cualquier dirección                                                                     |
+| Reembolsada           | Una posición sin precio final dentro de los 14 días posteriores a su hora de fin. Ambas partes recuperaron su dinero, menos la comisión                           |
+| Swap                  | Cambiar un token por otro, en Arbitrum o entre redes. USDC y USDT se cambian a USDG cuando pagan una operación                                                    |
+| Tamaño de la posición | Tu monto por el apalancamiento. Tu exposición, actualmente con un tope de 5,000 USDG por operación                                                                |
+| Terminando            | Una posición que pasó su hora de fin y cuyo precio final aún no se ha registrado                                                                                  |
+| USDG                  | Global Dollar, la stablecoin en dólares en la que se resuelven las posiciones, se hacen los pagos y depositan los emisores                                        |

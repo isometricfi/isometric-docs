@@ -1,0 +1,51 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Ödemeler ve talepler
+sidebarTitle: Ödemeler ve talepler
+description: Bir Isometric pozisyonunun nasıl ödendiği, ne zaman talep etmen gerektiği ve Portföy'ün sana neler gösterdiği.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Ödemeler ve talepler
+
+Long ya da short, her ödeme **USDG** olarak yapılır; USDC ya da USDT ile ödemiş olsan bile. Başka bir tokene ya da ağa taşımak için [takası](./pay-and-swap.mdx) kullan.
+
+## Bir pozisyon ödeme yaptığında
+
+Ödemen otomatik olarak yapılır. Ödeme, bitiş fiyatını kaydeden aynı işlemle cüzdanına gider; normalde bitiş saatinden bir iki dakika sonra. Pozisyon ardından **Ödendi** olarak görünür.
+
+## Ne zaman talep etmen gerekir
+
+Cüzdanına transfer başarısız olursa, örneğin cüzdanın USDG almaktan engellenmişse, pozisyon bunun yerine **Kazandı** olarak görünür. Hiçbir şey kaybolmaz. Ödeme sözleşmede bekler ve süresi hiç dolmaz.
+
+**Portföy**'ü aç, pozisyonu seç ve **Talep et**'e bas. Ödemeyi **Cüzdanım**'a ya da **Başka bir adres**'e gönder.
+
+<Warning>
+  Ödemenin tamamı girdiğin adrese gider ve geri gönderilemez. Her karakteri kontrol et ve adresin
+  Arbitrum One üzerinde USDG alabildiğinden emin ol.
+</Warning>
+
+## Pozisyon durumları
+
+| Durum       | Anlamı                                                                                                           |
+| ----------- | ---------------------------------------------------------------------------------------------------------------- |
+| Açık        | Bitiş saati henüz gelmedi                                                                                        |
+| Bitiyor     | Bitiş saati geçti ve bitiş fiyatının kaydedilmesi bekleniyor                                                     |
+| Ödendi      | Bitti ve cüzdanına ödendi                                                                                        |
+| Kazandı     | Ödemeyle bitti ama transfer başarısız oldu. Talep et                                                             |
+| Kaybetti    | Aralığının dışında bitti, bu yüzden hiçbir ödeme yapmaz                                                          |
+| İade edildi | Bitiş saatinden sonraki 14 gün içinde bitiş fiyatı gelmedi, bu yüzden ödediğin tutar ücret düşülerek iade edildi |
+
+## Portföy neleri gösterir
+
+| Rakam                  | Anlamı                                                                   |
+| ---------------------- | ------------------------------------------------------------------------ |
+| Şimdi bitse açık değer | Açık pozisyonlarının güncel fiyattan ne ödeyeceği. Yalnızca bir gösterge |
+| Açık maks. ödeme       | Açık pozisyonlarının ödeyebileceği en yüksek tutar                       |
+| Talep edilebilir       | Talep etmeni bekleyen ödemeler                                           |
+| Kazanma oranı          | Biten pozisyonlardan maliyetinden fazla ödeyenlerin payı                 |
+| Ödenen, ücretler dahil | Pozisyonlar için ödediğin her şey                                        |
+| Alınan ödeme           | Sana ödenen her şey                                                      |
+| Gerçekleşen K&Z        | Biten pozisyonlar için alınan ödeme eksi ödenen                          |
+
+Her satır kendi işlemine bağlantı verir; böylece her adım zincir üstünde kontrol edilebilir.

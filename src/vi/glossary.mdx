@@ -1,0 +1,45 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Thuật ngữ
+sidebarTitle: Thuật ngữ
+description: Mọi thuật ngữ dùng trong ứng dụng Isometric và tài liệu này, giải thích bằng ngôn ngữ dễ hiểu.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Thuật ngữ
+
+| Thuật ngữ                     | Ý nghĩa                                                                                                                                    |
+| ----------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------ |
+| Số tiền (Amount)              | Số bạn nhập ở **You put in**, tính bằng USDG. Cùng với đòn bẩy, nó quyết định quy mô vị thế, và là toàn bộ số tiền bạn trả, đã gồm phí     |
+| Arbitrum                      | Mạng layer-two của Ethereum mà Isometric chạy trên đó. Arbitrum One là mạng chính và Arbitrum Sepolia là testnet                           |
+| Beta                          | Đợt ra mắt hiện tại của Isometric trên Arbitrum One, với hợp đồng chưa được kiểm toán và quy mô vị thế bị giới hạn                         |
+| Hòa vốn (Breakeven)           | Giá kết thúc mà tại đó vị thế trả lại đúng số tiền đã bỏ ra. Mức giá màu xanh lá trên biểu đồ                                              |
+| Chainlink                     | Mạng oracle có nguồn giá làm điểm khởi đầu cho mọi báo giá và quyết định mọi vị thế tại thời điểm kết thúc                                 |
+| Nhận (Claim)                  | Nhận một khoản chi trả mà việc chuyển vào ví của bạn đã thất bại. Bạn có thể gửi nó đến bất kỳ địa chỉ nào                                 |
+| Tài sản thế chấp (Collateral) | Số tiền bên bán ký quỹ khi vị thế mở: **Chi trả tối đa** trừ đi premium của trader                                                         |
+| Hợp đồng (Contracts)          | Quy mô của vị thế tính theo đơn vị tài sản của thị trường                                                                                  |
+| Chế độ demo                   | Ứng dụng chạy với tiền mô phỏng. Không cần ví, gas hay chuỗi                                                                               |
+| Hướng (Direction)             | Long hoặc short                                                                                                                            |
+| Thời điểm kết thúc (End time) | Ngày và giờ một giao dịch hoặc dự đoán kết thúc, hiển thị là **Kết thúc**. Một mức giá Chainlink tại thời điểm đó quyết định kết quả       |
+| Đang kết thúc (Ending)        | Vị thế đã qua thời điểm kết thúc nhưng giá kết thúc chưa được ghi nhận                                                                     |
+| Keeper                        | Một tiến trình ghi nhận giá kết thúc và chi trả các vị thế sau thời điểm kết thúc. Bất kỳ ai cũng có thể làm việc tương tự                 |
+| Đòn bẩy (Leverage)            | Quy mô vị thế chia cho số tiền của bạn, từ 5x đến 100x. Quyết định quy mô và vị trí đường **Lose**. Không bao giờ tạo ra giá thanh lý      |
+| Long                          | Vị thế được chi trả nếu giá kết thúc cao hơn giá về 0                                                                                      |
+| Thua (Lost)                   | Vị thế đã kết thúc và không được chi trả gì                                                                                                |
+| Chi trả tối đa (Max payout)   | Số tiền lớn nhất một vị thế có thể chi trả, được cố định khi mở. Nhãn **Max** trên biểu đồ hiển thị nó dưới dạng lợi nhuận                 |
+| Đã chi trả (Paid)             | Vị thế đã kết thúc và khoản chi trả đã về ví của bạn                                                                                       |
+| Khoản chi trả (Payout)        | Số tiền một dự đoán trả nếu giá kết thúc bằng hoặc vượt mục tiêu, hiển thị là **If you're right**                                          |
+| Quy mô vị thế (Position size) | Số tiền của bạn nhân với đòn bẩy. Mức tiếp xúc của bạn, hiện bị giới hạn ở 5,000 USDG mỗi giao dịch                                        |
+| Dự đoán (Prediction)          | Một cược rằng giá kết thúc trên hoặc dưới một mục tiêu tại một thời điểm kết thúc                                                          |
+| Premium                       | Số tiền trader trả cho bên bán để có vị thế: số tiền bỏ vào trừ phí giao dịch                                                              |
+| Báo giá (Quote)               | Mức giá đã ký của bên bán cho một giao dịch. Báo giá tốt nhất sẽ khớp                                                                      |
+| Đã hoàn tiền (Refunded)       | Vị thế không có giá kết thúc trong vòng 14 ngày sau thời điểm kết thúc. Cả hai bên nhận lại tiền, trừ phí                                  |
+| Short                         | Vị thế được chi trả nếu giá kết thúc thấp hơn giá về 0                                                                                     |
+| Giá thực hiện (Strike)        | Thuật ngữ quyền chọn cho giá về 0                                                                                                          |
+| Mục tiêu (Target)             | Mức giá mà một dự đoán phải kết thúc bằng hoặc vượt qua để được trả trọn vẹn                                                               |
+| Hoán đổi (Swap)               | Đổi một token sang token khác, trên Arbitrum hoặc giữa các mạng. USDC và USDT được hoán đổi sang USDG khi dùng để thanh toán cho giao dịch |
+| Kỳ hạn (Term)                 | Thời gian một vị thế chạy. Từ 12 giờ đến 7 ngày                                                                                            |
+| USDG                          | Global Dollar, stablecoin đô la mà các vị thế kết thúc bằng, các khoản chi trả được trả bằng, và bên bán dùng để ký quỹ                    |
+| Thắng (Won)                   | Vị thế đã kết thúc có khoản chi trả nhưng việc chuyển tiền thất bại. Hãy nhận nó                                                           |
+| Giá về 0 (Worthless price)    | Giá kết thúc mà tại đó hoặc vượt qua đó vị thế không trả gì. Đường **Lose** màu đỏ trên biểu đồ                                            |
+| Bên bán (Writer)              | Bất kỳ ai đứng về phía còn lại của các dự đoán và giao dịch bằng cách báo giá cho chúng                                                    |

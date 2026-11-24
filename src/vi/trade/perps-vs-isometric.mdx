@@ -1,0 +1,63 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Perp so với Isometric
+sidebarTitle: Perp so với Isometric
+description: So sánh một vị thế Isometric với hợp đồng tương lai vĩnh cửu về thanh lý, phí funding, thoát lệnh, tiềm năng lợi nhuận và chi phí, và khi nào mỗi công cụ phù hợp hơn.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Perp so với Isometric
+
+Một hợp đồng tương lai vĩnh cửu (perp) và một vị thế Isometric thể hiện cùng một quan điểm: giá tăng, hoặc giá giảm. Chúng khác nhau ở những gì có thể xảy ra với bạn trên đường đi.
+
+## So sánh trực tiếp
+
+|                         | Hợp đồng vĩnh cửu                                    | Isometric                                                                |
+| ----------------------- | ---------------------------------------------------- | ------------------------------------------------------------------------ |
+| **Số tiền bỏ vào**      | Ký quỹ, có thể nạp thêm hoặc rút ra                  | Một lần thanh toán, là toàn bộ chi phí                                   |
+| **Lỗ tối đa**           | Khoản ký quỹ, và ở một số sàn còn nhiều hơn          | Số tiền bạn đã trả, không bao giờ hơn                                    |
+| **Thanh lý**            | Có. Giá vượt qua giá thanh lý sẽ đóng vị thế của bạn | Không. Vị thế chạy đến lúc kết thúc, dù ở giữa có chuyện gì xảy ra       |
+| **Phí funding**         | Trả hoặc nhận vài giờ một lần khi vị thế còn mở      | Không có                                                                 |
+| **Thoát lệnh**          | Bất cứ lúc nào                                       | Chỉ khi kết thúc                                                         |
+| **Tiềm năng lợi nhuận** | Không giới hạn                                       | Giới hạn ở mức Max hiển thị trên biểu đồ                                 |
+| **Thời hạn**            | Không có hạn                                         | Từ 12 giờ đến 7 ngày, đặt bằng cách kéo đường kết thúc                   |
+| **Đối tác giao dịch**   | Các trader khác qua sổ lệnh                          | Bên bán có báo giá được khớp, với khoản chi trả của bạn được khóa từ đầu |
+| **Bạn nhận được gì**    | Ký quỹ cộng hoặc trừ PnL                             | Khoản chi trả bằng USDG, hoặc không gì cả                                |
+
+## Lãi lỗ khi kết thúc
+
+Cả hai trả như nhau cho mỗi 1% giá biến động, vì cùng số tiền với cùng đòn bẩy cho ra cùng quy mô vị thế. Perp tính biến động đó từ giá vào lệnh của bạn. Vị thế Isometric tính từ giá về 0 và dừng ở mức trần.
+
+## Khi Isometric tốt hơn
+
+**Bạn không thể bị nhiễu giá quét khỏi lệnh.** Một perp 25x bị thanh lý bởi một cây râu nến 4%. Một vị thế Isometric 25x bỏ qua râu nến đó và kết thúc theo giá tại giờ kết thúc. Nếu bạn đúng vào ngày kết thúc nhưng sai trong một giờ ở giữa, chỉ Isometric trả tiền cho bạn.
+
+**Giữ vị thế không tốn gì.** Một vị thế perp giữ qua vài ngày phí funding cao có thể mất vì funding nhiều hơn vì giá. Vị thế Isometric không có chi phí duy trì.
+
+**Rủi ro giảm giá được biết trước khi bạn ký.** Không có kịch bản nào bạn nợ nhiều hơn số đã trả, không có lệnh gọi ký quỹ lúc 3 giờ sáng, và không có thanh lý dây chuyền.
+
+**Một mức giá cho toàn bộ quy mô.** Bên bán báo giá cho toàn bộ số tiền. Không phải ăn dần qua sổ lệnh, không khớp một phần, và giao dịch mở đúng theo báo giá bạn đã xác nhận hoặc không mở.
+
+## Khi perp tốt hơn
+
+**Bạn muốn thoát sớm.** Perp cho phép bạn chốt lời hoặc cắt lỗ bất cứ lúc nào. Vị thế Isometric thì không, và một vị thế đang lãi vào ngày đầu vẫn có thể kết thúc về 0 vào ngày thứ ba.
+
+**Bạn muốn lợi nhuận không giới hạn.** Vị thế Isometric ngừng tăng lãi ở mức **Max**. Perp thì tiếp tục.
+
+**Bạn muốn bám theo giá liên tục.** Vị thế Isometric kết thúc theo một mức giá tại một giờ. PnL của perp là giá trực tiếp ở mọi thời điểm.
+
+**Bạn giao dịch ra vào cả ngày.** Vị thế Isometric có kỳ hạn tối thiểu 12 giờ.
+
+## Một cú giảm rồi hồi phục
+
+Perp bị đóng khi giá rơi qua mức thanh lý vào ngày thứ hai, và bỏ lỡ đợt hồi phục. Vị thế Isometric, mở cùng giá với cùng đòn bẩy, vẫn đang mở khi giá hồi phục và kết thúc có lãi.
+
+<Frame caption="Cùng một đường đi giá cho cả hai vị thế. Chỉ giá tại giờ kết thúc quyết định vị thế Isometric.">
+
+![Đường đi giá mở tại giá vào lệnh, rơi qua mức thanh lý của perp sớm trong kỳ hạn, rồi hồi phục và kết thúc cao hơn hẳn giá vào lệnh lúc kết thúc. Perp bị đóng tại mức thanh lý. Vị thế Isometric vẫn mở và kết thúc có lãi.](/images/dip-that-recovers.svg)
+
+</Frame>
+
+## Cùng quan điểm, cơ chế khác nhau
+
+Nếu bạn đã giao dịch perp, hãy xem vị thế Isometric như cùng một giao dịch theo hướng nhưng bỏ đi cơ chế ký quỹ. Bạn từ bỏ khả năng thoát sớm và phần lợi nhuận không giới hạn. Đổi lại, bạn có chi phí cố định, không thanh lý, không phí funding, và việc kết thúc chỉ quan tâm giá ở đâu vào lúc cuối.

@@ -1,0 +1,61 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Grafiği okuma
+sidebarTitle: Grafiği okuma
+description: Isometric kaldıraç grafiğinin her bitiş fiyatında ne ödendiğini nasıl gösterdiği, işlenmiş bir örnekle; böylece işlem yapmadan önce neyi kabul ettiğini tam olarak bilirsin.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Grafiği okuma
+
+Grafik, işlem panelinin ta kendisidir. Solda son iki günün fiyatı yer alır. Sağda, **Biter** yazan çizginin ötesinde, işleminin olası her bitiş fiyatında ne ödediğini gösteren bantlar bulunur. Yalnızca o çizgideki fiyat sayılır. Yol boyunca yaşanan bir düşüş hiçbir şeyi belirlemez.
+
+## Bantlar
+
+Bir long için yukarıdan aşağıya:
+
+| Bant                        | Anlamı                                                                                   |
+| --------------------------- | ---------------------------------------------------------------------------------------- |
+| **Max** (maksimum)          | En üst fiyatta ya da ötesinde ödeme büyümeyi bırakır. Etiket, en yüksek kârını gösterir. |
+| Yeşil                       | Orta fiyat ile en üst fiyat arasında yatırdığından fazlasını geri alırsın.               |
+| **Some back** (kısmen geri) | En alt fiyat ile orta fiyat arasında yatırdığının bir kısmını geri alırsın.              |
+| **Lose** (kayıp)            | En alt fiyatta ya da altında işlem hiçbir şey ödemez. Etiket, ne kaybettiğini gösterir.  |
+
+Bir short, aynı grafiğin ters çevrilmiş hâlidir: **Max** bandı altta, **Lose** bandı üstte yer alır.
+
+Sağ kenardaki üç fiyat şunlardır: **değersiz fiyatı** (kırmızı), **başa baş** (yeşil) ve **tavan** (**Max**'ın başladığı yer). Bir bitiş fiyatını ve tam olarak ne ödediğini görmek için bantların herhangi bir yerinin üzerine gel ya da dokun.
+
+## Bantları ne hareket ettirir
+
+- **Kaldıraç.** Yüksek kaldıraç **Lose** çizgisini bugünkü fiyata yaklaştırır; böylece aleyhine daha küçük bir hareket her şeyi kaybettirir. Değersiz fiyatının ötesindeki her %1 daha fazla öder. Bkz. [Kaldıraç](./leverage.mdx).
+- **Bitiş çizgisi.** Daha geç bir bitiş saati başa baş fiyatını biraz daha uzağa, **Max** bandını da daha dışarıya iter; böylece maksimum ödeme büyür.
+- **Tutarın.** Daha büyük bir tutar her ödemeyi orantılı olarak büyütür. Fiyatlar aynı kalır.
+
+## İşlenmiş bir örnek
+
+Bitcoin **$100,000** seviyesinde. **Long** açıyorsun, **25x** kaldıraçla **$100** yatırıyorsun ve bitiş çizgisini **3 gün** sonrasına sürüklüyorsun. Grafik şunu gösterebilir:
+
+| Grafikteki fiyat | Değer                              |
+| ---------------- | ---------------------------------- |
+| Tavan            | $110,000, **Max +$223** etiketiyle |
+| Başa baş         | $101,296                           |
+| Değersiz         | $97,400, **Lose $100** etiketiyle  |
+
+Her bitiş fiyatının ödediği:
+
+| Bitişte Bitcoin    | Aldığın | Sonuç |
+| ------------------ | ------- | ----- |
+| $97,400 ya da altı | $0      | −$100 |
+| $100,000           | $67     | −$33  |
+| $101,296           | $100    | $0    |
+| $104,000           | $169    | +$69  |
+| $107,000           | $246    | +$146 |
+| $110,000 ve üzeri  | $323    | +$223 |
+
+25x kaldıraçta, değersiz fiyatının ötesindeki her %1, yatırdığın tutarın yaklaşık %25'i eder; burada yaklaşık $25. $110,000'in ötesinde ödeme büyümeyi bırakır: Bitcoin $150,000'de de aynı $323'ü öder.
+
+Bunlar örnek rakamlardır. Seninkiler canlı fiyata ve satıcıların gönderdiği tekliflere bağlıdır.
+
+## Teklif piyasayı takip eder
+
+Fiyat hareket ettikçe bantlar güncellenir. Her teklif kısa bir süre için bağlayıcıdır ve uygulama, sen imzalamadan önce teklifi yeniler. İşlemin ya tam olarak onayladığın teklifle açılır ya da hiç açılmaz. Başarısız bir işlemin maliyeti yalnızca ağ ücretidir.

@@ -1,0 +1,61 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: O que alavancagem significa aqui
+sidebarTitle: Alavancagem
+description: Na Isometric, a alavancagem define o tamanho da sua posição e onde fica a sua linha de perda. Ela nunca cria um preço de liquidação forçada.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# O que alavancagem significa aqui
+
+Em um perpétuo, a alavancagem é quanto você toma emprestado, e ela vem com um preço em que você é liquidado. Na Isometric não há empréstimo nem liquidação forçada. A alavancagem faz duas coisas: define o tamanho da sua posição e onde fica a linha **Lose** (perda) no gráfico.
+
+Escolha em **Alavancagem** na boleta: 5x, 10x, 15x, 20x, 25x, 30x, 40x, 50x, 75x ou 100x.
+
+## A alavancagem define o tamanho da posição
+
+O tamanho da sua posição é o que você aplica vezes a alavancagem, com limite de **5,000 USDG** por operação. Uma alavancagem maior reduz o máximo que você pode aplicar, que a boleta mostra como **Máx.**
+
+| Alavancagem | Máximo que você pode aplicar |
+| ----------- | ---------------------------- |
+| 5x          | $1,000                       |
+| 10x         | $500                         |
+| 25x         | $200                         |
+| 50x         | $100                         |
+| 100x        | $50                          |
+
+O mínimo é $1.
+
+## A alavancagem move a linha de perda
+
+Pagar menos pela mesma posição significa mais risco. Uma alavancagem maior aproxima o preço sem valor do preço de hoje e, a partir de cerca de 50x, o coloca além dele, então basta menos coisa dar errado para você perder tudo.
+
+Cinco longs de Bitcoin de três dias com o Bitcoin a $100,000, cada um com tamanho de posição de $5,000:
+
+| Alavancagem | Você aplica | Sem valor em | Ponto de equilíbrio | Pagamento máximo |
+| ----------- | ----------- | ------------ | ------------------- | ---------------- |
+| 5x          | $1,000      | $83,738      | $100,486            | $1,568           |
+| 10x         | $500        | $91,402      | $100,542            | $1,017           |
+| 25x         | $200        | $97,388      | $101,283            | $648             |
+| 50x         | $100        | $100,466     | $102,476            | $474             |
+| 100x        | $50         | $102,936     | $103,965            | $343             |
+
+Esses números são exemplos. O gráfico mostra os seus.
+
+- **Alavancagem baixa** é uma exposição pequena e segura ao preço. Raramente perde tudo e raramente paga muitas vezes o valor aplicado.
+- **Alavancagem alta** paga muito por um movimento pequeno a seu favor e perde tudo com um movimento pequeno contra você.
+
+**Cada 1% além do preço sem valor paga o percentual da alavancagem sobre o seu valor**, até o máximo. A 25x, cada 1% equivale a 25% do que você aplicou. Com o mercado calmo, as linhas ficam mais perto do preço de hoje. Com o mercado volátil, ficam mais longe, porque os lançadores precificam um movimento maior.
+
+## Sem preço de liquidação forçada
+
+Nada acontece com a sua posição enquanto ela está aberta. Se um long a 25x anda 10% contra você no primeiro dia e se recupera no segundo, ele paga integralmente no terceiro. Um perpétuo com a mesma alavancagem teria sido liquidado no primeiro dia.
+
+## Como escolher a alavancagem
+
+Pergunte onde você acha que o preço vai estar no horário de término, não quanto você quer ganhar.
+
+- Se acha que ele vai andar devagar a seu favor ou ficar parado, escolha alavancagem baixa.
+- Se acha que ele vai se mover com força, escolha alavancagem alta.
+
+Mude a alavancagem e veja as faixas do gráfico se moverem antes de decidir.

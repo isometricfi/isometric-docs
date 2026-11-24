@@ -1,0 +1,57 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Conheça os riscos
+sidebarTitle: Riscos
+description: O que você pode perder em uma previsão na Isometric, o que pode atrasar um pagamento e contra o que o protocolo não te protege.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Conheça os riscos
+
+<Warning>
+  Toda previsão pode perder 100% do que você pagou. Nunca use dinheiro que você não pode perder por
+  inteiro.
+</Warning>
+
+## A Isometric está em beta
+
+Os contratos não foram auditados, e os limites podem mudar durante o beta. Use apenas o que você aceita perder.
+
+## Quanto faltou importa
+
+Uma previsão que termina 0.1% ou mais antes do alvo não paga nada. Uma diferença menor paga só parte do pagamento cotado.
+
+## Você não pode sair antes
+
+A previsão vai até o horário de término. Uma que está no rumo hoje ainda pode terminar antes do alvo amanhã, e ela não pode ser vendida nem transferida.
+
+## Um único preço em um único horário decide
+
+Normalmente, o último preço da Chainlink publicado até o seu horário de término decide o resultado. Se essa leitura for antiga demais, zero ou negativa, o contrato usa a primeira leitura após o horário de término. Por isso, um preço posterior pode decidir o seu pagamento.
+
+## Você pode não receber cotação
+
+Uma previsão precisa de um lançador disposto a ficar do outro lado. Um alvo longe do preço de hoje, ou um mercado pausado, pode deixar você sem cotação. As previsões abertas não são afetadas.
+
+## Um pagamento pode atrasar
+
+Um pagamento depende do preço e de alguém fazer o encerramento. Uma queda da rede, um feed de preço parado ou um keeper parado atrasam o pagamento, mas não mudam o que é devido a você. Qualquer pessoa pode fazer o encerramento. Se nenhum preço for publicado em até 14 dias após o horário de término, a previsão é reembolsada, menos a taxa.
+
+## As trocas passam por terceiros
+
+Pagar com USDC ou USDT e a troca entre redes usam a Velora e a Relay, que a Isometric não opera. Uma troca pode falhar ou ser executada com até o slippage mostrado.
+
+## Contratos, atualizações e USDG
+
+Os contratos são atualizáveis, e uma atualização entra em vigor sem prazo de espera. Uma atualização com defeito ou um dono de atualizações comprometido pode causar perda de fundos. Contratos podem ter bugs, oráculos podem falhar e redes podem parar. O USDG tem o seu próprio risco de emissor, incluindo a capacidade do emissor de congelar um endereço.
+
+## Isto não é recomendação
+
+Nada no app ou nesta documentação é recomendação de investimento. A Isometric não está disponível para residentes dos Estados Unidos, Canadá, Reino Unido, África do Sul ou países sancionados. Você é responsável pelos impostos sobre qualquer ganho. Veja os [termos de serviço](https://app.isometric.fi/terms).
+
+## O que o código do contrato protege
+
+- **A sua perda é fixa.** Nada pode ser tirado de você depois que você paga.
+- **O seu pagamento está garantido desde que você faz a previsão.** O colateral do lançador fica travado no contrato até o horário de término.
+- **Ninguém escolhe o preço.** Exatamente um preço da Chainlink é válido para cada horário de término.
+- **Resgates nunca expiram.** Um pagamento espera por você, e você pode enviá-lo para qualquer endereço.

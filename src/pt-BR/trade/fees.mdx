@@ -1,0 +1,39 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Taxas
+sidebarTitle: Taxas
+description: Quanto custa uma posição na Isometric, como a taxa é calculada e o que você nunca paga.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Taxas
+
+Uma posição custa um único pagamento, feito na abertura. O que você aplica é tudo o que você paga, com a taxa incluída.
+
+## A taxa de negociação
+
+A taxa é de **$0.50 mais 0.04% do tamanho da sua posição**, e nunca passa de 5% do que você aplica. Ela sai desse valor, nunca é cobrada por cima.
+
+## O que você nunca paga
+
+| Em um perpétuo                    | Na Isometric                        |
+| --------------------------------- | ----------------------------------- |
+| Taxa de financiamento a cada hora | Nada                                |
+| Taxa de fechamento                | Nada. Não existe fechamento         |
+| Multa de liquidação forçada       | Nada. Não existe liquidação forçada |
+| Taxa de saque sobre um pagamento  | Nada                                |
+| Uma parte do seu lucro            | Nada                                |
+
+## Taxas de rede
+
+Abrir uma posição com USDG é uma única transação na Arbitrum, paga em ETH da sua carteira. Qualquer aprovação é uma assinatura gratuita ou vai junto com a operação.
+
+O encerramento é enviado pelo keeper da Isometric, que paga as próprias taxas de rede, e os pagamentos vão direto para as carteiras. Você só paga uma taxa de rede depois do encerramento se algum dia precisar [resgatar](./payouts-and-claims.mdx) um pagamento por conta própria.
+
+## Custos de troca
+
+A Isometric não cobra taxa sobre trocas, inclusive quando você paga uma operação com USDC ou USDT. A cotação vem do terceiro que faz o roteamento da troca. Se a sua carteira não consegue agrupar transações, pagar com USDC ou USDT também custa as taxas de rede da aprovação e da troca. Veja [Pagar e trocar](./pay-and-swap.mdx).
+
+## A taxa pode mudar?
+
+A taxa pode mudar dentro de limites fixados no código do contrato. Uma mudança vale só para posições abertas depois dela, nunca para uma que já está aberta.

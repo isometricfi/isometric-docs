@@ -1,0 +1,70 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: 市場
+sidebarTitle: 市場
+description: 你可以在 Isometric 上交易和預測的市場、即將上線的市場，以及各自提供的內容。
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# 市場
+
+<Note>
+  每筆交易和預測都以 USDG 賠付。你可以用 USDC 或 USDT 支付，開倉時會兌換為 USDG。
+  你永遠不會收到該市場本身的資產。
+</Note>
+
+## 加密貨幣
+
+| 市場                                                                                                   | 狀態     |
+| ------------------------------------------------------------------------------------------------------ | -------- |
+| <img src="/assets/btc.svg" alt="" width="20" height="20" className="inline align-middle" /> Bitcoin    | 已上線   |
+| <img src="/assets/eth.svg" alt="" width="20" height="20" className="inline align-middle" /> Ether      | 已上線   |
+| <img src="/assets/arb.svg" alt="" width="20" height="20" className="inline align-middle" /> Arbitrum   | 已上線   |
+| <img src="/assets/sol.svg" alt="" width="20" height="20" className="inline align-middle" /> Solana     | 已上線   |
+| <img src="/assets/bnb.svg" alt="" width="20" height="20" className="inline align-middle" /> BNB        | 已上線   |
+| <img src="/assets/avax.svg" alt="" width="20" height="20" className="inline align-middle" /> Avalanche | 已上線   |
+| <img src="/assets/doge.svg" alt="" width="20" height="20" className="inline align-middle" /> Dogecoin  | 已上線   |
+| <img src="/assets/uni.svg" alt="" width="20" height="20" className="inline align-middle" /> Uniswap    | 已上線   |
+| <img src="/assets/xrp.svg" alt="" width="20" height="20" className="inline align-middle" /> XRP        | 即將上線 |
+
+## 股票
+
+| 市場                                                                                                   | 狀態     |
+| ------------------------------------------------------------------------------------------------------ | -------- |
+| <img src="/assets/nvda.svg" alt="" width="20" height="20" className="inline align-middle" /> NVIDIA    | 即將上線 |
+| <img src="/assets/aapl.svg" alt="" width="20" height="20" className="inline align-middle" /> Apple     | 即將上線 |
+| <img src="/assets/msft.svg" alt="" width="20" height="20" className="inline align-middle" /> Microsoft | 即將上線 |
+| <img src="/assets/googl.svg" alt="" width="20" height="20" className="inline align-middle" /> Alphabet | 即將上線 |
+| <img src="/assets/amzn.svg" alt="" width="20" height="20" className="inline align-middle" /> Amazon    | 即將上線 |
+| <img src="/assets/meta.svg" alt="" width="20" height="20" className="inline align-middle" /> Meta      | 即將上線 |
+| <img src="/assets/tsla.svg" alt="" width="20" height="20" className="inline align-middle" /> Tesla     | 即將上線 |
+| <img src="/assets/nflx.svg" alt="" width="20" height="20" className="inline align-middle" /> Netflix   | 即將上線 |
+| <img src="/assets/mstr.svg" alt="" width="20" height="20" className="inline align-middle" /> Strategy  | 即將上線 |
+| <img src="/assets/sndk.svg" alt="" width="20" height="20" className="inline align-middle" /> SanDisk   | 即將上線 |
+| <img src="/assets/spcx.svg" alt="" width="20" height="20" className="inline align-middle" /> SpaceX    | 即將上線 |
+
+## 原物料
+
+| 市場                                                                                                | 狀態     |
+| --------------------------------------------------------------------------------------------------- | -------- |
+| <img src="/assets/gold.svg" alt="" width="20" height="20" className="inline align-middle" /> 黃金   | 即將上線 |
+| <img src="/assets/silver.svg" alt="" width="20" height="20" className="inline align-middle" /> 白銀 | 即將上線 |
+
+## 提供的內容
+
+| 設定     | 槓桿                                                             | 預測                                               |
+| -------- | ---------------------------------------------------------------- | -------------------------------------------------- |
+| 可選擇   | 做多或做空，5x 至 100x                                           | 賣方願意報價的任何目標價格，高於或低於目前價格皆可 |
+| 結束時間 | 12 小時至 7 天內的任意整點                                       | 12 小時至 7 天內的任意整點                         |
+| 金額     | 最低 $1，部位規模上限 5,000 USDG                                 | 最低 $1，賠付最多 1,000 USDG，且不超過金額的 10 倍 |
+| 支付方式 | USDG、USDC 或 USDT。請參閱[支付與兌換](./trade/pay-and-swap.mdx) | USDG、USDC 或 USDT                                 |
+| 賠付     | USDG                                                             | USDG                                               |
+| 網路     | Arbitrum One                                                     | Arbitrum One                                       |
+
+## 誰是交易對手
+
+每筆交易和預測都會發出詢價，由最優報價成交。開倉時，你的權利金和得標賣方的存入資金就足以支付全部賠付。
+
+## 價格
+
+圖表和頁首的價格跑馬燈顯示的是交易所價格，加密貨幣採用 Coinbase。交易和預測絕不以圖表價格定價。每筆報價都以你詢價當下鏈上的 **Chainlink** 價格為起點，並在結束時間由同一個價格來源決定結果。

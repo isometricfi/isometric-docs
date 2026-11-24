@@ -1,0 +1,30 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Nasıl çalışır
+sidebarTitle: Nasıl çalışır
+description: Bir Isometric pozisyonunun altında ne yatar. Her işlem, vade sonunda tek bir Chainlink fiyatıyla sonuçlanan, tam teminatlı bir opsiyon spread'idir.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Nasıl çalışır
+
+Her Isometric pozisyonu bir opsiyon spread'idir.
+
+- **Long bir call spread'dir.** Fiyat değersiz fiyatının üzerine çıktıkça, bir tavana kadar öder.
+- **Short bir put spread'dir.** Fiyat değersiz fiyatının altına düştükçe, bir tabana kadar öder.
+- **Spread'i sen alırsın, bir satıcı satar.** Satıcılar işlemine teklif vermek için yarışır ve en iyi teklif gerçekleşir.
+- **Tam teminatlıdır.** İşlem açıldığında priminin ve satıcının yatırdığı tutar, **Maks. ödemenin** tamamını karşılar.
+- **Bitiş saatinde bir kez sonuçlanır.** Ödemeyi tek bir Chainlink fiyatı belirler ve ödeme USDG olarak yapılır. Erken kullanım ya da erken kapanış yoktur.
+
+## Opsiyon terimleriyle grafik
+
+| Grafikte                    | Opsiyon terimleriyle                                      |
+| --------------------------- | --------------------------------------------------------- |
+| **Lose** (kayıp) çizgisi    | Kullanım fiyatı                                           |
+| **Max** (maksimum) çizgisi  | Tavan; short için taban                                   |
+| Maks. ödeme                 | Spread'in kullanım fiyatı ile tavan arasındaki tam değeri |
+| Yatırdığın tutar            | Prim artı işlem ücreti                                    |
+| Yatırdığın tutar × kaldıraç | Nominal değer                                             |
+| **Biter**                   | Vade sonu                                                 |
+
+Kaldıraç, nominal değerin ödediğin tutara bölümüdür. Bir marjin gereksinimini değil, spread'in büyüklüğünü belirler; bu yüzden tasfiye edilecek bir şey yoktur.

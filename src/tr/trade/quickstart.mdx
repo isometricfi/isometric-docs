@@ -1,0 +1,81 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: İlk işlemini aç
+sidebarTitle: Hızlı başlangıç
+description: Birkaç dakika içinde bir cüzdan bağla, Arbitrum'da bakiye yükle ve Isometric'te kaldıraçlı bir long ya da short aç.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# İlk işlemini aç
+
+Bu rehber seni boş bir cüzdandan açık bir pozisyona götürür.
+
+<Tip>
+
+Gerçek para kullanmadan denemek için uygulamanın üst çubuğundan **Demo**'yu aç.
+
+</Tip>
+
+<Steps>
+
+<Step title="Bir cüzdan bağla" icon="lucide:wallet">
+
+[app.isometric.fi](https://app.isometric.fi) adresini aç, **Kaldıraç**'a git ve **Bağla**'yı seç. Davet gerekmez.
+
+</Step>
+
+<Step title="Arbitrum'da bakiye yükle" icon="lucide:coins">
+
+Isometric, Arbitrum One üzerinde çalışır. Oradaki cüzdanında iki şeye ihtiyacın var:
+
+- İşlemlerin ödemesi için **USDG, USDC ya da USDT**. Her işlem USDG olarak ödenir, bu yüzden USDC ve USDT işlem açılırken USDG'ye takas edilir.
+- Ağ ücretleri için **biraz ETH**.
+
+Paran başka bir ağda mı? Hesap menünü aç ve **Takas (zincirler arası)** seçeneğini seç. Bkz. [Ödeme ve takas](./pay-and-swap.mdx).
+
+</Step>
+
+<Step title="Bir piyasa ve yön seç" icon="lucide:search">
+
+Piyasayı değiştirmek için sol üstteki piyasaya bas. Bitiş saatinde fiyatın daha yüksek olacağını düşünüyorsan **Long**'a, daha düşük olacağını düşünüyorsan **Short**'a bas.
+
+</Step>
+
+<Step title="Bitiş çizgisini sürükle" icon="lucide:move-horizontal">
+
+Grafiğin solunda son iki günün fiyatı, sağında ise gelecek yer alır. İşleminin ne zaman biteceğini seçmek için **Biter** yazan çizgiyi 12 saat ile 7 gün arasında herhangi bir yere sürükle. Grafiğin altındaki **12h**, **1d**, **3d** ya da **1w** düğmelerine de basabilirsin.
+
+</Step>
+
+<Step title="Tutarını ve kaldıracını belirle" icon="lucide:sliders-horizontal">
+
+- **You put in** (yatırdığın tutar). Harcayacağın miktar, USDG cinsinden. Ücret dahil ödediğin her şeydir ve kaybedebileceğin en fazla tutardır. Bunun yerine USDC ya da USDT ile ödemek için yanındaki tokene bas.
+- **Kaldıraç.** Buna bas ve 5x ile 100x arasında seç. Yüksek kaldıraç her harekette daha fazla öder ve daha çabuk kaybettirir. **Maks.**, kaldıracının izin verdiği en büyük tutarı gösterir.
+
+</Step>
+
+<Step title="Grafiği oku" icon="lucide:chart-line">
+
+Bitiş çizgisinin sağındaki bantlar, her bitiş fiyatının ne ödediğini gösterir: tutarını kaybettiğin **Lose** (kayıp), bir kısmını geri aldığın **Some back** (kısmen geri), kâr ve en yüksek kâr **Max** (maksimum). Tam olarak ne ödediğini görmek için herhangi bir fiyatın üzerine gel ya da dokun. [Grafiği okuma](./reading-the-chart.mdx) bir örnek üzerinden anlatır.
+
+</Step>
+
+<Step title="İşlemi aç" icon="lucide:check">
+
+**BTC long** ya da **BTC short** düğmesine bas ve cüzdanında onayla. İşlem zincire yazıldığı anda pozisyon açılır ve grafiğin altında **Açık** sekmesinde görünür.
+
+</Step>
+
+<Step title="Bitiş saatini bekle" icon="lucide:hourglass">
+
+Başka bir şey yapman gerekmez. Pozisyon erken kapatılamaz ve tasfiye edilemez. Bitiş saatinde sonucu tek bir Chainlink fiyatı belirler ve varsa ödeme cüzdanına USDG olarak gönderilir. Bkz. [Ödemeler ve talepler](./payouts-and-claims.mdx).
+
+</Step>
+
+</Steps>
+
+## İşlem yapmadan önce
+
+- [Riskleri öğren](./risks.mdx) sayfasını oku. Kısa bir sayfa.
+- Bir pozisyon bitiş saatine kadar sürer. Erken çıkış yoktur.
+- Tamamını kaybetmeyi göze alamayacağın parayla asla işlem yapma.

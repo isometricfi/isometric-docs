@@ -1,0 +1,49 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Lançadores
+sidebarTitle: Lançadores
+description: Quem fica do outro lado das operações e previsões da Isometric, como as cotações são escolhidas e como todo pagamento é travado quando uma posição abre.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Lançadores
+
+Um lançador é qualquer pessoa que fica do outro lado das operações e previsões da Isometric. Cada uma sai para cotação, e qualquer lançador pode responder.
+
+## Como um pedido é cotado
+
+1. **Um trader pede** uma previsão, ou um long ou short com um prazo, um valor e uma alavancagem. O pedido vai para todos os lançadores ao mesmo tempo.
+2. **Os lançadores respondem** com um preço assinado. O melhor é executado.
+3. **A posição abre** em uma única transação. O trader paga o prêmio e o lançador deposita o restante do **Pagamento máximo**. O contrato guarda os dois até o encerramento.
+4. **No vencimento**, um único preço da Chainlink encerra a posição. O trader recebe o seu pagamento, e o restante volta para o lançador.
+
+## O que você está lançando
+
+Toda operação é uma trava de opções europeia, com liquidação financeira, sobre o preço da Chainlink do mercado, paga em USDG.
+
+| O trader abre | Você vende     | Resultado para o trader no preço `P`    | Pagamento máximo               |
+| ------------- | -------------- | --------------------------------------- | ------------------------------ |
+| Long          | Um call spread | `contracts × (min(P, cap) − strike)⁺`   | `contracts × (cap − strike)`   |
+| Short         | Um put spread  | `contracts × (strike − max(P, floor))⁺` | `contracts × (strike − floor)` |
+
+- **Você cota só o preço de exercício (strike).** O pedido fixa o lado, o vencimento, o teto (cap) ou piso (floor), o nocional e o prêmio. O tamanho decorre do seu strike: `contracts = notional ÷ strike`.
+- **O melhor strike vence.** O menor strike para um long, o maior para um short. Com o teto ou o piso fixo, essa cotação paga mais ao trader em qualquer cenário.
+- **É totalmente colateralizada.** Na execução, o contrato retém em garantia o prêmio do trader e o seu complemento até o valor total da trava. Nada mais é devido depois.
+- **É encerrada uma única vez.** No vencimento, o trader recebe o resultado e o restante da garantia volta para você, na mesma transação.
+
+## Lançando previsões
+
+Você também pode lançar previsões. Por baixo, uma previsão é a mesma trava de opções com uma faixa estreita. O teto ou o piso é o alvo do trader, e o strike fica 0.1% antes dele, então a trava paga integralmente no alvo e nada 0.1% antes dele.
+
+| O trader prevê | Você vende     | Strike           | Teto ou piso |
+| -------------- | -------------- | ---------------- | ------------ |
+| Sobe           | Um call spread | `target × 0.999` | `target`     |
+| Cai            | Um put spread  | `target × 1.001` | `target`     |
+
+- **Você cota só o tamanho.** O pedido fixa o lado, o vencimento, o strike, o teto ou piso e o prêmio. Você escolhe `contracts`. O pagamento máximo é `contracts × (cap − strike)` para Sobe ou `contracts × (strike − floor)` para Cai. Você deposita esse pagamento menos o prêmio do trader.
+- **O maior pagamento vence.** A cotação com mais contratos paga mais ao trader.
+- **Os pagamentos têm limite.** Uma previsão paga no máximo 1,000 USDG, e no máximo 10 vezes o seu valor.
+
+## Torne-se um lançador
+
+Market makers podem se conectar e responder a previsões e operações com os seus próprios preços. Envie um e-mail para [support@isometric.fi](mailto:support@isometric.fi) para começar.

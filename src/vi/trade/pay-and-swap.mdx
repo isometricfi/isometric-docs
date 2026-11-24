@@ -1,0 +1,59 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Thanh toán và hoán đổi
+sidebarTitle: Thanh toán và hoán đổi
+description: Bắt đầu một dự đoán hoặc giao dịch Isometric bằng USDC, USDT hoặc USDG, và chuyển tiền giữa Arbitrum và các mạng khác bằng hoán đổi đa chuỗi.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Thanh toán và hoán đổi
+
+Mọi dự đoán và giao dịch đều kết thúc bằng **USDG**, và mọi khoản chi trả đều được trả bằng **USDG**. Bạn không cần giữ USDG để bắt đầu, và bạn có thể chuyển tiền vào từ các mạng khác rồi chuyển ra lại.
+
+## Thanh toán bằng USDC hoặc USDT
+
+Trên phiếu lệnh, nhấn vào token bên cạnh **You put in** và chọn USDG, USDC hoặc USDT trên Arbitrum One. Hộp thoại hiển thị giá hoán đổi trước khi bạn tiếp tục.
+
+Số tiền của bạn luôn được tính bằng USDG. Nếu bạn thanh toán bằng USDC hoặc USDT, ứng dụng mua đúng lượng USDG đó khi giao dịch mở, với mức trượt giá tối đa 0.5%. Phiếu lệnh giữ lại khoảng 1% số dư của bạn cho lệnh hoán đổi, nên bạn không thể dùng hết toàn bộ.
+
+Cách giao dịch được đưa lên chuỗi phụ thuộc vào ví của bạn:
+
+- **Nếu ví của bạn có thể gộp giao dịch,** lệnh hoán đổi và giao dịch đi cùng nhau. Cả hai cùng thành công hoặc không cái nào xảy ra.
+- **Nếu không,** ví của bạn gửi phê duyệt token (nếu cần), rồi lệnh hoán đổi, rồi giao dịch. Nếu lệnh hoán đổi thành công mà giao dịch sau đó thất bại, bạn giữ USDG và có thể giao dịch lại hoặc hoán đổi ngược lại.
+
+Thanh toán bằng USDG không cần hoán đổi.
+
+## Hoán đổi
+
+Mở menu tài khoản và chọn **Hoán đổi (đa chuỗi)**. Chọn token bạn trả và token bạn nhận, mỗi token kèm mạng của nó.
+
+| Hoán đổi                  | Chạy qua                    | Thời gian              |
+| ------------------------- | --------------------------- | ---------------------- |
+| Trong Arbitrum One        | Velora, một bộ tổng hợp DEX | Vài giây               |
+| Đến hoặc từ một mạng khác | Relay, một cầu nối          | Ước tính trong báo giá |
+
+Bạn có thể hoán đổi đến hoặc từ Arbitrum One với Ethereum, Base, Optimism, Polygon, BNB Chain, Avalanche, HyperEVM, Hyperliquid và Robinhood Chain.
+
+### Chuyển tiền vào
+
+Thanh toán bằng một token trên mạng khác và nhận USDG, USDC hoặc USDT trên Arbitrum One. Sau đó bạn có thể đặt một dự đoán hoặc mở một giao dịch.
+
+### Chuyển tiền ra
+
+Khoản chi trả về ví của bạn dưới dạng USDG trên Arbitrum One. Để chuyển đi, hãy trả bằng USDG trên Arbitrum One và chọn token và mạng bạn muốn nhận.
+
+### Trước khi xác nhận
+
+Lệnh hoán đổi hiển thị **Nhận tối thiểu**, **Tác động giá**, **Trượt giá tối đa**, **Lộ trình** và **Thời gian ước tính**. Nếu giá thay đổi vượt mức tối thiểu trước khi bạn gửi, ứng dụng sẽ dừng lại và yêu cầu bạn xem báo giá mới.
+
+### Chi phí
+
+Isometric không thu phí hoán đổi. Tỷ giá bạn thấy đến từ bên thứ ba định tuyến lệnh hoán đổi, và bạn trả phí mạng trên mạng bạn gửi đi. Lệnh hoán đổi từ Hyperliquid được ký thay vì gửi dưới dạng giao dịch.
+
+### Nếu lệnh hoán đổi đa chuỗi không khớp
+
+Mở **Lịch sử hoán đổi** trong hộp thoại hoán đổi để theo dõi lệnh. Lệnh sẽ hiển thị **Đang chờ**, **Hoàn tất**, **Đã hoàn tiền** hoặc **Thất bại**. Nếu Relay không thể khớp lệnh hoán đổi, Relay sẽ hoàn tiền nạp của bạn trên mạng bạn đã gửi đi.
+
+<Warning>
+  Velora và Relay là bên thứ ba không do Isometric vận hành. Xem [Hiểu rõ rủi ro](./risks.mdx).
+</Warning>

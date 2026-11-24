@@ -1,0 +1,201 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Câu hỏi thường gặp
+sidebarTitle: FAQ
+description: Câu trả lời ngắn cho những câu hỏi trader và bên bán hỏi nhiều nhất về Isometric.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Câu hỏi thường gặp
+
+## Đòn bẩy
+
+<AccordionGroup>
+
+<Accordion title="Tôi có thể đóng vị thế sớm không?">
+
+Không. Vị thế chạy đến thời điểm kết thúc. Đó là đánh đổi cho việc không bị thanh lý và không có phí funding. Hãy chọn kỳ hạn mà bạn sẵn lòng chờ hết.
+
+</Accordion>
+
+<Accordion title="Tôi có thể bị thanh lý không?">
+
+Không. Không có gì xảy ra với vị thế từ lúc mở đến thời điểm kết thúc, dù giá đi ngược bạn bao xa. Số tiền bạn đã trả là mức lỗ tối đa, và nó đã được trả khi mở.
+
+</Accordion>
+
+<Accordion title="Có phí funding không?">
+
+Không. Giữ vị thế không tốn chi phí nào.
+
+</Accordion>
+
+<Accordion title="Điều gì quyết định vị thế có được chi trả không?">
+
+Một [mức giá Chainlink tại thời điểm kết thúc của bạn](./trade/expiry-and-settlement.mdx). Các vùng trên biểu đồ cho thấy mỗi mức giá kết thúc trả bao nhiêu.
+
+</Accordion>
+
+<Accordion title="Một vị thế có thể chi trả tối đa bao nhiêu?">
+
+Mức **Max** trên biểu đồ. Mỗi báo giá đều có một mức, được cố định khi vị thế mở. Thời điểm kết thúc xa hơn và đòn bẩy cao hơn cho mức tối đa lớn hơn.
+
+</Accordion>
+
+<Accordion title="Tôi có bị trừ đúng số tiền đã nhập không?">
+
+Có. Số tiền bạn bỏ vào là toàn bộ chi phí, đã gồm phí, và là mức lỗ tối đa. Giao dịch mở đúng theo báo giá bạn đã xác nhận, hoặc thất bại và bạn chỉ mất phí mạng. Nếu bạn thanh toán bằng USDC hoặc USDT, số tiền được tính bằng USDG và tỷ giá hoán đổi quyết định cần bao nhiêu stablecoin.
+
+</Accordion>
+
+<Accordion title="Mở một vị thế cần bao nhiêu giao dịch trên chuỗi?">
+
+Một nếu bạn thanh toán bằng USDG. Mọi phê duyệt hoặc là một chữ ký miễn phí, hoặc được gửi cùng với giao dịch. Thanh toán bằng USDC hoặc USDT cũng chỉ là một giao dịch nếu ví của bạn có thể gộp chúng. Nếu không, ví sẽ gửi phê duyệt (nếu cần) và lệnh hoán đổi trước.
+
+</Accordion>
+
+<Accordion title="Tôi được trả tiền như thế nào?">
+
+Bằng USDG, dù long hay short. Khi kết thúc, khoản chi trả được gửi thẳng vào ví của bạn, thường một hoặc hai phút sau thời điểm kết thúc. Xem [Chi trả và nhận](./trade/payouts-and-claims.mdx).
+
+</Accordion>
+
+<Accordion title="Trạng thái Thắng nghĩa là gì?">
+
+Vị thế đã được chi trả, nhưng việc chuyển vào ví của bạn thất bại. Không mất gì cả. Mở vị thế trong Danh mục và nhận nó, về cùng ví hoặc một địa chỉ khác có thể nhận USDG. Khoản cần nhận không bao giờ hết hạn.
+
+</Accordion>
+
+<Accordion title="Vì sao nút không hiện Long hoặc Short?">
+
+Nút đang cho bạn biết vì sao giao dịch không thể thực hiện: sai mạng, không đủ token bạn dùng để thanh toán, số tiền nằm ngoài giới hạn, không có báo giá cho giao dịch, không có lộ trình hoán đổi, hoặc thị trường đang tạm dừng.
+
+</Accordion>
+
+<Accordion title="Làm sao chọn thời điểm giao dịch kết thúc?">
+
+Kéo đường có nhãn **Kết thúc** trên biểu đồ, hoặc nhấn **12h**, **1d**, **3d** hoặc **1w** bên dưới. Kỳ hạn từ 12 giờ đến 7 ngày và được làm tròn lên giờ chẵn tiếp theo.
+
+</Accordion>
+
+<Accordion title="Tôi cần gì trong ví?">
+
+USDG, USDC hoặc USDT để thanh toán cho vị thế và một ít ETH cho phí mạng, tất cả trên Arbitrum One.
+
+</Accordion>
+
+<Accordion title="Một giao dịch có thể lớn đến đâu?">
+
+Số tiền bắt đầu từ $1, và số tiền nhân đòn bẩy không được vượt quá quy mô vị thế 5,000 USDG. Tức là $1,000 ở 5x và $50 ở 100x, mức đòn bẩy cao nhất.
+
+</Accordion>
+
+<Accordion title="Tôi có cần giữ USDG không?">
+
+Không. Bạn có thể thanh toán bằng USDC hoặc USDT trên Arbitrum One, và ứng dụng sẽ hoán đổi sang USDG khi giao dịch mở. Giao dịch vẫn kết thúc bằng USDG và chi trả bằng USDG. Xem [Thanh toán và hoán đổi](./trade/pay-and-swap.mdx).
+
+</Accordion>
+
+<Accordion title="Tôi có thể chuyển tiền từ mạng khác vào, hoặc chuyển ra lại không?">
+
+Có. Mở menu tài khoản và chọn **Hoán đổi (đa chuỗi)**. Tính năng này chuyển tiền vào và ra Arbitrum One với các mạng như Ethereum, Base, Optimism, Polygon, BNB Chain, Avalanche, Hyperliquid và Robinhood Chain. Xem [Thanh toán và hoán đổi](./trade/pay-and-swap.mdx).
+
+</Accordion>
+
+</AccordionGroup>
+
+## Dự đoán
+
+<AccordionGroup>
+
+<Accordion title="Tôi có cần lời mời không?">
+
+Không. Kết nối ví trên Arbitrum One và mở một giao dịch hoặc một dự đoán.
+
+</Accordion>
+
+<Accordion title="Điều gì quyết định dự đoán có được chi trả không?">
+
+Thông thường là giá Chainlink cuối cùng tại hoặc trước thời điểm kết thúc của bạn. Nếu giá đó quá cũ, bằng 0 hoặc âm, hợp đồng sẽ dùng lần đọc giá đầu tiên sau thời điểm kết thúc. Bằng hoặc vượt mục tiêu thì được trả trọn vẹn. Thiếu dưới 0.1% thì được trả một phần theo tỷ lệ; thiếu nhiều hơn hoặc thiếu đúng 0.1% thì không được gì. Xem [Dự đoán chi trả thế nào](./predict/how-it-pays.mdx).
+
+</Accordion>
+
+<Accordion title="Tôi có thể bán dự đoán trước khi kết thúc không?">
+
+Không. Dự đoán chạy đến thời điểm kết thúc.
+
+</Accordion>
+
+<Accordion title="Một dự đoán có thể lớn đến đâu?">
+
+Một dự đoán chi trả tối đa 1,000 USDG, và tối đa gấp 10 lần số tiền của nó.
+
+</Accordion>
+
+</AccordionGroup>
+
+## Bên bán
+
+<AccordionGroup>
+
+<Accordion title="Làm sao để trở thành bên bán?">
+
+Bên bán đứng về phía còn lại của các dự đoán và giao dịch bằng cách tự báo giá. Xem [Bên bán](./write/writers.mdx).
+
+</Accordion>
+
+<Accordion title="Lợi nhuận đến từ đâu?">
+
+Từ số tiền trader trả cho vị thế của họ. Không có cho vay, staking hay farming.
+
+</Accordion>
+
+<Accordion title="Bên bán có thể lỗ không?">
+
+Có. Bên bán chịu khoản chi trả cho các dự đoán và giao dịch mình khớp, và một biến động mạnh theo một hướng có thể khiến số tiền phải trả lớn hơn số đã thu.
+
+</Accordion>
+
+</AccordionGroup>
+
+## Giao thức
+
+<AccordionGroup>
+
+<Accordion title="Đây có phải là giao thức quyền chọn không?">
+
+Có, ở lớp bên dưới. Một vị thế long hoặc một dự đoán Tăng là một call spread, và một vị thế short hoặc một dự đoán Giảm là một put spread, cả hai đều được thế chấp đầy đủ khi mở và kết thúc bằng USDG theo một mức giá oracle. Bạn không cần biết điều đó để dự đoán hay giao dịch.
+
+</Accordion>
+
+<Accordion title="Ai là đối tác giao dịch?">
+
+Bên bán có báo giá đã khớp với dự đoán hoặc giao dịch của bạn. Premium của bạn và khoản ký quỹ của bên bán bao trọn **Chi trả tối đa** của bạn khi vị thế mở.
+
+</Accordion>
+
+<Accordion title="Isometric có thể động đến tiền của tôi không?">
+
+Không qua các quyền điều khiển hằng ngày. Bộ phận quản trị có thể thay đổi phí trong giới hạn trần cố định trong mã. Người giám hộ (guardian) có thể tạm dừng vị thế mới. Không bên nào có thể thay đổi vị thế đang mở, sửa giá kết thúc đã ghi nhận, hay chặn việc kết thúc, nhận và hoàn tiền.
+
+Hợp đồng có thể nâng cấp, và một bản nâng cấp có thể thay đổi bất cứ điều gì. [Hiểu rõ rủi ro](./trade/risks.mdx) nói rõ hơn.
+
+</Accordion>
+
+<Accordion title="Chuyện gì xảy ra nếu keeper ngừng hoạt động?">
+
+Việc kết thúc bị chậm cho đến khi có người khác gửi giao dịch đó. Bất kỳ ai cũng có thể làm. Giá kết thúc được cố định bởi nguồn giá Chainlink bất kể ai ghi nhận nó, nên một lần kết thúc muộn vẫn chi trả đúng như khi đúng giờ.
+
+</Accordion>
+
+<Accordion title="Chuyện gì xảy ra nếu mạng hoặc nguồn giá ngừng hoạt động?">
+
+Việc kết thúc chờ đến khi có giá. Nếu không có giá nào được công bố trong vòng 14 ngày sau thời điểm kết thúc, cả hai bên được hoàn tiền, trừ phí. Những gì bạn đã được nợ không thay đổi.
+
+</Accordion>
+
+</AccordionGroup>
+
+## Vẫn chưa giải quyết được
+
+Gửi email đến [support@isometric.fi](mailto:support@isometric.fi) hoặc hỏi trong [Telegram](https://t.me/isometricfi).

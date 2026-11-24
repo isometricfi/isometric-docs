@@ -1,0 +1,59 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Pagar e trocar
+sidebarTitle: Pagar e trocar
+description: Comece uma previsão ou operação na Isometric com USDC, USDT ou USDG, e mova dinheiro entre a Arbitrum e outras redes com a troca entre redes.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Pagar e trocar
+
+Toda previsão e toda operação é encerrada em **USDG**, e todo pagamento é feito em **USDG**. Você não precisa ter USDG para começar, e pode trazer dinheiro de outras redes e levá-lo de volta.
+
+## Pague com USDC ou USDT
+
+Na boleta, toque no token ao lado de **Você aplica** e escolha USDG, USDC ou USDT na Arbitrum One. A janela mostra o preço da troca antes de você continuar.
+
+O seu valor é sempre contado em USDG. Se você pagar com USDC ou USDT, o app compra exatamente essa quantidade de USDG na abertura, com slippage máximo de 0.5%. A boleta reserva cerca de 1% do seu saldo para a troca, então você não consegue gastar o saldo inteiro.
+
+Como isso chega à blockchain depende da sua carteira:
+
+- **Se a sua carteira consegue agrupar transações,** a troca e a operação vão juntas. As duas acontecem ou nenhuma acontece.
+- **Se não consegue,** a sua carteira envia a aprovação do token, se for necessária, depois a troca e depois a operação. Se a troca for confirmada e a operação falhar em seguida, você fica com os USDG e pode operar de novo ou trocá-los de volta.
+
+Pagar com USDG não exige troca.
+
+## A troca
+
+Abra o menu da sua conta e escolha **Trocar (entre redes)**. Escolha o que você paga e o que você recebe, cada um com a sua rede.
+
+| Troca                  | Feita por                   | Tempo               |
+| ---------------------- | --------------------------- | ------------------- |
+| Dentro da Arbitrum One | Velora, um agregador de DEX | Alguns segundos     |
+| De ou para outra rede  | Relay, uma ponte            | Estimado na cotação |
+
+Você pode trocar de ou para a Arbitrum One a partir de Ethereum, Base, Optimism, Polygon, BNB Chain, Avalanche, HyperEVM, Hyperliquid e Robinhood Chain.
+
+### Trazer dinheiro
+
+Pague com um token em outra rede e receba USDG, USDC ou USDT na Arbitrum One. Depois disso, você pode fazer uma previsão ou abrir uma operação.
+
+### Levar dinheiro de volta
+
+Os pagamentos chegam à sua carteira em USDG na Arbitrum One. Para movê-los, pague com USDG na Arbitrum One e escolha o token e a rede em que quer receber.
+
+### Antes de confirmar
+
+A troca mostra **Mínimo recebido**, **Impacto no preço**, **Slippage máximo**, **Rota** e **Tempo estimado**. Se o preço passar do seu mínimo antes do envio, o app para e pede que você revise uma nova cotação.
+
+### Custos
+
+A Isometric não cobra taxa sobre trocas. A cotação que você vê vem do terceiro que faz o roteamento da troca, e você paga a taxa de rede na rede de onde envia. Uma troca a partir da Hyperliquid é assinada, em vez de enviada como transação.
+
+### Se uma troca entre redes não for concluída
+
+Abra **Histórico de swaps** na janela de troca para acompanhar uma troca. Ele mostra **Pendente**, **Concluído**, **Reembolsado** ou **Falhou**. Se a Relay não conseguir concluir uma troca, ela reembolsa o seu depósito na rede de onde você enviou.
+
+<Warning>
+  Velora e Relay são terceiros que a Isometric não opera. Veja [Conheça os riscos](./risks.mdx).
+</Warning>

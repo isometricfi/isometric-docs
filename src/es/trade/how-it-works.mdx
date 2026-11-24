@@ -1,0 +1,30 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Cómo funciona
+sidebarTitle: Cómo funciona
+description: Qué es una posición de Isometric por dentro. Cada operación es un spread de opciones totalmente colateralizado, que se resuelve al vencimiento con un solo precio de Chainlink.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Cómo funciona
+
+Cada posición de Isometric es un spread de opciones.
+
+- **Un largo es un call spread.** Paga a medida que el precio sube por encima de tu precio sin valor, hasta un tope.
+- **Un corto es un put spread.** Paga a medida que el precio baja por debajo de tu precio sin valor, hasta un piso.
+- **Tú compras el spread y un emisor lo vende.** Los emisores compiten por cotizar tu operación, y se ejecuta la mejor cotización.
+- **Está totalmente colateralizado.** Cuando se abre la operación, tu prima y el depósito del emisor cubren tu **Pago máximo** completo.
+- **Se resuelve una sola vez, a la hora de fin.** Un solo precio de Chainlink decide el pago, que se hace en USDG. No hay ejercicio anticipado ni cierre anticipado.
+
+## El gráfico en términos de opciones
+
+| En el gráfico                   | En términos de opciones                                           |
+| ------------------------------- | ----------------------------------------------------------------- |
+| La línea **Lose** (pierdes)     | El precio de ejercicio                                            |
+| La línea **Max** (máximo)       | El tope, o el piso en un corto                                    |
+| Pago máximo                     | El valor total del spread, entre el precio de ejercicio y el tope |
+| Lo que aportas                  | La prima más la comisión de trading                               |
+| Lo que aportas × apalancamiento | El nocional                                                       |
+| **Termina**                     | El vencimiento                                                    |
+
+El apalancamiento es el nocional dividido por lo que pagas. Fija el tamaño del spread, no un requisito de margen, así que no hay nada que liquidar.

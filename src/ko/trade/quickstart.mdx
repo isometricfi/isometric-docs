@@ -1,0 +1,81 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: 첫 거래 시작하기
+sidebarTitle: 빠른 시작
+description: 지갑을 연결하고 Arbitrum에 자금을 준비한 뒤, 몇 분 만에 Isometric에서 레버리지 롱 또는 숏을 엽니다.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# 첫 거래 시작하기
+
+빈 지갑에서 시작해 포지션을 열기까지의 과정을 안내합니다.
+
+<Tip>
+
+실제 자금 없이 체험하려면 앱 상단에서 **데모**를 켜세요.
+
+</Tip>
+
+<Steps>
+
+<Step title="지갑 연결하기" icon="lucide:wallet">
+
+[app.isometric.fi](https://app.isometric.fi)를 열고 **레버리지**로 이동한 뒤 **연결**을 선택하세요. 초대는 필요 없습니다.
+
+</Step>
+
+<Step title="Arbitrum에 자금 준비하기" icon="lucide:coins">
+
+Isometric은 Arbitrum One에서 운영됩니다. 해당 네트워크의 지갑에 두 가지가 필요합니다.
+
+- 거래 결제용 **USDG, USDC 또는 USDT**. 모든 거래는 USDG로 지급되므로, USDC와 USDT는 거래가 열릴 때 USDG로 스왑됩니다.
+- 네트워크 수수료용 **소량의 ETH**.
+
+자금이 다른 네트워크에 있나요? 계정 메뉴를 열고 **스왑 (크로스체인)** 항목을 선택하세요. [결제와 스왑](./pay-and-swap.mdx)을 참고하세요.
+
+</Step>
+
+<Step title="마켓과 방향 고르기" icon="lucide:search">
+
+왼쪽 위의 마켓을 눌러 마켓을 바꿀 수 있습니다. 종료 시간에 가격이 더 높을 것 같으면 **롱**을, 더 낮을 것 같으면 **숏**을 누르세요.
+
+</Step>
+
+<Step title="종료선 드래그하기" icon="lucide:move-horizontal">
+
+차트 왼쪽에는 최근 2일간의 가격이, 오른쪽에는 미래가 표시됩니다. **종료**로 표시된 선을 드래그해 거래가 끝나는 시점을 12시간에서 7일 사이로 정하세요. 차트 아래의 **12h**, **1d**, **3d**, **1w**를 눌러도 됩니다.
+
+</Step>
+
+<Step title="금액과 레버리지 정하기" icon="lucide:sliders-horizontal">
+
+- **You put in** (투입 금액). 쓸 금액으로, USDG 기준입니다. 수수료를 포함해 지불하는 전부이자 최대 손실입니다. 옆의 토큰을 눌러 USDC나 USDT로 결제할 수도 있습니다.
+- **레버리지.** 눌러서 5x~100x 중에 고르세요. 레버리지가 높을수록 가격 변동당 지급액이 커지고, 더 빨리 손실이 납니다. **최대**는 선택한 레버리지에서 가능한 최대 금액을 보여 줍니다.
+
+</Step>
+
+<Step title="차트 읽기" icon="lucide:chart-line">
+
+종료선 오른쪽의 구간이 종료 가격별 지급액을 보여 줍니다. 투입 금액을 잃는 **Lose** (손실), **Some back** (일부 회수), 수익, **Max** (최대) 수익입니다. 아무 가격에나 마우스를 올리거나 탭하면 정확한 지급액을 볼 수 있습니다. [차트 읽기](./reading-the-chart.mdx)에서 예시를 함께 살펴보세요.
+
+</Step>
+
+<Step title="포지션 열기" icon="lucide:check">
+
+**BTC 롱** 또는 **BTC 숏**을 누르고 지갑에서 승인하세요. 트랜잭션이 처리되는 즉시 포지션이 열리며, 차트 아래 **보유 중**에 표시됩니다.
+
+</Step>
+
+<Step title="종료 시간까지 기다리기" icon="lucide:hourglass">
+
+더 할 일은 없습니다. 포지션은 조기 종료할 수 없고 청산되지도 않습니다. 종료 시간에 Chainlink 가격 하나가 결과를 결정하고, 지급액이 있으면 USDG로 지갑에 전송됩니다. [지급과 수령](./payouts-and-claims.mdx)을 참고하세요.
+
+</Step>
+
+</Steps>
+
+## 거래하기 전에
+
+- [위험 알아두기](./risks.mdx)를 읽어 보세요. 길지 않습니다.
+- 포지션은 종료 시간까지 유지됩니다. 중도 종료는 없습니다.
+- 전부 잃으면 감당할 수 없는 돈으로는 절대 거래하지 마세요.

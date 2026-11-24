@@ -1,0 +1,39 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Phí
+sidebarTitle: Phí
+description: Chi phí của một vị thế Isometric, cách tính phí, và những khoản bạn không bao giờ phải trả.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Phí
+
+Một vị thế chỉ tốn một lần thanh toán, khi bạn mở nó. Số tiền bạn bỏ vào là toàn bộ số bạn trả, đã gồm phí.
+
+## Phí giao dịch
+
+Phí là **$0.50 cộng 0.04% quy mô vị thế**, và không bao giờ quá 5% số tiền bạn bỏ vào. Phí được trừ từ số tiền đó, không bao giờ cộng thêm.
+
+## Những khoản bạn không bao giờ phải trả
+
+| Trên perp                       | Trên Isometric                   |
+| ------------------------------- | -------------------------------- |
+| Phí funding mỗi giờ             | Không có                         |
+| Phí đóng vị thế                 | Không có. Không có thao tác đóng |
+| Phạt thanh lý                   | Không có. Không có thanh lý      |
+| Phí rút tiền trên khoản chi trả | Không có                         |
+| Cắt một phần lợi nhuận của bạn  | Không có                         |
+
+## Phí mạng
+
+Mở một vị thế bằng USDG là một giao dịch trên Arbitrum, trả bằng ETH từ ví của bạn. Mọi phê duyệt hoặc là một chữ ký miễn phí, hoặc được gửi cùng với giao dịch.
+
+Giao dịch kết thúc do keeper của Isometric gửi, keeper tự trả phí mạng, và khoản chi trả đi thẳng vào ví. Bạn chỉ trả phí mạng sau khi kết thúc nếu bạn cần tự [nhận](./payouts-and-claims.mdx) một khoản chi trả.
+
+## Chi phí hoán đổi
+
+Isometric không thu phí hoán đổi, kể cả khi bạn thanh toán giao dịch bằng USDC hoặc USDT. Tỷ giá đến từ bên thứ ba định tuyến lệnh hoán đổi. Nếu ví của bạn không thể gộp giao dịch, thanh toán bằng USDC hoặc USDT còn tốn phí mạng của phê duyệt và lệnh hoán đổi. Xem [Thanh toán và hoán đổi](./pay-and-swap.mdx).
+
+## Phí có thể thay đổi không
+
+Phí có thể thay đổi trong giới hạn cố định trong mã hợp đồng. Thay đổi chỉ áp dụng cho các vị thế mở sau đó, không bao giờ áp dụng cho vị thế đang mở.

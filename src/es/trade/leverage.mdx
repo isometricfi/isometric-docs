@@ -1,0 +1,61 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Qué significa el apalancamiento aquí
+sidebarTitle: Apalancamiento
+description: En Isometric, el apalancamiento fija el tamaño de tu posición y dónde queda tu línea de pérdida. Nunca crea un precio de liquidación.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Qué significa el apalancamiento aquí
+
+En un perpetuo, el apalancamiento es cuánto pides prestado, y viene con un precio en el que te liquidan. En Isometric no hay préstamo ni liquidación. El apalancamiento hace dos cosas: fija qué tan grande es tu posición y dónde queda la línea **Lose** (pierdes) en el gráfico.
+
+Elígelo en **Apalancamiento** en el ticket: 5x, 10x, 15x, 20x, 25x, 30x, 40x, 50x, 75x o 100x.
+
+## El apalancamiento fija el tamaño de la posición
+
+El tamaño de tu posición es lo que aportas por el apalancamiento, con un tope de **5,000 USDG** por operación. Un apalancamiento mayor reduce lo máximo que puedes aportar, que el ticket muestra como **Máx.**
+
+| Apalancamiento | Lo máximo que puedes aportar |
+| -------------- | ---------------------------- |
+| 5x             | $1,000                       |
+| 10x            | $500                         |
+| 25x            | $200                         |
+| 50x            | $100                         |
+| 100x           | $50                          |
+
+El mínimo es $1.
+
+## El apalancamiento mueve la línea de pérdida
+
+Pagar menos por la misma posición significa más riesgo. Un apalancamiento mayor acerca el precio sin valor al precio de hoy, y desde unos 50x lo pasa, así que basta con menos para que lo pierdas todo.
+
+Cinco largos de Bitcoin a tres días con Bitcoin en $100,000, cada uno con un tamaño de posición de $5,000:
+
+| Apalancamiento | Aportas | Sin valor en | Punto de equilibrio | Pago máximo |
+| -------------- | ------- | ------------ | ------------------- | ----------- |
+| 5x             | $1,000  | $83,738      | $100,486            | $1,568      |
+| 10x            | $500    | $91,402      | $100,542            | $1,017      |
+| 25x            | $200    | $97,388      | $101,283            | $648        |
+| 50x            | $100    | $100,466     | $102,476            | $474        |
+| 100x           | $50     | $102,936     | $103,965            | $343        |
+
+Estas cifras son de ejemplo. El gráfico muestra las tuyas.
+
+- **Un apalancamiento bajo** es una apuesta segura y pequeña sobre el precio. Rara vez lo pierde todo y rara vez paga varias veces lo aportado.
+- **Un apalancamiento alto** paga mucho por un movimiento pequeño a tu favor y lo pierde todo con un movimiento pequeño en tu contra.
+
+**Cada 1% más allá del precio sin valor paga un porcentaje de tu monto igual al apalancamiento**, hasta el máximo. A 25x, cada 1% equivale al 25% de lo que aportaste. Cuando el mercado está tranquilo, las líneas quedan más cerca del precio de hoy. Cuando está volátil, quedan más lejos, porque los emisores ponen en el precio un movimiento mayor.
+
+## Sin precio de liquidación
+
+No le pasa nada a tu posición mientras está abierta. Si un largo a 25x se mueve un 10% en tu contra el primer día y se recupera el segundo, paga completo el tercer día. Un perpetuo con el mismo apalancamiento te habría cerrado la posición el primer día.
+
+## Cómo elegir el apalancamiento
+
+Pregúntate dónde crees que estará el precio a la hora de fin, no cuánto quieres ganar.
+
+- Si crees que irá derivando a tu favor o se mantendrá, elige un apalancamiento bajo.
+- Si crees que se moverá con decisión, elige un apalancamiento alto.
+
+Cambia el apalancamiento y mira cómo se mueven las bandas del gráfico antes de decidir.

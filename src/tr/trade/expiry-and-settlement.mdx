@@ -1,0 +1,44 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Bitiş saati
+sidebarTitle: Bitiş saati
+description: Bir Isometric pozisyonunu açmanla ödemeyi alman arasında neler olur ve bitiş saatindeki tek bir fiyat sonucu nasıl belirler.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Bitiş saati
+
+Bir Isometric pozisyonunun sabit bir bitişi vardır. Açılış ile bitiş arasında senden hiçbir şey beklenmez ve sana karşı hiçbir şey yapılamaz.
+
+## Seçmek
+
+Grafikte **Biter** yazan çizgiyi sürükle. Etiketi gün ve saati gösterir, örneğin **Biter Yarın 09:00**. Vadeler 12 saatten 7 güne kadardır; teklifi talep ettiğin andan itibaren sayılır ve **bir sonraki tam saate yuvarlanır**.
+
+## Pozisyon açıkken
+
+Pozisyon kapatılamaz, büyüklüğü değiştirilemez, devredilemez ve tasfiye edilemez. Grafiğin altında **Açık** sekmesinde ve **Portföy**'de, şimdi bitse ne ödeyeceği ve maksimum ödemesiyle birlikte görünür.
+
+## Bitiş saatinde
+
+Sözleşme, **bitiş saatinde ya da öncesinde yayımlanan son Chainlink fiyatını** kullanır. Bu okuma çok eskiyse, sıfırsa ya da negatifse sözleşme bunun yerine bitiş saatinden sonraki ilk okumaya bakar. O okumanın pozitif olması gerekir.
+
+Bitiş saati geçtikten sonra bitiş fiyatını herkes gönderebilir. Isometric bunu yapan bir keeper çalıştırır; normalde bir iki dakika içinde gönderilir. O zamana kadar pozisyon **Bitiyor** olarak görünür. Beklemek, hangi fiyatın sayılacağını değiştirmez.
+
+Aynı işlem iki tarafa da ödeme yapar. Ödemen doğrudan cüzdanına gider, kalanı satıcıya geri döner.
+
+## Bitişten sonra
+
+| Durum       | Ne oldu                                                         | Ne yaparsın                                             |
+| ----------- | --------------------------------------------------------------- | ------------------------------------------------------- |
+| Ödendi      | Fiyat senin tarafında bitti ve ödeme cüzdanına ulaştı           | Hiçbir şey                                              |
+| Kaybetti    | Fiyat değersiz fiyatında ya da ötesinde bitti                   | Hiçbir şey. Pozisyon hiçbir ödeme yapmadı               |
+| Kazandı     | Ödeme yapıldı ama cüzdanına transfer başarısız oldu             | [Talep et](./payouts-and-claims.mdx)                    |
+| İade edildi | Bitiş saatinden sonraki 14 gün içinde bitiş fiyatı yayımlanmadı | Hiçbir şey. Ödediğin tutar, ücret düşülerek iade edildi |
+
+## Bir ödemeyi ne geciktirebilir
+
+- **Keeper geride kaldı.** Bitiş fiyatını herkes gönderebildiği için duran bir keeper ödemeyi engellemez, yalnızca geciktirir.
+- **Fiyat akışı gecikti.** Bitiş saatinden sonraki 14 gün içinde fiyat gelmezse iki tarafa da iade yapılır.
+- **Ağ çöktü.** Arbitrum yeniden blok üretene kadar hiçbir şey kaydedilemez.
+
+Bunların hiçbiri sana borçlu olunan tutarı değiştirmez. Ödemeni karşılayan para, sana ulaşana kadar sözleşmede kalır.

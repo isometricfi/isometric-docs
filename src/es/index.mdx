@@ -1,0 +1,64 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Bienvenido a Isometric
+sidebarTitle: Bienvenida
+description: Opera con tus condiciones. Apalancamiento de hasta 100x sin liquidación, donde solo cuenta el precio a tu hora de fin.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Opera con tus condiciones
+
+<Note>
+  Isometric está en beta en Arbitrum One, y cada posición tiene un tope de 5,000 USDG. Los contratos
+  no están auditados, así que usa solo lo que estés dispuesto a perder.
+</Note>
+
+Isometric te permite ir **en largo o en corto con hasta 100x de apalancamiento** y sin liquidación. Pagas una sola vez, por adelantado, y eso es lo máximo que puedes perder. Una mecha no puede sacarte de la posición, porque solo cuenta el precio a tu hora de fin.
+
+## Una operación en tres pasos
+
+1. **Elige Largo o Corto.**
+2. **Arrastra la línea de fin** en el gráfico para elegir cuándo termina la operación, de 12 horas a 7 días.
+3. **Define cuánto aportas y tu apalancamiento**, y luego presiona **Largo en BTC** o **Corto en BTC**.
+
+Antes de operar, el gráfico muestra lo que paga cada precio final: la banda **Lose** (pierdes), donde se va tu monto; la banda **Some back** (recuperas parte); la zona donde ganas; y tu ganancia **Max** (máximo). Consulta [Cómo leer el gráfico](./trade/reading-the-chart.mdx).
+
+## Por qué no un perpetuo
+
+<Columns cols={3}>
+  <Card title="Sin liquidación" icon="lucide:shield-check">
+    Un movimiento en tu contra no cierra tu posición. Sigue abierta hasta la hora de fin.
+  </Card>
+  <Card title="Sin financiación" icon="lucide:clock">
+    Mantener la posición no cuesta nada. Lo que pagas al abrir es el costo total.
+  </Card>
+  <Card title="Pago bloqueado al abrir" icon="lucide:lock">
+    Tu pago y el depósito del emisor cubren tu pago máximo completo desde el momento en que se abre
+    la operación.
+  </Card>
+</Columns>
+
+La contrapartida: una posición dura hasta su hora de fin, y el pago deja de crecer al llegar a su máximo. [Perpetuos frente a Isometric](./trade/perps-vs-isometric.mdx) expone ambos lados.
+
+## También en Isometric
+
+<Columns cols={2}>
+  <Card title="Predecir" icon="lucide:target" href="./predict/quickstart.mdx" arrow>
+    Apuesta a que un precio termina por encima o por debajo de tu propio objetivo a tu propia hora
+    de fin. El pago queda fijado al realizarla.
+  </Card>
+  <Card title="Emitir" icon="lucide:pen-line" href="./write/writers.mdx" arrow>
+    Toma el otro lado de operaciones y predicciones cotizando tus propios precios.
+  </Card>
+</Columns>
+
+## Sigue leyendo
+
+<Columns cols={2}>
+  <Card title="Abre tu primera operación" icon="lucide:rocket" href="./trade/quickstart.mdx" arrow>
+    Conecta una billetera, fóndeala desde cualquier red compatible y abre una posición.
+  </Card>
+  <Card title="Conoce los riesgos" icon="lucide:shield-alert" href="./trade/risks.mdx" arrow>
+    Lo que puedes perder y lo que puede retrasar un pago.
+  </Card>
+</Columns>

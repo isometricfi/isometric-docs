@@ -1,0 +1,61 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Cómo leer el gráfico
+sidebarTitle: Cómo leer el gráfico
+description: Cómo el gráfico de apalancamiento de Isometric muestra lo que paga cada precio final, con un ejemplo práctico, para que sepas exactamente lo que aceptas antes de operar.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Cómo leer el gráfico
+
+El gráfico es el ticket. A la izquierda están los últimos dos días de precio. A la derecha, más allá de la línea marcada **Termina**, hay bandas que muestran lo que paga tu operación en cada precio final posible. Solo cuenta el precio en esa línea. Una caída por el camino no decide nada.
+
+## Las bandas
+
+Para un largo, de arriba hacia abajo:
+
+| Banda                           | Qué significa                                                                                      |
+| ------------------------------- | -------------------------------------------------------------------------------------------------- |
+| **Max** (máximo)                | En el precio superior o más allá, el pago deja de crecer. La etiqueta muestra tu ganancia máxima.  |
+| Verde                           | Entre el precio del medio y el precio superior recuperas más de lo que aportaste.                  |
+| **Some back** (recuperas parte) | Entre el precio inferior y el precio del medio recuperas parte de lo que aportaste.                |
+| **Lose** (pierdes)              | En el precio inferior o por debajo, la operación no paga nada. La etiqueta muestra lo que pierdes. |
+
+Un corto es el mismo gráfico al revés: la banda **Max** queda abajo y **Lose** arriba.
+
+Los tres precios del borde derecho son el **precio sin valor** (rojo), el **punto de equilibrio** (verde) y el **tope** (donde empieza **Max**). Pasa el cursor o toca cualquier punto de las bandas para ver un precio final y exactamente lo que paga.
+
+## Qué mueve las bandas
+
+- **El apalancamiento.** Un apalancamiento mayor acerca la línea **Lose** al precio de hoy, así que un movimiento más pequeño en tu contra te hace perderlo todo. Cada 1% más allá del precio sin valor paga más. Consulta [Apalancamiento](./leverage.mdx).
+- **La línea de fin.** Una hora de fin más tardía aleja un poco el punto de equilibrio y lleva la banda **Max** más lejos, así que el pago máximo crece.
+- **Tu monto.** Un monto mayor escala cada pago. Los precios no cambian.
+
+## Un ejemplo práctico
+
+Bitcoin está en **$100,000**. Vas en **Largo**, aportas **$100** a **25x** y arrastras la línea de fin a **3 días**. El gráfico podría mostrar:
+
+| Precio en el gráfico | Valor                                   |
+| -------------------- | --------------------------------------- |
+| Tope                 | $110,000, con la etiqueta **Max +$223** |
+| Punto de equilibrio  | $101,296                                |
+| Sin valor            | $97,400, con la etiqueta **Lose $100**  |
+
+Lo que paga cada precio final:
+
+| Bitcoin al final | Recibes | Resultado |
+| ---------------- | ------- | --------- |
+| $97,400 o menos  | $0      | −$100     |
+| $100,000         | $67     | −$33      |
+| $101,296         | $100    | $0        |
+| $104,000         | $169    | +$69      |
+| $107,000         | $246    | +$146     |
+| $110,000 o más   | $323    | +$223     |
+
+A 25x, cada 1% más allá del precio sin valor equivale a cerca del 25% de lo que aportaste, aquí unos $25. Por encima de $110,000 el pago deja de crecer: Bitcoin a $150,000 paga los mismos $323.
+
+Estas cifras son de ejemplo. Las tuyas dependen del precio en vivo y de las cotizaciones que envíen los emisores.
+
+## La cotización sigue al mercado
+
+Las bandas se actualizan a medida que se mueve el precio. Cada cotización es firme durante un tiempo corto, y la app la actualiza antes de que firmes. Tu operación se abre exactamente con la cotización que confirmaste, o no se abre. Una operación fallida solo cuesta la comisión de red.

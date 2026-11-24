@@ -1,0 +1,51 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Chi trả và nhận
+sidebarTitle: Chi trả và nhận
+description: Cách một vị thế Isometric được chi trả, khi nào bạn cần tự nhận, và Danh mục hiển thị những gì.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Chi trả và nhận
+
+Mọi khoản chi trả, dù long hay short, đều được trả bằng **USDG**, kể cả khi bạn thanh toán bằng USDC hoặc USDT. Để chuyển sang token hoặc mạng khác, hãy dùng [hoán đổi](./pay-and-swap.mdx).
+
+## Khi vị thế được chi trả
+
+Bạn được trả tự động. Khoản chi trả đi vào ví của bạn trong cùng giao dịch ghi nhận giá kết thúc, thường một hoặc hai phút sau thời điểm kết thúc. Vị thế khi đó hiển thị **Đã chi trả**.
+
+## Khi bạn cần tự nhận
+
+Nếu việc chuyển vào ví của bạn thất bại, ví dụ vì ví bị chặn nhận USDG, vị thế sẽ hiển thị **Thắng**. Không mất gì cả. Khoản chi trả chờ trong hợp đồng và không bao giờ hết hạn.
+
+Mở **Danh mục**, chọn vị thế và nhấn **Nhận**. Gửi về **Ví của tôi** hoặc **Địa chỉ khác**.
+
+<Warning>
+  Toàn bộ khoản chi trả sẽ được gửi đến địa chỉ bạn nhập và không thể gửi lại. Hãy kiểm tra từng ký
+  tự, và chắc chắn địa chỉ đó có thể nhận USDG trên Arbitrum One.
+</Warning>
+
+## Trạng thái vị thế
+
+| Trạng thái    | Ý nghĩa                                                                                                         |
+| ------------- | --------------------------------------------------------------------------------------------------------------- |
+| Đang mở       | Thời điểm kết thúc còn ở phía trước                                                                             |
+| Đang kết thúc | Thời điểm kết thúc đã qua và giá kết thúc đang chờ được ghi nhận                                                |
+| Đã chi trả    | Đã kết thúc và đã chi trả vào ví của bạn                                                                        |
+| Thắng         | Đã kết thúc với khoản chi trả, nhưng việc chuyển tiền thất bại. Hãy nhận nó                                     |
+| Thua          | Kết thúc ngoài vùng giá nên không được chi trả                                                                  |
+| Đã hoàn tiền  | Không có giá kết thúc trong vòng 14 ngày sau thời điểm kết thúc, nên số tiền bạn đã trả, trừ phí, được hoàn lại |
+
+## Danh mục hiển thị gì
+
+| Số liệu                           | Ý nghĩa                                                               |
+| --------------------------------- | --------------------------------------------------------------------- |
+| Giá trị đang mở nếu kết thúc ngay | Số tiền các vị thế đang mở sẽ trả theo giá hiện tại. Chỉ để tham khảo |
+| Chi trả tối đa đang mở            | Số tiền lớn nhất các vị thế đang mở có thể trả                        |
+| Có thể nhận                       | Các khoản chi trả đang chờ bạn nhận                                   |
+| Tỷ lệ thắng                       | Tỷ lệ vị thế đã kết thúc trả nhiều hơn chi phí của chúng              |
+| Đã bỏ vào, gồm phí                | Tất cả số tiền bạn đã trả cho các vị thế                              |
+| Đã chi trả                        | Tất cả số tiền đã được trả cho bạn                                    |
+| PnL đã thực hiện                  | Đã chi trả trừ đã bỏ vào, với các vị thế đã kết thúc                  |
+
+Mỗi dòng đều liên kết đến giao dịch của nó, nên mọi bước đều có thể kiểm tra trên chuỗi.

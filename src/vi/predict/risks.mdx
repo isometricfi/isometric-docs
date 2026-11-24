@@ -1,0 +1,57 @@
+---
+$schema: https://holocron.so/frontmatter.json
+title: Hiểu rõ rủi ro
+sidebarTitle: Rủi ro
+description: Bạn có thể mất gì với một dự đoán Isometric, điều gì có thể làm chậm khoản chi trả, và giao thức không bảo vệ bạn khỏi những gì.
+og:image: https://isometric.fi/docs-opengraph.png
+---
+
+# Hiểu rõ rủi ro
+
+<Warning>
+  Mọi dự đoán đều có thể mất 100% số tiền bạn đã trả. Đừng bao giờ dùng số tiền mà bạn không thể
+  chấp nhận mất toàn bộ.
+</Warning>
+
+## Isometric đang ở bản beta
+
+Hợp đồng chưa được kiểm toán, và các giới hạn có thể thay đổi trong giai đoạn beta. Chỉ dùng số tiền bạn sẵn sàng mất.
+
+## Thiếu bao nhiêu là quan trọng
+
+Một dự đoán kết thúc thiếu từ 0.1% trở lên so với mục tiêu sẽ không trả gì. Thiếu ít hơn thì chỉ trả một phần khoản chi trả đã báo giá.
+
+## Bạn không thể thoát sớm
+
+Một dự đoán chạy đến thời điểm kết thúc. Một dự đoán đang đúng hướng hôm nay vẫn có thể kết thúc thiếu vào ngày mai, và nó không thể được bán hay chuyển nhượng.
+
+## Một mức giá tại một thời điểm quyết định
+
+Thông thường, giá Chainlink cuối cùng tại hoặc trước thời điểm kết thúc của bạn quyết định kết quả. Nếu giá đó quá cũ, bằng 0 hoặc âm, hợp đồng sẽ dùng lần đọc giá đầu tiên sau thời điểm kết thúc. Vì vậy một mức giá muộn hơn có thể quyết định khoản chi trả của bạn.
+
+## Bạn có thể không nhận được báo giá
+
+Một dự đoán cần một bên bán sẵn sàng đứng về phía còn lại. Một mục tiêu xa giá hôm nay, hoặc thị trường đang tạm dừng, có thể khiến bạn không có báo giá. Các dự đoán đang mở không bị ảnh hưởng.
+
+## Khoản chi trả có thể bị chậm
+
+Khoản chi trả chờ giá và chờ ai đó thực hiện việc kết thúc. Sự cố mạng, nguồn giá ngừng cập nhật hoặc keeper bị đình trệ có thể làm chậm nó, nhưng không thay đổi số tiền bạn được nhận. Bất kỳ ai cũng có thể thực hiện việc kết thúc. Nếu không có giá nào được công bố trong vòng 14 ngày sau thời điểm kết thúc, dự đoán được hoàn tiền, trừ phí.
+
+## Hoán đổi chạy qua bên thứ ba
+
+Thanh toán bằng USDC hoặc USDT và hoán đổi đa chuỗi dùng Velora và Relay, không do Isometric vận hành. Một lệnh hoán đổi có thể thất bại hoặc khớp với mức trượt giá tới mức đã hiển thị.
+
+## Hợp đồng, nâng cấp và USDG
+
+Hợp đồng có thể nâng cấp, và bản nâng cấp có hiệu lực ngay, không có độ trễ. Một bản nâng cấp lỗi hoặc chủ sở hữu quyền nâng cấp bị xâm phạm có thể gây mất tiền. Hợp đồng có thể có lỗi, oracle có thể hỏng, và mạng có thể ngừng. USDG mang rủi ro riêng về đơn vị phát hành, bao gồm khả năng đơn vị phát hành đóng băng một địa chỉ.
+
+## Đây không phải lời khuyên
+
+Không nội dung nào trong ứng dụng hay tài liệu này là lời khuyên đầu tư. Isometric không dành cho cư dân Hoa Kỳ, Canada, Vương quốc Anh, Nam Phi hoặc các quốc gia bị trừng phạt. Bạn chịu trách nhiệm về thuế trên mọi khoản lãi. Xem [điều khoản dịch vụ](https://app.isometric.fi/terms).
+
+## Mã hợp đồng bảo vệ những gì
+
+- **Mức lỗ của bạn được cố định.** Không ai có thể lấy thêm gì của bạn sau khi bạn đã trả.
+- **Khoản chi trả của bạn được bảo đảm ngay khi bạn đặt.** Tài sản thế chấp của bên bán được khóa trong hợp đồng cho đến thời điểm kết thúc.
+- **Không ai chọn giá.** Chỉ đúng một mức giá Chainlink hợp lệ cho một thời điểm kết thúc.
+- **Khoản cần nhận không bao giờ hết hạn.** Khoản chi trả chờ bạn, và bạn có thể gửi nó đến bất kỳ địa chỉ nào.
